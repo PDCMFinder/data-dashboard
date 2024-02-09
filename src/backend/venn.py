@@ -15,4 +15,7 @@ def get_dt_venn(filtered_data):
     operations = ['All three (Intersection)', 'Mutation and Expression', 'Mutation and Copy Number Alteration', 'Expression and Copy Number Alteration']
     values = [intersection, set1_and_set2, set1_and_set3, set2_and_set3]
     venn_df = DataFrame({'Type': operations, 'Model': [str(v) for v in values]})
+    fig.update_layout(
+        title=dict(text="Model data type overlaps", automargin=True, yref='paper')
+    )
     return fig, venn_df

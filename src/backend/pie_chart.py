@@ -1,5 +1,5 @@
 from pandas import DataFrame
-from plotly.graph_objects import Pie, Scatterpolar, Figure
+from plotly.graph_objects import Pie, Scatterpolar, Figure, Layout
 from plotly.subplots import make_subplots
 from numpy import linspace, concatenate, pi, arange
 
@@ -41,11 +41,13 @@ def get_model_type_donut(df):
     labels = df.index.tolist()
     values = df.values.tolist()
     fig = Figure(data=[Pie(labels=labels, values=values, hole=0.4)])
+    fig.update_layout(
+        title=dict(text="Model type overview", automargin=True, yref='container')
+    )
     return fig
 
 
 def get_dto_radial(filtered_data, tm):
-
     pie_chart = filtered_data.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
         'molecular_characterisation_type').count().sort_index()['model_id']
     colors_dict = {'mutation': '#ef553b', 'expression': '#636efa', 'copy number alteration': '#b6e880',
@@ -72,5 +74,25 @@ def get_dto_radial(filtered_data, tm):
             radialaxis=dict(range=[0, len(pie_chart.index)*260], visible=False, showgrid=False, showticklabels=False,),
             angularaxis=dict(showline=False, showticklabels=False, direction='clockwise'),
         ),
+        title=dict(text="Data type overview", automargin=True, yref='container')
+    )
+    return fig
+
+
+def get_library_strategy_plot(df):
+    df['library_strategy'] = df['library_strategy'].fillna('Not Provided').astype(str).str.replace('mRNA NGS', 'RNA-Seq').replace('WXS', 'WES').replace('microarray', 'Microarray')
+    df['library_strategy'] = ['Targeted' if str(t).lower().__contains__('target') else t for t in df['library_strategy']]
+
+    df = df.groupby(['molecular_characterisation_type', 'library_strategy']).count()['model_id']
+    molecular_characterisation_type = ['mutation', 'expression', 'copy number alteration']
+    fig = make_subplots(rows=1, cols=3, specs=[[{"type": "pie"}] * 3])
+    col = 1
+    for mct in molecular_characterisation_type:
+        labels = df[mct].index.tolist()
+        values = df[mct].values.tolist()
+        fig.add_trace(Pie(labels=labels, values=values, name=mct.title()), row=1, col=col)
+        col += 1
+    fig.update_layout(
+        title=dict(text="Technology used for each data type", automargin=True, yref='paper')
     )
     return fig

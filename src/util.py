@@ -1,7 +1,7 @@
 from pandas import DataFrame, read_csv
-from src.backend.pie_chart import get_model_type_donut, get_dto_radial
+from src.backend.pie_chart import get_model_type_donut, get_dto_radial, get_library_strategy_plot
 from src.backend.venn import get_dt_venn
-from src.backend.bar_chart import get_bar_chart
+from src.backend.bar_chart import get_bar_chart, get_reactive_bar_plot
 from src.resources import input_file, total_models
 
 data = DataFrame([[0, 0], [1, 1]], columns=['Type', 'Model'])
@@ -18,6 +18,8 @@ def custom_plots(selected_category, selected_plot):
         fig, table_data = get_dt_venn(data_overview)
         table_display = {'display': 'block'}
         return fig, table_display, table_data.to_dict('records')
+    if selected_plot == "library_strategy":
+        return get_library_strategy_plot(data_overview)
 
 def bar_chart():
     return get_bar_chart()
@@ -27,3 +29,8 @@ def model_type_pie(category):
     file = total_models[category]
     data = read_csv(file)
     return get_model_type_donut(data)
+
+def reactive_bar_plot(release, category):
+    file = total_models[release]
+    data = read_csv(file)
+    return get_reactive_bar_plot(data, category)

@@ -15,3 +15,8 @@ total_models = {'DR_5.3': 'assets/model/total_models_DR_v5.3.csv', 'DR_5.2': 'as
               'DR_3.0': 'assets/model/total_models_DR_v3.0.csv',
               'DR_2.1': 'assets/model/total_models_DR_v2.1.csv', 'DR_2.0': 'assets/model/total_models_DR_v2.0.csv',
               'DR_1.0': 'assets/model/total_models_DR_v1.0.csv'}
+
+reactive_categories = {'Providers': 'provider', 'Model Type': 'model_type',
+                 'Publications': 'publication', 'Age': 'age_in_years_at_collection',
+                 'Diagnosis': 'diagnosis', 'Tumour Type': 'tumour_type',
+                 'Primary Site': 'primary_site', 'Gender': 'sex', 'Ethnicity': 'ethnicity'}
