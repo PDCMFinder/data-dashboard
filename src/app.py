@@ -29,17 +29,25 @@ app.layout = html.Div(
         html.Div(
             children=[
                 dcc.Graph(
+                    id='model-type-plot',
+                    style={'width': '100%', 'marginTop': 20}
+                ),
+            ],
+                style={'width': '33%', 'float': 'left'}
+        ),
+        html.Div(
+            children=[
+                dcc.Graph(
                     id='dto-pie-plot',
                     style={'width': '100%', 'marginTop': 20}
                 ),
             ],
-                style={'width': '50%', 'float': 'left'}
+                style={'width': '33%', 'float': 'left'}
         ),
         html.Div(
             children=[
                 dcc.Graph(
                     id='venn-plot',
-                    style={'width': '100%', 'marginTop': 20}
                 ),
                 html.Div([
                         dash_table.DataTable(
@@ -53,11 +61,11 @@ app.layout = html.Div(
                         ),
                     ],
                     id='table-container',
-                    style={'width': '100%', 'marginTop': 20}
                 ),
             ],
-                style={'width': '50%', 'float': 'right'}
+                style={'width': '30%', 'float': 'right', 'margingBottom': '1%'}
         ),
+
     ],
         style={'font-family': 'Arial', 'margin': 'auto', 'padding': '10px'}
 )
@@ -67,6 +75,13 @@ app.layout = html.Div(
 )
 def update_pie_plot(category):
     return custom_plots(category, 'dto_donut')
+
+@app.callback(
+    Output('model-type-plot', 'figure'),
+    [Input('dropdown-category', 'value')]
+)
+def update_model_type_plot(category):
+    return model_type_pie(category)
 
 @app.callback(
     Output('venn-plot', 'figure'),
