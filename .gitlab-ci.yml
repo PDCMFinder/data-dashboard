@@ -28,13 +28,13 @@ build_main_prod_image:
     - |
       if [[ "${REQUIRES_REBUILD_IMAGE}" == "true" ]]; then
           echo "Building prod image" 
-          docker build -t "${CI_REGISTRY_IMAGE}":main -f Dockerfile .  | tee ${MOUNT_POINT}/build.log
-          docker push "${CI_REGISTRY_IMAGE}":main  | tee ${MOUNT_POINT}/push.log
+          docker build -t "${CI_REGISTRY_IMAGE}":latest -f Dockerfile .  | tee ${MOUNT_POINT}/build.log
+          docker push "${CI_REGISTRY_IMAGE}":latest  | tee ${MOUNT_POINT}/push.log
           docker logout ${CI_REGISTRY}
           echo "Pushing to docker hub"
           echo "${DOCKER_HUB_PWD}" | docker login --username "${DOCKER_HUB_USER}" --password-stdin
-          docker tag "${CI_REGISTRY_IMAGE}":main "${DOCKER_HUB_USER}"/"${DOCKER_HUB_REPO}":main
-          docker push "${DOCKER_HUB_USER}"/"${DOCKER_HUB_REPO}":main  | tee ${MOUNT_POINT}/dockerhub-push-latest.log
+          docker tag "${CI_REGISTRY_IMAGE}":latest "${DOCKER_HUB_USER}"/"${DOCKER_HUB_REPO}":latest
+          docker push "${DOCKER_HUB_USER}"/"${DOCKER_HUB_REPO}":latest  | tee ${MOUNT_POINT}/dockerhub-push-latest.log
       fi
     - docker logout
 
