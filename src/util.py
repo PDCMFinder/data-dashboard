@@ -1,5 +1,5 @@
 from pandas import DataFrame, read_csv
-from src.backend.pie_chart import get_dto_dount, get_dto_radial
+from src.backend.pie_chart import get_model_type_donut, get_dto_radial
 from src.backend.venn import get_dt_venn
 from src.backend.bar_chart import get_bar_chart
 from src.resources import input_file, total_models
@@ -21,3 +21,9 @@ def custom_plots(selected_category, selected_plot):
 
 def bar_chart():
     return get_bar_chart()
+
+
+def model_type_pie(category):
+    file = total_models[category]
+    data = read_csv(file)
+    return get_model_type_donut(data)

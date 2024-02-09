@@ -126,8 +126,8 @@ def venn_to_plotly(L_sets, L_labels=None, title=None):
     p_fig.update_layout(
         plot_bgcolor='white',
         margin=dict(b=0, l=10, pad=0, r=10, t=40),
-        width=800,
-        height=400,
+        width=400,
+        height=500,
         shapes=L_shapes,
         annotations=L_annotation,
         title=dict(text=title, x=0.5, xanchor='center')

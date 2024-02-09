@@ -3,7 +3,7 @@ from plotly.graph_objects import Pie, Scatterpolar, Figure
 from plotly.subplots import make_subplots
 from numpy import linspace, concatenate, pi, arange
 
-def get_dto_dount(filtered_data, tm):
+def get_dto_donut(filtered_data, tm):
     pie_chart = filtered_data.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
         'molecular_characterisation_type').count().sort_index()['model_id']
     colors_dict = {'mutation': '#ef553b', 'expression': '#636efa', 'copy number alteration': '#b6e880',
@@ -29,6 +29,18 @@ def get_dto_dount(filtered_data, tm):
         if i == cols:
             row=2
 
+    return fig
+
+
+def get_model_type_donut(df):
+    df['model_type'] = ['Organoid' if str(t).lower().__contains__('organoid') else t for t in df['model_type']]
+    df['model_type'] = ['Cell Line' if str(t).lower().__contains__('cell') or str(t).lower().__contains__('pdc') or str(t).lower().__contains__('2d') or str(t).lower().__contains__('2-d') else t for t in df['model_type']]
+    df['model_type'] = ['Other' if str(t).lower().__contains__('other') or str(t).lower().__contains__('mixed') else t for t in df['model_type']]
+
+    df = df.groupby('model_type').count()['provider']
+    labels = df.index.tolist()
+    values = df.values.tolist()
+    fig = Figure(data=[Pie(labels=labels, values=values, hole=0.4)])
     return fig
 
 
