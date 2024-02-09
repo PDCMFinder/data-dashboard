@@ -29,6 +29,13 @@ def get_bar_chart():
     return fig
 
 def get_reactive_bar_plot(data, column):
+    if column == 'publications':
+        data[column] = data[column].fillna('No')
+        data[column] = ['Yes' if str(p).__contains__('PMID') else 'No' for p in data[column]]
+    if column == 'age_in_years_at_collection':
+        data[column] = ['Younger than 21' if not str(a).lower().__contains__('not') and float(a) < 21 else 'Not provided' if str(a).lower().__contains__('not') else 'Older than 21' for a in data[column]]
+    if column == 'sex' or column == 'ethnicity':
+        data[column] = data[column].str.title()
     data = data.groupby(column).count().to_dict()['model_id']
     data = DataFrame(list(data.items()), columns=[column, 'Models'])
     if column == 'model_type':
