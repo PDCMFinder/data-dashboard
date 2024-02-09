@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pdcm-data-dashboard-deployment
+  namespace: pdcm-data-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pdcm-data-dashboard
+  template:
+    metadata:
+      labels:
+        app: pdcm-data-dashboard
+    spec:
+      containers:
+      - name: pdcm-data-dashboard
+        image: pdxfinder/data-dashboard:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8050
+        resources:
+          limits:
+            cpu: "1"    # The maximum CPU the container can use (e.g., 0.5 CPU core)
+            memory: "1Gi"  # The maximum memory the container can use (e.g., 512 megabytes)
+          requests:
+            cpu: "0.5"    # The guaranteed minimum CPU the container needs (e.g., 0.2 CPU core)
+            memory: "512Mi"
+
