@@ -1,6 +1,7 @@
 from pandas import DataFrame
 from src.backend.venn_to_plotly import venn_to_plotly
 
+
 def get_dt_venn(filtered_data):
     filtered_data = filtered_data.fillna('').groupby('molecular_characterisation_type')['model_id'].apply(set)
     set1, set2, set3 = set(filtered_data['mutation']), set(filtered_data['expression']), set(filtered_data['copy number alteration'])

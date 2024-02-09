@@ -1,10 +1,11 @@
 from pandas import DataFrame, read_csv, concat
-from src.resources import input_file, labels
+from src.resources import total_models, labels
 from plotly.graph_objects import Figure, Bar
+
 def get_bar_chart():
     models = DataFrame()
-    for f in input_file.keys():
-        file = input_file[f]
+    for f in total_models.keys():
+        file = total_models[f]
         model = read_csv(file, usecols=['model_id', 'provider']).drop_duplicates()
         model['Release'] = labels[f]
         models = concat([models, model])
