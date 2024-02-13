@@ -30,24 +30,29 @@ app.layout = html.Div(
         ),
         html.Div(
             children=[
+                dcc.Markdown('### Model type overview:', style={'display': 'inline-block'}),
                 dcc.Graph(
                     id='model-type-plot',
                     style={'width': '100%', 'marginTop': 20}
                 ),
             ],
-            style={'width': '33%', 'float': 'left', 'marginTop': '5px'}
+            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+                   'border-radius': '10px', 'width': '32%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
         ),
         html.Div(
             children=[
+                dcc.Markdown('### Data type overview:', style={'display': 'inline-block'}),
                 dcc.Graph(
                     id='dto-pie-plot',
                     style={'width': '100%', 'marginTop': 20}
                 ),
             ],
-            style={'width': '33%', 'float': 'left', 'marginTop': '5px'}
+            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+                   'border-radius': '10px', 'width': '32%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '5px'}
         ),
         html.Div(
             children=[
+                dcc.Markdown('### Model data overlap:', style={'display': 'inline-block'}),
                 dcc.Graph(
                     id='venn-plot',
                 ),
@@ -62,20 +67,36 @@ app.layout = html.Div(
                         style_cell={'textAlign': 'left'},
                     ),
                 ],
+                    style={'marginTop': '10px'},
                     id='table-container',
                 ),
             ],
-            style={'width': '30%', 'float': 'right', 'margingBottom': '1%'}
+            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+                   'border-radius': '10px', 'width': '31.5%', 'float': 'right', 'marginTop': '5px', 'marginLeft': '5px'}
         ),
         html.Div(
             children=[
-                dcc.Markdown('### Select attributes for comparison:'),
-                dcc.Dropdown(
-                    id='reactive-category',
-                    options=[{'label': str(category).title(), 'value': reactive_categories[category]} for category in
-                             reactive_categories.keys()],
-                    value=list(reactive_categories.values())[0],
-                    multi=False,
+                html.Div(
+                    children=[
+                        dcc.Markdown('Attribute:', style={'display': 'inline-block'}),
+                        dcc.Dropdown(
+                            id='reactive-category',
+                            options=[{'label': str(category).title(), 'value': reactive_categories[category]} for category in
+                                     reactive_categories.keys()],
+                            value=list(reactive_categories.values())[0],
+                            multi=False,
+                            style={'width': '40%', 'display': 'inline-block', 'margin-left': '5px'}
+                        ),
+                        dcc.Markdown('Group by:', style={'display': 'inline-block'}),
+                        dcc.Dropdown(
+                            id='reactive-groupby-category',
+                            options=[{'label': str(category).title(), 'value': reactive_categories[category]} for category in
+                                     reactive_categories.keys()],
+                            value=None,
+                            multi=False,
+                            style={'width': '40%', 'display': 'inline-block', 'margin-left': '5px'}
+                        ),
+                    ],
                     style={'width': '100%'}
                 ),
                 dcc.Graph(
@@ -83,16 +104,19 @@ app.layout = html.Div(
                     style={'width': '100%'}
                 ),
             ],
-            style={'width': '50%', 'float': 'left', 'marginTop': '5px'}
+            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+                   'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px'}
         ),
         html.Div(
             children=[
+                dcc.Markdown('### Molecular data by Technology used:', style={'display': 'inline-block'}),
                 dcc.Graph(
                     id='library-strategy-plot',
-                    style={'width': '100%', 'marginTop': 20}
+                    style={'width': '100%'}
                 ),
             ],
-            style={'width': '50%', 'float': 'left', 'marginTop': '5px'}
+            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+                   'border-radius': '10px', 'width': '48%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
         ),
     ],
     style={'font-family': 'Arial', 'margin': 'auto', 'padding': '10px'}
@@ -137,10 +161,11 @@ def update_selected_plot(selected_category):
 
 @app.callback(
     Output('reactive-plot', 'figure'),
-    [Input('dropdown-category', 'value'), Input('reactive-category', 'value')]
+    [Input('dropdown-category', 'value'), Input('reactive-category', 'value'),
+     Input('reactive-groupby-category', 'value')]
 )
-def update_reactive_plot(release, category):
-    return reactive_bar_plot(release, category)
+def update_reactive_plot(release, category, group_cat):
+    return reactive_bar_plot(release, category, group_cat)
 
 
 @app.callback(
