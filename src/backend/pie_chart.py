@@ -41,9 +41,7 @@ def get_model_type_donut(df):
     labels = df.index.tolist()
     values = df.values.tolist()
     fig = Figure(data=[Pie(labels=labels, values=values, hole=0.4)])
-    fig.update_layout(
-        title=dict(text="Model type overview", automargin=True, yref='container')
-    )
+
     return fig
 
 
@@ -74,7 +72,6 @@ def get_dto_radial(filtered_data, tm):
             radialaxis=dict(range=[0, len(pie_chart.index)*260], visible=False, showgrid=False, showticklabels=False,),
             angularaxis=dict(showline=False, showticklabels=False, direction='clockwise'),
         ),
-        title=dict(text="Data type overview", automargin=True, yref='container')
     )
     return fig
 
@@ -92,7 +89,4 @@ def get_library_strategy_plot(df):
         values = df[mct].values.tolist()
         fig.add_trace(Pie(labels=labels, values=values, name=mct.title()), row=1, col=col)
         col += 1
-    fig.update_layout(
-        title=dict(text="Technology used for each data type", automargin=True, yref='paper')
-    )
     return fig
