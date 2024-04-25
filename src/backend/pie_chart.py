@@ -33,9 +33,9 @@ def get_dto_donut(filtered_data, tm):
 
 
 def get_model_type_donut(df):
-    df['model_type'] = ['Organoid' if str(t).lower().__contains__('organoid') else t for t in df['model_type']]
-    df['model_type'] = ['Cell Line' if str(t).lower().__contains__('cell') or str(t).lower().__contains__('pdc') or str(t).lower().__contains__('2d') or str(t).lower().__contains__('2-d') else t for t in df['model_type']]
-    df['model_type'] = ['Other' if str(t).lower().__contains__('other') or str(t).lower().__contains__('mixed') else t for t in df['model_type']]
+    df.loc[:, 'model_type'] = ['Organoid' if str(t).lower().__contains__('organoid') else t for t in df['model_type']]
+    df.loc[:, 'model_type'] = ['Cell Line' if str(t).lower().__contains__('cell') or str(t).lower().__contains__('pdc') or str(t).lower().__contains__('2d') or str(t).lower().__contains__('2-d') else t for t in df['model_type']]
+    df.loc[:, 'model_type'] = ['Other' if str(t).lower().__contains__('other') or str(t).lower().__contains__('mixed') else t for t in df['model_type']]
 
     df = df.groupby('model_type').count()['provider']
     labels = df.index.tolist()

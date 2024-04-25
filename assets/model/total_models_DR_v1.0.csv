@@ -23,7 +23,7 @@ SIDM00397,CMP,Cell Line,,71,Adult Acute Megakaryoblastic Leukemia,Not provided,H
 SIDM00114,CMP,Cell Line,,,Adenosquamous Lung Carcinoma,Not collected,Lung,Not collected,Unknown
 SIDM00514,CMP,Cell Line,,14,Melanoma,Metastatic,Skin,Male,Unknown
 SIDM01330,CMP,Cell Line,,78,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Male,White
-SIDM01444,CMP,Cell Line,11776963.0,65,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
+SIDM01444,CMP,Cell Line,11776963,65,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
 SIDM00563,CMP,Cell Line,,52,Acute Biphenotypic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,East Asian
 SIDM01766,CMP,Cell Line,,72,Chondrosarcoma,Not provided,Bone,Female,White
 SIDM00083,CMP,Cell Line,,34,Gliosarcoma,Not provided,Central Nervous System,Female,Unknown
@@ -35,7 +35,7 @@ SIDM01074,CMP,Cell Line,,49,Glioblastoma,Not provided,Central Nervous System,Mal
 SIDM01240,CMP,Cell Line,,22,Melanoma,Metastatic,Skin,Male,Unknown
 SIDM00346,CMP,Cell Line,,29,Chronic Myelogenous Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM00747,CMP,Cell Line,,58,Lung Adenocarcinoma,Metastatic,Lung,Male,White
-SIDM00454,CMP,Cell Line,3607778.0,2,Embryonal Rhabdomyosarcoma,Not provided,Soft Tissue,Not collected,Unknown
+SIDM00454,CMP,Cell Line,3607778,2,Embryonal Rhabdomyosarcoma,Not provided,Soft Tissue,Not collected,Unknown
 SIDM00739,CMP,Cell Line,,56,Lung Adenocarcinoma,Not provided,Lung,Female,Unknown
 SIDM01175,CMP,Cell Line,,68,Fibrosarcoma,Not provided,Soft Tissue,Male,White
 SIDM00402,CMP,Cell Line,,,Bladder Carcinoma,Not provided,Bladder,Female,Unknown
@@ -52,13 +52,13 @@ SIDM00974,CMP,Cell Line,,,Melanoma,Not provided,Skin,Not collected,Unknown
 SIDM00440,CMP,Cell Line,,,Adult Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00578,CMP,Cell Line,,2,Neuroblastoma,Metastatic,Peripheral Nervous System,Male,Unknown
 SIDM00556,CMP,Cell Line,,,Neuroblastoma,Metastatic,Peripheral Nervous System,Not collected,Unknown
-SIDM00823,CMP,Cell Line,565251.0,70,Colon Adenocarcinoma,Metastatic,Large Intestine,Male,White
+SIDM00823,CMP,Cell Line,565251,70,Colon Adenocarcinoma,Metastatic,Large Intestine,Male,White
 SIDM01582,CMP,Cell Line,,77,Gastric Adenocarcinoma,Metastatic,Stomach,Male,East Asian
 SIDM00412,CMP,Cell Line,,46,Follicular Lymphoma,Metastatic,Haematopoietic and Lymphoid,Female,Unknown
 SIDM00432,CMP,Cell Line,,2,Childhood T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM00914,CMP,Cell Line,,,Melanoma,Not provided,Skin,Female,Unknown
 SIDM00488,CMP,Cell Line,,,Rectal Adenocarcinoma,Not provided,Large Intestine,Not collected,Unknown
-SIDM01632,CMP,Cell Line,8872523.0,,Pancreatic Carcinoma,Metastatic,Pancreas,Not collected,Unknown
+SIDM01632,CMP,Cell Line,8872523,,Pancreatic Carcinoma,Metastatic,Pancreas,Not collected,Unknown
 SIDM00595,CMP,Cell Line,,71,Endometrial Adenocarcinoma,Not provided,Endometrium,Female,East Asian
 SIDM00418,CMP,Cell Line,,57,Follicular Thyroid Carcinoma,Not provided,Thyroid,Male,White
 SIDM01535,CMP,Cell Line,,,Melanotic Neuroectodermal Tumor,Not collected,Bone,Not collected,Unknown
@@ -72,7 +72,7 @@ SIDM00867,CMP,Cell Line,,59,Glioblastoma,Not provided,Central Nervous System,Fem
 SIDM00806,CMP,Cell Line,,13,Osteosarcoma,Not provided,Bone,Female,White
 SIDM01773,CMP,Cell Line,,,Mantle Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Not collected,Unknown
 SIDM00561,CMP,Cell Line,,32,Hairy Cell Leukemia,Not provided,Haematopoietic and Lymphoid,Female,East Asian
-SIDM01903,CMP,Cell Line,2474517.0,,Pleural Epithelioid Mesothelioma,Not provided,Lung,Male,Unknown
+SIDM01903,CMP,Cell Line,2474517,,Pleural Epithelioid Mesothelioma,Not provided,Lung,Male,Unknown
 SIDM00145,CMP,Cell Line,,19,Adult T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01781,CMP,Cell Line,,59,Gastric Adenocarcinoma,Metastatic,Stomach,Female,East Asian
 SIDM01717,CMP,Cell Line,,71,Small Cell Lung Carcinoma,Metastatic,Lung,Male,White
@@ -88,7 +88,7 @@ SIDM01002,CMP,Cell Line,,46,Breast Carcinoma,Metastatic,Breast,Female,White
 SIDM00082,CMP,Cell Line,,6,Melanoma,Metastatic,Skin,Male,White
 SIDM01657,CMP,Cell Line,,77,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Female,East Asian
 SIDM00562,CMP,Cell Line,,46,Breast Carcinoma,Not provided,Breast,Female,Unknown
-SIDM01451,CMP,Cell Line,12037578.0,50,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Male,East Asian
+SIDM01451,CMP,Cell Line,12037578,50,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Male,East Asian
 SIDM00989,CMP,Cell Line,,51,Bladder Carcinoma,Not provided,Bladder,Female,East Asian
 SIDM01223,CMP,Cell Line,,14,Childhood T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01229,CMP,Cell Line,,2,Neuroblastoma,Not provided,Peripheral Nervous System,Male,Unknown
@@ -139,7 +139,7 @@ SIDM01057,CMP,Cell Line,,,Adult Acute Myeloid Leukemia,Not provided,Haematopoiet
 SIDM01187,CMP,Cell Line,,43,Invasive Ductal Carcinoma Not Otherwise Specified,Not provided,Breast,Female,Unknown
 SIDM00283,CMP,Cell Line,,70,Diffuse Large B-Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,East Asian
 SIDM01292,CMP,Organoid,,55,Esophageal Adenocarcinoma,Not provided,Esophagus,Male,White
-SIDM00862,CMP,Cell Line,14284371.0,9,Epstein-Barr Virus-Related Burkitt s Lymphoma,Not provided,Haematopoietic and Lymphoid,Female,Black
+SIDM00862,CMP,Cell Line,14284371,9,Epstein-Barr Virus-Related Burkitt s Lymphoma,Not provided,Haematopoietic and Lymphoid,Female,Black
 SIDM01151,CMP,Cell Line,,24,Hepatocellular Carcinoma,Not provided,Liver,Male,East Asian
 SIDM00487,CMP,Cell Line,,,Colon Adenocarcinoma,Not provided,Large Intestine,Not collected,Unknown
 SIDM00722,CMP,Cell Line,,,Pleural Biphasic Mesothelioma,Not provided,Lung,Male,Unknown
@@ -153,7 +153,7 @@ SIDM00014,CMP,Cell Line,,,Colon Carcinoma,Not collected,Large Intestine,Not coll
 SIDM00598,CMP,Cell Line,,57,Squamous Cell Lung Carcinoma,Not provided,Lung,Male,East Asian
 SIDM01373,CMP,Cell Line,,,Melanoma,Metastatic,Skin,Not collected,Unknown
 SIDM00985,CMP,Cell Line,,8,Burkitt's Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,White
-SIDM01354,CMP,Cell Line,21683373.0,59,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Male,White
+SIDM01354,CMP,Cell Line,21683373,59,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Male,White
 SIDM01718,CMP,Cell Line,,61,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00069,CMP,Cell Line,,45,Rectal Adenocarcinoma,Not provided,Large Intestine,Male,East Asian
 SIDM01056,CMP,Cell Line,,50,Ductal Breast Carcinoma,Metastatic,Breast,Female,White
@@ -166,7 +166,7 @@ SIDM00660,CMP,Cell Line,,32,Cecum Adenocarcinoma,Not provided,Large Intestine,Ma
 SIDM01262,CMP,Cell Line,,7,Epstein-Barr Virus-Related Burkitt s Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,Black
 SIDM01097,CMP,Cell Line,,17,Primitive Neuroectodermal Tumor,Not provided,Central Nervous System,Male,White
 SIDM00619,CMP,Cell Line,,71,Anaplastic Thyroid Carcinoma,Not provided,Thyroid,Male,East Asian
-SIDM00032,CMP,Cell Line,947851.0,58,Bladder Carcinoma,Not provided,Bladder,Male,Black
+SIDM00032,CMP,Cell Line,947851,58,Bladder Carcinoma,Not provided,Bladder,Male,Black
 SIDM00288,CMP,Cell Line,,10,Childhood Precursor B Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01113,CMP,Cell Line,,75,Uterine Corpus Leiomyosarcoma,Not provided,Uterus,Female,White
 SIDM00087,CMP,Cell Line,,61,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
@@ -178,7 +178,7 @@ SIDM00975,CMP,Cell Line,,,Melanoma,Not provided,Skin,Not collected,Unknown
 SIDM00446,CMP,Cell Line,,65,Adult Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01466,CMP,Cell Line,,,Ewing's Sarcoma,Not collected,Bone,Not collected,Unknown
 SIDM00907,CMP,Cell Line,,,Burkitt's Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
-SIDM01336,CMP,Cell Line,11776963.0,61,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
+SIDM01336,CMP,Cell Line,11776963,61,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
 SIDM00799,CMP,Cell Line,,53,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
 SIDM00310,CMP,Cell Line,,,Malignant Pleural Mesothelioma,Not collected,Lung,Not collected,Unknown
 SIDM00076,CMP,Cell Line,,,Esophageal Squamous Cell Carcinoma,Not collected,Esophagus,Not collected,Unknown
@@ -201,8 +201,8 @@ SIDM00142,CMP,Cell Line,,63,Endometrial Adenocarcinoma,Not provided,Endometrium,
 SIDM01604,CMP,Cell Line,,,Lung Adenocarcinoma,Not collected,Lung,Not collected,Unknown
 SIDM00215,CMP,Cell Line,,62,Rectal Adenocarcinoma,Metastatic,Large Intestine,Female,East Asian
 SIDM01763,CMP,Cell Line,,1,Rhabdomyosarcoma,Not collected,Soft Tissue,Female,White
-SIDM01449,CMP,Cell Line,12037578.0,53,Pancreatic Ductal Adenocarcinoma,Metastatic,Pancreas,Male,East Asian
-SIDM01438,CMP,Cell Line,11819450.0,52,Hepatocellular Carcinoma,Not provided,Liver,Male,East Asian
+SIDM01449,CMP,Cell Line,12037578,53,Pancreatic Ductal Adenocarcinoma,Metastatic,Pancreas,Male,East Asian
+SIDM01438,CMP,Cell Line,11819450,52,Hepatocellular Carcinoma,Not provided,Liver,Male,East Asian
 SIDM00774,CMP,Cell Line,,48,Ductal Breast Carcinoma,Not provided,Breast,Female,Black
 SIDM01578,CMP,Cell Line,,,Bladder Carcinoma,Not collected,Bladder,Not collected,Unknown
 SIDM00804,CMP,Cell Line,,13,Osteosarcoma,Not provided,Bone,Female,White
@@ -219,8 +219,8 @@ SIDM00090,CMP,Cell Line,,64,High Grade Ovarian Serous Adenocarcinoma,Not provide
 SIDM00458,CMP,Cell Line,,62,Adult Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Not collected,Unknown
 SIDM00606,CMP,Cell Line,,49,Squamous Cell Lung Carcinoma,Metastatic,Lung,Male,Unknown
 SIDM00847,CMP,Cell Line,,7,Embryonal Rhabdomyosarcoma,Not provided,Soft Tissue,Female,White
-SIDM01377,CMP,Cell Line,9328139.0,56,High Grade Ovarian Serous Adenocarcinoma,Metastatic,Ovary,Female,East Asian
-SIDM01857,CMP,Cell Line,1692339.0,40,Oral Cavity Squamous Cell Carcinoma,Not provided,Head and Neck,Female,Unknown
+SIDM01377,CMP,Cell Line,9328139,56,High Grade Ovarian Serous Adenocarcinoma,Metastatic,Ovary,Female,East Asian
+SIDM01857,CMP,Cell Line,1692339,40,Oral Cavity Squamous Cell Carcinoma,Not provided,Head and Neck,Female,Unknown
 SIDM00928,CMP,Cell Line,,35,Breast Carcinoma,Not provided,Breast,Female,Unknown
 SIDM01142,CMP,Cell Line,,22,Embryonal Carcinoma,Metastatic,Testis,Male,White
 SIDM01106,CMP,Cell Line,,67,Melanoma,Metastatic,Skin,Male,White
@@ -271,12 +271,12 @@ SIDM00758,CMP,Cell Line,,47,Lung Adenocarcinoma,Metastatic,Lung,Female,White
 SIDM01188,CMP,Cell Line,,57,Pancreatic Adenocarcinoma,Metastatic,Pancreas,Female,White
 SIDM01139,CMP,Cell Line,,70,Pancreatic Adenocarcinoma,Not provided,Pancreas,Female,White
 SIDM01531,CMP,Cell Line,,38,B-Cell Non-Hodgkin's Lymphoma,Metastatic,Haematopoietic and Lymphoid,Female,Unknown
-SIDM01909,CMP,Cell Line,3761468.0,,Bladder Carcinoma,Not provided,Bladder,Female,Unknown
+SIDM01909,CMP,Cell Line,3761468,,Bladder Carcinoma,Not provided,Bladder,Female,Unknown
 SIDM00613,CMP,Cell Line,,,Glioblastoma,Not provided,Central Nervous System,Female,Unknown
 SIDM01012,CMP,Cell Line,,73,B-Cell Prolymphocytic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00133,CMP,Cell Line,,6,Lung Adenocarcinoma,Not provided,Lung,Female,Unknown
 SIDM00105,CMP,Cell Line,,60,High Grade Ovarian Serous Adenocarcinoma,Metastatic,Ovary,Female,White
-SIDM01830,CMP,Cell Line,4038766.0,,Clear Cell Renal Cell Carcinoma,Not provided,Kidney,Not collected,Unknown
+SIDM01830,CMP,Cell Line,4038766,,Clear Cell Renal Cell Carcinoma,Not provided,Kidney,Not collected,Unknown
 SIDM00637,CMP,Cell Line,,0,B-Cell Non-Hodgkin's Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00884,CMP,Cell Line,,43,Ductal Breast Carcinoma,Not provided,Breast,Female,White
 SIDM00772,CMP,Cell Line,,38,Ductal Breast Carcinoma,Not provided,Breast,Female,White
@@ -284,10 +284,10 @@ SIDM01032,CMP,Cell Line,,54,Esophageal Squamous Cell Carcinoma,Not provided,Esop
 SIDM01247,CMP,Cell Line,,3,Burkitt's Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,White
 SIDM00088,CMP,Cell Line,,62,Prostate Carcinoma,Metastatic,Prostate,Male,White
 SIDM01218,CMP,Cell Line,,,Gestational Choriocarcinoma,Not provided,Placenta,Male,Unknown
-SIDM01807,CMP,Cell Line,7429092.0,68,Gallbladder Carcinoma,Metastatic,Biliary Tract,Male,Unknown
+SIDM01807,CMP,Cell Line,7429092,68,Gallbladder Carcinoma,Metastatic,Biliary Tract,Male,Unknown
 SIDM01454,CMP,Cell Line,,69,Renal Cell Carcinoma,Not provided,Kidney,Male,East Asian
 SIDM00577,CMP,Cell Line,,1.25,Neuroblastoma,Not provided,Peripheral Nervous System,Male,Unknown
-SIDM01414,CMP,Cell Line,844036.0,1,Retinoblastoma,Not provided,Eye,Female,White
+SIDM01414,CMP,Cell Line,844036,1,Retinoblastoma,Not provided,Eye,Female,White
 SIDM01145,CMP,Cell Line,,33,Gastric Carcinoma,Metastatic,Stomach,Female,East Asian
 SIDM00679,CMP,Cell Line,,58,Cervical Carcinoma,Metastatic,Cervix,Female,White
 SIDM01940,CMP,Cell Line,,0.83,Childhood Acute Megakaryoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
@@ -311,7 +311,7 @@ SIDM00225,CMP,Cell Line,,,Melanoma,Not provided,Skin,Male,White
 SIDM01144,CMP,Cell Line,,33,Gastric Carcinoma,Metastatic,Stomach,Female,East Asian
 SIDM00727,CMP,Cell Line,,55,Lung Adenocarcinoma,Not provided,Lung,Male,White
 SIDM00973,CMP,Cell Line,,37,Melanoma,Metastatic,Skin,Male,Unknown
-SIDM01434,CMP,Cell Line,11819450.0,57,Hepatocellular Carcinoma,Not provided,Liver,Male,East Asian
+SIDM01434,CMP,Cell Line,11819450,57,Hepatocellular Carcinoma,Not provided,Liver,Male,East Asian
 SIDM00903,CMP,Cell Line,,58,Lung Adenocarcinoma,Not provided,Lung,Male,White
 SIDM00317,CMP,Cell Line,,,Renal Cell Carcinoma,Not provided,Kidney,Not collected,Unknown
 SIDM00720,CMP,Cell Line,,48,Pleural Sarcomatoid Mesothelioma,Metastatic,Lung,Male,White
@@ -332,12 +332,12 @@ SIDM00099,CMP,Cell Line,,,Malignant Pleural Mesothelioma,Not collected,Lung,Not 
 SIDM00389,CMP,Cell Line,,25,Diffuse Large B-Cell Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01170,CMP,Cell Line,,42,Ovarian Endometrioid Adenocarcinoma,Not provided,Ovary,Female,Unknown
 SIDM01092,CMP,Cell Line,,,Lymphoma,Not collected,Haematopoietic and Lymphoid,Not collected,Unknown
-SIDM00457,CMP,Cell Line,3926660.0,56,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Female,Unknown
+SIDM00457,CMP,Cell Line,3926660,56,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM01416,CMP,Cell Line,,,Melanoma,Not provided,Skin,Not collected,Unknown
 SIDM01001,CMP,Cell Line,,62,Breast Carcinoma,Metastatic,Breast,Female,Unknown
 SIDM00251,CMP,Cell Line,,72,Gastric Carcinoma,Metastatic,Stomach,Female,East Asian
 SIDM00216,CMP,Cell Line,,56,Colon Adenocarcinoma,Metastatic,Large Intestine,Female,East Asian
-SIDM01436,CMP,Cell Line,9299249.0,,Malignant Ovarian Brenner Tumor,Not provided,Ovary,Female,Unknown
+SIDM01436,CMP,Cell Line,9299249,,Malignant Ovarian Brenner Tumor,Not provided,Ovary,Female,Unknown
 SIDM01086,CMP,Cell Line,,32,Adult B Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,White
 SIDM01062,CMP,Cell Line,,50,Breast Carcinoma,Not provided,Breast,Female,Unknown
 SIDM01607,CMP,Cell Line,,47,Adenosquamous Lung Carcinoma,Not collected,Lung,Male,Unknown
@@ -349,7 +349,7 @@ SIDM00355,CMP,Cell Line,,,Lung Adenocarcinoma,Not provided,Lung,Not collected,Ea
 SIDM01780,CMP,Cell Line,,73,Diffuse Large B-Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,White
 SIDM00692,CMP,Cell Line,,,Gestational Choriocarcinoma,Not provided,Placenta,Male,Unknown
 SIDM00313,CMP,Cell Line,,34,Hodgkin's Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
-SIDM01324,CMP,Cell Line,9876219.0,60,Basaloid Squamous Cell Carcinoma,Not provided,Head and Neck,Male,Unknown
+SIDM01324,CMP,Cell Line,9876219,60,Basaloid Squamous Cell Carcinoma,Not provided,Head and Neck,Male,Unknown
 SIDM00308,CMP,Cell Line,,38,Chronic Myelogenous Leukemia,Not provided,Haematopoietic and Lymphoid,Male,East Asian
 SIDM00962,CMP,Cell Line,,45,Chronic Myelogenous Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01450,CMP,Cell Line,,53,Gastric Adenocarcinoma,Not provided,Stomach,Male,East Asian
@@ -371,7 +371,7 @@ SIDM00771,CMP,Cell Line,,50,Lung Adenocarcinoma,Metastatic,Lung,Male,White
 SIDM00369,CMP,Cell Line,,,Esophageal Squamous Cell Carcinoma,Not provided,Esophagus,Male,Unknown
 SIDM00350,CMP,Cell Line,,,Head and Neck Squamous Cell Carcinoma,Not provided,Head and Neck,Not collected,East Asian
 SIDM00614,CMP,Cell Line,,53,Hepatocellular Carcinoma,Not provided,Liver,Male,East Asian
-SIDM01440,CMP,Cell Line,11776963.0,5,Primitive Neuroectodermal Tumor,Not provided,Central Nervous System,Male,Unknown
+SIDM01440,CMP,Cell Line,11776963,5,Primitive Neuroectodermal Tumor,Not provided,Central Nervous System,Male,Unknown
 SIDM00066,CMP,Cell Line,,,Esophageal Squamous Cell Carcinoma,Not collected,Esophagus,Not collected,Unknown
 SIDM00901,CMP,Cell Line,,55,Endometrial Adenocarcinoma,Not provided,Endometrium,Female,White
 SIDM00573,CMP,Cell Line,,64,Glioblastoma,Not provided,Central Nervous System,Female,Unknown
@@ -394,7 +394,7 @@ SIDM01677,CMP,Cell Line,,56,Lung Adenocarcinoma,Not collected,Lung,Male,Black
 SIDM00371,CMP,Cell Line,,73,Pancreatic Ductal Adenocarcinoma,Metastatic,Pancreas,Male,East Asian
 SIDM00407,CMP,Cell Line,,43,Diffuse Large B-Cell Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00108,CMP,Cell Line,,,Melanoma,Not provided,Skin,Not collected,Unknown
-SIDM01690,CMP,Cell Line,8148313.0,55,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
+SIDM01690,CMP,Cell Line,8148313,55,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01009,CMP,Cell Line,,,Neuroblastoma,Not provided,Peripheral Nervous System,Not collected,Unknown
 SIDM01609,CMP,Cell Line,,,Endometrial Adenocarcinoma,Not provided,Endometrium,Female,East Asian
 SIDM00981,CMP,Cell Line,,60,Diffuse Large B-Cell Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,Unknown
@@ -402,10 +402,10 @@ SIDM00855,CMP,Cell Line,,0.75,Epithelioid Cell Type Gastrointestinal Stromal Tum
 SIDM00091,CMP,Cell Line,,,High Grade Ovarian Serous Adenocarcinoma,Not collected,Ovary,Not collected,Unknown
 SIDM00762,CMP,Cell Line,,62,Lung Adenocarcinoma,Metastatic,Lung,Female,White
 SIDM00982,CMP,Cell Line,,63,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
-SIDM01360,CMP,Cell Line,7814141.0,80,Merkel Cell Carcinoma,Metastatic,Skin,Male,Unknown
+SIDM01360,CMP,Cell Line,7814141,80,Merkel Cell Carcinoma,Metastatic,Skin,Male,Unknown
 SIDM00638,CMP,Cell Line,,47,Human Papilloma Virus-Related Cervical Squamous Cell Carcinoma,Metastatic,Cervix,Female,White
 SIDM01526,CMP,Cell Line,,61,Pleural Epithelioid Mesothelioma,Not collected,Lung,Female,East Asian
-SIDM01910,CMP,Cell Line,3761468.0,,Bladder Carcinoma,Metastatic,Bladder,Female,Unknown
+SIDM01910,CMP,Cell Line,3761468,,Bladder Carcinoma,Metastatic,Bladder,Female,Unknown
 SIDM01704,CMP,Cell Line,,16,Giant Cell Bone Sarcoma,Not provided,Bone,Female,White
 SIDM01020,CMP,Cell Line,,64,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM00810,CMP,Cell Line,,52,Lung Adenocarcinoma,Not provided,Lung,Male,White
@@ -420,7 +420,7 @@ SIDM01137,CMP,Cell Line,,70,Pancreatic Ductal Adenocarcinoma,Not provided,Pancre
 SIDM01067,CMP,Cell Line,,39,Lung Adenocarcinoma,Not provided,Lung,Female,Unknown
 SIDM01211,CMP,Cell Line,,,Ovarian Endometrioid Adenocarcinoma,Not provided,Ovary,Female,Unknown
 SIDM00538,CMP,Cell Line,,74,Esophageal Adenocarcinoma,Not provided,Esophagus,Male,White
-SIDM00367,CMP,Cell Line,3012965.0,24,Small Cell Lung Carcinoma,Not collected,Lung,Male,Unknown
+SIDM00367,CMP,Cell Line,3012965,24,Small Cell Lung Carcinoma,Not collected,Lung,Male,Unknown
 SIDM00918,CMP,Cell Line,,45,High Grade Ovarian Serous Adenocarcinoma,Metastatic,Ovary,Female,White
 SIDM00899,CMP,Cell Line,,62,Pancreatic Ductal Adenocarcinoma,Metastatic,Pancreas,Female,White
 SIDM01203,CMP,Cell Line,,22,Embryonal Carcinoma,Metastatic,Testis,Male,White
@@ -447,20 +447,20 @@ SIDM01841,CMP,Cell Line,,56,Adult Acute Myeloid Leukemia,Not provided,Haematopoi
 SIDM00395,CMP,Cell Line,,1.7,Neuroblastoma,Metastatic,Peripheral Nervous System,Male,Other
 SIDM01193,CMP,Cell Line,,50,Astrocytoma,Not provided,Central Nervous System,Male,White
 SIDM01528,CMP,Cell Line,,,High Grade Ovarian Serous Adenocarcinoma,Metastatic,Ovary,Female,Unknown
-SIDM00158,CMP,Cell Line,11776963.0,58,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
-SIDM00001,CMP,Cell Line,10071128.0,61,Chronic Lymphocytic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,White
+SIDM00158,CMP,Cell Line,11776963,58,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
+SIDM00001,CMP,Cell Line,10071128,61,Chronic Lymphocytic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,White
 SIDM00934,CMP,Cell Line,,40,Pancreatic Ductal Adenocarcinoma,Metastatic,Pancreas,Male,White
 SIDM01047,CMP,Cell Line,,5,Chronic Myelogenous Leukemia,Not provided,Haematopoietic and Lymphoid,Female,White
 SIDM01134,CMP,Cell Line,,51,Small Cell Lung Carcinoma,Not provided,Lung,Male,White
 SIDM00144,CMP,Cell Line,,,Large Cell Lung Carcinoma,Metastatic,Lung,Male,Unknown
 SIDM01581,CMP,Cell Line,,15,Anaplastic Large Cell Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01037,CMP,Cell Line,,62,Breast Carcinoma,Metastatic,Breast,Female,Unknown
-SIDM01422,CMP,Cell Line,8631031.0,,Breast Carcinoma,Metastatic,Breast,Not collected,Unknown
+SIDM01422,CMP,Cell Line,8631031,,Breast Carcinoma,Metastatic,Breast,Not collected,Unknown
 SIDM00659,CMP,Cell Line,,33,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
 SIDM00537,CMP,Cell Line,,71,Colon Adenocarcinoma,Not provided,Large Intestine,Female,White
-SIDM01868,CMP,Cell Line,10222657.0,58,Natural Killer Cell Lymphoblastic Leukemia or Lymphoma,Not provided,Haematopoietic and Lymphoid,Female,Unknown
+SIDM01868,CMP,Cell Line,10222657,58,Natural Killer Cell Lymphoblastic Leukemia or Lymphoma,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM01621,CMP,Cell Line,,47,Adult Acute Myeloid Leukemia,Not collected,Haematopoietic and Lymphoid,Female,Unknown
-SIDM01442,CMP,Cell Line,11776963.0,40,Oligodendroglioma,Not provided,Central Nervous System,Male,Unknown
+SIDM01442,CMP,Cell Line,11776963,40,Oligodendroglioma,Not provided,Central Nervous System,Male,Unknown
 SIDM00315,CMP,Cell Line,,53,Glioblastoma,Not provided,Central Nervous System,Female,Unknown
 SIDM01831,CMP,Cell Line,,23,Hodgkin's Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01571,CMP,Cell Line,,88,Ovarian Mucinous Adenocarcinoma,Not collected,Ovary,Female,East Asian
@@ -489,16 +489,16 @@ SIDM00193,CMP,Cell Line,,53,Colon Adenocarcinoma,Not provided,Large Intestine,Ma
 SIDM01126,CMP,Cell Line,,48,Small Cell Lung Carcinoma,Not provided,Lung,Female,Black
 SIDM00403,CMP,Cell Line,,16,Childhood T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM01044,CMP,Cell Line,,57,Lung Mucoepidermoid Carcinoma,Not provided,Lung,Male,White
-SIDM01530,CMP,Cell Line,9473233.0,92,Primary Effusion Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
+SIDM01530,CMP,Cell Line,9473233,92,Primary Effusion Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00268,CMP,Cell Line,,,Undifferentiated Gallbladder Carcinoma,Not provided,Biliary Tract,Female,East Asian
-SIDM01691,CMP,Cell Line,7873501.0,44,Chronic Myelogenous Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
+SIDM01691,CMP,Cell Line,7873501,44,Chronic Myelogenous Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00581,CMP,Cell Line,,35,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
-SIDM01864,CMP,Cell Line,7772516.0,22,Adult Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,East Asian
+SIDM01864,CMP,Cell Line,7772516,22,Adult Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,East Asian
 SIDM00104,CMP,Cell Line,,,Malignant Pleural Mesothelioma,Not collected,Lung,Not collected,Unknown
 SIDM00583,CMP,Cell Line,,56,Pancreatic Ductal Adenocarcinoma,Not collected,Pancreas,Male,White
 SIDM01246,CMP,Cell Line,,14,Askin's Tumor,Metastatic,Bone,Female,White
 SIDM00786,CMP,Cell Line,,67,Colon Adenocarcinoma,Not provided,Large Intestine,Male,Unknown
-SIDM01437,CMP,Cell Line,9299249.0,55,Ovarian Serous Cystadenocarcinoma,Metastatic,Ovary,Female,East Asian
+SIDM01437,CMP,Cell Line,9299249,55,Ovarian Serous Cystadenocarcinoma,Metastatic,Ovary,Female,East Asian
 SIDM00037,CMP,Cell Line,,39,Endometrial Adenocarcinoma,Not provided,Endometrium,Female,Unknown
 SIDM00882,CMP,Cell Line,,42,Ductal Breast Carcinoma,Not provided,Breast,Female,Other
 SIDM00078,CMP,Cell Line,,,Tongue Squamous Cell Carcinoma,Not provided,Head and Neck,Male,White
@@ -508,7 +508,7 @@ SIDM00640,CMP,Cell Line,,62,Pleural Biphasic Mesothelioma,Metastatic,Lung,Male,W
 SIDM01810,CMP,Cell Line,,74,Tongue Squamous Cell Carcinoma,Not provided,Head and Neck,Male,Unknown
 SIDM01107,CMP,Cell Line,,29,Melanoma,Metastatic,Skin,Male,White
 SIDM00489,CMP,Cell Line,,,Gingival Squamous Cell Carcinoma,Not provided,Head and Neck,Male,East Asian
-SIDM01820,CMP,Cell Line,10353731.0,63,Squamous Cell Lung Carcinoma,Not provided,Lung,Female,Black
+SIDM01820,CMP,Cell Line,10353731,63,Squamous Cell Lung Carcinoma,Not provided,Lung,Female,Black
 SIDM00557,CMP,Cell Line,,,Neuroblastoma,Metastatic,Peripheral Nervous System,Not collected,Unknown
 SIDM00631,CMP,Cell Line,,43,Breast Carcinoma,Metastatic,Breast,Female,White
 SIDM01264,CMP,Cell Line,,42,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Female,Black
@@ -517,13 +517,13 @@ SIDM00673,CMP,Cell Line,,49,Ductal Breast Carcinoma,Not provided,Breast,Female,B
 SIDM00436,CMP,Cell Line,,20,Adult Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00796,CMP,Cell Line,,54,Salivary Gland Squamous Cell Carcinoma,Not provided,Head and Neck,Male,White
 SIDM01710,CMP,Cell Line,,54,Squamous Cell Lung Carcinoma,Not collected,Lung,Female,Black
-SIDM01875,CMP,Cell Line,3188836.0,58,Glioblastoma,Not provided,Central Nervous System,Male,East Asian
+SIDM01875,CMP,Cell Line,3188836,58,Glioblastoma,Not provided,Central Nervous System,Male,East Asian
 SIDM01133,CMP,Cell Line,,48,Lung Carcinoid Tumor,Not provided,Lung,Female,Black
 SIDM00693,CMP,Cell Line,,58,Bladder Carcinoma,Not provided,Bladder,Male,White
 SIDM01202,CMP,Cell Line,,,Bladder Carcinoma,Not provided,Bladder,Female,Unknown
 SIDM00396,CMP,Cell Line,,63,Adult Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01316,CMP,Cell Line,,19,Ewing's Sarcoma,Not provided,Bone,Male,White
-SIDM01870,CMP,Cell Line,8402545.0,43,Cutaneous Melanoma,Metastatic,Skin,Male,White
+SIDM01870,CMP,Cell Line,8402545,43,Cutaneous Melanoma,Metastatic,Skin,Male,White
 SIDM01537,CMP,Cell Line,,2.5,Atypical Teratoid/Rhabdoid Tumor,Not provided,Soft Tissue,Female,White
 SIDM00694,CMP,Cell Line,,53,Duodenal Adenocarcinoma,Not provided,Small Intestine,Male,White
 SIDM00493,CMP,Cell Line,,32,Lung Mucoepidermoid Carcinoma,Metastatic,Lung,Female,Black
@@ -556,7 +556,7 @@ SIDM00063,CMP,Cell Line,,,Cutaneous Melanoma,Not collected,Skin,Not collected,Un
 SIDM01824,CMP,Cell Line,,70,Cholangiocarcinoma,Metastatic,Biliary Tract,Female,East Asian
 SIDM00430,CMP,Cell Line,,5,Childhood T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM00341,CMP,Cell Line,,64,Squamous Cell Lung Carcinoma,Not provided,Lung,Female,Unknown
-SIDM00826,CMP,Cell Line,565251.0,70,Colon Adenocarcinoma,Metastatic,Large Intestine,Male,White
+SIDM00826,CMP,Cell Line,565251,70,Colon Adenocarcinoma,Metastatic,Large Intestine,Male,White
 SIDM00894,CMP,Cell Line,,2,Neuroblastoma,Not provided,Peripheral Nervous System,Male,Unknown
 SIDM01409,CMP,Cell Line,,,Bladder Carcinoma,Metastatic,Bladder,Male,Black
 SIDM00417,CMP,Cell Line,,53,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
@@ -573,7 +573,7 @@ SIDM00170,CMP,Cell Line,,62,Laryngeal Squamous Cell Carcinoma,Not provided,Head 
 SIDM01061,CMP,Cell Line,,60,Oral Cavity Squamous Cell Carcinoma,Metastatic,Head and Neck,Male,East Asian
 SIDM00499,CMP,Cell Line,,,Prostate Carcinoma,Not provided,Prostate,Male,Unknown
 SIDM00634,CMP,Cell Line,,14,Askin's Tumor,Metastatic,Bone,Female,White
-SIDM01352,CMP,Cell Line,21683373.0,75,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Female,White
+SIDM01352,CMP,Cell Line,21683373,75,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Female,White
 SIDM00260,CMP,Cell Line,,37,Gastric Tubular Adenocarcinoma,Metastatic,Stomach,Male,East Asian
 SIDM01762,CMP,Cell Line,,57,Esophageal Squamous Cell Carcinoma,Not provided,Esophagus,Male,Unknown
 SIDM00286,CMP,Cell Line,,1.17,Neuroblastoma,Not provided,Peripheral Nervous System,Female,Unknown
@@ -589,13 +589,13 @@ SIDM01596,CMP,Cell Line,,,Lung Adenocarcinoma,Metastatic,Lung,Male,White
 SIDM01135,CMP,Cell Line,,,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Male,White
 SIDM01357,CMP,Cell Line,,,Uveal Melanoma,Not collected,Eye,Not collected,Unknown
 SIDM01123,CMP,Cell Line,,63,Prostate Carcinoma,Metastatic,Prostate,Male,White
-SIDM01383,CMP,Cell Line,922665.0,0.83,Neuroblastoma,Metastatic,Peripheral Nervous System,Female,Unknown
+SIDM01383,CMP,Cell Line,922665,0.83,Neuroblastoma,Metastatic,Peripheral Nervous System,Female,Unknown
 SIDM00502,CMP,Cell Line,,52,B Acute Lymphoblastic Leukemia,Metastatic,Haematopoietic and Lymphoid,Female,East Asian
 SIDM00768,CMP,Cell Line,,58,Non-Small Cell Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM01356,CMP,Cell Line,,,Melanoma,Metastatic,Skin,Male,Unknown
 SIDM01556,CMP,Cell Line,,,Plasma Cell Myeloma,Not collected,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00293,CMP,Cell Line,,63,Small Cell Lung Carcinoma,Not provided,Lung,Male,East Asian
-SIDM01858,CMP,Cell Line,3098690.0,57,Diffuse Large B-Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Female,Unknown
+SIDM01858,CMP,Cell Line,3098690,57,Diffuse Large B-Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM00338,CMP,Cell Line,,40,Adult Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,East Asian
 SIDM01059,CMP,Cell Line,,64,Cutaneous Melanoma,Not provided,Skin,Female,Unknown
 SIDM00943,CMP,Cell Line,,56,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Male,White
@@ -675,14 +675,14 @@ SIDM01344,CMP,Cell Line,,28,Melanoma,Not provided,Skin,Female,East Asian
 SIDM00168,CMP,Cell Line,,60,Laryngeal Squamous Cell Carcinoma,Not provided,Head and Neck,Male,East Asian
 SIDM00027,CMP,Cell Line,,25,Renal Cell Carcinoma,Metastatic,Kidney,Female,White
 SIDM00404,CMP,Cell Line,,,B-Cell Non-Hodgkin's Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,Unknown
-SIDM01452,CMP,Cell Line,10604729.0,,Breast Carcinoma,Not provided,Breast,Not collected,Unknown
+SIDM01452,CMP,Cell Line,10604729,,Breast Carcinoma,Not provided,Breast,Not collected,Unknown
 SIDM01117,CMP,Cell Line,,62,Small Cell Lung Carcinoma,Metastatic,Lung,Male,Black
 SIDM00912,CMP,Cell Line,,57,Lung Carcinoma,Metastatic,Lung,Female,Unknown
-SIDM01905,CMP,Cell Line,2474517.0,,Pleural Biphasic Mesothelioma,Not provided,Lung,Male,Unknown
+SIDM01905,CMP,Cell Line,2474517,,Pleural Biphasic Mesothelioma,Not provided,Lung,Male,Unknown
 SIDM00005,CMP,Cell Line,,47,Ductal Breast Carcinoma,Metastatic,Breast,Female,White
 SIDM01231,CMP,Cell Line,,,Squamous Cell Lung Carcinoma,Not provided,Lung,Male,East Asian
 SIDM01197,CMP,Cell Line,,71,Colon Adenocarcinoma,Metastatic,Large Intestine,Male,East Asian
-SIDM00466,CMP,Cell Line,9328139.0,40,High Grade Ovarian Serous Adenocarcinoma,Not provided,Ovary,Female,East Asian
+SIDM00466,CMP,Cell Line,9328139,40,High Grade Ovarian Serous Adenocarcinoma,Not provided,Ovary,Female,East Asian
 SIDM00301,CMP,Cell Line,,50,Pancreatic Carcinoma,Metastatic,Pancreas,Male,East Asian
 SIDM00834,CMP,Cell Line,,66,Rectal Adenocarcinoma,Not provided,Large Intestine,Female,White
 SIDM01172,CMP,Cell Line,,1,Childhood Acute Differentiated Monocytic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
@@ -695,14 +695,14 @@ SIDM01195,CMP,Cell Line,,37,Adult Acute Monocytic Leukemia,Metastatic,Haematopoi
 SIDM00102,CMP,Cell Line,,,Pleural Epithelioid Mesothelioma,Not collected,Lung,Not collected,Unknown
 SIDM01118,CMP,Cell Line,,63,Small Cell Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM01542,CMP,Cell Line,,14,Primitive Neuroectodermal Tumor,Metastatic,Bone,Female,White
-SIDM01788,CMP,Cell Line,2474517.0,,Pleural Biphasic Mesothelioma,Not provided,Lung,Male,Unknown
+SIDM01788,CMP,Cell Line,2474517,,Pleural Biphasic Mesothelioma,Not provided,Lung,Male,Unknown
 SIDM01128,CMP,Cell Line,,55,Small Cell Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM00511,CMP,Cell Line,,63,Small Cell Lung Carcinoma,Metastatic,Lung,Male,Unknown
 SIDM00247,CMP,Cell Line,,62,Gastric Adenocarcinoma,Metastatic,Stomach,Female,East Asian
-SIDM01872,CMP,Cell Line,9714054.0,65,Primary Central Chondrosarcoma,Not provided,Bone,Male,Unknown
+SIDM01872,CMP,Cell Line,9714054,65,Primary Central Chondrosarcoma,Not provided,Bone,Male,Unknown
 SIDM00065,CMP,Cell Line,,68,Hepatocellular Carcinoma,Not provided,Liver,Male,Unknown
-SIDM01842,CMP,Cell Line,21533512.0,43,Gallbladder Carcinoma,Metastatic,Biliary Tract,Male,East Asian
-SIDM00500,CMP,Cell Line,3479249.0,35,Colon Adenocarcinoma,Not provided,Large Intestine,Male,East Asian
+SIDM01842,CMP,Cell Line,21533512,43,Gallbladder Carcinoma,Metastatic,Biliary Tract,Male,East Asian
+SIDM00500,CMP,Cell Line,3479249,35,Colon Adenocarcinoma,Not provided,Large Intestine,Male,East Asian
 SIDM00366,CMP,Cell Line,,,Small Cell Lung Carcinoma,Not provided,Lung,Not collected,Unknown
 SIDM00980,CMP,Cell Line,,72,Gastric Adenocarcinoma,Not provided,Stomach,Male,Unknown
 SIDM01727,CMP,Cell Line,,62,Chronic Myelogenous Leukemia,Not provided,Haematopoietic and Lymphoid,Male,East Asian
@@ -722,7 +722,7 @@ SIDM01511,CMP,Cell Line,,75,Gastric Carcinoma,Metastatic,Stomach,Male,East Asian
 SIDM01757,CMP,Cell Line,,84,Bladder Carcinoma,Not provided,Bladder,Female,Unknown
 SIDM00249,CMP,Cell Line,,,Esophageal Squamous Cell Carcinoma,Not provided,Esophagus,Female,Unknown
 SIDM00695,CMP,Cell Line,,29,Melanoma,Not provided,Skin,Male,White
-SIDM01805,CMP,Cell Line,140093.0,,Lung Adenocarcinoma,Metastatic,Lung,Not collected,East Asian
+SIDM01805,CMP,Cell Line,140093,,Lung Adenocarcinoma,Metastatic,Lung,Not collected,East Asian
 SIDM00999,CMP,Cell Line,,69,Bladder Carcinoma,Not provided,Bladder,Male,White
 SIDM01125,CMP,Cell Line,,56,Adenosquamous Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM01024,CMP,Cell Line,,77,Esophageal Squamous Cell Carcinoma,Not provided,Esophagus,Male,East Asian
@@ -732,7 +732,7 @@ SIDM00011,CMP,Cell Line,,43,Melanoma,Metastatic,Skin,Male,White
 SIDM01534,CMP,Cell Line,,14,Primitive Neuroectodermal Tumor,Not provided,Bone,Female,White
 SIDM00977,CMP,Cell Line,,55,Melanoma,Metastatic,Skin,Female,Unknown
 SIDM01232,CMP,Cell Line,,2,Neuroblastoma,Not provided,Peripheral Nervous System,Male,Unknown
-SIDM01806,CMP,Cell Line,8431860.0,64,Uterine Carcinosarcoma,Not provided,Uterus,Female,East Asian
+SIDM01806,CMP,Cell Line,8431860,64,Uterine Carcinosarcoma,Not provided,Uterus,Female,East Asian
 SIDM01112,CMP,Cell Line,,19,Osteosarcoma,Not provided,Bone,Male,Black
 SIDM01510,CMP,Cell Line,,50,Lung Adenocarcinoma,Metastatic,Lung,Male,Unknown
 SIDM00680,CMP,Cell Line,,58,Colon Adenocarcinoma,Not provided,Large Intestine,Female,White
@@ -769,18 +769,18 @@ SIDM00284,CMP,Cell Line,,47,Melanoma,Not provided,Skin,Female,Unknown
 SIDM00972,CMP,Cell Line,,37,Melanoma,Metastatic,Skin,Male,Unknown
 SIDM01319,CMP,Cell Line,,,Pancreatic Carcinoma,Not collected,Pancreas,Not collected,Unknown
 SIDM01533,CMP,Cell Line,,56,Colon Adenocarcinoma,Not provided,Large Intestine,Male,Unknown
-SIDM01685,CMP,Cell Line,1664237.0,26,B Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
+SIDM01685,CMP,Cell Line,1664237,26,B Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00132,CMP,Cell Line,,61,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Female,Unknown
 SIDM01095,CMP,Cell Line,,17,Alveolar Rhabdomyosarcoma,Metastatic,Soft Tissue,Male,White
 SIDM01003,CMP,Cell Line,,27,Adult T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
-SIDM00780,CMP,Cell Line,3479249.0,43,Cecum Adenocarcinoma,Not provided,Large Intestine,Female,East Asian
+SIDM00780,CMP,Cell Line,3479249,43,Cecum Adenocarcinoma,Not provided,Large Intestine,Female,East Asian
 SIDM00159,CMP,Cell Line,,,Ampulla of Vater Adenocarcinoma,Not provided,Biliary Tract,Not collected,East Asian
 SIDM00664,CMP,Cell Line,,46,Pancreatic Adenocarcinoma,Metastatic,Pancreas,Male,White
 SIDM01082,CMP,Cell Line,,70,Tongue Squamous Cell Carcinoma,Not provided,Head and Neck,Male,Unknown
 SIDM00444,CMP,Cell Line,,47,Esophageal Adenocarcinoma,Metastatic,Esophagus,Male,White
 SIDM00984,CMP,Cell Line,,46,Hairy Cell Leukemia,Metastatic,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01108,CMP,Cell Line,,60,Lung Adenocarcinoma,Not provided,Lung,Female,White
-SIDM01811,CMP,Cell Line,1692339.0,53,Oral Cavity Squamous Cell Carcinoma,Not provided,Head and Neck,Female,Unknown
+SIDM01811,CMP,Cell Line,1692339,53,Oral Cavity Squamous Cell Carcinoma,Not provided,Head and Neck,Female,Unknown
 SIDM00070,CMP,Cell Line,,42,Primary Effusion Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00469,CMP,Cell Line,,,Pancreatic Adenocarcinoma,Not provided,Pancreas,Not collected,Unknown
 SIDM01083,CMP,Cell Line,,55,Tongue Squamous Cell Carcinoma,Not provided,Head and Neck,Male,Unknown
@@ -792,14 +792,14 @@ SIDM01104,CMP,Cell Line,,,Melanoma,Not provided,Skin,Female,Unknown
 SIDM01739,CMP,Cell Line,,69,Small Cell Lung Carcinoma,Metastatic,Lung,Female,White
 SIDM00062,CMP,Cell Line,,1,Hepatoblastoma,Not provided,Liver,Male,East Asian
 SIDM00375,CMP,Cell Line,,,Head and Neck Squamous Cell Carcinoma,Not collected,Head and Neck,Not collected,Unknown
-SIDM01447,CMP,Cell Line,11776963.0,61,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
+SIDM01447,CMP,Cell Line,11776963,61,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
 SIDM01245,CMP,Cell Line,,4,Childhood T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
-SIDM00425,CMP,Cell Line,9328139.0,78,Ovarian Clear Cell Adenocarcinoma,Metastatic,Ovary,Female,East Asian
+SIDM00425,CMP,Cell Line,9328139,78,Ovarian Clear Cell Adenocarcinoma,Metastatic,Ovary,Female,East Asian
 SIDM00944,CMP,Cell Line,,,Colon Adenocarcinoma,Not provided,Large Intestine,Not collected,Unknown
 SIDM00423,CMP,Cell Line,,59,Diffuse Large B-Cell Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01612,CMP,Cell Line,,,Endometrial Adenocarcinoma,Not provided,Endometrium,Female,East Asian
-SIDM00007,CMP,Cell Line,7814141.0,80,Merkel Cell Carcinoma,Metastatic,Skin,Female,Unknown
-SIDM01664,CMP,Cell Line,9815652.0,63,Prostate Carcinoma,Metastatic,Prostate,Male,Black
+SIDM00007,CMP,Cell Line,7814141,80,Merkel Cell Carcinoma,Metastatic,Skin,Female,Unknown
+SIDM01664,CMP,Cell Line,9815652,63,Prostate Carcinoma,Metastatic,Prostate,Male,Black
 SIDM01034,CMP,Cell Line,,0.25,Childhood Precursor B Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM01570,CMP,Cell Line,,,Ovarian Clear Cell Adenocarcinoma,Metastatic,Ovary,Female,East Asian
 SIDM00887,CMP,Cell Line,,4,Medulloblastoma,Not provided,Central Nervous System,Male,White
@@ -814,7 +814,7 @@ SIDM01261,CMP,Cell Line,,63,Invasive Ductal Carcinoma Not Otherwise Specified,Me
 SIDM01467,CMP,Cell Line,,,Ewing's Sarcoma,Not collected,Bone,Not collected,Unknown
 SIDM00753,CMP,Cell Line,,26,Squamous Cell Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM00329,CMP,Cell Line,,20,Hodgkin's Lymphoma,Not provided,Haematopoietic and Lymphoid,Female,Unknown
-SIDM01792,CMP,Cell Line,28018010.0,67,Uveal Melanoma,Not provided,Eye,Female,White
+SIDM01792,CMP,Cell Line,28018010,67,Uveal Melanoma,Not provided,Eye,Female,White
 SIDM00036,CMP,Cell Line,,,Colon Carcinoma,Metastatic,Large Intestine,Not collected,Unknown
 SIDM00933,CMP,Cell Line,,45,Breast Carcinoma,Metastatic,Breast,Female,Unknown
 SIDM00130,CMP,Cell Line,,26,Pancreatic Ductal Adenocarcinoma,Metastatic,Pancreas,Male,White
@@ -822,7 +822,7 @@ SIDM00224,CMP,Cell Line,,70,Pleural Epithelioid Mesothelioma,Not provided,Lung,F
 SIDM01163,CMP,Cell Line,,44,Bronchiolo-Alveolar Lung Carcinoma,Not provided,Lung,Female,White
 SIDM00292,CMP,Cell Line,,50,Small Cell Lung Carcinoma,Metastatic,Lung,Male,East Asian
 SIDM01885,CMP,Cell Line,,27,Glioblastoma,Not provided,Central Nervous System,Male,East Asian
-SIDM00684,CMP,Cell Line,10416987.0,60,Glioblastoma,Not provided,Central Nervous System,Female,White
+SIDM00684,CMP,Cell Line,10416987,60,Glioblastoma,Not provided,Central Nervous System,Female,White
 SIDM00545,CMP,Cell Line,,78,Melanoma,Metastatic,Skin,Male,White
 SIDM00318,CMP,Cell Line,,,Renal Cell Carcinoma,Not collected,Kidney,Male,Unknown
 SIDM00123,CMP,Cell Line,,22,Papillary Renal Cell Carcinoma,Metastatic,Kidney,Male,White
@@ -852,7 +852,7 @@ SIDM01100,CMP,Cell Line,,2,Neuroblastoma,Metastatic,Peripheral Nervous System,Fe
 SIDM01554,CMP,Cell Line,,71,Pleural Epithelioid Mesothelioma,Not collected,Lung,Male,White
 SIDM01177,CMP,Cell Line,,15,B Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM00166,CMP,Cell Line,,60,Uterine Corpus Carcinosarcoma,Not provided,Uterus,Female,East Asian
-SIDM01321,CMP,Cell Line,6205469.0,,Pancreatic Carcinoma,Metastatic,Pancreas,Not collected,Unknown
+SIDM01321,CMP,Cell Line,6205469,,Pancreatic Carcinoma,Metastatic,Pancreas,Not collected,Unknown
 SIDM00959,CMP,Cell Line,,0.83,Childhood Acute Megakaryoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00991,CMP,Cell Line,,4,Childhood T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM00080,CMP,Cell Line,,24,Cutaneous Melanoma,Metastatic,Skin,Female,White
@@ -860,7 +860,7 @@ SIDM01038,CMP,Cell Line,,78,Mantle Cell Lymphoma,Not provided,Haematopoietic and
 SIDM00686,CMP,Cell Line,,64,Endometrial Adenocarcinoma,Not provided,Endometrium,Female,White
 SIDM00413,CMP,Cell Line,,41,Diffuse Large B-Cell Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,White
 SIDM01515,CMP,Cell Line,,29,Burkitt's Lymphoma,Not collected,Haematopoietic and Lymphoid,Male,White
-SIDM01826,CMP,Cell Line,8877005.0,47,Invasive Ductal Carcinoma Not Otherwise Specified,Not provided,Breast,Female,Unknown
+SIDM01826,CMP,Cell Line,8877005,47,Invasive Ductal Carcinoma Not Otherwise Specified,Not provided,Breast,Female,Unknown
 SIDM00916,CMP,Cell Line,,,Melanoma,Metastatic,Skin,Female,Unknown
 SIDM00559,CMP,Cell Line,,75,Pancreatic Adenosquamous Carcinoma,Metastatic,Pancreas,Male,East Asian
 SIDM01735,CMP,Cell Line,,37,Intrahepatic Cholangiocarcinoma,Not provided,Biliary Tract,Female,Unknown
@@ -871,7 +871,7 @@ SIDM00580,CMP,Cell Line,,34,Adult Acute Monocytic Leukemia,Not provided,Haematop
 SIDM01675,CMP,Cell Line,,55,Small Cell Lung Carcinoma,Metastatic,Lung,Female,White
 SIDM01855,CMP,Cell Line,,,Chronic Lymphocytic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,White
 SIDM00113,CMP,Cell Line,,43,Clear Cell Renal Cell Carcinoma,Not provided,Kidney,Male,Unknown
-SIDM01895,CMP,Cell Line,2474517.0,,Pleural Biphasic Mesothelioma,Not provided,Lung,Male,Unknown
+SIDM01895,CMP,Cell Line,2474517,,Pleural Biphasic Mesothelioma,Not provided,Lung,Male,Unknown
 SIDM00650,CMP,Cell Line,,60,Small Cell Lung Carcinoma,Metastatic,Lung,Male,Black
 SIDM01132,CMP,Cell Line,,0.92,Primitive Neuroectodermal Tumor,Not provided,Central Nervous System,Male,White
 SIDM00534,CMP,Cell Line,,,Colon Carcinoma,Not provided,Large Intestine,Not collected,Unknown
@@ -889,7 +889,7 @@ SIDM01674,CMP,Cell Line,,55,Lung Adenocarcinoma,Metastatic,Lung,Female,White
 SIDM00463,CMP,Cell Line,,7,Childhood T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00915,CMP,Cell Line,,66,Small Cell Lung Carcinoma,Metastatic,Lung,Female,White
 SIDM00220,CMP,Cell Line,,39,Ovarian Serous Adenocarcinoma,Metastatic,Ovary,Female,Unknown
-SIDM00822,CMP,Cell Line,565251.0,70,Colon Adenocarcinoma,Metastatic,Large Intestine,Male,White
+SIDM00822,CMP,Cell Line,565251,70,Colon Adenocarcinoma,Metastatic,Large Intestine,Male,White
 SIDM01397,CMP,Cell Line,,,Melanoma,Metastatic,Skin,Not collected,Unknown
 SIDM01130,CMP,Cell Line,,,Squamous Cell Lung Carcinoma,Not provided,Lung,Male,Unknown
 SIDM00393,CMP,Cell Line,,72,Gastric Fundus Carcinoma,Not provided,Stomach,Male,Other
@@ -902,8 +902,8 @@ SIDM00300,CMP,Cell Line,,69,Squamous Cell Lung Carcinoma,Not provided,Lung,Male,
 SIDM01838,CMP,Cell Line,,38,Colon Adenocarcinoma,Not provided,Large Intestine,Female,East Asian
 SIDM01165,CMP,Cell Line,,56,Pancreatic Adenocarcinoma,Metastatic,Pancreas,Male,White
 SIDM00910,CMP,Cell Line,,,Neuroblastoma,Not provided,Peripheral Nervous System,Not collected,Unknown
-SIDM01884,CMP,Cell Line,12127564.0,65,T-Cell Large Granular Lymphocyte Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
-SIDM01970,CMP,Cell Line,10551321.0,,Glioma,Not provided,Central Nervous System,Female,East Asian
+SIDM01884,CMP,Cell Line,12127564,65,T-Cell Large Granular Lymphocyte Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
+SIDM01970,CMP,Cell Line,10551321,,Glioma,Not provided,Central Nervous System,Female,East Asian
 SIDM01591,CMP,Cell Line,,44,Breast Carcinoma,Not collected,Breast,Female,White
 SIDM01249,CMP,Cell Line,,4,Childhood T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,White
 SIDM01505,CMP,Cell Line,,62,Pleural Sarcomatoid Mesothelioma,Not collected,Lung,Male,Unknown
@@ -923,13 +923,13 @@ SIDM01443,CMP,Cell Line,,63,Signet Ring Cell Gastric Adenocarcinoma,Metastatic,S
 SIDM00754,CMP,Cell Line,,66,Bronchiolo-Alveolar Lung Carcinoma,Metastatic,Lung,Female,White
 SIDM01085,CMP,Cell Line,,63,Bladder Carcinoma,Not provided,Bladder,Male,White
 SIDM00748,CMP,Cell Line,,44,Large Cell Lung Carcinoma,Not provided,Lung,Male,White
-SIDM01867,CMP,Cell Line,2474517.0,,Pleural Biphasic Mesothelioma,Not provided,Lung,Male,Unknown
+SIDM01867,CMP,Cell Line,2474517,,Pleural Biphasic Mesothelioma,Not provided,Lung,Male,Unknown
 SIDM01417,CMP,Cell Line,,59,Centroblastic Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00560,CMP,Cell Line,,,Gastric Tubular Adenocarcinoma,Not provided,Stomach,Not collected,Unknown
 SIDM00328,CMP,Cell Line,,,Esophageal Squamous Cell Carcinoma,Not provided,Esophagus,Male,Unknown
 SIDM00532,CMP,Cell Line,,,Anaplastic Astrocytoma,Not provided,Central Nervous System,Not collected,Unknown
 SIDM01850,CMP,Cell Line,,,Intrahepatic Cholangiocarcinoma,Not collected,Biliary Tract,Female,East Asian
-SIDM01908,CMP,Cell Line,1824823.0,64,Adult Acute Megakaryoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
+SIDM01908,CMP,Cell Line,1824823,64,Adult Acute Megakaryoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01477,CMP,Cell Line,,,Ovarian Carcinoma,Metastatic,Ovary,Female,Unknown
 SIDM00767,CMP,Cell Line,,47,Small Cell Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM01207,CMP,Cell Line,,11,Epstein-Barr Virus-Related Burkitt s Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,Black
@@ -940,21 +940,21 @@ SIDM01726,CMP,Cell Line,,5,Ewing's Sarcoma,Not provided,Bone,Female,White
 SIDM00570,CMP,Cell Line,,35,Signet Ring Cell Gastric Adenocarcinoma,Metastatic,Stomach,Female,Unknown
 SIDM01619,CMP,Cell Line,,,Endometrial Adenocarcinoma,Not provided,Endometrium,Female,East Asian
 SIDM00802,CMP,Cell Line,,22,Melanoma,Metastatic,Skin,Male,Unknown
-SIDM01378,CMP,Cell Line,9328139.0,51,Ovarian Clear Cell Adenocarcinoma,Not provided,Ovary,Female,East Asian
+SIDM01378,CMP,Cell Line,9328139,51,Ovarian Clear Cell Adenocarcinoma,Not provided,Ovary,Female,East Asian
 SIDM01771,CMP,Cell Line,,50,Papillary Serous Cystadenocarcinoma,Metastatic,Ovary,Female,East Asian
 SIDM01152,CMP,Cell Line,,65,Squamous Cell Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM00770,CMP,Cell Line,,52,Small Cell Lung Carcinoma,Not provided,Lung,Male,White
-SIDM01625,CMP,Cell Line,1834251.0,,Myelodysplastic syndrome,Metastatic,Haematopoietic and Lymphoid,Male,East Asian
+SIDM01625,CMP,Cell Line,1834251,,Myelodysplastic syndrome,Metastatic,Haematopoietic and Lymphoid,Male,East Asian
 SIDM01620,CMP,Cell Line,,77,Keratoacanthoma,Not provided,Skin,Female,Unknown
-SIDM01873,CMP,Cell Line,8667638.0,29,Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
-SIDM01439,CMP,Cell Line,11819450.0,49,Hepatocellular Carcinoma,Not provided,Liver,Male,East Asian
+SIDM01873,CMP,Cell Line,8667638,29,Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
+SIDM01439,CMP,Cell Line,11819450,49,Hepatocellular Carcinoma,Not provided,Liver,Male,East Asian
 SIDM01156,CMP,Cell Line,,69,Small Cell Lung Carcinoma,Not provided,Lung,Male,White
 SIDM00009,CMP,Cell Line,,,Acute Myeloid Leukemia,Not collected,Haematopoietic and Lymphoid,Not collected,Unknown
 SIDM00682,CMP,Cell Line,,,Astrocytoma,Not provided,Central Nervous System,Male,Unknown
-SIDM00426,CMP,Cell Line,23882450.0,,Alveolar Rhabdomyosarcoma,Not provided,Soft Tissue,Female,Unknown
+SIDM00426,CMP,Cell Line,23882450,,Alveolar Rhabdomyosarcoma,Not provided,Soft Tissue,Female,Unknown
 SIDM00326,CMP,Cell Line,,,Esophageal Squamous Cell Carcinoma,Not provided,Esophagus,Not collected,Unknown
 SIDM01782,CMP,Cell Line,,67,Tongue Squamous Cell Carcinoma,Not provided,Head and Neck,Male,East Asian
-SIDM01825,CMP,Cell Line,8877005.0,48,Invasive Ductal Carcinoma Not Otherwise Specified,Not provided,Breast,Female,Unknown
+SIDM01825,CMP,Cell Line,8877005,48,Invasive Ductal Carcinoma Not Otherwise Specified,Not provided,Breast,Female,Unknown
 SIDM00391,CMP,Cell Line,,54,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01478,CMP,Cell Line,,,Ovarian Carcinoma,Metastatic,Ovary,Female,Unknown
 SIDM00307,CMP,Cell Line,,,Squamous Cell Lung Carcinoma,Not provided,Lung,Male,East Asian
@@ -974,7 +974,7 @@ SIDM01096,CMP,Cell Line,,65,Colon Adenocarcinoma,Metastatic,Large Intestine,Male
 SIDM01482,CMP,Cell Line,,67,Small Cell Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM00715,CMP,Cell Line,,0,Lung Adenocarcinoma,Metastatic,Lung,Male,Unknown
 SIDM01090,CMP,Cell Line,,,Colon Carcinoma,Not provided,Large Intestine,Not collected,Unknown
-SIDM01774,CMP,Cell Line,7622937.0,,Pancreatic Carcinoma,Metastatic,Pancreas,Not collected,Unknown
+SIDM01774,CMP,Cell Line,7622937,,Pancreatic Carcinoma,Metastatic,Pancreas,Not collected,Unknown
 SIDM00645,CMP,Cell Line,,53,Lung Adenocarcinoma,Metastatic,Lung,Male,White
 SIDM01660,CMP,Cell Line,,,Clear Cell Renal Cell Carcinoma,Not provided,Kidney,Male,East Asian
 SIDM00785,CMP,Cell Line,,59,Adult Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,White
@@ -1014,17 +1014,17 @@ SIDM00450,CMP,Cell Line,,24,Acute Myeloid Leukemia,Not provided,Haematopoietic a
 SIDM00550,CMP,Cell Line,,58,Esophageal Squamous Cell Carcinoma,Not provided,Esophagus,Male,East Asian
 SIDM00831,CMP,Cell Line,,,Pharyngeal Squamous Cell Carcinoma,Metastatic,Head and Neck,Female,White
 SIDM01260,CMP,Cell Line,,63,Invasive Ductal Carcinoma Not Otherwise Specified,Metastatic,Breast,Female,White
-SIDM01425,CMP,Cell Line,3167863.0,,Ovarian Cystadenocarcinoma,Metastatic,Ovary,Female,Unknown
+SIDM01425,CMP,Cell Line,3167863,,Ovarian Cystadenocarcinoma,Metastatic,Ovary,Female,Unknown
 SIDM00947,CMP,Cell Line,,67,Glioblastoma,Not provided,Central Nervous System,Female,Unknown
 SIDM00920,CMP,Cell Line,,51,Breast Adenocarcinoma,Metastatic,Breast,Female,White
 SIDM00874,CMP,Cell Line,,23,Ductal Breast Carcinoma,Not provided,Breast,Female,White
 SIDM00392,CMP,Cell Line,,67,Cutaneous Melanoma,Metastatic,Skin,Male,White
 SIDM00140,CMP,Cell Line,,62,Melanoma,Metastatic,Skin,Male,Unknown
 SIDM00443,CMP,Cell Line,,43,Diffuse Large B-Cell Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,White
-SIDM01441,CMP,Cell Line,10604729.0,,Invasive Ductal Carcinoma Not Otherwise Specified,Not provided,Breast,Not collected,Unknown
+SIDM01441,CMP,Cell Line,10604729,,Invasive Ductal Carcinoma Not Otherwise Specified,Not provided,Breast,Not collected,Unknown
 SIDM01412,CMP,Cell Line,,67,Gingival Squamous Cell Carcinoma,Not provided,Head and Neck,Male,East Asian
 SIDM00602,CMP,Cell Line,,63,Gastric Adenocarcinoma,Not provided,Stomach,Male,East Asian
-SIDM01461,CMP,Cell Line,10604729.0,,Breast Carcinoma,Metastatic,Breast,Female,Unknown
+SIDM01461,CMP,Cell Line,10604729,,Breast Carcinoma,Metastatic,Breast,Female,Unknown
 SIDM01572,CMP,Cell Line,,56,Endometrial Adenocarcinoma,Not provided,Endometrium,Female,East Asian
 SIDM00587,CMP,Cell Line,,,Intrahepatic Cholangiocarcinoma,Not provided,Biliary Tract,Not collected,Unknown
 SIDM00988,CMP,Cell Line,,64,Renal Cell Carcinoma,Not provided,Kidney,Male,Unknown
@@ -1041,7 +1041,7 @@ SIDM00331,CMP,Cell Line,,15,Childhood Precursor B Lymphoblastic Leukemia,Not pro
 SIDM00434,CMP,Cell Line,,52,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Male,East Asian
 SIDM01587,CMP,Cell Line,,75,Bladder Carcinoma,Metastatic,Bladder,Male,East Asian
 SIDM01553,CMP,Cell Line,,58,Lung Adenocarcinoma,Not collected,Lung,Male,Unknown
-SIDM01498,CMP,Cell Line,1834251.0,,Myelodysplastic syndrome,Metastatic,Haematopoietic and Lymphoid,Male,East Asian
+SIDM01498,CMP,Cell Line,1834251,,Myelodysplastic syndrome,Metastatic,Haematopoietic and Lymphoid,Male,East Asian
 SIDM01469,CMP,Cell Line,,64,Pancreatic Adenocarcinoma,Metastatic,Pancreas,Male,East Asian
 SIDM01408,CMP,Cell Line,,,Bladder Carcinoma,Not provided,Bladder,Not collected,Unknown
 SIDM00895,CMP,Cell Line,,85,Primary Effusion Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,White
@@ -1054,7 +1054,7 @@ SIDM00243,CMP,Cell Line,,24,Testicular Embryonal Carcinoma,Not provided,Testis,M
 SIDM00600,CMP,Cell Line,,75,Papillary Thyroid Carcinoma,Metastatic,Thyroid,Not collected,East Asian
 SIDM00290,CMP,Cell Line,,,Gastric Carcinoma,Metastatic,Stomach,Not collected,East Asian
 SIDM00565,CMP,Cell Line,,59,Oral Cavity Squamous Cell Carcinoma,Metastatic,Head and Neck,Female,East Asian
-SIDM00827,CMP,Cell Line,10071128.0,62,Chronic Lymphocytic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,White
+SIDM00827,CMP,Cell Line,10071128,62,Chronic Lymphocytic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,White
 SIDM01314,CMP,Organoid,,78,Colon Adenocarcinoma,Not provided,Large Intestine,Male,White
 SIDM01746,CMP,Cell Line,,20,Osteosarcoma,Metastatic,Bone,Male,White
 SIDM00788,CMP,Cell Line,,,Colon Adenocarcinoma,Not provided,Large Intestine,Male,Unknown
@@ -1078,7 +1078,7 @@ SIDM01239,CMP,Cell Line,,56,Uterine Corpus Sarcoma,Not provided,Uterus,Female,Wh
 SIDM01787,CMP,Cell Line,,37,Adult Acute Monocytic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00410,CMP,Cell Line,,15,Natural Killer Cell Lymphoblastic Leukemia or Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00125,CMP,Cell Line,,58,Renal Cell Carcinoma,Not provided,Kidney,Male,White
-SIDM01388,CMP,Cell Line,9815701.0,3,Neuroblastoma,Not collected,Peripheral Nervous System,Not collected,Unknown
+SIDM01388,CMP,Cell Line,9815701,3,Neuroblastoma,Not collected,Peripheral Nervous System,Not collected,Unknown
 SIDM01318,CMP,Cell Line,,24,Hepatocellular Carcinoma,Not provided,Liver,Male,Unknown
 SIDM01460,CMP,Cell Line,,42,Astrocytoma,Not provided,Central Nervous System,Female,East Asian
 SIDM00668,CMP,Cell Line,,56,Non-Cancerous,Not provided,Haematopoietic and Lymphoid,Female,White
@@ -1114,7 +1114,7 @@ SIDM01529,CMP,Cell Line,,53,Bladder Carcinoma,Metastatic,Bladder,Male,White
 SIDM00993,CMP,Cell Line,,64,Plasma Cell Myeloma,Metastatic,Haematopoietic and Lymphoid,Female,Unknown
 SIDM00547,CMP,Cell Line,,64,Giant Cell Lung Carcinoma,Not provided,Lung,Male,East Asian
 SIDM01031,CMP,Cell Line,,49,Esophageal Squamous Cell Carcinoma,Not provided,Esophagus,Female,Unknown
-SIDM01917,CMP,Cell Line,9573483.0,50,Human Papilloma Virus-Related Cervical Squamous Cell Carcinoma,Not provided,Cervix,Female,East Asian
+SIDM01917,CMP,Cell Line,9573483,50,Human Papilloma Virus-Related Cervical Squamous Cell Carcinoma,Not provided,Cervix,Female,East Asian
 SIDM01288,CMP,Organoid,,80,Colon Adenocarcinoma,Not provided,Large Intestine,Male,White
 SIDM00954,CMP,Cell Line,,52,Breast Carcinoma,Metastatic,Breast,Female,Unknown
 SIDM00958,CMP,Cell Line,,36,Chronic Myelogenous Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
@@ -1122,7 +1122,7 @@ SIDM00612,CMP,Cell Line,,,Anaplastic Astrocytoma,Not provided,Central Nervous Sy
 SIDM01119,CMP,Cell Line,,65,Lung Carcinoid Tumor,Not provided,Lung,Female,White
 SIDM01508,CMP,Cell Line,,30,Hepatosplenic T-cell Lymphoma,Not collected,Haematopoietic and Lymphoid,Male,White
 SIDM01008,CMP,Cell Line,,73,Diffuse Large B-Cell Lymphoma,Metastatic,Haematopoietic and Lymphoid,Female,Unknown
-SIDM00464,CMP,Cell Line,9328139.0,64,High Grade Ovarian Serous Adenocarcinoma,Not provided,Ovary,Female,East Asian
+SIDM00464,CMP,Cell Line,9328139,64,High Grade Ovarian Serous Adenocarcinoma,Not provided,Ovary,Female,East Asian
 SIDM00930,CMP,Cell Line,,10,Osteosarcoma,Not provided,Bone,Male,Unknown
 SIDM00615,CMP,Cell Line,,57,Hepatocellular Carcinoma,Not provided,Liver,Female,East Asian
 SIDM01667,CMP,Cell Line,,68,Mantle Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Female,White
@@ -1136,7 +1136,7 @@ SIDM00555,CMP,Cell Line,,,Glioblastoma,Not provided,Central Nervous System,Femal
 SIDM00523,CMP,Cell Line,,54,Small Cell Lung Carcinoma,Not provided,Lung,Male,White
 SIDM00605,CMP,Cell Line,,65,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
 SIDM01154,CMP,Cell Line,,8,Childhood Precursor T Lymphoblastic Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,White
-SIDM01323,CMP,Cell Line,9876219.0,67,Oral Cavity Squamous Cell Carcinoma,Not provided,Head and Neck,Female,Unknown
+SIDM01323,CMP,Cell Line,9876219,67,Oral Cavity Squamous Cell Carcinoma,Not provided,Head and Neck,Female,Unknown
 SIDM01403,CMP,Cell Line,,,Bladder Carcinoma,Not provided,Bladder,Male,Unknown
 SIDM00504,CMP,Cell Line,,,Anaplastic Astrocytoma,Not provided,Central Nervous System,Not collected,Unknown
 SIDM00655,CMP,Cell Line,,,Testicular Embryonal Carcinoma,Not provided,Testis,Male,East Asian
@@ -1149,7 +1149,7 @@ SIDM00626,CMP,Cell Line,,66,Human Papilloma Virus-Related Cervical Squamous Cell
 SIDM01055,CMP,Cell Line,,42,Glioblastoma,Not provided,Central Nervous System,Female,Unknown
 SIDM00267,CMP,Cell Line,,,Gallbladder Carcinoma,Metastatic,Biliary Tract,Female,East Asian
 SIDM01328,CMP,Cell Line,,54,Pancreatic Ductal Adenocarcinoma,Metastatic,Pancreas,Male,White
-SIDM01353,CMP,Cell Line,21683373.0,48,Pancreatic Ductal Adenocarcinoma,Metastatic,Pancreas,Female,White
+SIDM01353,CMP,Cell Line,21683373,48,Pancreatic Ductal Adenocarcinoma,Metastatic,Pancreas,Female,White
 SIDM01828,CMP,Cell Line,,82,Oral Cavity Squamous Cell Carcinoma,Not provided,Head and Neck,Female,White
 SIDM00906,CMP,Cell Line,,41,Human Papilloma Virus-Related Cervical Squamous Cell Carcinoma,Not provided,Cervix,Female,White
 SIDM00386,CMP,Cell Line,,12,Ewing's Sarcoma,Metastatic,Bone,Male,Other
@@ -1160,7 +1160,7 @@ SIDM00271,CMP,Cell Line,,72,Gastric Adenosquamous Carcinoma,Metastatic,Stomach,M
 SIDM00845,CMP,Cell Line,,16,Epstein-Barr Virus-Related Burkitt s Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,Black
 SIDM00864,CMP,Cell Line,,,Cervical Carcinoma,Not provided,Cervix,Female,Unknown
 SIDM01179,CMP,Cell Line,,41,Epithelioid Sarcoma,Metastatic,Soft Tissue,Male,White
-SIDM01791,CMP,Cell Line,3546933.0,26,Merkel Cell Carcinoma,Metastatic,Skin,Male,White
+SIDM01791,CMP,Cell Line,3546933,26,Merkel Cell Carcinoma,Metastatic,Skin,Male,White
 SIDM01171,CMP,Cell Line,,61,Glioblastoma,Not provided,Central Nervous System,Male,White
 SIDM01922,CMP,Cell Line,,58,Glioblastoma,Not provided,Central Nervous System,Male,East Asian
 SIDM00983,CMP,Cell Line,,,Bladder Carcinoma,Not provided,Bladder,Male,Unknown
@@ -1175,7 +1175,7 @@ SIDM00160,CMP,Cell Line,,,Ampulla of Vater Adenocarcinoma,Not provided,Biliary T
 SIDM00348,CMP,Cell Line,,58,Esophageal Squamous Cell Carcinoma,Not provided,Esophagus,Male,Unknown
 SIDM00552,CMP,Cell Line,,,Alveolar Rhabdomyosarcoma,Not provided,Soft Tissue,Not collected,East Asian
 SIDM00766,CMP,Cell Line,,59,Small Cell Lung Carcinoma,Metastatic,Lung,Male,White
-SIDM01815,CMP,Cell Line,2979208.0,42,Cervical Squamous Cell Carcinoma,Not provided,Cervix,Female,East Asian
+SIDM01815,CMP,Cell Line,2979208,42,Cervical Squamous Cell Carcinoma,Not provided,Cervix,Female,East Asian
 SIDM00819,CMP,Cell Line,,77,Clear Cell Renal Cell Carcinoma,Not provided,Kidney,Male,White
 SIDM00735,CMP,Cell Line,,69,Small Cell Lung Carcinoma,Metastatic,Lung,Female,White
 SIDM01184,CMP,Cell Line,,81,Bladder Carcinoma,Not provided,Bladder,Female,White
@@ -1183,10 +1183,10 @@ SIDM01798,CMP,Cell Line,,,Liposarcoma,Not provided,Soft Tissue,Not collected,Unk
 SIDM00379,CMP,Cell Line,,,Astrocytoma,Not collected,Central Nervous System,Not collected,Unknown
 SIDM00756,CMP,Cell Line,,68,Lung Adenocarcinoma,Metastatic,Lung,Female,White
 SIDM01093,CMP,Cell Line,,55,Human Papilloma Virus-Related Cervical Squamous Cell Carcinoma,Not provided,Cervix,Female,Unknown
-SIDM01894,CMP,Cell Line,2474517.0,,Pleural Epithelioid Mesothelioma,Not provided,Lung,Not collected,Unknown
+SIDM01894,CMP,Cell Line,2474517,,Pleural Epithelioid Mesothelioma,Not provided,Lung,Not collected,Unknown
 SIDM01078,CMP,Cell Line,,54,Small Cell Lung Carcinoma,Not provided,Lung,Male,White
 SIDM01695,CMP,Cell Line,,64,Adult Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,East Asian
-SIDM01906,CMP,Cell Line,2474517.0,,Pleural Epithelioid Mesothelioma,Not provided,Lung,Male,Unknown
+SIDM01906,CMP,Cell Line,2474517,,Pleural Epithelioid Mesothelioma,Not provided,Lung,Male,Unknown
 SIDM00860,CMP,Cell Line,,56,Hypopharyngeal Squamous Cell Carcinoma,Not provided,Head and Neck,Male,White
 SIDM01423,CMP,Cell Line,,50,Melanoma,Not collected,Skin,Male,Unknown
 SIDM00319,CMP,Cell Line,,,Melanoma,Metastatic,Skin,Not collected,Unknown
@@ -1199,7 +1199,7 @@ SIDM00415,CMP,Cell Line,,69,Diffuse Large B-Cell Lymphoma,Not provided,Haematopo
 SIDM00277,CMP,Cell Line,,33,Chronic Eosinophilic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,East Asian
 SIDM00494,CMP,Cell Line,,47,Lung Adenocarcinoma,Metastatic,Lung,Male,Unknown
 SIDM00227,CMP,Cell Line,,2,Neuroblastoma,Metastatic,Peripheral Nervous System,Female,White
-SIDM01410,CMP,Cell Line,20518020.0,30,Synovial Sarcoma,Not collected,Soft Tissue,Not collected,Unknown
+SIDM01410,CMP,Cell Line,20518020,30,Synovial Sarcoma,Not collected,Soft Tissue,Not collected,Unknown
 SIDM01743,CMP,Cell Line,,48,Melanoma,Not provided,Skin,Female,White
 SIDM00236,CMP,Cell Line,,,Lung Adenocarcinoma,Not provided,Lung,Not collected,East Asian
 SIDM00352,CMP,Cell Line,,34,Ovarian Clear Cell Adenocarcinoma,Not provided,Ovary,Female,East Asian
@@ -1227,10 +1227,10 @@ SIDM00486,CMP,Cell Line,,69,Squamous Cell Lung Carcinoma,Not provided,Lung,Male,
 SIDM01797,CMP,Cell Line,,77,Plasma Cell Myeloma,Metastatic,Haematopoietic and Lymphoid,Female,East Asian
 SIDM00086,CMP,Cell Line,,54,Renal Cell Carcinoma,Not provided,Kidney,Male,Unknown
 SIDM00316,CMP,Cell Line,,40,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
-SIDM01347,CMP,Cell Line,2083224.0,62,Ovarian Cystadenocarcinoma,Not provided,Ovary,Female,Unknown
+SIDM01347,CMP,Cell Line,2083224,62,Ovarian Cystadenocarcinoma,Not provided,Ovary,Female,Unknown
 SIDM01483,CMP,Cell Line,,69,Melanoma,Metastatic,Skin,Female,Unknown
 SIDM00896,CMP,Cell Line,,46,Primary Effusion Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
-SIDM01426,CMP,Cell Line,3167863.0,,Ovarian Cystadenocarcinoma,Metastatic,Ovary,Female,Unknown
+SIDM01426,CMP,Cell Line,3167863,,Ovarian Cystadenocarcinoma,Metastatic,Ovary,Female,Unknown
 SIDM01257,CMP,Cell Line,,1,Hepatoblastoma,Not provided,Liver,Male,East Asian
 SIDM01734,CMP,Cell Line,,,Cutaneous T-Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Not collected,Unknown
 SIDM00917,CMP,Cell Line,,,Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Male,White
@@ -1272,13 +1272,13 @@ SIDM00333,CMP,Cell Line,,81,Adenosquamous Endometrial Carcinoma,Not provided,End
 SIDM00794,CMP,Cell Line,,86,Squamous Cell Carcinoma,Metastatic,Skin,Male,Unknown
 SIDM01749,CMP,Cell Line,,,Osteosarcoma,Not provided,Bone,Male,White
 SIDM00795,CMP,Cell Line,,54,Amelanotic Melanoma,Not provided,Skin,Female,Unknown
-SIDM01424,CMP,Cell Line,8199015.0,5,B Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
+SIDM01424,CMP,Cell Line,8199015,5,B Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM01779,CMP,Cell Line,,56,Gastric Adenocarcinoma,Metastatic,Stomach,Female,Unknown
 SIDM00164,CMP,Cell Line,,,Cholangiocarcinoma,Not provided,Biliary Tract,Not collected,East Asian
 SIDM01194,CMP,Cell Line,,52,Hepatocellular Carcinoma,Not provided,Liver,Male,East Asian
 SIDM01598,CMP,Cell Line,,39,Lung Adenocarcinoma,Not collected,Lung,Male,White
 SIDM00890,CMP,Cell Line,,53,Amelanotic Melanoma,Not provided,Skin,Male,White
-SIDM01492,CMP,Cell Line,3279793.0,3.4,Medulloblastoma,Not provided,Central Nervous System,Male,Unknown
+SIDM01492,CMP,Cell Line,3279793,3.4,Medulloblastoma,Not provided,Central Nervous System,Male,Unknown
 SIDM00474,CMP,Cell Line,,78,Ovarian Carcinoma,Not provided,Ovary,Female,Unknown
 SIDM01200,CMP,Cell Line,,58,Colon Adenocarcinoma,Not provided,Large Intestine,Female,White
 SIDM00152,CMP,Cell Line,,44,Rectosigmoid Adenocarcinoma,Not provided,Large Intestine,Female,White
@@ -1309,7 +1309,7 @@ SIDM01405,CMP,Cell Line,,,Renal Pelvis Carcinoma,Not provided,Bladder,Not collec
 SIDM00435,CMP,Cell Line,,77,Adult Acute Myeloid Leukemia,Not provided,Haematopoietic and Lymphoid,Female,East Asian
 SIDM01025,CMP,Cell Line,,58,Esophageal Squamous Cell Carcinoma,Not provided,Esophagus,Female,East Asian
 SIDM00891,CMP,Cell Line,,72,Colon Adenocarcinoma,Not provided,Large Intestine,Male,White
-SIDM01384,CMP,Cell Line,12759538.0,,Squamous Cell Lung Carcinoma,Not collected,Lung,Not collected,Unknown
+SIDM01384,CMP,Cell Line,12759538,,Squamous Cell Lung Carcinoma,Not collected,Lung,Not collected,Unknown
 SIDM01432,CMP,Cell Line,,60,Renal Cell Carcinoma,Not provided,Kidney,Male,East Asian
 SIDM00801,CMP,Cell Line,,56,Melanoma,Not provided,Skin,Male,White
 SIDM00651,CMP,Cell Line,,36,Large Cell Lung Carcinoma,Metastatic,Lung,Male,White
@@ -1326,7 +1326,7 @@ SIDM01150,CMP,Cell Line,,59,Lung Adenocarcinoma,Metastatic,Lung,Male,White
 SIDM01808,CMP,Cell Line,,84,Buccal Mucosa Squamous Cell Carcinoma,Not provided,Head and Neck,Male,Unknown
 SIDM01076,CMP,Cell Line,,12,B Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00987,CMP,Cell Line,,63,Anaplastic Thyroid Carcinoma,Metastatic,Thyroid,Female,Unknown
-SIDM01446,CMP,Cell Line,11776963.0,54,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
+SIDM01446,CMP,Cell Line,11776963,54,Glioblastoma,Not provided,Central Nervous System,Male,Unknown
 SIDM00111,CMP,Cell Line,,,Astrocytoma,Not provided,Central Nervous System,Not collected,Unknown
 SIDM00507,CMP,Cell Line,,58,Lung Carcinoma,Not provided,Lung,Female,Unknown
 SIDM00376,CMP,Cell Line,,10,Childhood Precursor B Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,White
@@ -1334,7 +1334,7 @@ SIDM01241,CMP,Cell Line,,71,Endometrial Adenocarcinoma,Not provided,Endometrium,
 SIDM01256,CMP,Cell Line,,4,Childhood T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,White
 SIDM01105,CMP,Cell Line,,42,Melanoma,Metastatic,Skin,Female,White
 SIDM01091,CMP,Cell Line,,,Lymphoma,Not collected,Haematopoietic and Lymphoid,Not collected,Unknown
-SIDM01833,CMP,Cell Line,593370.0,30,Testicular Teratoma,Not provided,Testis,Male,Unknown
+SIDM01833,CMP,Cell Line,593370,30,Testicular Teratoma,Not provided,Testis,Male,Unknown
 SIDM00723,CMP,Cell Line,,,Non-Small Cell Lung Carcinoma,Not provided,Lung,Male,Unknown
 SIDM00731,CMP,Cell Line,,67,Small Cell Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM00459,CMP,Cell Line,,48,Diffuse Large B-Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
@@ -1342,7 +1342,7 @@ SIDM00759,CMP,Cell Line,,,Lung Adenocarcinoma,Not provided,Lung,Female,Unknown
 SIDM01566,CMP,Cell Line,,16,Hodgkin's Lymphoma,Not collected,Haematopoietic and Lymphoid,Male,White
 SIDM00038,CMP,Cell Line,,39,Endometrial Adenocarcinoma,Not provided,Endometrium,Female,Unknown
 SIDM00298,CMP,Cell Line,,69,Squamous Cell Lung Carcinoma,Not provided,Lung,Male,East Asian
-SIDM01662,CMP,Cell Line,2458153.0,53,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
+SIDM01662,CMP,Cell Line,2458153,53,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM01248,CMP,Cell Line,,59,Squamous Cell Thyroid Gland Carcinoma,Not provided,Thyroid,Male,White
 SIDM00400,CMP,Cell Line,,67,Follicular Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00579,CMP,Cell Line,,1.66,Neuroblastoma,Metastatic,Peripheral Nervous System,Female,East Asian
@@ -1359,7 +1359,7 @@ SIDM00776,CMP,Cell Line,,65,Colon Adenocarcinoma,Not provided,Large Intestine,Fe
 SIDM00332,CMP,Cell Line,,,Breast Carcinoma,Metastatic,Breast,Female,Unknown
 SIDM00478,CMP,Cell Line,,74,Esophageal Squamous Cell Carcinoma,Not provided,Esophagus,Male,White
 SIDM01088,CMP,Cell Line,,65,Adenosquamous Endometrial Carcinoma,Not provided,Endometrium,Female,White
-SIDM01506,CMP,Cell Line,1979248.0,64,Anaplastic Large Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Female,East Asian
+SIDM01506,CMP,Cell Line,1979248,64,Anaplastic Large Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Female,East Asian
 SIDM01817,CMP,Cell Line,,70,Chronic Lymphocytic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,White
 SIDM01606,CMP,Cell Line,,55,Giant Cell Lung Carcinoma,Not collected,Lung,Female,Unknown
 SIDM01772,CMP,Cell Line,,78,Malignant Pleural Mesothelioma,Not provided,Lung,Male,Unknown
@@ -1368,10 +1368,10 @@ SIDM01146,CMP,Cell Line,,44,Gastric Carcinoma,Not provided,Stomach,Male,East Asi
 SIDM00809,CMP,Cell Line,,52,Head and Neck Squamous Cell Carcinoma,Metastatic,Head and Neck,Male,Unknown
 SIDM00098,CMP,Cell Line,,,Pleural Sarcomatoid Mesothelioma,Not collected,Lung,Not collected,Unknown
 SIDM00094,CMP,Cell Line,,,Renal Cell Carcinoma,Not provided,Kidney,Not collected,Unknown
-SIDM00373,CMP,Cell Line,858140.0,52,Endometrial Adenocarcinoma,Metastatic,Endometrium,Female,Unknown
+SIDM00373,CMP,Cell Line,858140,52,Endometrial Adenocarcinoma,Metastatic,Endometrium,Female,Unknown
 SIDM01518,CMP,Cell Line,,,Tongue Squamous Cell Carcinoma,Not provided,Head and Neck,Female,White
-SIDM01230,CMP,Cell Line,7996872.0,29,Chronic Myelogenous Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
-SIDM00863,CMP,Cell Line,14284371.0,7,Epstein-Barr Virus-Related Burkitt s Lymphoma,Metastatic,Haematopoietic and Lymphoid,Female,Black
+SIDM01230,CMP,Cell Line,7996872,29,Chronic Myelogenous Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
+SIDM00863,CMP,Cell Line,14284371,7,Epstein-Barr Virus-Related Burkitt s Lymphoma,Metastatic,Haematopoietic and Lymphoid,Female,Black
 SIDM00079,CMP,Cell Line,,64,Ovarian Serous Cystadenocarcinoma,Metastatic,Ovary,Female,White
 SIDM01471,CMP,Cell Line,,22,Chronic Myelogenous Leukemia,Not collected,Haematopoietic and Lymphoid,Male,East Asian
 SIDM01558,CMP,Cell Line,,11,Childhood T Acute Lymphoblastic Leukemia,Not collected,Haematopoietic and Lymphoid,Male,White
@@ -1406,7 +1406,7 @@ SIDM00448,CMP,Cell Line,,,Diffuse Large B-Cell Lymphoma,Metastatic,Haematopoieti
 SIDM01182,CMP,Cell Line,,,Bladder Carcinoma,Not provided,Bladder,Male,Unknown
 SIDM01158,CMP,Cell Line,,53,Squamous Cell Lung Carcinoma,Not provided,Lung,Male,White
 SIDM01051,CMP,Cell Line,,36,Ovarian Mucinous Adenocarcinoma,Metastatic,Ovary,Female,Unknown
-SIDM01372,CMP,Cell Line,12037578.0,65,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Male,East Asian
+SIDM01372,CMP,Cell Line,12037578,65,Pancreatic Ductal Adenocarcinoma,Not provided,Pancreas,Male,East Asian
 SIDM01755,CMP,Cell Line,,56,Pancreatic Ductal Adenocarcinoma,Not collected,Pancreas,Male,White
 SIDM00599,CMP,Cell Line,,13,Osteosarcoma,Not provided,Bone,Female,East Asian
 SIDM00311,CMP,Cell Line,,,Pleural Epithelioid Mesothelioma,Not collected,Lung,Not collected,Unknown
@@ -1418,7 +1418,7 @@ SIDM01637,CMP,Cell Line,,,Lung Adenocarcinoma,Not collected,Lung,Not collected,U
 SIDM00146,CMP,Cell Line,,51,Breast Adenocarcinoma,Metastatic,Breast,Female,White
 SIDM01545,CMP,Cell Line,,47,Squamous Cell Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM00149,CMP,Cell Line,,,Amelanotic Melanoma,Metastatic,Skin,Male,Unknown
-SIDM01435,CMP,Cell Line,11819450.0,54,Hepatocellular Carcinoma,Not provided,Liver,Female,East Asian
+SIDM01435,CMP,Cell Line,11819450,54,Hepatocellular Carcinoma,Not provided,Liver,Female,East Asian
 SIDM00685,CMP,Cell Line,,65,Glioblastoma,Not provided,Central Nervous System,Male,White
 SIDM00938,CMP,Cell Line,,58,Breast Carcinoma,Metastatic,Breast,Female,Unknown
 SIDM01433,CMP,Cell Line,,,Renal Cell Carcinoma,Not provided,Kidney,Male,East Asian
@@ -1440,7 +1440,7 @@ SIDM01967,CMP,Cell Line,,50,Astrocytoma,Not provided,Central Nervous System,Male
 SIDM00815,CMP,Cell Line,,54,Ovarian Carcinoma,Not provided,Ovary,Female,Unknown
 SIDM01013,CMP,Cell Line,,63,Mantle Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM00892,CMP,Cell Line,,23,Invasive Ductal Carcinoma Not Otherwise Specified,Not provided,Breast,Female,White
-SIDM01846,CMP,Cell Line,8878451.0,51,Glioblastoma,Not provided,Central Nervous System,Male,East Asian
+SIDM01846,CMP,Cell Line,8878451,51,Glioblastoma,Not provided,Central Nervous System,Male,East Asian
 SIDM01331,CMP,Cell Line,,70,Lung Adenocarcinoma,Not provided,Lung,Male,East Asian
 SIDM00951,CMP,Cell Line,,,Adult T Acute Lymphoblastic Leukemia,Not collected,Haematopoietic and Lymphoid,Not collected,Unknown
 SIDM01213,CMP,Cell Line,,35,Fibrosarcoma,Not provided,Soft Tissue,Male,White
@@ -1457,7 +1457,7 @@ SIDM00857,CMP,Cell Line,,31,Melanoma,Not provided,Skin,Male,White
 SIDM00095,CMP,Cell Line,,78,Glioblastoma,Not provided,Central Nervous System,Female,Unknown
 SIDM00096,CMP,Cell Line,,11,Adult Immunoblastic Lymphoma,Metastatic,Haematopoietic and Lymphoid,Male,White
 SIDM01679,CMP,Cell Line,,42,Small Cell Lung Carcinoma,Metastatic,Lung,Male,White
-SIDM01829,CMP,Cell Line,4038766.0,,Renal Cell Carcinoma,Not provided,Kidney,Not collected,Unknown
+SIDM01829,CMP,Cell Line,4038766,,Renal Cell Carcinoma,Not provided,Kidney,Not collected,Unknown
 SIDM01006,CMP,Cell Line,,77,Plasma Cell Myeloma,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM00618,CMP,Cell Line,,50,Hepatocellular Carcinoma,Not provided,Liver,Male,East Asian
 SIDM00481,CMP,Cell Line,,,High Grade Ovarian Serous Adenocarcinoma,Metastatic,Ovary,Female,Unknown
@@ -1465,7 +1465,7 @@ SIDM00898,CMP,Cell Line,,43,Breast Adenocarcinoma,Metastatic,Breast,Female,White
 SIDM00515,CMP,Cell Line,,14,Melanoma,Not provided,Skin,Male,Unknown
 SIDM00729,CMP,Cell Line,,,Lung Adenocarcinoma,Not provided,Lung,Female,Unknown
 SIDM01672,CMP,Cell Line,,41,Small Cell Lung Carcinoma,Metastatic,Lung,Male,White
-SIDM00564,CMP,Cell Line,9328139.0,40,Ovarian Clear Cell Adenocarcinoma,Metastatic,Ovary,Female,East Asian
+SIDM00564,CMP,Cell Line,9328139,40,Ovarian Clear Cell Adenocarcinoma,Metastatic,Ovary,Female,East Asian
 SIDM01513,CMP,Cell Line,,,Ewing's Sarcoma,Not collected,Bone,Not collected,Unknown
 SIDM00453,CMP,Cell Line,,64,Pancreatic Adenocarcinoma,Metastatic,Pancreas,Female,Unknown
 SIDM01415,CMP,Cell Line,,64,Clivus Chordoma,Not provided,Bone,Male,White
@@ -1475,24 +1475,24 @@ SIDM01701,CMP,Cell Line,,71,Breast Adenocarcinoma,Not provided,Breast,Female,Whi
 SIDM00942,CMP,Cell Line,,69,Tongue Squamous Cell Carcinoma,Not provided,Head and Neck,Male,Unknown
 SIDM01692,CMP,Cell Line,,50,Cutaneous T-Cell Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,White
 SIDM00429,CMP,Cell Line,,19,Adult B Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
-SIDM01468,CMP,Cell Line,3004699.0,19,Ewing's Sarcoma,Metastatic,Bone,Male,Unknown
+SIDM01468,CMP,Cell Line,3004699,19,Ewing's Sarcoma,Metastatic,Bone,Male,Unknown
 SIDM00953,CMP,Cell Line,,,Small Cell Lung Carcinoma,Metastatic,Lung,Not collected,Unknown
 SIDM00241,CMP,Cell Line,,53,Breast Carcinoma,Metastatic,Breast,Female,East Asian
 SIDM00653,CMP,Cell Line,,67,Small Cell Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM01551,CMP,Cell Line,,37,Gastric Carcinoma,Metastatic,Stomach,Male,East Asian
 SIDM01073,CMP,Cell Line,,56,Hairy Cell Leukemia,Not provided,Haematopoietic and Lymphoid,Male,White
 SIDM00246,CMP,Cell Line,,39,Melanoma,Metastatic,Skin,Female,East Asian
-SIDM00473,CMP,Cell Line,9876219.0,45,Tongue Squamous Cell Carcinoma,Not provided,Head and Neck,Male,Unknown
+SIDM00473,CMP,Cell Line,9876219,45,Tongue Squamous Cell Carcinoma,Not provided,Head and Neck,Male,Unknown
 SIDM01204,CMP,Cell Line,,62,Large Cell Lung Carcinoma,Metastatic,Lung,Male,White
 SIDM00244,CMP,Cell Line,,1.33,Neuroblastoma,Not provided,Peripheral Nervous System,Male,Unknown
 SIDM01748,CMP,Cell Line,,22,Osteosarcoma,Not provided,Bone,Male,White
 SIDM01448,CMP,Cell Line,,65,Laryngeal Squamous Cell Carcinoma,Not provided,Head and Neck,Male,East Asian
-SIDM01370,CMP,Cell Line,856461.0,3,Neuroblastoma,Not collected,Peripheral Nervous System,Female,Unknown
+SIDM01370,CMP,Cell Line,856461,3,Neuroblastoma,Not collected,Peripheral Nervous System,Female,Unknown
 SIDM01007,CMP,Cell Line,,2,Childhood T Acute Lymphoblastic Leukemia,Not provided,Haematopoietic and Lymphoid,Male,Unknown
 SIDM00935,CMP,Cell Line,,76,Vulvar Squamous Cell Carcinoma,Not provided,Vulva,Female,Unknown
 SIDM00388,CMP,Cell Line,,5,B-Cell Non-Hodgkin's Lymphoma,Not provided,Haematopoietic and Lymphoid,Male,White
 SIDM00807,CMP,Cell Line,,68,Bladder Carcinoma,Not provided,Bladder,Male,White
-SIDM00498,CMP,Cell Line,3479249.0,77,Cecum Adenocarcinoma,Not provided,Large Intestine,Female,East Asian
+SIDM00498,CMP,Cell Line,3479249,77,Cecum Adenocarcinoma,Not provided,Large Intestine,Female,East Asian
 SIDM01631,CMP,Cell Line,,47,Chronic Lymphocytic Leukemia,Not provided,Haematopoietic and Lymphoid,Female,Unknown
 SIDM01934,CMP,Cell Line,,53,Duodenal Adenocarcinoma,Not provided,Small Intestine,Male,White
 SIDM01075,CMP,Cell Line,,5,Hereditary Spherocytosis,Not provided,Haematopoietic and Lymphoid,Male,White
