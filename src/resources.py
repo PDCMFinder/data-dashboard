@@ -1,19 +1,30 @@
 import pandas as pd
 from pandas import read_csv
 
-input_file = {'latest': 'https://www.cancermodels.org/api/model_molecular_metadata?select=sample_id,data_source,data_type,platform_name,model_id', 'DR_5.3': 'assets/sample/DR_v5.3.csv', 'DR_5.2': 'assets/sample/DR_v5.2.csv', 'DR_5.1': 'assets/sample/DR_v5.1.csv',
+
+
+input_file = {
+    #'latest': 'https://www.cancermodels.org/api/model_molecular_metadata?select=sample_id,data_source,data_type,platform_name,model_id',
+    'DR_6.0': 'assets/sample/DR_v6.0.csv',
+    'DR_5.3': 'assets/sample/DR_v5.3.csv', 'DR_5.2': 'assets/sample/DR_v5.2.csv', 'DR_5.1': 'assets/sample/DR_v5.1.csv',
               'DR_4.0': 'assets/sample/DR_v4.0.csv',
               'DR_3.0': 'assets/sample/DR_v3.0.csv',
               'DR_2.1': 'assets/sample/DR_v2.1.csv', 'DR_2.0': 'assets/sample/DR_v2.0.csv',
               'DR_1.0': 'assets/sample/DR_v1.0.csv'}
 
-labels = {'latest': 'Latest Release', 'DR_5.3': 'Data release 5.3', 'DR_5.2': 'Data release 5.2', 'DR_5.1': 'Data release 5.1',
+labels = {'DR_6.0': 'Data release 6.0',
+
+    #'latest': 'Latest Release',
+
+          'DR_5.3': 'Data release 5.3', 'DR_5.2': 'Data release 5.2', 'DR_5.1': 'Data release 5.1',
           'DR_4.0': 'Data release 4.0',
           'DR_3.0': 'Data release 3.0',
           'DR_2.1': 'Data release 2.1', 'DR_2.0': 'Data release 2.0',
           'DR_1.0': 'Data release 1.0'}
 
-total_models = {'latest': 'https://www.cancermodels.org/api/model_metadata?select=model_id,data_source,type,pubmed_ids,patient_age,histology,tumor_type,primary_site,patient_sex,patient_ethnicity',
+total_models = {
+    'DR_6.0': 'assets/model/total_models_DR_v6.0.csv',
+    #'latest': 'https://www.cancermodels.org/api/model_metadata?select=model_id,data_source,type,pubmed_ids,patient_age,histology,tumor_type,primary_site,patient_sex,patient_ethnicity',
                 'DR_5.3': 'assets/model/total_models_DR_v5.3.csv', 'DR_5.2': 'assets/model/total_models_DR_v5.2.csv', 'DR_5.1': 'assets/model/total_models_DR_v5.1.csv',
               'DR_4.0': 'assets/model/total_models_DR_v4.0.csv',
               'DR_3.0': 'assets/model/total_models_DR_v3.0.csv',
@@ -88,9 +99,9 @@ primary_site_mapping = {
 
 diagnosis_to_cancer = read_csv('assets/diagnosis_mappings.tsv', sep='\t')
 diagnosis_to_cancer = dict(zip(diagnosis_to_cancer['sample_diagnosis'], diagnosis_to_cancer['mappedTermLabel']))
-cancer_system = pd.read_json("https://www.cancermodels.org/api/model_metadata?select=histology,cancer_system").drop_duplicates()
-cancer_system['histology'] = cancer_system['histology'].str.title()
-
+#cancer_system = pd.read_json("https://www.cancermodels.org/api/model_metadata?select=histology,cancer_system").drop_duplicates()
+#cancer_system['histology'] = cancer_system['histology'].str.title()
+cancer_system = None
 
 primary_site_mapping = {
     'Brain': 'Nervous System Cancer',

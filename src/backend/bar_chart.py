@@ -97,3 +97,7 @@ def get_key_from_value(dictionary, target_value):
         if value == target_value:
             return key
     return None
+
+def get_country_bar_plot(df):
+    fig = bar(df.groupby('country').count()['provider'].reset_index(), x='country', y='provider')
+    return fig

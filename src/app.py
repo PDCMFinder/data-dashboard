@@ -16,6 +16,16 @@ app.layout = html.Div(
                     id='overview-bar-chart',
                     style={'width': '100%'}
                 ),
+                dcc.Markdown('### Summary Stats:', style={'display': 'inline-block'}),
+                dash_table.DataTable(
+                        id='summary-stat-table',
+                        columns=[
+                            {'name': col, 'id': col} for col in list(summary.columns)
+                        ],
+                        data=summary.to_dict('records'),
+                        style_table={'overflow': 'auto'},
+                        style_cell={'textAlign': 'left'},
+                ),
                 dcc.Markdown('### Select Data release:'),
                 dcc.Dropdown(
                     id='dropdown-category',
@@ -78,6 +88,7 @@ app.layout = html.Div(
             children=[
                 html.Div(
                     children=[
+                        dcc.Markdown('### Model counts plot:'),
                         dcc.Markdown('Attribute:', style={'display': 'inline-block'}),
                         dcc.Dropdown(
                             id='reactive-category',
@@ -107,6 +118,26 @@ app.layout = html.Div(
             style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
                    'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px'}
         ),
+        html.Div(children=[
+            dcc.Markdown('### Provider country plot:', style={'display': 'inline-block'}),
+            dcc.Graph(
+                id='country-plot',
+                style={'width': '100%'}
+            ),
+            dash_table.DataTable(
+                id='country-table',
+                columns=[
+                    {'name': col, 'id': col} for col in list(country.columns)
+                ],
+                data=country.to_dict('records'),
+                style_table={'overflow': 'auto'},
+                style_cell={'textAlign': 'left'},
+            ),
+            ],
+            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+                        'border-radius': '10px', 'width': '32.5%', 'float': 'right', 'marginTop': '5px',
+                        'marginLeft': '5px'}
+            ),
         html.Div(
             children=[
                 dcc.Markdown('### Molecular data by Technology used:', style={'display': 'inline-block'}),
@@ -116,10 +147,10 @@ app.layout = html.Div(
                 ),
             ],
             style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-                   'border-radius': '10px', 'width': '48%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
+                   'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
         ),
     ],
-    style={'font-family': 'Arial', 'margin': 'auto', 'padding': '10px'}
+    style={'font-family': 'Merriweather', 'margin': 'auto', 'padding': '10px'}
 )
 
 
@@ -175,3 +206,19 @@ def update_reactive_plot(release, category, group_cat):
 )
 def update_bar_chart(value):
     return bar_chart()
+
+@app.callback(
+    Output('summary-stat-table', 'data'),
+    Input('dropdown-category', 'value')
+)
+def update_summary_stats(category):
+    return generate_summary_stats()
+
+
+@app.callback(
+    Output('country-plot', 'figure'),
+    Output('country-table', 'data'),
+    [Input('dropdown-category', 'value')]
+)
+def country_plot(selected_category):
+    return generate_country_plot(selected_category)

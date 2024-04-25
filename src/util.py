@@ -1,12 +1,15 @@
+import pandas as pd
 from pandas import DataFrame, read_csv, read_json, notna, concat
 from src.backend.pie_chart import get_model_type_donut, get_dto_radial, get_library_strategy_plot
 from src.backend.venn import get_dt_venn
 from src.backend.scatter import get_scatter_plot
-from src.backend.bar_chart import get_bar_chart, get_reactive_bar_plot
-from src.resources import input_file, total_models
+from src.backend.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot
+from src.resources import input_file, total_models, labels
+from requests import get
 
 data = DataFrame([[0, 0], [1, 1]], columns=['Type', 'Model'])
-
+country = DataFrame(columns=['country', 'provider'])
+summary = DataFrame(columns=['tag', 'date', "model_type_pdx", "model_type_cell_line", "model_type_organoid", "model_type_other", "model_type_total", "sample_type_xenograft", "sample_type_cell", "sample_type_patient", "sample_type_total", "molecular_data_biomarker", "molecular_data_cna", "molecular_data_expression", "molecular_data_immunemarker", "molecular_data_mut", "molecular_data_points_total"])
 
 def custom_plots(selected_category, selected_plot):
     file = input_file[selected_category]
@@ -94,3 +97,40 @@ def process_values(value):
         return [{'value': v} for v in value_list]
     else:
         return None
+
+def generate_summary_stats():
+    table = DataFrame()
+    for f in get("https://gitlab.ebi.ac.uk/api/v4/projects/1629/releases?private_token=glpat-gbQzKFxHTWyp_jZhP5gE").json():
+        if f['tag_name'].replace('PDCM_', '').replace('v', '') in labels.keys():
+            file_name = f"assets/phenomic/phenomics_data_points_{f['tag_name'].replace('PDCM_', '')}.csv"
+            df = read_csv(file_name).groupby('release').sum().reset_index()
+            file_name = f"assets/model/total_models_{f['tag_name'].replace('PDCM_', '')}.csv"
+            data = read_csv(file_name)
+            data['model_type'] = ['Organoid' if str(t).lower().__contains__('organoid') else t for t in
+                                  data['model_type']]
+            data['model_type'] = [
+                'Cell Line' if str(t).lower().__contains__('cell') or str(t).lower().__contains__('pdc') or str(
+                    t).lower().__contains__('2d') or str(t).lower().__contains__('2-d') else t for t in
+                data['model_type']]
+            data['model_type'] = [
+                'Other' if str(t).lower().__contains__('other') or str(t).lower().__contains__('mixed') else t for t in
+                data['model_type']]
+            data = data.groupby('model_type').count()['model_id'].reset_index()
+            df['model_type_cell_line'] = data[data['model_type'].str.contains('Cell')].reset_index(drop=True)['model_id'][0]
+            df['model_type_organoid'] = data[data['model_type'].str.contains('Organoid')].reset_index(drop=True)['model_id'][0]
+            df['model_type_pdx'] = data[data['model_type'].str.contains('PDX')].reset_index(drop=True)['model_id'][0]
+            df['model_type_other'] = data[data['model_type'].str.contains('Other')].reset_index(drop=True)['model_id'][0]
+            df['model_type_total'] = data['model_id'].sum()
+
+            df['date'] = f['released_at'].split('T')[0]
+            df['tag'] = labels[f['tag_name'].replace('PDCM_', '').replace('v', '')]
+            table = pd.concat([table, df]).reset_index(drop=True)
+    return table.to_dict('records')
+
+
+def generate_country_plot(release):
+    file_name = f"assets/country/provider_country_{release.replace('DR_', 'DR_v')}.csv"
+    table = read_csv(file_name).rename({'0':'release', '1':'provider', '2':'country'}, axis=1)[['country', 'provider']]
+    df = table.groupby('country')['provider'].apply(list).reset_index(name='provider')
+    df['provider'] = df['provider'].astype(str)
+    return get_country_bar_plot(table), df.to_dict('records')
