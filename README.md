@@ -13,7 +13,7 @@ It includes summary statistics, pie charts, bar charts, and tables to help users
 ### Usage
 Clone the repository:
 ```
-git clone https://github.com/yourusername/data-dashboard.git
+git clone https://github.com/PDCMFinder/data-dashboard.git
 ```
 Install the required dependencies:
 ```
