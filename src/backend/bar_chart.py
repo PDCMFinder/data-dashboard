@@ -101,3 +101,11 @@ def get_key_from_value(dictionary, target_value):
 def get_country_bar_plot(df):
     fig = bar(df.groupby('country').count()['provider'].reset_index(), x='country', y='provider')
     return fig
+
+
+def get_molecular_model_type_plot(temp):
+    data = temp.groupby(['molecular_characterisation_type', 'model_type']).size().reset_index(name='Count')
+    total = data.groupby('molecular_characterisation_type').sum()['Count'].to_dict()
+    data['Total'] = [total[r] for r in data['molecular_characterisation_type']]
+    fig = bar(data, x='molecular_characterisation_type', y='Count', color='model_type', hover_name='model_type', hover_data='Total')
+    return fig
