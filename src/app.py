@@ -149,6 +149,17 @@ app.layout = html.Div(
             style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
                    'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
         ),
+        html.Div(
+            children=[
+                dcc.Markdown('### Molecular data by model type:', style={'display': 'inline-block'}),
+                dcc.Graph(
+                    id='mol-model-type-plot',
+                    style={'width': '100%'}
+                ),
+            ],
+            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+                   'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
+        ),
     ],
     style={'font-family': 'Merriweather', 'margin': 'auto', 'padding': '10px'}
 )
@@ -222,3 +233,11 @@ def update_summary_stats(category):
 )
 def country_plot(selected_category):
     return generate_country_plot(selected_category)
+
+
+@app.callback(
+    Output('mol-model-type-plot', 'figure'),
+    [Input('dropdown-category', 'value')]
+)
+def molecular_model_type(selected_category):
+    return molecular_model_type_plot(selected_category)

@@ -3,7 +3,7 @@ from pandas import DataFrame, read_csv, read_json, notna, concat
 from src.backend.pie_chart import get_model_type_donut, get_dto_radial, get_library_strategy_plot
 from src.backend.venn import get_dt_venn
 from src.backend.scatter import get_scatter_plot
-from src.backend.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot
+from src.backend.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot
 from src.resources import input_file, total_models, labels
 from requests import get
 
@@ -134,3 +134,21 @@ def generate_country_plot(release):
     df = table.groupby('country')['provider'].apply(list).reset_index(name='provider')
     df['provider'] = df['provider'].astype(str)
     return get_country_bar_plot(table), df.to_dict('records')
+
+def molecular_model_type_plot(release):
+    file = input_file[release]
+    df_2 = read_csv(file)
+
+    file = total_models[release]
+    df = read_csv(file)
+    df.loc[:, 'model_type'] = ['Organoid' if str(t).lower().__contains__('organoid') else t for t in df['model_type']]
+    df.loc[:, 'model_type'] = [
+        'Cell Line' if str(t).lower().__contains__('cell') or str(t).lower().__contains__('pdc') or str(
+            t).lower().__contains__('2d') or str(t).lower().__contains__('2-d') else t for t in df['model_type']]
+    df.loc[:, 'model_type'] = [
+        'Other' if str(t).lower().__contains__('other') or str(t).lower().__contains__('mixed') else t for t in
+        df['model_type']]
+
+    temp = df_2.drop_duplicates(['molecular_characterisation_type', 'model_id'])[['model_id', 'molecular_characterisation_type']].merge(df[['model_id', 'model_type']],
+                                                                         on='model_id', how='left')
+    return get_molecular_model_type_plot(temp)
