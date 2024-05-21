@@ -5,161 +5,159 @@ from src.util import *
 from src.resources import labels, input_file, reactive_categories
 
 app = dash.Dash(__name__)
-app.layout = html.Div(
-    children=[
-        html.H1("CancerModels.Org - Data Overview Dashboard",
-                style={'textAlign': 'left', 'marginBottom': 20, 'backgroundColor': '#013e48', 'color': '#ffffff',
-                       'padding': '0.1%', 'padding-top': '2%'}),
-        html.Div(
-            children=[
-                dcc.Graph(
-                    id='overview-bar-chart',
-                    style={'width': '100%'}
-                ),
+app.layout = html.Div(children=[
+    html.H1("CancerModels.Org - Data Overview Dashboard",
+            style={'textAlign': 'left', 'marginBottom': 20, 'backgroundColor': '#013e48', 'color': '#ffffff',
+                   'padding': '0.1%', 'padding-top': '2%'}),
+    html.Div(children=[
+        html.Div(children=[
+            html.Div(children=[dcc.Graph(id='overview-bar-chart',)], style={'width': '50%', 'float': 'left'}),
+            html.Div(children=[
                 dcc.Markdown('### Summary Stats:', style={'display': 'inline-block'}),
                 dash_table.DataTable(
-                        id='summary-stat-table',
-                        columns=[
-                            {'name': col, 'id': col} for col in list(summary.columns)
-                        ],
-                        data=summary.to_dict('records'),
-                        style_table={'overflow': 'auto'},
-                        style_cell={'textAlign': 'left'},
-                ),
-                dcc.Markdown('### Select Data release:'),
-                dcc.Dropdown(
-                    id='dropdown-category',
-                    options=[{'label': str(labels[category]).title(), 'value': category} for category in
-                             input_file.keys()],
-                    value=list(input_file.keys())[0],
-                    multi=False,
-                    style={'width': '100%', 'margin': 'left', 'marginTop': 20}
+                    id='summary-stat-table',
+                    columns=[
+                        {'name': col, 'id': col} for col in list(summary.columns)
+                    ],
+                    data=summary.to_dict('records'),
+                    style_table={'overflow': 'auto'},
+                    style_cell={'textAlign': 'left'},
+                    style_header={
+                            'backgroundColor': 'rgb(210, 210, 210)',
+                            'color': 'black',
+                            'fontWeight': 'bold'
+                        }
+                    ),
+                ], style={'width': '50%', 'float': 'right'}),
+                ]),
+    ], style={'height': '10%', 'width': '100%', 'margin': 'auto', 'marginTop': '-10'}
+    ),
+    html.Div(children=[
+        dcc.Markdown('### Select Data release: ', style={'display': 'inline-block'}),
+        dcc.Dropdown(
+            id='dropdown-category',
+            options=[{'label': str(labels[category]).title(), 'value': category} for category in
+                     input_file.keys()],
+            value=list(input_file.keys())[0],
+            multi=False,
+            style={'width': '50%', 'display': 'inline-block'}
+        )], style={'width': '100%', 'display': 'inline-block'}),
+    html.Div(children=[
+        dcc.Markdown('### Model type overview:', style={'display': 'inline-block'}),
+        dcc.Graph(
+            id='model-type-plot',
+            style={'width': '100%', 'marginTop': 20}
+        ),
+        ],
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+               'border-radius': '10px', 'width': '32%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
+    ),
+    html.Div(children=[
+            dcc.Markdown('### Data type overview:', style={'display': 'inline-block'}),
+            dcc.Graph(
+                id='dto-pie-plot',
+                style={'width': '100%', 'marginTop': 20}
+            ),
+        ],
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+               'border-radius': '10px', 'width': '32%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '5px'}
+    ),
+    html.Div(children=[
+            dcc.Markdown('### Model data overlap:', style={'display': 'inline-block'}),
+            dcc.Graph(
+                id='venn-plot',
+            ),
+            html.Div([
+                dash_table.DataTable(
+                    id='table',
+                    columns=[
+                        {'name': col, 'id': col} for col in list(data.columns)
+                    ],
+                    data=data.to_dict('records'),
+                    style_table={'overflow': 'auto'},
+                    style_cell={'textAlign': 'left'},
                 ),
             ],
-            style={'height': '10%', 'width': '100%', 'margin': 'auto', 'marginTop': '-10'}
-        ),
-        html.Div(
-            children=[
-                dcc.Markdown('### Model type overview:', style={'display': 'inline-block'}),
-                dcc.Graph(
-                    id='model-type-plot',
-                    style={'width': '100%', 'marginTop': 20}
-                ),
-            ],
-            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-                   'border-radius': '10px', 'width': '32%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
-        ),
-        html.Div(
-            children=[
-                dcc.Markdown('### Data type overview:', style={'display': 'inline-block'}),
-                dcc.Graph(
-                    id='dto-pie-plot',
-                    style={'width': '100%', 'marginTop': 20}
-                ),
-            ],
-            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-                   'border-radius': '10px', 'width': '32%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '5px'}
-        ),
-        html.Div(
-            children=[
-                dcc.Markdown('### Model data overlap:', style={'display': 'inline-block'}),
-                dcc.Graph(
-                    id='venn-plot',
-                ),
-                html.Div([
-                    dash_table.DataTable(
-                        id='table',
-                        columns=[
-                            {'name': col, 'id': col} for col in list(data.columns)
-                        ],
-                        data=data.to_dict('records'),
-                        style_table={'overflow': 'auto'},
-                        style_cell={'textAlign': 'left'},
+                style={'marginTop': '10px'},
+                id='table-container',
+            ),
+        ],
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+               'border-radius': '10px', 'width': '31.5%', 'float': 'right', 'marginTop': '5px', 'marginLeft': '5px'}
+    ),
+    html.Div(children=[
+            html.Div(
+                children=[
+                    dcc.Markdown('### Model counts plot:'),
+                    dcc.Markdown('Attribute:', style={'display': 'inline-block'}),
+                    dcc.Dropdown(
+                        id='reactive-category',
+                        options=[{'label': str(category).title(), 'value': reactive_categories[category]} for category in
+                                 reactive_categories.keys()],
+                        value=list(reactive_categories.values())[0],
+                        multi=False,
+                        style={'width': '40%', 'display': 'inline-block', 'margin-left': '5px'}
+                    ),
+                    dcc.Markdown('Group by:', style={'display': 'inline-block'}),
+                    dcc.Dropdown(
+                        id='reactive-groupby-category',
+                        options=[{'label': str(category).title(), 'value': reactive_categories[category]} for category in
+                                 reactive_categories.keys()],
+                        value=None,
+                        multi=False,
+                        style={'width': '40%', 'display': 'inline-block', 'margin-left': '5px'}
                     ),
                 ],
-                    style={'marginTop': '10px'},
-                    id='table-container',
-                ),
-            ],
-            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-                   'border-radius': '10px', 'width': '31.5%', 'float': 'right', 'marginTop': '5px', 'marginLeft': '5px'}
-        ),
-        html.Div(
-            children=[
-                html.Div(
-                    children=[
-                        dcc.Markdown('### Model counts plot:'),
-                        dcc.Markdown('Attribute:', style={'display': 'inline-block'}),
-                        dcc.Dropdown(
-                            id='reactive-category',
-                            options=[{'label': str(category).title(), 'value': reactive_categories[category]} for category in
-                                     reactive_categories.keys()],
-                            value=list(reactive_categories.values())[0],
-                            multi=False,
-                            style={'width': '40%', 'display': 'inline-block', 'margin-left': '5px'}
-                        ),
-                        dcc.Markdown('Group by:', style={'display': 'inline-block'}),
-                        dcc.Dropdown(
-                            id='reactive-groupby-category',
-                            options=[{'label': str(category).title(), 'value': reactive_categories[category]} for category in
-                                     reactive_categories.keys()],
-                            value=None,
-                            multi=False,
-                            style={'width': '40%', 'display': 'inline-block', 'margin-left': '5px'}
-                        ),
-                    ],
-                    style={'width': '100%'}
-                ),
-                dcc.Graph(
-                    id='reactive-plot',
-                    style={'width': '100%'}
-                ),
-            ],
-            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-                   'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px'}
-        ),
-        html.Div(children=[
-            dcc.Markdown('### Provider country plot:', style={'display': 'inline-block'}),
-            dcc.Graph(
-                id='country-plot',
                 style={'width': '100%'}
             ),
-            dash_table.DataTable(
-                id='country-table',
-                columns=[
-                    {'name': col, 'id': col} for col in list(country.columns)
-                ],
-                data=country.to_dict('records'),
-                style_table={'overflow': 'auto'},
-                style_cell={'textAlign': 'left'},
+            dcc.Graph(
+                id='reactive-plot',
+                style={'width': '100%'}
             ),
+        ],
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+               'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px'}
+    ),
+    html.Div(children=[
+        dcc.Markdown('### Provider country plot:', style={'display': 'inline-block'}),
+        dcc.Graph(
+            id='country-plot',
+            style={'width': '100%'}
+        ),
+        dash_table.DataTable(
+            id='country-table',
+            columns=[
+                {'name': col, 'id': col} for col in list(country.columns)
             ],
-            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-                        'border-radius': '10px', 'width': '32.5%', 'float': 'right', 'marginTop': '5px',
-                        'marginLeft': '5px'}
+            data=country.to_dict('records'),
+            style_table={'overflow': 'auto'},
+            style_cell={'textAlign': 'left'},
+        ),
+        ],
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+                    'border-radius': '10px', 'width': '32.5%', 'float': 'right', 'marginTop': '5px',
+                    'marginLeft': '5px'}
+        ),
+    html.Div(children=[
+            dcc.Markdown('### Molecular data by Technology used:', style={'display': 'inline-block'}),
+            dcc.Graph(
+                id='library-strategy-plot',
+                style={'width': '100%'}
             ),
-        html.Div(
-            children=[
-                dcc.Markdown('### Molecular data by Technology used:', style={'display': 'inline-block'}),
-                dcc.Graph(
-                    id='library-strategy-plot',
-                    style={'width': '100%'}
-                ),
-            ],
-            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-                   'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
-        ),
-        html.Div(
-            children=[
-                dcc.Markdown('### Molecular data by model type:', style={'display': 'inline-block'}),
-                dcc.Graph(
-                    id='mol-model-type-plot',
-                    style={'width': '100%'}
-                ),
-            ],
-            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-                   'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
-        ),
+        ],
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+               'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
+    ),
+    html.Div(children=[
+            dcc.Markdown('### Molecular data by model type:', style={'display': 'inline-block'}),
+            dcc.Graph(
+                id='mol-model-type-plot',
+                style={'width': '100%'}
+            ),
+        ],
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
+               'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
+    ),
     ],
     style={'font-family': 'Merriweather', 'margin': 'auto', 'padding': '10px'}
 )
