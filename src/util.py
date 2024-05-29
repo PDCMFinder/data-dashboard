@@ -1,7 +1,7 @@
 import pandas as pd
 from pandas import DataFrame, read_csv, read_json, notna, concat
 from src.backend.pie_chart import get_model_type_donut, get_dto_radial, get_library_strategy_plot
-from src.backend.venn import get_dt_venn
+from src.backend.venn import get_dt_venn, get_venn_table
 from src.backend.scatter import get_scatter_plot
 from src.backend.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot
 from src.resources import input_file, total_models, labels
@@ -44,12 +44,15 @@ def custom_plots(selected_category, selected_plot):
             tm = read_csv(total_models[selected_category]).shape[0]
         fig = get_dto_radial(data_overview, int(tm))
         return fig
-    if selected_plot == 'dt_venn':
+    elif selected_plot == 'dt_venn':
         fig, table_data = get_dt_venn(data_overview)
         table_display = {'display': 'block', 'marginTop': '10px'}
         return fig, table_display, table_data.to_dict('records')
-    if selected_plot == "library_strategy":
+    elif selected_plot == "library_strategy":
         return get_library_strategy_plot(data_overview)
+    if selected_plot == 'table':
+        model = read_csv(total_models[selected_category])
+        return get_venn_table(data_overview, f"assets/exports/{selected_category}_mol_data_model_list.xlsx", model)
 
 def bar_chart():
     return get_bar_chart()
