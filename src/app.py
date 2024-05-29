@@ -82,7 +82,7 @@ app.layout = html.Div(children=[
                     style_table={'overflow': 'auto'},
                     style_cell={'textAlign': 'left'},
                 ),
-                html.Button("Download CSV", id="btn_csv"),
+                html.Button("Export to XLS", id="btn_csv"),
                 dcc.Download(id="download-dataframe-csv")
             ],
                 style={'marginTop': '10px'},
