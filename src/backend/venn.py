@@ -1,8 +1,6 @@
 from pandas import DataFrame, ExcelWriter
 from src.backend.venn_to_plotly import venn_to_plotly
 from dash.dcc import send_file
-import io
-import base64
 
 
 def get_dt_venn(filtered_data):
