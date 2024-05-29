@@ -22,7 +22,7 @@ def get_dt_venn(filtered_data):
 
 def get_venn_table(df, output, model):
     model['model_type'] = model['mt']
-    model['mt'] = f"https://www.cancermodels.org/data/models/{model['provider']}/{model['model_id']}"
+    model['mt'] = "https://www.cancermodels.org/data/models/"+model['provider']+"/"+model['model_id']
     filtered = df.fillna('').groupby('molecular_characterisation_type')['model_id'].apply(set).reset_index()
     data_type_sets = {}
     for i, row in filtered.iterrows():
@@ -48,7 +48,7 @@ def get_venn_table(df, output, model):
         # age, diagnosis, ethnicity, model type, sex, tumor type
         row_df.to_excel(writer, sheet_name=f'{row["index"]}', index=False)
     # Save the Excel file to the bytes buffer
-    writer.save()
+    writer.close()
     # Encode the bytes buffer to base64
     return send_file(output)
     #output.seek(0)
