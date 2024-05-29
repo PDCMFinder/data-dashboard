@@ -37,9 +37,10 @@ def get_venn_table(df, output, model):
     m_e_c_b = sorted(list(set(m_e_c).intersection(data_type_sets['biomarker'])))
     m_e_c_b_i = sorted(list(set(m_e_c_i).intersection(data_type_sets['biomarker'])))
     t_d = sorted(list(set(data_type_sets['treatment']).intersection(data_type_sets['drug'])))
+    m_e_c_t_d = sorted(list(set(m_e_c_t).intersection(t_d)))
 
-    cols = ['mut_exp_cna', 'mut_exp_cna_immune', 'mut_exp_cna_drug', 'mut_exp_cna_treatment', 'mut_exp_cna_bio', 'mut_exp_cna_bio_immune', 'treatment_drug_dosing']
-    out_df = DataFrame([[m_e_c, m_e_c_i, m_e_c_d, m_e_c_t, m_e_c_b, m_e_c_b_i, t_d]], columns=cols)
+    cols = ['mut_exp_cna', 'mut_exp_cna_immune', 'mut_exp_cna_drug', 'mut_exp_cna_treatment', 'mut_exp_cna_bio', 'mut_exp_cna_bio_immune', 'treatment_drug_dosing', 'mut_cna_exp_treatment_dosing']
+    out_df = DataFrame([[m_e_c, m_e_c_i, m_e_c_d, m_e_c_t, m_e_c_b, m_e_c_b_i, t_d, m_e_c_t_d]], columns=cols)
     #output = io.BytesIO()
     # Create an Excel writer object and write the DataFrame to it
     writer = ExcelWriter(output)
