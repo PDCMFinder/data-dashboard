@@ -1,8 +1,11 @@
 import dash
 from dash import html, dcc, dash_table
 from dash.dependencies import Input, Output
+from dash.exceptions import PreventUpdate
 from src.util import *
 from src.resources import labels, input_file, reactive_categories
+from io import BytesIO
+from base64 import b64decode
 
 app = dash.Dash(__name__)
 app.layout = html.Div(children=[
@@ -26,7 +29,9 @@ app.layout = html.Div(children=[
                             'backgroundColor': 'rgb(210, 210, 210)',
                             'color': 'black',
                             'fontWeight': 'bold'
-                        }
+                        },
+                    export_format='xlsx',
+                    export_headers='display',
                     ),
                 ], style={'width': '50%', 'float': 'right'}),
                 ]),
@@ -77,6 +82,8 @@ app.layout = html.Div(children=[
                     style_table={'overflow': 'auto'},
                     style_cell={'textAlign': 'left'},
                 ),
+                html.Button("Download CSV", id="btn_csv"),
+                dcc.Download(id="download-dataframe-csv")
             ],
                 style={'marginTop': '10px'},
                 id='table-container',
@@ -198,6 +205,19 @@ def update_model_type_plot(category):
 def update_selected_plot(selected_category):
     return custom_plots(selected_category, 'dt_venn')
 
+@app.callback(
+    Output("download-dataframe-csv", "data"),
+    [Input('dropdown-category', 'value'), Input("btn_csv", "n_clicks")],
+    prevent_initial_call=True,
+)
+def func(release, n_clicks):
+    if not n_clicks:
+        raise PreventUpdate
+    else:
+        return custom_plots(release, 'table')
+    #return dcc.send_data_frame(df.to_csv, "export_mol_data_overview.csv")
+
+
 
 @app.callback(
     Output('reactive-plot', 'figure'),
@@ -239,3 +259,5 @@ def country_plot(selected_category):
 )
 def molecular_model_type(selected_category):
     return molecular_model_type_plot(selected_category)
+
+
