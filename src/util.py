@@ -9,7 +9,7 @@ from requests import get
 
 data = DataFrame([[0, 0], [1, 1]], columns=['Type', 'Model'])
 country = DataFrame(columns=['country', 'provider'])
-summary = DataFrame(columns=['tag', 'date', "model_type_pdx", "model_type_cell_line", "model_type_organoid", "model_type_other", "model_type_total", "sample_type_xenograft", "sample_type_cell", "sample_type_patient", "sample_type_total", "molecular_data_biomarker", "molecular_data_cna", "molecular_data_expression", "molecular_data_immunemarker", "molecular_data_mut", "molecular_data_points_total"])
+summary = DataFrame(columns=['tag', 'date', "model_type_pdx", "model_type_cell_line", "model_type_organoid", "model_type_other", "model_type_total", "sample_type_xenograft", "sample_type_cell", "sample_type_patient", "sample_type_total", "molecular_data_biomarker", "molecular_data_cna", "molecular_data_expression", "molecular_data_immunemarker", "molecular_data_mut", "molecular_data_points_total", "drug_data_points", "treatment_data_points", "image_data_points"])
 
 def custom_plots(selected_category, selected_plot):
     file = input_file[selected_category]
