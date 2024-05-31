@@ -40,7 +40,10 @@ def get_model_type_donut(df):
     df = df.groupby('model_type').count()['provider']
     labels = df.index.tolist()
     values = df.values.tolist()
-    fig = Figure(data=[Pie(labels=labels, values=values, hole=0.4)])
+    color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
+    colors = [color_code[label] for label in labels]
+
+    fig = Figure(data=[Pie(labels=labels, values=values, hole=0.4, marker=dict(colors=colors))])
 
     return fig
 

@@ -30,7 +30,8 @@ def get_bar_chart():
     models = models.iloc[::-1]
     total = models.groupby('Release').sum()['Model Count'].to_dict()
     models['Total Models'] = [total[r] for r in models['Release']]
-    fig = bar(models, x='Release', y='Model Count', color='Model Type', hover_data=['Total Models'])
+    color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
+    fig = bar(models, x='Release', y='Model Count', color='Model Type', hover_data=['Total Models'], color_discrete_map=color_code)
     fig.update_layout(
         title=dict(text="Model Distribution per Data Release", yref='container')
     )
@@ -107,5 +108,8 @@ def get_molecular_model_type_plot(temp):
     data = temp.groupby(['molecular_characterisation_type', 'model_type']).size().reset_index(name='Count')
     total = data.groupby('molecular_characterisation_type').sum()['Count'].to_dict()
     data['Total'] = [total[r] for r in data['molecular_characterisation_type']]
-    fig = bar(data, x='molecular_characterisation_type', y='Count', color='model_type', hover_name='model_type', hover_data='Total')
+    color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
+
+    fig = bar(data, x='molecular_characterisation_type', y='Count', color='model_type', hover_name='model_type',
+              hover_data='Total', color_discrete_map=color_code)
     return fig
