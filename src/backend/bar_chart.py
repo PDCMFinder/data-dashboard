@@ -66,17 +66,18 @@ def get_reactive_bar_plot(data, column, gc):
             'Other' if str(t).lower().__contains__('other') or str(t).lower().__contains__('mixed') else t for t in
             data['model_type']]
     groupby_columns = [column]
+    color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
     if gc is not None and column != gc:
         groupby_columns.append(gc)
     data = data.groupby(groupby_columns).size().reset_index(name='Count')
     data = data[data[column] != "Not provided"]
     if gc is None or column == gc:
-        fig = bar(data, x=column, y='Count')
+        fig = bar(data, x=column, y='Count', color_discrete_map=color_code)
     else:
         data = data.sort_values(by=gc)
         total = data.groupby(column).sum()['Count'].to_dict()
         data['Total'] = [total[r] for r in data[column]]
-        fig = bar(data, x=column, y='Count', color=gc, hover_name=gc, hover_data='Total')
+        fig = bar(data, x=column, y='Count', color=gc, hover_name=gc, hover_data='Total', color_discrete_map=color_code)
         fig.update_layout(legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1))
         for trace in fig.data:
             trace.update(showlegend=False)
