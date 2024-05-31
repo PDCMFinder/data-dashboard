@@ -50,17 +50,17 @@ def get_model_type_donut(df):
 
 def get_dto_radial(filtered_data, tm):
     pie_chart = filtered_data.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
-        'molecular_characterisation_type').count().sort_index()['model_id']
+        'molecular_characterisation_type').count().sort_index()['model_id'].sort_values()
     colors_dict = {'mutation': '#ef553b', 'expression': '#636efa', 'copy number alteration': '#b6e880',
               'images': '#00cc96', 'drug': '#19d3f3', 'treatment': '#ff6692',
               'immunemarker': '#ffa15a', 'biomarker': '#ab63fa'}
 
     fig = Figure()
     radius = 0
-    for i, dt in enumerate(pie_chart.index, 1):
+    for i, dt in enumerate(pie_chart.index):
         theta = linspace(0, 360 * (pie_chart[dt]/tm), pie_chart[dt], endpoint=False)
         fig.add_trace(Scatterpolar(
-            r=arange(radius, pie_chart[dt], 0.1),
+            r=arange(radius, pie_chart[dt], 0.01),
             theta=theta,
             mode='lines',
             name=dt,
@@ -68,7 +68,7 @@ def get_dto_radial(filtered_data, tm):
             hovertemplate=f'models: {pie_chart[dt]}, percentage: {round(pie_chart[dt]/tm*100, 2)}',
             line_color=colors_dict[str(dt).lower()]
         ))
-        radius +=250
+        radius+=225
 
     fig.update_layout(
         polar=dict(
