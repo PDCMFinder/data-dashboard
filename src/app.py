@@ -3,7 +3,7 @@ from dash import html, dcc, dash_table
 from dash.dependencies import Input, Output
 from dash.exceptions import PreventUpdate
 from src.util import *
-from src.resources import labels, input_file, reactive_categories
+from src.resources import labels, reactive_categories
 from io import BytesIO
 from base64 import b64decode
 
@@ -42,8 +42,8 @@ app.layout = html.Div(children=[
         dcc.Dropdown(
             id='dropdown-category',
             options=[{'label': str(labels[category]).title(), 'value': category} for category in
-                     input_file.keys()],
-            value=list(input_file.keys())[0],
+                     labels.keys()],
+            value=list(labels.keys())[0],
             multi=False,
             style={'width': '50%', 'display': 'inline-block'}
         )], style={'width': '100%', 'display': 'inline-block'}),
@@ -73,15 +73,6 @@ app.layout = html.Div(children=[
                 id='venn-plot',
             ),
             html.Div([
-                dash_table.DataTable(
-                    id='table',
-                    columns=[
-                        {'name': col, 'id': col} for col in list(data.columns)
-                    ],
-                    data=data.to_dict('records'),
-                    style_table={'overflow': 'auto'},
-                    style_cell={'textAlign': 'left'},
-                ),
                 html.Button("Export to XLS", id="btn_csv"),
                 dcc.Download(id="download-dataframe-csv")
             ],
@@ -198,8 +189,6 @@ def update_model_type_plot(category):
 
 @app.callback(
     Output('venn-plot', 'figure'),
-    Output('table-container', 'style'),
-    Output('table', 'data'),
     [Input('dropdown-category', 'value')]
 )
 def update_selected_plot(selected_category):

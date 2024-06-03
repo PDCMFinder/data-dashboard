@@ -1,28 +1,20 @@
 from pandas import DataFrame, read_csv, concat, read_json
-from src.resources import total_models, labels, reactive_categories, primary_site_mapping, cancer_system, diagnosis_to_cancer
-
+from src.resources import labels, reactive_categories, primary_site_mapping, cancer_system, diagnosis_to_cancer
+from src.transform import read_input_file
 from plotly_express import bar
 
 
 def get_bar_chart():
     models = DataFrame()
-    for f in total_models.keys():
-        file = total_models[f]
+    for f in labels.keys():
         if f != 'latest':
-            model = read_csv(file, usecols=['model_id', 'provider', 'model_type']).drop_duplicates()
+            model = read_input_file(f"assets/model/total_models_{f.replace('_', '_v')}.csv", ['model_id', 'provider', 'model_type']).drop_duplicates()
         else:
             mapper = {'data_source': 'provider', 'type': 'model_type', 'pubmed_ids': 'publications',
                       'patient_age': 'age_in_years_at_collection', 'histology': 'diagnosis', 'patient_sex': 'sex',
                       'patient_ethnicity': 'ethnicity'}
-            model = read_json(file).rename(columns=mapper)
-        model['model_type'] = ['Organoid' if str(t).lower().__contains__('organoid') else t for t in
-                               model['model_type']]
-        model['model_type'] = [
-            'Cell Line' if str(t).lower().__contains__('cell') or str(t).lower().__contains__('pdc') or str(
-                t).lower().__contains__('2d') or str(t).lower().__contains__('2-d') else t for t in model['model_type']]
-        model['model_type'] = [
-            'Other' if str(t).lower().__contains__('other') or str(t).lower().__contains__('mixed') else t for t in
-            model['model_type']]
+            url = ''
+            model = read_json(url).rename(columns=mapper)
         model = model.groupby('model_type').count()['model_id']
         model = DataFrame(zip(model.index.tolist(), model.values.tolist()), columns=['Model Type', 'Model Count'])
         model['Release'] = labels[f]
@@ -39,32 +31,13 @@ def get_bar_chart():
 
 
 def get_reactive_bar_plot(data, column, gc):
-    if column == 'diagnosis' or (gc is not None and gc == 'diagnosis'):
-        data['diagnosis'] = [diagnosis_to_cancer[d].title() if d in diagnosis_to_cancer else 'Not provided' for d in data['diagnosis'].str.lower()]
-    if column == 'primary_site' or (gc is not None and gc == 'primary_site'):
-        data['primary_site'] = data['primary_site'].str.title()#[primary_site_mapping[str(ps)] if str(ps) in primary_site_mapping.keys() else 'Not provided' for ps in data['primary_site'].str.title()]
-    if column == 'tumour_type' or (gc is not None and gc == 'tumour_type'):
-        #primary metastatic recurrent refractory pre-malignant
-        data['tumour_type'] = [t.replace('Not Collected', 'Not provided').replace('Not Provided', 'Not provided') for t in data['tumour_type'].str.title()]
     if column == 'publications' or (gc is not None and gc == 'publications'):
         data['publications'] = data['publications'].fillna('No')
         data['publications'] = ['Yes' if str(p).__contains__('PMID') else 'No' for p in data['publications']]
     if column == 'age_in_years_at_collection' or (gc is not None and gc == 'age_in_years_at_collection'):
-        data['age_in_years_at_collection'] = data['age_in_years_at_collection'].str.replace('--', 'Not provided')
         data['age_in_years_at_collection'] = [
             'Younger than 21' if not str(a).lower().__contains__('not') and float(a) < 21 else 'Not provided' if str(
                 a).lower().__contains__('not') else 'Older than 21' for a in data['age_in_years_at_collection']]
-    if column == 'sex' or column == 'ethnicity' or (gc is not None and gc == 'sex') or (gc is not None and gc == 'ethnicity'):
-        data['sex'] = data['sex'].str.title().replace('Not Provided', 'Not provided').replace('Not Collected', 'Not provided')
-        data['ethnicity'] = data['ethnicity'].str.title().replace('Not Provided', 'Not provided').replace('Not Collected', 'Not provided')
-    if column == 'model_type' or (gc is not None and gc == 'model_type'):
-        data['model_type'] = ['Organoid' if str(t).lower().__contains__('organoid') else t for t in data['model_type']]
-        data['model_type'] = [
-            'Cell Line' if str(t).lower().__contains__('cell') or str(t).lower().__contains__('pdc') or str(
-                t).lower().__contains__('2d') or str(t).lower().__contains__('2-d') else t for t in data['model_type']]
-        data['model_type'] = [
-            'Other' if str(t).lower().__contains__('other') or str(t).lower().__contains__('mixed') else t for t in
-            data['model_type']]
     groupby_columns = [column]
     color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
     if gc is not None and column != gc:

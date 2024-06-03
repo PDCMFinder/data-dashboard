@@ -8,21 +8,12 @@ def get_dt_venn(filtered_data):
     set1, set2, set3 = process_sets(filtered_data['mutation']), process_sets(filtered_data['expression']), process_sets(filtered_data['copy number alteration'])
     labels = ['mutation', 'expression', 'copy number alteration']
     fig = venn_to_plotly([set1, set2, set3], labels)
-    intersection = sorted(list(set1 & set2 & set3))
-    set1_and_set2 = sorted(list(set1 & set2))
-    set1_and_set3 = sorted(list(set1 & set3))
-    set2_and_set3 = sorted(list(set2 & set3))
-    operations = ['All three (Intersection)', 'Mutation and Expression', 'Mutation and Copy Number Alteration', 'Expression and Copy Number Alteration']
-    values = [intersection, set1_and_set2, set1_and_set3, set2_and_set3]
-    venn_df = DataFrame({'Type': operations, 'Model': [str(v) for v in values]})
     fig.update_layout(
         title=dict(text="Model data type overlaps", automargin=True, yref='paper')
     )
-    return fig, venn_df
+    return fig
 
 def get_venn_table(df, output, model):
-    model['model_type'] = model['mt']
-    model.drop(['mt'], axis=1, inplace=True)
     model['links'] = "https://www.cancermodels.org/data/models/"+model['provider']+"/"+model['model_id']
     cancer_system = read_json("https://www.cancermodels.org/api/search_index?select=external_model_id,cancer_system")
     model = model.merge(cancer_system, left_on='model_id', right_on='external_model_id', how='left')
