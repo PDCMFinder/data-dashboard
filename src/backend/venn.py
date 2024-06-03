@@ -57,7 +57,7 @@ def get_dt_venn4(df):
         data_dict['copy number alteration'])
     data_dict['mutation_expression_cna'] = sorted(list(set1 & set2 & set3))
     data_subset_dict = dict(
-        (k, process_sets(data_dict[k])) for k in ('mutation, expression, cna', 'drug', 'treatment', 'immunemarker'))
+        (k, process_sets(data_dict[k])) for k in ('mutation_expression_cna', 'drug', 'treatment', 'immunemarker'))
     plt.figure(figsize=(15, 15))
     buf = io.BytesIO()
     venn(data_subset_dict, fontsize=12, legend_loc="upper left")
