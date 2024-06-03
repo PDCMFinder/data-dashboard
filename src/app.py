@@ -72,6 +72,27 @@ app.layout = html.Div(children=[
             dcc.Graph(
                 id='venn-plot',
             ),
+            dcc.Graph(
+                id='venn-plot-venn4',
+figure={
+            'data': [],
+            'layout': {
+                'images': [{
+                    'source': None,
+                    'xref': 'paper',
+                    'yref': 'paper',
+                    'x': 0.5,
+                    'y': 0.5,
+                    'sizex': 1,
+                    'sizey': 1,
+                    'xanchor': 'center',
+                    'yanchor': 'middle'
+                }],
+                'xaxis': {'visible': False},
+                'yaxis': {'visible': False}
+            }
+        }
+            ),
             html.Div([
                 html.Button("Export to XLS", id="btn_csv"),
                 dcc.Download(id="download-dataframe-csv")
@@ -193,6 +214,14 @@ def update_model_type_plot(category):
 )
 def update_selected_plot(selected_category):
     return custom_plots(selected_category, 'dt_venn')
+
+@app.callback(
+    Output('venn-plot-venn4', 'figure'),
+    [Input('dropdown-category', 'value')]
+)
+def update_selected_plot(selected_category):
+    return custom_plots(selected_category, 'dt_venn_v4')
+
 
 @app.callback(
     Output("download-dataframe-csv", "data"),

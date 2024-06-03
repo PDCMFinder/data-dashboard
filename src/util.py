@@ -1,7 +1,7 @@
 import pandas as pd
 from pandas import DataFrame, read_csv, read_json, notna, concat
 from src.backend.pie_chart import get_model_type_donut, get_dto_radial, get_library_strategy_plot
-from src.backend.venn import get_dt_venn, get_venn_table
+from src.backend.venn import get_dt_venn, get_dt_venn4, get_venn_table
 from src.backend.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot
 from src.resources import labels
 from src.transform import read_input_file
@@ -47,6 +47,8 @@ def custom_plots(release, selected_plot):
         return fig
     elif selected_plot == 'dt_venn':
         return get_dt_venn(data_overview)
+    elif selected_plot == 'dt_venn_v4':
+        return get_dt_venn4(data_overview)
     elif selected_plot == "library_strategy":
         return get_library_strategy_plot(data_overview)
     if selected_plot == 'table':

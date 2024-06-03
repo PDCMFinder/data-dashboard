@@ -8,3 +8,4 @@ matplotlib_venn
 scipy
 plotly_express
 openpyxl
+venn

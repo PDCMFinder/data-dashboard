@@ -1,7 +1,11 @@
 from pandas import DataFrame, ExcelWriter, read_json
 from src.backend.venn_to_plotly import venn_to_plotly
 from dash.dcc import send_file
-
+from venn import venn
+import io
+import matplotlib.pyplot as plt
+from PIL import Image
+import base64
 
 def get_dt_venn(filtered_data):
     filtered_data = filtered_data.fillna('').groupby('molecular_characterisation_type')['model_id'].apply(set)
@@ -46,16 +50,40 @@ def get_venn_table(df, output, model):
     writer.close()
     # Encode the bytes buffer to base64
     return send_file(output)
-    #output.seek(0)
-    #return base64.b64encode(output.read()).decode('utf-8')
 
-        #print(i)
-        #row['molecular_characterisation_type']
-        #row['model_id']
-
-        #provider = [df[df['model_id'] == m].reset_index(drop=True)['provider'][0] for m in row['model_id']]
-    #return out_df
-
+def get_dt_venn4(df):
+    data_dict = df.groupby('molecular_characterisation_type')['model_id'].apply(set).to_dict()
+    set1, set2, set3 = process_sets(data_dict['mutation']), process_sets(data_dict['expression']), process_sets(
+        data_dict['copy number alteration'])
+    data_dict['mutation_expression_cna'] = sorted(list(set1 & set2 & set3))
+    data_subset_dict = dict(
+        (k, process_sets(data_dict[k])) for k in ('mutation, expression, cna', 'drug', 'treatment', 'immunemarker'))
+    plt.figure(figsize=(15, 15))
+    buf = io.BytesIO()
+    venn(data_subset_dict, fontsize=12, legend_loc="upper left")
+    plt.savefig(buf, format="png")
+    plt.close()
+    buf.seek(0)
+    img_base64 = base64.b64encode(buf.getvalue()).decode('utf-8')
+    buf.close()
+    return {
+        'data': [],
+        'layout': {
+            'images': [{
+                'source': "data:image/png;base64,{}".format(img_base64),
+                'xref': 'paper',
+                'yref': 'paper',
+                'x': 0.5,
+                'y': 0.5,
+                'sizex': 1.5,
+                'sizey': 1.5,
+                'xanchor': 'center',
+                'yanchor': 'middle'
+            }],
+            'xaxis': {'visible': False},
+            'yaxis': {'visible': False}
+        }
+    }
 
 def process_sets(s):
     s = set(s)
