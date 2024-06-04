@@ -32,7 +32,7 @@ def venn_to_plotly(L_sets, L_labels=None, title=None):
 
     # Define color list for sets
     # check for other colors: https://css-tricks.com/snippets/css/named-colors-and-hex-equivalents/
-    L_color = ['#b6e880', '#636efa', '#ffa15a']
+    L_color = ['#f0553b', '#636efa', '#b6e880']
 
     # Create empty list to make hold of min and max values of set shapes
     L_x_max = []

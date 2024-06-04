@@ -35,11 +35,12 @@ def get_reactive_bar_plot(data, column, gc):
     if gc is None or column == gc:
         fig = bar(data, x=column, y='Count', color_discrete_map=color_code)
     else:
-        data = data.sort_values(by=gc)
         total = data.groupby(column).sum()['Count'].to_dict()
         data['Total'] = [total[r] for r in data[column]]
         fig = bar(data, x=column, y='Count', color=gc, hover_name=gc, hover_data='Total', color_discrete_map=color_code)
         fig.update_layout(legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1))
+        fig.update_layout(barmode='stack', xaxis={'categoryorder': 'category ascending'})
+
         for trace in fig.data:
             trace.update(showlegend=False)
     if len(data[column]) > 15:

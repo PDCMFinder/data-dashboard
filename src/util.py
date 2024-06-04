@@ -102,7 +102,7 @@ def reactive_bar_plot(release, category, gc, plot_type):
     groupby_columns = [category]
     if gc is not None and category != gc:
         groupby_columns.append(gc)
-    data = data.groupby(groupby_columns).size().reset_index(name='Count')
+    data = data.groupby(groupby_columns).size().reset_index(name='Count').sort_values(by=category)
     data = data[data[category] != "Not provided"]
     if plot_type == 'table':
         return data

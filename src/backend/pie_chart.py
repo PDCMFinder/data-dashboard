@@ -2,6 +2,7 @@ from pandas import DataFrame
 from plotly.graph_objects import Pie, Scatterpolar, Figure, Layout
 from plotly.subplots import make_subplots
 from numpy import linspace, concatenate, pi, arange
+from matplotlib.cm import get_cmap
 
 def get_dto_donut(filtered_data, tm):
     pie_chart = filtered_data.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
@@ -76,13 +77,18 @@ def get_dto_radial(filtered_data, tm):
 
 
 def get_library_strategy_plot(df):
+    df['library_strategy'] = df['library_strategy'].str.replace('Not Provided', 'Not provided').str.replace('Immunohistochemistry', 'IHC').str.replace('immunohistochemistry', 'IHC').str.replace('Tumor mutation burden', 'Tumor Mutation Burden')
     df = df.groupby(['molecular_characterisation_type', 'library_strategy']).count()['model_id']
     molecular_characterisation_type = ['mutation', 'expression', 'copy number alteration']
     fig = make_subplots(rows=1, cols=3, specs=[[{"type": "pie"}] * 3])
     col = 1
+    color_map = {"WES": "#636EFA", "WGS": "#EF553B",
+                 "Targeted": "#00CC96", "RNA-Seq": "#AB63FA",
+                 "Microarray": "#FFA15A", "Not provided": "#19D3F3"}
     for mct in molecular_characterisation_type:
         labels = df[mct].index.tolist()
         values = df[mct].values.tolist()
-        fig.add_trace(Pie(labels=labels, values=values, name=mct.title()), row=1, col=col)
+        cmap = [color_map[l] for l in labels]
+        fig.add_trace(Pie(labels=labels, values=values, name=mct.title(), marker=dict(colors=cmap)), row=1, col=col)
         col += 1
     return fig
