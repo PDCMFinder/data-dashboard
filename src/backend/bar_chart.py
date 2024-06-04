@@ -31,19 +31,7 @@ def get_bar_chart():
 
 
 def get_reactive_bar_plot(data, column, gc):
-    if column == 'publications' or (gc is not None and gc == 'publications'):
-        data['publications'] = data['publications'].fillna('No')
-        data['publications'] = ['Yes' if str(p).__contains__('PMID') else 'No' for p in data['publications']]
-    if column == 'age_in_years_at_collection' or (gc is not None and gc == 'age_in_years_at_collection'):
-        data['age_in_years_at_collection'] = [
-            'Younger than 21' if not str(a).lower().__contains__('not') and float(a) < 21 else 'Not provided' if str(
-                a).lower().__contains__('not') else 'Older than 21' for a in data['age_in_years_at_collection']]
-    groupby_columns = [column]
     color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
-    if gc is not None and column != gc:
-        groupby_columns.append(gc)
-    data = data.groupby(groupby_columns).size().reset_index(name='Count')
-    data = data[data[column] != "Not provided"]
     if gc is None or column == gc:
         fig = bar(data, x=column, y='Count', color_discrete_map=color_code)
     else:
@@ -78,10 +66,7 @@ def get_country_bar_plot(df):
     return fig
 
 
-def get_molecular_model_type_plot(temp):
-    data = temp.groupby(['molecular_characterisation_type', 'model_type']).size().reset_index(name='Count')
-    total = data.groupby('molecular_characterisation_type').sum()['Count'].to_dict()
-    data['Total'] = [total[r] for r in data['molecular_characterisation_type']]
+def get_molecular_model_type_plot(data):
     color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
 
     fig = bar(data, x='molecular_characterisation_type', y='Count', color='model_type', hover_name='model_type',

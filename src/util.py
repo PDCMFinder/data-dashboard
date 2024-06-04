@@ -34,7 +34,7 @@ def custom_plots(release, selected_plot):
         data_overview['molecular_characterisation_type'] = data_overview['molecular_characterisation_type'].str.replace('bio markers', 'biomarker')
     else:
         data_overview = read_input_file(f"assets/sample/{release.replace('_', '_v')}.csv")
-    if selected_plot == 'dto_donut':
+    if selected_plot.__contains__('dto_donut'):
         if release == 'latest':
             url = 'https://www.cancermodels.org/api/model_metadata?select=model_id,data_source,type,pubmed_ids,patient_age,histology,tumor_type,primary_site,patient_sex,patient_ethnicity'
             mapper = {'data_source': 'provider', 'type': 'model_type', 'pubmed_ids': 'publications',
@@ -43,13 +43,23 @@ def custom_plots(release, selected_plot):
             tm = read_json(url).rename(columns=mapper).shape[0]
         else:
             tm = read_input_file(f"assets/model/total_models_{release.replace('_', '_v')}.csv", ['model_id']).shape[0]
+        if selected_plot.__contains__('table'):
+            return data_overview.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
+        'molecular_characterisation_type').count().sort_index()['model_id'].sort_values().reset_index()
         fig = get_dto_radial(data_overview, int(tm))
         return fig
     elif selected_plot == 'dt_venn':
         return get_dt_venn(data_overview)
     elif selected_plot == 'dt_venn_v4':
         return get_dt_venn4(data_overview)
-    elif selected_plot == "library_strategy":
+    elif selected_plot.__contains__("library_strategy"):
+        data_overview['library_strategy'] = data_overview['library_strategy'].fillna('Not Provided').astype(str).str.replace('mRNA NGS',
+                                                                                                       'RNA-Seq').replace(
+            'WXS', 'WES').replace('microarray', 'Microarray')
+        data_overview['library_strategy'] = ['Targeted' if str(t).lower().__contains__('target') else t for t in
+                                  data_overview['library_strategy']]
+        if selected_plot.__contains__('table'):
+            return data_overview.groupby(['molecular_characterisation_type', 'library_strategy']).count()['model_id'].reset_index()
         return get_library_strategy_plot(data_overview)
     if selected_plot == 'table':
         model = read_input_file(f"assets/model/total_models_{release.replace('_', '_v')}.csv")
@@ -58,7 +68,7 @@ def custom_plots(release, selected_plot):
 def bar_chart():
     return get_bar_chart()
 
-def model_type_pie(release):
+def model_type_pie(release, type):
     if release == 'latest':
         url = 'https://www.cancermodels.org/api/model_metadata?select=model_id,data_source,type,pubmed_ids,patient_age,histology,tumor_type,primary_site,patient_sex,patient_ethnicity'
         mapper = {'data_source': 'provider', 'type': 'model_type', 'pubmed_ids': 'publications',
@@ -67,9 +77,12 @@ def model_type_pie(release):
         data = read_json(url).rename(columns=mapper)
     else:
         data = read_input_file(f"assets/model/total_models_{release.replace('_', '_v')}.csv", ['model_id', 'provider', 'model_type'])
-    return get_model_type_donut(data.drop_duplicates(['model_id']))
+    if type == 'plot':
+        return get_model_type_donut(data.drop_duplicates(['model_id']))
+    else:
+        return data.drop_duplicates(['model_id']).groupby('model_type').count()['provider'].reset_index()
 
-def reactive_bar_plot(release, category, gc):
+def reactive_bar_plot(release, category, gc, plot_type):
     if release == 'latest':
         url = 'https://www.cancermodels.org/api/model_metadata?select=model_id,data_source,type,pubmed_ids,patient_age,histology,tumor_type,primary_site,patient_sex,patient_ethnicity'
         mapper = {'data_source': 'provider', 'type': 'model_type', 'pubmed_ids': 'publications',
@@ -78,6 +91,21 @@ def reactive_bar_plot(release, category, gc):
         data = read_json(url).rename(columns=mapper)
     else:
         data = read_input_file(f"assets/model/total_models_{release.replace('_', '_v')}.csv")
+        if category == 'publications' or (gc is not None and gc == 'publications'):
+            data['publications'] = data['publications'].fillna('No')
+            data['publications'] = ['Yes' if str(p).__contains__('PMID') else 'No' for p in data['publications']]
+        if category == 'age_in_years_at_collection' or (gc is not None and gc == 'age_in_years_at_collection'):
+            data['age_in_years_at_collection'] = [
+                'Younger than 21' if not str(a).lower().__contains__('not') and float(
+                    a) < 21 else 'Not provided' if str(
+                    a).lower().__contains__('not') else 'Older than 21' for a in data['age_in_years_at_collection']]
+    groupby_columns = [category]
+    if gc is not None and category != gc:
+        groupby_columns.append(gc)
+    data = data.groupby(groupby_columns).size().reset_index(name='Count')
+    data = data[data[category] != "Not provided"]
+    if plot_type == 'table':
+        return data
     return get_reactive_bar_plot(data, category, gc)
 
 def process_values(value):
@@ -110,16 +138,23 @@ def generate_summary_stats():
     return table.to_dict('records')
 
 
-def generate_country_plot(release):
+def generate_country_plot(release, plot_type):
     file_name = f"assets/country/provider_country_{release.replace('DR_', 'DR_v')}.csv"
     table = read_input_file(file_name).rename({'0':'release', '1':'provider', '2':'country'}, axis=1)[['country', 'provider']]
     df = table.groupby('country')['provider'].apply(list).reset_index(name='provider')
     df['provider'] = df['provider'].astype(str)
+    if plot_type == 'table':
+        return table.groupby('country').count()['provider'].reset_index()
     return get_country_bar_plot(table), df.to_dict('records')
 
-def molecular_model_type_plot(release):
+def molecular_model_type_plot(release, plot_type):
     df_2 = read_input_file(f"assets/sample/{release.replace('_', '_v')}.csv")
     df = read_input_file(f"assets/model/total_models_{release.replace('_', '_v')}.csv", ['model_id', 'model_type'])
     temp = df_2.drop_duplicates(['molecular_characterisation_type', 'model_id'])[['model_id', 'molecular_characterisation_type']].merge(df,
                                                                          on='model_id', how='left')
-    return get_molecular_model_type_plot(temp)
+    data = temp.groupby(['molecular_characterisation_type', 'model_type']).size().reset_index(name='Count')
+    total = data.groupby('molecular_characterisation_type').sum()['Count'].to_dict()
+    data['Total'] = [total[r] for r in data['molecular_characterisation_type']]
+    if plot_type == 'table':
+        return data
+    return get_molecular_model_type_plot(data)

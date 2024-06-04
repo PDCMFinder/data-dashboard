@@ -53,6 +53,10 @@ app.layout = html.Div(children=[
             id='model-type-plot',
             style={'width': '100%', 'marginTop': 20}
         ),
+        html.Div([
+                html.Button("Export to CSV", id="btn_csv_mto"),
+                dcc.Download(id="download-dataframe-csv-mto")
+            ]),
         ],
         style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
                'border-radius': '10px', 'width': '32%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
@@ -63,6 +67,10 @@ app.layout = html.Div(children=[
                 id='dto-pie-plot',
                 style={'width': '100%', 'marginTop': 20}
             ),
+            html.Div([
+                html.Button("Export to CSV", id="btn_csv_dto"),
+                dcc.Download(id="download-dataframe-csv-dto")
+            ]),
         ],
         style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
                'border-radius': '10px', 'width': '32%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '5px'}
@@ -74,23 +82,23 @@ app.layout = html.Div(children=[
             ),
             dcc.Graph(
                 id='venn-plot-venn4',
-figure={
-            'data': [],
-            'layout': {
-                'images': [{
-                    'source': None,
-                    'xref': 'paper',
-                    'yref': 'paper',
-                    'x': 0.5,
-                    'y': 0.5,
-                    'sizex': 1,
-                    'sizey': 1,
-                    'xanchor': 'center',
-                    'yanchor': 'middle'
-                }],
-                'xaxis': {'visible': False},
-                'yaxis': {'visible': False}
-            }
+            figure={
+                'data': [],
+                'layout': {
+                    'images': [{
+                        'source': None,
+                        'xref': 'paper',
+                        'yref': 'paper',
+                        'x': 0.5,
+                        'y': 0.5,
+                        'sizex': 1,
+                        'sizey': 1,
+                        'xanchor': 'center',
+                        'yanchor': 'middle'
+                    }],
+                    'xaxis': {'visible': False},
+                    'yaxis': {'visible': False}
+                }
         }
             ),
             html.Div([
@@ -126,6 +134,10 @@ figure={
                         multi=False,
                         style={'width': '40%', 'display': 'inline-block', 'margin-left': '5px'}
                     ),
+                    html.Div([
+                        html.Button("Export to CSV", id="btn_csv_model_counts"),
+                        dcc.Download(id="download-dataframe-csv-model_counts")
+                    ]),
                 ],
                 style={'width': '100%'}
             ),
@@ -139,6 +151,11 @@ figure={
     ),
     html.Div(children=[
         dcc.Markdown('### Provider country plot:', style={'display': 'inline-block'}),
+        html.Div([
+            html.Button("Export to CSV", id="btn_csv_country"),
+            dcc.Download(id="download-dataframe-csv-country")
+        ]),
+
         dcc.Graph(
             id='country-plot',
             style={'width': '100%'}
@@ -151,6 +168,8 @@ figure={
             data=country.to_dict('records'),
             style_table={'overflow': 'auto'},
             style_cell={'textAlign': 'left'},
+            export_format='csv',
+            export_headers='display',
         ),
         ],
         style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
@@ -163,7 +182,11 @@ figure={
                 id='library-strategy-plot',
                 style={'width': '100%'}
             ),
-        ],
+            html.Div([
+                html.Button("Export to CSV", id="btn_csv_lsp"),
+                dcc.Download(id="download-dataframe-csv-lsp")
+            ]),
+    ],
         style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
                'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
     ),
@@ -173,6 +196,10 @@ figure={
                 id='mol-model-type-plot',
                 style={'width': '100%'}
             ),
+            html.Div([
+                html.Button("Export to CSV", id="btn_csv_mmtp"),
+                dcc.Download(id="download-dataframe-csv-mmtp")
+            ]),
         ],
         style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
                'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
@@ -197,7 +224,7 @@ def update_pie_plot(category):
 
 
 def update_library_strategy_plot(category):
-    return custom_plots(category, 'library_strategy')
+    return custom_plots(category, 'library_strategy_plot')
 
 
 @app.callback(
@@ -205,7 +232,7 @@ def update_library_strategy_plot(category):
     [Input('dropdown-category', 'value')]
 )
 def update_model_type_plot(category):
-    return model_type_pie(category)
+    return model_type_pie(category, 'plot')
 
 
 @app.callback(
@@ -224,26 +251,12 @@ def update_selected_plot(selected_category):
 
 
 @app.callback(
-    Output("download-dataframe-csv", "data"),
-    [Input('dropdown-category', 'value'), Input("btn_csv", "n_clicks")],
-    prevent_initial_call=True,
-)
-def func(release, n_clicks):
-    if not n_clicks:
-        raise PreventUpdate
-    else:
-        return custom_plots(release, 'table')
-    #return dcc.send_data_frame(df.to_csv, "export_mol_data_overview.csv")
-
-
-
-@app.callback(
     Output('reactive-plot', 'figure'),
     [Input('dropdown-category', 'value'), Input('reactive-category', 'value'),
      Input('reactive-groupby-category', 'value')]
 )
 def update_reactive_plot(release, category, group_cat):
-    return reactive_bar_plot(release, category, group_cat)
+    return reactive_bar_plot(release, category, group_cat, 'plot')
 
 
 @app.callback(
@@ -268,7 +281,7 @@ def update_summary_stats(category):
     [Input('dropdown-category', 'value')]
 )
 def country_plot(selected_category):
-    return generate_country_plot(selected_category)
+    return generate_country_plot(selected_category, 'plot')
 
 
 @app.callback(
@@ -276,6 +289,89 @@ def country_plot(selected_category):
     [Input('dropdown-category', 'value')]
 )
 def molecular_model_type(selected_category):
-    return molecular_model_type_plot(selected_category)
+    return molecular_model_type_plot(selected_category, 'plot')
 
 
+## Exports
+@app.callback(
+    Output("download-dataframe-csv", "data"),
+    [Input('dropdown-category', 'value'), Input("btn_csv", "n_clicks")],
+    prevent_initial_call=True,
+)
+def func(release, n_clicks):
+    if not n_clicks:
+        raise PreventUpdate
+    else:
+        return custom_plots(release, 'table')
+
+@app.callback(
+    Output("download-dataframe-csv-mto", "data"),
+    [Input('dropdown-category', 'value'), Input("btn_csv_mto", "n_clicks")],
+    prevent_initial_call=True,
+)
+def func(release, n_clicks):
+    if not n_clicks:
+        raise PreventUpdate
+    else:
+        return dcc.send_data_frame(model_type_pie(release, 'table').to_csv, f'{release}_mto_table.csv', index=False)
+
+
+@app.callback(
+    Output("download-dataframe-csv-dto", "data"),
+    [Input('dropdown-category', 'value'), Input("btn_csv_dto", "n_clicks")],
+    prevent_initial_call=True,
+)
+def func(release, n_clicks):
+    if not n_clicks:
+        raise PreventUpdate
+    else:
+        return dcc.send_data_frame(custom_plots(release, 'dto_donut_table').to_csv, f'{release}_dto_table.csv', index=False)
+
+
+@app.callback(
+    Output("download-dataframe-csv-model_counts", "data"),
+    [Input('dropdown-category', 'value'),
+     Input('reactive-category', 'value'),
+     Input('reactive-groupby-category', 'value'),
+     Input("btn_csv_model_counts", "n_clicks")],
+    prevent_initial_call=True,
+)
+def func(release, category, group_cat, n_clicks):
+    if not n_clicks:
+        raise PreventUpdate
+    else:
+        return dcc.send_data_frame(reactive_bar_plot(release, category, group_cat, 'table').to_csv, f'{release}_model_counts_table.csv', index=False)
+
+
+@app.callback(
+    Output("download-dataframe-csv-country", "data"),
+    [Input('dropdown-category', 'value'), Input("btn_csv_country", "n_clicks")],
+    prevent_initial_call=True,
+)
+def func(release, n_clicks):
+    if not n_clicks:
+        raise PreventUpdate
+    else:
+        return dcc.send_data_frame(generate_country_plot(release, 'table').to_csv, f'{release}_country_table.csv', index=False)
+
+@app.callback(
+    Output("download-dataframe-csv-lsp", "data"),
+    [Input('dropdown-category', 'value'), Input("btn_csv_lsp", "n_clicks")],
+    prevent_initial_call=True,
+)
+def func(release, n_clicks):
+    if not n_clicks:
+        raise PreventUpdate
+    else:
+        return dcc.send_data_frame(custom_plots(release, 'library_strategy_table').to_csv, f'{release}_library_table.csv', index=False)
+
+@app.callback(
+    Output("download-dataframe-csv-mmtp", "data"),
+    [Input('dropdown-category', 'value'), Input("btn_csv_mmtp", "n_clicks")],
+    prevent_initial_call=True,
+)
+def func(release, n_clicks):
+    if not n_clicks:
+        raise PreventUpdate
+    else:
+        return dcc.send_data_frame(molecular_model_type_plot(release, 'table').to_csv, f'{release}_molecular_model_type_table.csv', index=False)

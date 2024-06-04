@@ -58,9 +58,9 @@ def get_dt_venn4(df):
     data_dict['mutation_expression_cna'] = sorted(list(set1 & set2 & set3))
     data_subset_dict = dict(
         (k, process_sets(data_dict[k])) for k in ('mutation_expression_cna', 'drug', 'treatment', 'immunemarker'))
-    plt.figure(figsize=(15, 15))
+    plt.figure(figsize=(20, 20))
     buf = io.BytesIO()
-    venn(data_subset_dict, fontsize=12, legend_loc="upper left")
+    venn(data_subset_dict, fontsize=15, legend_loc="upper left")
     plt.savefig(buf, format="png")
     plt.close()
     buf.seek(0)
@@ -75,8 +75,8 @@ def get_dt_venn4(df):
                 'yref': 'paper',
                 'x': 0.5,
                 'y': 0.5,
-                'sizex': 1.5,
-                'sizey': 1.5,
+                'sizex': 1.8,
+                'sizey': 1.8,
                 'xanchor': 'center',
                 'yanchor': 'middle'
             }],

@@ -76,9 +76,6 @@ def get_dto_radial(filtered_data, tm):
 
 
 def get_library_strategy_plot(df):
-    df['library_strategy'] = df['library_strategy'].fillna('Not Provided').astype(str).str.replace('mRNA NGS', 'RNA-Seq').replace('WXS', 'WES').replace('microarray', 'Microarray')
-    df['library_strategy'] = ['Targeted' if str(t).lower().__contains__('target') else t for t in df['library_strategy']]
-
     df = df.groupby(['molecular_characterisation_type', 'library_strategy']).count()['model_id']
     molecular_characterisation_type = ['mutation', 'expression', 'copy number alteration']
     fig = make_subplots(rows=1, cols=3, specs=[[{"type": "pie"}] * 3])
