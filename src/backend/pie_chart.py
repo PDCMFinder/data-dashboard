@@ -2,7 +2,6 @@ from pandas import DataFrame
 from plotly.graph_objects import Pie, Scatterpolar, Figure, Layout
 from plotly.subplots import make_subplots
 from numpy import linspace, concatenate, pi, arange
-from matplotlib.cm import get_cmap
 
 def get_dto_donut(filtered_data, tm):
     pie_chart = filtered_data.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
