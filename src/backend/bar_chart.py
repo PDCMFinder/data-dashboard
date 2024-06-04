@@ -64,6 +64,7 @@ def get_key_from_value(dictionary, target_value):
 
 def get_country_bar_plot(df):
     fig = bar(df.groupby('country').count()['provider'].reset_index(), x='country', y='provider')
+    fig.update_layout(barmode='stack', xaxis={'categoryorder': 'category ascending'})
     return fig
 
 
@@ -72,4 +73,5 @@ def get_molecular_model_type_plot(data):
 
     fig = bar(data, x='molecular_characterisation_type', y='Count', color='model_type', hover_name='model_type',
               hover_data='Total', color_discrete_map=color_code)
+    fig.update_layout(barmode='stack', xaxis={'categoryorder': 'category ascending'})
     return fig

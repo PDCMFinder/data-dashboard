@@ -2,6 +2,7 @@ from pandas import DataFrame
 from plotly.graph_objects import Pie, Scatterpolar, Figure, Layout
 from plotly.subplots import make_subplots
 from numpy import linspace, concatenate, pi, arange
+from plotly.express.colors import qualitative
 
 def get_dto_donut(filtered_data, tm):
     pie_chart = filtered_data.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
@@ -76,14 +77,23 @@ def get_dto_radial(filtered_data, tm):
 
 
 def get_library_strategy_plot(df):
-    df['library_strategy'] = df['library_strategy'].str.replace('Not Provided', 'Not provided').str.replace('Immunohistochemistry', 'IHC').str.replace('immunohistochemistry', 'IHC').str.replace('Tumor mutation burden', 'Tumor Mutation Burden')
+    replacements = {'Not Provided': 'Not provided',
+                    'Immunohistochemistry': 'IHC', 'immunohistochemistry': 'IHC',
+                    'Tumor mutation burden': 'Tumor Mutation Burden',
+                    'Illumina microarray': 'Microarray', 'arraw comparative genomic hybridization': 'Microarray',
+                    'Genomic plateform of Curie Institute': 'Microarray', 'aCGH array 2x400k': 'Microarray', 'aCGH array 4x180k': 'Microarray',
+                    'whole exome sequencing': 'WES', 'Whole exome sequencing': 'WES',
+                    'NGS plateform of Curie Institute': 'NGS',
+                    'rna sequencing': 'RNA-Seq', 'RNA sequencing': 'RNA-Seq', 'RNAseq': 'RNA-Seq',
+                    'Illumina HT-12 v3': 'WGS', 'NGS': 'NGS', }
+    df['library_strategy'] = df['library_strategy'].replace(replacements)
     df = df.groupby(['molecular_characterisation_type', 'library_strategy']).count()['model_id']
     molecular_characterisation_type = ['mutation', 'expression', 'copy number alteration']
     fig = make_subplots(rows=1, cols=3, specs=[[{"type": "pie"}] * 3])
     col = 1
     color_map = {"WES": "#636EFA", "WGS": "#EF553B",
                  "Targeted": "#00CC96", "RNA-Seq": "#AB63FA",
-                 "Microarray": "#FFA15A", "Not provided": "#19D3F3"}
+                 "Microarray": "#FFA15A", "Not provided": "#19D3F3", "NGS": "#FF6692"}
     for mct in molecular_characterisation_type:
         labels = df[mct].index.tolist()
         values = df[mct].values.tolist()

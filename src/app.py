@@ -59,7 +59,7 @@ app.layout = html.Div(children=[
             ]),
         ],
         style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-               'border-radius': '10px', 'width': '32%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
+               'border-radius': '10px', 'width': '31.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
     ),
     html.Div(children=[
             dcc.Markdown('### Data type overview:', style={'display': 'inline-block'}),
@@ -73,7 +73,7 @@ app.layout = html.Div(children=[
             ]),
         ],
         style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-               'border-radius': '10px', 'width': '32%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '5px'}
+               'border-radius': '10px', 'width': '31.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '5px'}
     ),
     html.Div(children=[
             dcc.Markdown('### Model data overlap:', style={'display': 'inline-block'}),
@@ -110,7 +110,7 @@ app.layout = html.Div(children=[
             ),
         ],
         style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-               'border-radius': '10px', 'width': '31.5%', 'float': 'right', 'marginTop': '5px', 'marginLeft': '5px'}
+               'border-radius': '10px', 'width': '32.5%', 'float': 'right', 'marginTop': '5px', 'marginLeft': '5px'}
     ),
     html.Div(children=[
             html.Div(

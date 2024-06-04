@@ -56,11 +56,13 @@ def get_dt_venn4(df):
     set1, set2, set3 = process_sets(data_dict['mutation']), process_sets(data_dict['expression']), process_sets(
         data_dict['copy number alteration'])
     data_dict['mutation_expression_cna'] = sorted(list(set1 & set2 & set3))
+    if 'immunemarker' not in data_dict.keys():
+        data_dict['immunemarker'] = set()
     data_subset_dict = dict(
         (k, process_sets(data_dict[k])) for k in ('mutation_expression_cna', 'drug', 'treatment', 'immunemarker'))
-    plt.figure(figsize=(20, 20))
+    plt.figure(figsize=(12, 12))
     buf = io.BytesIO()
-    venn(data_subset_dict, fontsize=15, legend_loc="upper left")
+    venn(data_subset_dict, figsize=(12,12), fontsize=20, legend_loc="upper left")
     plt.savefig(buf, format="png")
     plt.close()
     buf.seek(0)
