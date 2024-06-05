@@ -7,6 +7,9 @@ from src.resources import labels, reactive_categories
 from io import BytesIO
 from base64 import b64decode
 
+
+backend = get_release_data("")
+
 app = dash.Dash(__name__)
 app.layout = html.Div(children=[
     html.H1("CancerModels.Org - Data Overview Dashboard",
@@ -225,7 +228,7 @@ def update_pie_plot(category):
 
 
 def update_library_strategy_plot(category):
-    return custom_plots(category, 'library_strategy_plot')
+    return custom_plots(category, 'library_strategy')
 
 
 @app.callback(
@@ -303,7 +306,7 @@ def func(release, n_clicks):
     if not n_clicks:
         raise PreventUpdate
     else:
-        return custom_plots(release, 'table')
+        return custom_plots(release, 'dt_venn','table')
 
 @app.callback(
     Output("download-dataframe-csv-mto", "data"),
@@ -326,7 +329,7 @@ def func(release, n_clicks):
     if not n_clicks:
         raise PreventUpdate
     else:
-        return dcc.send_data_frame(custom_plots(release, 'dto_donut_table').to_csv, f'{release}_dto_table.csv', index=False)
+        return dcc.send_data_frame(custom_plots(release, 'dto_donut', 'table').to_csv, f'{release}_dto_table.csv', index=False)
 
 
 @app.callback(
@@ -364,7 +367,7 @@ def func(release, n_clicks):
     if not n_clicks:
         raise PreventUpdate
     else:
-        return dcc.send_data_frame(custom_plots(release, 'library_strategy_table').to_csv, f'{release}_library_table.csv', index=False)
+        return dcc.send_data_frame(custom_plots(release, 'library_strategy', 'table').to_csv, f'{release}_library_table.csv', index=False)
 
 @app.callback(
     Output("download-dataframe-csv-mmtp", "data"),

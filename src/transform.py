@@ -1,5 +1,21 @@
 from pandas import read_csv, DataFrame
-from src.resources import diagnosis_to_cancer
+from src.resources import diagnosis_to_cancer, primary_site_mapping
+
+cache = {}
+
+def load_data(release):
+    if release in cache:
+        return cache[release]
+    country = f"assets/country/provider_country_{release.replace('_', '_v')}.csv"
+    country = read_csv(country)
+    samples = f"assets/sample/{release.replace('_', '_v')}.csv"
+    samples = read_input_file(samples)
+    total_model = f"assets/model/total_models_{release.replace('_', '_v')}.csv"
+    total_model = read_input_file(total_model)
+    data = {'total': total_model, 'samples': samples, 'country': country}
+    cache[release] = data
+    return data
+
 
 def read_input_file(fname, cols=list()):
     if len(cols)>0:
@@ -27,6 +43,18 @@ def process_data_df(data: DataFrame) -> DataFrame:
                              data['diagnosis'].str.lower()]
     if 'primary_site' in columns:
         data['primary_site'] = data['primary_site'].str.title()
+        data['primary_site'] = [next((f for f in primary_site_mapping if ps in primary_site_mapping[f]), 'Unmapped')  for ps in data['primary_site']]
+        '''
+        for j, r in data.iterrows():
+            ps = r['primary_site']
+            row = 'Unmapped'
+            for i, f in enumerate(primary_site_mapping):
+                if ps in primary_site_mapping[f]:
+                    row = f
+                    break
+            data.loc[j, 'primary_site'] = row
+        '''
+
     if 'tumour_type' in columns:
         data['tumour_type'] = [t.replace('Not Collected', 'Not provided').replace('Not Provided', 'Not provided') for t
                                in data['tumour_type'].fillna('Not provided').str.title()]
@@ -38,4 +66,12 @@ def process_data_df(data: DataFrame) -> DataFrame:
     if 'ethnicity' in columns:
         data['ethnicity'] = data['ethnicity'].str.title().replace('Not Provided', 'Not provided').replace('Not Collected',
                                                                                                       'Not provided')
+    if 'publications' in columns:
+        data['publications'] = data['publications'].fillna('No')
+        data['publications'] = ['Yes' if str(p).__contains__('PMID') else 'No' for p in data['publications']]
+    if 'age_in_years_at_collection' in columns:
+        data['age_in_years_at_collection'] = [
+            'Younger than 21' if not str(a).lower().__contains__('not') and float(
+                a) < 21 else 'Not provided' if str(
+                a).lower().__contains__('not') else 'Older than 21' for a in data['age_in_years_at_collection']]
     return data

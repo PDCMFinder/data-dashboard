@@ -4,7 +4,6 @@ from dash.dcc import send_file
 from venn import venn
 import io
 import matplotlib.pyplot as plt
-from PIL import Image
 import base64
 
 def get_dt_venn(filtered_data, plot_type):
