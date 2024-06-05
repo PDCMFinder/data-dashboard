@@ -9,12 +9,14 @@ from base64 import b64decode
 
 
 backend = get_release_data("")
-
+padding = "0.5%"
+margin_left = '0.45%'
+margin_bottom = "0.5%"
 app = dash.Dash(__name__)
 app.layout = html.Div(children=[
     html.H1("CancerModels.Org - Data Overview Dashboard",
-            style={'textAlign': 'left', 'marginBottom': 20, 'backgroundColor': '#013e48', 'color': '#ffffff',
-                   'padding': '0.1%', 'padding-top': '2%'}),
+            style={'textAlign': 'left', 'backgroundColor': '#013e48', 'color': '#ffffff',
+                   'padding': '0.2%', 'padding-top': '2%'}),
     html.Div(children=[
         html.Div(children=[
             html.Div(children=[dcc.Graph(id='overview-bar-chart',)], style={'width': '50%', 'float': 'left'}),
@@ -38,7 +40,7 @@ app.layout = html.Div(children=[
                     ),
                 ], style={'width': '50%', 'float': 'right'}),
                 ]),
-    ], style={'height': '10%', 'width': '100%', 'margin': 'auto', 'marginTop': '-10'}
+    ], style={'height': '10%', 'width': '100%'}
     ),
     html.Div(children=[
         dcc.Markdown('### Select Data release: ', style={'display': 'inline-block'}),
@@ -54,29 +56,29 @@ app.layout = html.Div(children=[
         dcc.Markdown('### Model type overview:', style={'display': 'inline-block'}),
         dcc.Graph(
             id='model-type-plot',
-            style={'width': '100%', 'marginTop': 20}
+            style={'width': '100%'}
         ),
         html.Div([
                 html.Button("Export to CSV", id="btn_csv_mto"),
                 dcc.Download(id="download-dataframe-csv-mto")
             ]),
         ],
-        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-               'border-radius': '10px', 'width': '31.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': padding,
+               'border-radius': '10px', 'width': '31.5%', 'float': 'left', 'margin-bottom': margin_bottom}
     ),
     html.Div(children=[
             dcc.Markdown('### Data type overview:', style={'display': 'inline-block'}),
             dcc.Graph(
                 id='dto-pie-plot',
-                style={'width': '100%', 'marginTop': 20}
+                style={'width': '100%'}
             ),
             html.Div([
                 html.Button("Export to CSV", id="btn_csv_dto"),
                 dcc.Download(id="download-dataframe-csv-dto")
             ]),
         ],
-        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-               'border-radius': '10px', 'width': '31.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '5px'}
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': padding,
+               'border-radius': '10px', 'width': '31.5%', 'float': 'left', 'margin-left': margin_left, 'margin-bottom': margin_bottom}
     ),
     html.Div(children=[
             dcc.Markdown('### Model data overlap:', style={'display': 'inline-block'}),
@@ -109,12 +111,11 @@ app.layout = html.Div(children=[
                 html.Button("Export to XLS", id="btn_csv"),
                 dcc.Download(id="download-dataframe-csv")
             ],
-                style={'marginTop': '10px'},
                 id='table-container',
             ),
         ],
-        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-               'border-radius': '10px', 'width': '32.5%', 'float': 'right', 'marginTop': '5px', 'marginLeft': '5px'}
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': padding,
+               'border-radius': '10px', 'width': '33%', 'float': 'right', 'margin-bottom': margin_bottom}
     ),
     html.Div(children=[
             html.Div(
@@ -127,7 +128,7 @@ app.layout = html.Div(children=[
                                  reactive_categories.keys()],
                         value=list(reactive_categories.values())[0],
                         multi=False,
-                        style={'width': '40%', 'display': 'inline-block', 'margin-left': '5px'}
+                        style={'width': '40%', 'display': 'inline-block'}
                     ),
                     dcc.Markdown('Group by:', style={'display': 'inline-block'}),
                     dcc.Dropdown(
@@ -136,7 +137,7 @@ app.layout = html.Div(children=[
                                  reactive_categories.keys()],
                         value=None,
                         multi=False,
-                        style={'width': '40%', 'display': 'inline-block', 'margin-left': '5px'}
+                        style={'width': '40%', 'display': 'inline-block'}
                     ),
                     html.Div([
                         html.Button("Export to CSV", id="btn_csv_model_counts"),
@@ -150,8 +151,8 @@ app.layout = html.Div(children=[
                 style={'width': '100%'}
             ),
         ],
-        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-               'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px'}
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': padding,
+               'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'margin-bottom': margin_bottom}
     ),
     html.Div(children=[
         dcc.Markdown('### Provider country plot:', style={'display': 'inline-block'}),
@@ -176,9 +177,8 @@ app.layout = html.Div(children=[
             export_headers='display',
         ),
         ],
-        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-                    'border-radius': '10px', 'width': '32.5%', 'float': 'right', 'marginTop': '5px',
-                    'marginLeft': '5px'}
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': padding,
+                    'border-radius': '10px', 'width': '33%', 'float': 'right', 'margin-bottom': margin_bottom}
         ),
     html.Div(children=[
             dcc.Markdown('### Molecular data by Technology used:', style={'display': 'inline-block'}),
@@ -191,8 +191,8 @@ app.layout = html.Div(children=[
                 dcc.Download(id="download-dataframe-csv-lsp")
             ]),
     ],
-        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-               'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': padding,
+               'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'margin-bottom': margin_bottom}
     ),
     html.Div(children=[
             dcc.Markdown('### Molecular data by model type:', style={'display': 'inline-block'}),
@@ -205,11 +205,11 @@ app.layout = html.Div(children=[
                 dcc.Download(id="download-dataframe-csv-mmtp")
             ]),
         ],
-        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '10px',
-               'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'marginTop': '5px', 'marginLeft': '0px'}
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': padding,
+               'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'margin-bottom': margin_bottom}
     ),
     ],
-    style={'font-family': 'Merriweather', 'margin': 'auto', 'padding': '10px'}
+    style={'font-family': 'Merriweather', 'padding': padding}
 )
 
 
