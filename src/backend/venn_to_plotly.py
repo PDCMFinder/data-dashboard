@@ -63,9 +63,9 @@ def venn_to_plotly(L_sets, L_labels=None, title=None):
         anno_set_label = go.layout.Annotation(
             xref="x",
             yref="y",
-            x=v.set_labels[i].get_position()[0],
-            y=v.set_labels[i].get_position()[1],
-            text=v.set_labels[i].get_text(),
+            x=v.set_labels[i].get_position()[0] if v.set_labels[i] is not None else 0,
+            y=v.set_labels[i].get_position()[1] if v.set_labels[i] is not None else 0,
+            text=v.set_labels[i].get_text() if v.subset_labels[i] is not None else '',
             showarrow=False
         )
 
@@ -86,9 +86,9 @@ def venn_to_plotly(L_sets, L_labels=None, title=None):
         anno_subset_label = go.layout.Annotation(
             xref="x",
             yref="y",
-            x=v.subset_labels[i].get_position()[0],
-            y=v.subset_labels[i].get_position()[1],
-            text=v.subset_labels[i].get_text(),
+            x=v.subset_labels[i].get_position()[0] if v.subset_labels[i] is not None else 0,
+            y=v.subset_labels[i].get_position()[1] if v.subset_labels[i] is not None else 0,
+            text=v.subset_labels[i].get_text() if v.subset_labels[i] is not None else '',
             showarrow=False
         )
 

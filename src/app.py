@@ -77,6 +77,7 @@ app.layout = html.Div(children=[
     ),
     html.Div(children=[
             dcc.Markdown('### Model data overlap:', style={'display': 'inline-block'}),
+            dcc.RadioItems(['Total', 'PDX', 'Cell Line', 'Organoid'], 'Total', inline=True, id='venn-type'),
             dcc.Graph(
                 id='venn-plot',
             ),
@@ -237,17 +238,17 @@ def update_model_type_plot(category):
 
 @app.callback(
     Output('venn-plot', 'figure'),
-    [Input('dropdown-category', 'value')]
+    [Input('dropdown-category', 'value'), Input('venn-type', 'value'),]
 )
-def update_selected_plot(selected_category):
-    return custom_plots(selected_category, 'dt_venn')
+def update_selected_plot(selected_category, venn_type):
+    return custom_plots(selected_category, f'dt_venn_{venn_type}')
 
 @app.callback(
     Output('venn-plot-venn4', 'figure'),
     [Input('dropdown-category', 'value')]
 )
 def update_selected_plot(selected_category):
-    return custom_plots(selected_category, 'dt_venn_v4')
+    return custom_plots(selected_category, 'dt_v4venn')
 
 
 @app.callback(

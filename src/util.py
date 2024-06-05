@@ -48,9 +48,15 @@ def custom_plots(release, selected_plot):
         'molecular_characterisation_type').count().sort_index()['model_id'].sort_values().reset_index()
         fig = get_dto_radial(data_overview, int(tm))
         return fig
-    elif selected_plot == 'dt_venn':
-        return get_dt_venn(data_overview)
-    elif selected_plot == 'dt_venn_v4':
+    elif selected_plot.__contains__('dt_venn'):
+        plot_type = selected_plot.split('_')[2]
+        if plot_type != 'Total':
+            models = read_input_file(f"assets/model/total_models_{release.replace('_', '_v')}.csv", ['model_id', 'provider', 'model_type'])
+            models = models[models['model_type'] == plot_type]
+            data_overview = data_overview[['sample_id', 'provider', 'molecular_characterisation_type', 'model_id']].merge(models, on=['model_id', 'provider'], how='inner')
+            #data_overview = data_overview.groupby(['molecular_characterisation_type'])['model_id'].apply(set).reset_index()
+        return get_dt_venn(data_overview, plot_type)
+    elif selected_plot == 'dt_v4venn':
         return get_dt_venn4(data_overview)
     elif selected_plot.__contains__("library_strategy"):
         data_overview['library_strategy'] = data_overview['library_strategy'].fillna('Not Provided').astype(str).str.replace('mRNA NGS',

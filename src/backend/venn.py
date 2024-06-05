@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import base64
 
-def get_dt_venn(filtered_data):
+def get_dt_venn(filtered_data, plot_type):
     filtered_data = filtered_data.fillna('').groupby('molecular_characterisation_type')['model_id'].apply(set)
     set1, set2, set3 = process_sets(filtered_data['mutation']), process_sets(filtered_data['expression']), process_sets(filtered_data['copy number alteration'])
     labels = ['mutation', 'expression', 'copy number alteration']
