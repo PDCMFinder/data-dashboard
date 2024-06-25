@@ -49,7 +49,7 @@ def custom_plots(release, plot_type, export_type='plot'):
         fig = get_dto_radial(samples, int(tm))
         return fig
     elif plot_type.__contains__('dt_venn'):
-        plot_type = plot_type.split('_')[2]
+        plot_type = plot_type.split('_')[-1]
         if plot_type != 'Total':
             models = load_data(release)['total'][['model_id', 'provider', 'model_type']]
             models = models[models['model_type'] == plot_type]
