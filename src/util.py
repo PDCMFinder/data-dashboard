@@ -50,13 +50,14 @@ def custom_plots(release, plot_type, export_type='plot'):
         return fig
     elif plot_type.__contains__('dt_venn'):
         plot_type = plot_type.split('_')[-1]
-        if plot_type != 'Total':
-            models = load_data(release)['total'][['model_id', 'provider', 'model_type']]
+        models = load_data(release)['total'][['model_id', 'provider', 'model_type']]
+        if plot_type != 'Total' and plot_type != 'venn':
             models = models[models['model_type'] == plot_type]
-            sample = samples[['sample_id', 'provider', 'molecular_characterisation_type', 'model_id']].merge(models, on=['model_id', 'provider'], how='inner')
+            samples = samples[['sample_id', 'provider', 'molecular_characterisation_type', 'model_id']].merge(models, on=[
+                'model_id', 'provider'], how='inner')
         if export_type == 'table':
             return get_venn_table(samples, f"assets/exports/{release}_mol_data_model_list.xlsx", models)
-        return get_dt_venn(sample, plot_type)
+        return get_dt_venn(samples, plot_type)
     elif plot_type == 'dt_v4venn':
         if export_type == 'biomarker':
             return get_dt_venn4(samples, 'bio')

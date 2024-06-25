@@ -18,6 +18,7 @@ def get_dt_venn(filtered_data, plot_type):
 
 def get_venn_table(df, output, model):
     model['links'] = "https://www.cancermodels.org/data/models/"+model['provider']+"/"+model['model_id']
+    model['model_id'] = model['model_id'].astype(str)
     cancer_system = read_json("https://www.cancermodels.org/api/search_index?select=external_model_id,cancer_system")
     model = model.merge(cancer_system, left_on='model_id', right_on='external_model_id', how='left')
     filtered = df.fillna('').groupby('molecular_characterisation_type')['model_id'].apply(set).reset_index()
