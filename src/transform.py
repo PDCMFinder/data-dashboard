@@ -1,5 +1,5 @@
 from pandas import read_csv, DataFrame
-from src.resources import diagnosis_to_cancer, primary_site_mapping
+from src.resources import diagnosis_to_cancer, primary_site_mapping, diagnosis_to_cancer_system
 
 cache = {}
 
@@ -39,8 +39,11 @@ def process_data_df(data: DataFrame) -> DataFrame:
             'Other' if str(t).lower().__contains__('other') or str(t).lower().__contains__('mixed') else t for t in
             data['model_type']]
     if 'diagnosis' in columns:
-        data['diagnosis'] = [diagnosis_to_cancer[d].title() if d in diagnosis_to_cancer else 'Not provided' for d in
-                             data['diagnosis'].str.lower()]
+#        data['diagnosis'] = [diagnosis_to_cancer[d].title() if d in diagnosis_to_cancer else 'Not provided' for d in
+#                             data['diagnosis'].str.lower()]
+        data['diagnosis'] = [diagnosis_to_cancer_system[d] if d in diagnosis_to_cancer_system.keys() else 'Not provided' for d in
+                                                  data['diagnosis'].str.lower()]
+        data['diagnosis'] = data['diagnosis'].str.replace('Not provided', 'Unclassified')
     if 'primary_site' in columns:
         data['primary_site'] = data['primary_site'].str.title()
         data['primary_site'] = [next((f for f in primary_site_mapping if ps in primary_site_mapping[f]), 'Unmapped')  for ps in data['primary_site']]

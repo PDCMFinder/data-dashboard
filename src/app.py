@@ -83,12 +83,10 @@ app.layout = html.Div(children=[
     html.Div(children=[
             dcc.Markdown('### Model data overlap:', style={'display': 'inline-block'}),
             dcc.RadioItems(['Total', 'PDX', 'Cell Line', 'Organoid'], 'Total', inline=True, id='venn-type'),
-            dcc.Graph(
-                id='venn-plot',
-            ),
-            dcc.Graph(
+            html.Div(dcc.Graph(id='venn-plot'),),
+            html.Div(dcc.Graph(
                 id='venn-plot-venn4',
-            figure={
+                figure={
                 'data': [],
                 'layout': {
                     'images': [{
@@ -106,6 +104,29 @@ app.layout = html.Div(children=[
                     'yaxis': {'visible': False}
                 }
         }
+                ),
+            ),
+            html.Div(dcc.Graph(
+                    id='venn-plot-venn4-bio',
+                    figure={
+                    'data': [],
+                    'layout': {
+                        'images': [{
+                            'source': None,
+                            'xref': 'paper',
+                            'yref': 'paper',
+                            'x': 0.5,
+                            'y': 0.5,
+                            'sizex': 1,
+                            'sizey': 1,
+                            'xanchor': 'center',
+                            'yanchor': 'middle'
+                        }],
+                        'xaxis': {'visible': False},
+                        'yaxis': {'visible': False}
+                    }
+            }
+                ),
             ),
             html.Div([
                 html.Button("Export to XLS", id="btn_csv"),
@@ -155,32 +176,6 @@ app.layout = html.Div(children=[
                'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'margin-bottom': margin_bottom}
     ),
     html.Div(children=[
-        dcc.Markdown('### Provider country plot:', style={'display': 'inline-block'}),
-        html.Div([
-            html.Button("Export to CSV", id="btn_csv_country"),
-            dcc.Download(id="download-dataframe-csv-country")
-        ]),
-
-        dcc.Graph(
-            id='country-plot',
-            style={'width': '100%'}
-        ),
-        dash_table.DataTable(
-            id='country-table',
-            columns=[
-                {'name': col, 'id': col} for col in list(country.columns)
-            ],
-            data=country.to_dict('records'),
-            style_table={'overflow': 'auto'},
-            style_cell={'textAlign': 'left'},
-            export_format='csv',
-            export_headers='display',
-        ),
-        ],
-        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': padding,
-                    'border-radius': '10px', 'width': '33%', 'float': 'right', 'margin-bottom': margin_bottom}
-        ),
-    html.Div(children=[
             dcc.Markdown('### Molecular data by Technology used:', style={'display': 'inline-block'}),
             dcc.Graph(
                 id='library-strategy-plot',
@@ -194,6 +189,32 @@ app.layout = html.Div(children=[
         style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': padding,
                'border-radius': '10px', 'width': '64.5%', 'float': 'left', 'margin-bottom': margin_bottom}
     ),
+    html.Div(children=[
+            dcc.Markdown('### Provider country plot:', style={'display': 'inline-block'}),
+            html.Div([
+                html.Button("Export to CSV", id="btn_csv_country"),
+                dcc.Download(id="download-dataframe-csv-country")
+            ]),
+
+            dcc.Graph(
+                id='country-plot',
+                style={'width': '100%'}
+            ),
+            dash_table.DataTable(
+                id='country-table',
+                columns=[
+                    {'name': col, 'id': col} for col in list(country.columns)
+                ],
+                data=country.to_dict('records'),
+                style_table={'overflow': 'auto'},
+                style_cell={'textAlign': 'left'},
+                export_format='csv',
+                export_headers='display',
+            ),
+            ],
+            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': padding,
+                        'border-radius': '10px', 'width': '33%', 'float': 'right', 'margin-bottom': margin_bottom}
+            ),
     html.Div(children=[
             dcc.Markdown('### Molecular data by model type:', style={'display': 'inline-block'}),
             dcc.Graph(
@@ -253,6 +274,12 @@ def update_selected_plot(selected_category, venn_type):
 def update_selected_plot(selected_category):
     return custom_plots(selected_category, 'dt_v4venn')
 
+@app.callback(
+    Output('venn-plot-venn4-bio', 'figure'),
+    [Input('dropdown-category', 'value')]
+)
+def update_selected_plot(selected_category):
+    return custom_plots(selected_category, 'dt_v4venn', 'biomarker')
 
 @app.callback(
     Output('reactive-plot', 'figure'),
@@ -379,3 +406,4 @@ def func(release, n_clicks):
         raise PreventUpdate
     else:
         return dcc.send_data_frame(molecular_model_type_plot(release, 'table').to_csv, f'{release}_molecular_model_type_table.csv', index=False)
+
