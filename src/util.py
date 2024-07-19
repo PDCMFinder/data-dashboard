@@ -44,9 +44,12 @@ def custom_plots(release, plot_type, export_type='plot'):
         else:
             tm = load_data(release)['total'][['model_id']].shape[0]
         if export_type == 'table':
-            return samples.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
-        'molecular_characterisation_type').count().sort_index()['model_id'].sort_values().reset_index()
-        fig = get_dto_radial(samples, int(tm))
+            pie_table = samples.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
+        'molecular_characterisation_type').count().sort_index()['model_id'].sort_values()
+            pie_table = pd.concat([pie_table, pd.DataFrame({0: load_data(release)['total'][['model_id', 'publications']].groupby('publications').count().reset_index().iloc[1][1]}, index=['publication'])]).sort_index()
+            return pie_table.reset_index()
+        publication_counts = load_data(release)['total'][['model_id', 'publications']].groupby('publications').count().reset_index().iloc[1][1]
+        fig = get_dto_radial(samples, int(tm), int(publication_counts))
         return fig
     elif plot_type.__contains__('dt_venn'):
         plot_type = plot_type.split('_')[-1]

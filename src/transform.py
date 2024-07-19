@@ -73,6 +73,7 @@ def process_data_df(data: DataFrame) -> DataFrame:
         data['publications'] = data['publications'].fillna('No')
         data['publications'] = ['Yes' if str(p).__contains__('PMID') else 'No' for p in data['publications']]
     if 'age_in_years_at_collection' in columns:
+        data['age_in_years_at_collection'] = data['age_in_years_at_collection'].str.replace('0-1', '1')
         data['age_in_years_at_collection'] = [
             'Younger than 21' if not str(a).lower().__contains__('not') and float(
                 a) < 21 else 'Not provided' if str(

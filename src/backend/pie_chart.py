@@ -1,3 +1,4 @@
+import pandas as pd
 from plotly.graph_objects import Pie, Scatterpolar, Figure
 from plotly.subplots import make_subplots
 from numpy import linspace, arange
@@ -44,24 +45,25 @@ def get_model_type_donut(df):
     return fig
 
 
-def get_dto_radial(filtered_data, tm):
+def get_dto_radial(filtered_data, tm, pc):
     pie_chart = filtered_data.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
         'molecular_characterisation_type').count().sort_index()['model_id'].sort_values()
     colors_dict = {'mutation': '#ef553b', 'expression': '#636efa', 'copy number alteration': '#b6e880',
               'images': '#00cc96', 'drug': '#19d3f3', 'treatment': '#ff6692',
-              'immunemarker': '#ffa15a', 'biomarker': '#ab63fa'}
-
+              'immunemarker': '#ffa15a', 'biomarker': '#ab63fa', 'publication': '#ffda2f'}
+    pie_chart = pd.concat([pie_chart, pd.DataFrame({0: pc}, index=['publication'])]).sort_index()
     fig = Figure()
     radius = 0
     for i, dt in enumerate(pie_chart.index):
-        theta = linspace(0, 360 * (pie_chart[dt]/tm), pie_chart[dt], endpoint=False)
+        count = pie_chart.loc[dt].reset_index(drop=True)[0]
+        theta = linspace(0, 360 * (count/tm), count, endpoint=False)
         fig.add_trace(Scatterpolar(
-            r=arange(radius, pie_chart[dt], 0.01),
+            r=arange(radius, count, 0.01),
             theta=theta,
             mode='lines',
             name=dt,
             line=dict(width=5),
-            hovertemplate=f'models: {pie_chart[dt]}, percentage: {round(pie_chart[dt]/tm*100, 2)}',
+            hovertemplate=f'models: {count}, percentage: {round(count/tm*100, 2)}',
             line_color=colors_dict[str(dt).lower()]
         ))
         radius+=225
