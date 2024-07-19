@@ -55,7 +55,7 @@ def get_dto_radial(filtered_data, tm, pc):
     fig = Figure()
     radius = 0
     for i, dt in enumerate(pie_chart.index):
-        count = pie_chart.loc[dt].reset_index(drop=True)[0]
+        count = int(pie_chart.loc[dt].reset_index(drop=True)[0])
         theta = linspace(0, 360 * (count/tm), count, endpoint=False)
         fig.add_trace(Scatterpolar(
             r=arange(radius, count, 0.01),
