@@ -1,7 +1,7 @@
 import pandas as pd
 from plotly.graph_objects import Pie, Scatterpolar, Figure
 from plotly.subplots import make_subplots
-from numpy import linspace, arange
+from numpy import linspace, arange, isnan
 
 
 def get_dto_donut(filtered_data, tm):
@@ -55,18 +55,19 @@ def get_dto_radial(filtered_data, tm, pc):
     fig = Figure()
     radius = 0
     for i, dt in enumerate(pie_chart.index):
-        count = int(pie_chart.loc[dt].reset_index(drop=True)[0])
-        theta = linspace(0, 360 * (count/tm), count, endpoint=False)
-        fig.add_trace(Scatterpolar(
-            r=arange(radius, count, 0.01),
-            theta=theta,
-            mode='lines',
-            name=dt,
-            line=dict(width=5),
-            hovertemplate=f'models: {count}, percentage: {round(count/tm*100, 2)}',
-            line_color=colors_dict[str(dt).lower()]
-        ))
-        radius+=225
+        if not isnan(pie_chart.loc[dt].reset_index(drop=True)[0]):
+            count = int(pie_chart.loc[dt].reset_index(drop=True)[0])
+            theta = linspace(0, 360 * (count/tm), count, endpoint=False)
+            fig.add_trace(Scatterpolar(
+                r=arange(radius, count, 0.01),
+                theta=theta,
+                mode='lines',
+                name=dt,
+                line=dict(width=5),
+                hovertemplate=f'models: {count}, percentage: {round(count/tm*100, 2)}',
+                line_color=colors_dict[str(dt).lower()]
+            ))
+            radius+=225
 
     fig.update_layout(
         polar=dict(
