@@ -35,6 +35,10 @@ def custom_plots(release, plot_type, export_type='plot'):
     else:
         samples = load_data(release)['samples']
     if plot_type == 'dto_donut':
+        publication_counts = load_data(release)['total'][['model_id', 'publications']].groupby('publications').count().reset_index().iloc[1][1]
+        pie_table = samples.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
+            'molecular_characterisation_type').count().sort_index()['model_id'].sort_values().to_frame()
+        pie_table = pd.concat([pie_table, pd.DataFrame({'model_id': publication_counts}, index=['publication'])]).sort_index()
         if release == 'latest':
             url = 'https://www.cancermodels.org/api/model_metadata?select=model_id,data_source,type,pubmed_ids,patient_age,histology,tumor_type,primary_site,patient_sex,patient_ethnicity'
             mapper = {'data_source': 'provider', 'type': 'model_type', 'pubmed_ids': 'publications',
@@ -44,12 +48,8 @@ def custom_plots(release, plot_type, export_type='plot'):
         else:
             tm = load_data(release)['total'][['model_id']].shape[0]
         if export_type == 'table':
-            pie_table = samples.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
-        'molecular_characterisation_type').count().sort_index()['model_id'].sort_values()
-            pie_table = pd.concat([pie_table, pd.DataFrame({0: load_data(release)['total'][['model_id', 'publications']].groupby('publications').count().reset_index().iloc[1][1]}, index=['publication'])]).sort_index()
             return pie_table.reset_index()
-        publication_counts = load_data(release)['total'][['model_id', 'publications']].groupby('publications').count().reset_index().iloc[1][1]
-        fig = get_dto_radial(samples, int(tm), int(publication_counts))
+        fig = get_dto_radial(pie_table, int(tm))
         return fig
     elif plot_type.__contains__('dt_venn'):
         plot_type = plot_type.split('_')[-1]

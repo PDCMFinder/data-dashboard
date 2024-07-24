@@ -45,13 +45,10 @@ def get_model_type_donut(df):
     return fig
 
 
-def get_dto_radial(filtered_data, tm, pc):
-    pie_chart = filtered_data.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
-        'molecular_characterisation_type').count().sort_index()['model_id'].sort_values()
+def get_dto_radial(pie_chart, tm):
     colors_dict = {'mutation': '#ef553b', 'expression': '#636efa', 'copy number alteration': '#b6e880',
               'images': '#00cc96', 'drug': '#19d3f3', 'treatment': '#ff6692',
               'immunemarker': '#ffa15a', 'biomarker': '#ab63fa', 'publication': '#ffda2f'}
-    pie_chart = pd.concat([pie_chart, pd.DataFrame({0: pc}, index=['publication'])]).sort_index()
     fig = Figure()
     radius = 0
     for i, dt in enumerate(pie_chart.index):
