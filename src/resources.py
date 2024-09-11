@@ -13,6 +13,8 @@ reactive_categories = {'Providers': 'provider', 'Model Type': 'model_type',
                  'Cancer System': 'diagnosis', 'Tumour Type': 'tumour_type',
                  'Primary Site': 'primary_site', 'Gender': 'sex', 'Ethnicity': 'ethnicity'}
 
+summary_columns = ['tag', 'date', "model_type_pdx", "model_type_cell_line", "model_type_organoid", "model_type_other", "model_type_total", "sample_type_xenograft", "sample_type_cell", "sample_type_patient", "sample_type_total", "molecular_data_biomarker", "molecular_data_cna", "molecular_data_expression", "molecular_data_immunemarker", "molecular_data_mut", "molecular_data_points_total", "drug_data_points", "treatment_data_points", "image_data_points"]
+
 primary_site_mapping = {
     "Central Nervous System": [
         "4Th Ventricle", "Brain", "Brain Stem", "Cerebellum", "Cerebrum",

@@ -2,14 +2,14 @@ import pandas as pd
 from pandas import DataFrame, read_csv, read_json, notna, concat
 from src.backend.pie_chart import get_model_type_donut, get_dto_radial, get_library_strategy_plot
 from src.backend.venn import get_dt_venn, get_dt_venn4, get_venn_table
-from src.backend.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot
-from src.resources import labels
+from src.backend.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot, get_ss_bar_chart
+from src.resources import labels, summary_columns
 from src.transform import load_data
 from requests import get
 
 data = DataFrame([[0, 0], [1, 1]], columns=['Type', 'Model'])
 country = DataFrame(columns=['country', 'provider'])
-summary = DataFrame(columns=['tag', 'date', "model_type_pdx", "model_type_cell_line", "model_type_organoid", "model_type_other", "model_type_total", "sample_type_xenograft", "sample_type_cell", "sample_type_patient", "sample_type_total", "molecular_data_biomarker", "molecular_data_cna", "molecular_data_expression", "molecular_data_immunemarker", "molecular_data_mut", "molecular_data_points_total", "drug_data_points", "treatment_data_points", "image_data_points"])
+summary = DataFrame(columns=summary_columns)
 
 def custom_plots(release, plot_type, export_type='plot'):
     if release == 'latest':
@@ -95,6 +95,10 @@ def bar_chart():
     models = models.iloc[::-1]
     return get_bar_chart(models)
 
+def generate_ss_bar_plot(df, cat):
+    df = df.sort_values(by=['date']).reset_index(drop=True)
+    return get_ss_bar_chart(df, cat)
+
 def model_type_pie(release, type):
     if release == 'latest':
         url = 'https://www.cancermodels.org/api/model_metadata?select=model_id,data_source,type,pubmed_ids,patient_age,histology,tumor_type,primary_site,patient_sex,patient_ethnicity'
@@ -153,7 +157,7 @@ def generate_summary_stats():
             df['date'] = f['released_at'].split('T')[0]
             df['tag'] = labels[f['tag_name'].replace('PDCM_', '').replace('v', '')]
             table = pd.concat([table, df]).reset_index(drop=True)
-    return table.to_dict('records')
+    return table
 
 
 def generate_country_plot(release, plot_type):

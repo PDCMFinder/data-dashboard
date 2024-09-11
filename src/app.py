@@ -3,7 +3,7 @@ from dash import html, dcc, dash_table
 from dash.dependencies import Input, Output
 from dash.exceptions import PreventUpdate
 from src.util import *
-from src.resources import labels, reactive_categories
+from src.resources import labels, reactive_categories, summary_columns
 from io import BytesIO
 from base64 import b64decode
 
@@ -20,6 +20,17 @@ app.layout = html.Div(children=[
     html.Div(children=[
         html.Div(children=[
             html.Div(children=[dcc.Graph(id='overview-bar-chart',)], style={'width': '50%', 'float': 'left'}),
+            html.Div(children=[
+                dcc.Dropdown(
+                    id='ss-dropdown-category',
+                    options=[{'label': str(category.replace("_", " ").replace(" type ", ": ").replace(" data points", " data").replace("data ", "data: ")).title(), 'value': category} for category in
+                             summary_columns if category != "tag" and category != "date"],
+                    value=list(summary_columns)[2],
+                    multi=False,
+                    style={'width': '100%', 'display': 'inline-block'}
+                ),
+                dcc.Graph(id='summary-stats-bar-chart')
+            ], style={'width': '50%', 'float': 'right'}),
             html.Div(children=[
                 dcc.Markdown('### Summary Stats:', style={'display': 'inline-block'}),
                 dash_table.DataTable(
@@ -38,7 +49,7 @@ app.layout = html.Div(children=[
                     export_format='xlsx',
                     export_headers='display',
                     ),
-                ], style={'width': '50%', 'float': 'right'}),
+                ], style={'width': '100%', 'margin_bottom': margin_bottom}),
                 ]),
     ], style={'height': '10%', 'width': '100%'}
     ),
@@ -303,8 +314,16 @@ def update_bar_chart(value):
     Input('dropdown-category', 'value')
 )
 def update_summary_stats(category):
-    return generate_summary_stats()
+    return generate_summary_stats().to_dict('records')
 
+
+@app.callback(
+    Output('summary-stats-bar-chart', 'figure'),
+    Input('ss-dropdown-category', 'value')
+)
+def update_summary_stats(category):
+    table = generate_summary_stats()
+    return generate_ss_bar_plot(table[['tag', 'date', category]], category)
 
 @app.callback(
     Output('country-plot', 'figure'),

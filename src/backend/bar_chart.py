@@ -12,6 +12,12 @@ def get_bar_chart(models):
     )
     return fig
 
+def get_ss_bar_chart(models, cat):
+    fig = bar(models, x='tag', y=cat, hover_data=[cat])
+    fig.update_layout(
+        title=dict(text="Summary statistics for a data type per Data Release", yref='container')
+    )
+    return fig
 
 def get_reactive_bar_plot(data, column, gc):
     color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
