@@ -1,7 +1,8 @@
-from src.resources import cancer_system, diagnosis_to_cancer, primary_site_mapping
+from src.components.resources import cancer_system, diagnosis_to_cancer, primary_site_mapping
 import numpy as np
 from pandas import DataFrame
-from plotly_express import scatter, data as scatter_data
+from plotly_express import scatter
+
 
 def get_scatter_plot(data):
     data['diagnosis'] = [diagnosis_to_cancer[d].title() if d in diagnosis_to_cancer else 'Not provided' for d in

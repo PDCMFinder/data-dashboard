@@ -1,5 +1,5 @@
 from pandas import DataFrame, ExcelWriter, read_json
-from src.backend.venn_to_plotly import venn_to_plotly
+from src.components.venn.venn_to_plotly import venn_to_plotly
 from dash.dcc import send_file
 from venn import venn
 import io

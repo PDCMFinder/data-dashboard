@@ -13,7 +13,24 @@ reactive_categories = {'Providers': 'provider', 'Model Type': 'model_type',
                  'Cancer System': 'diagnosis', 'Tumour Type': 'tumour_type',
                  'Primary Site': 'primary_site', 'Gender': 'sex', 'Ethnicity': 'ethnicity'}
 
-summary_columns = ['tag', 'date', "model_type_pdx", "model_type_cell_line", "model_type_organoid", "model_type_other", "model_type_total", "sample_type_xenograft", "sample_type_cell", "sample_type_patient", "sample_type_total", "molecular_data_biomarker", "molecular_data_cna", "molecular_data_expression", "molecular_data_immunemarker", "molecular_data_mut", "molecular_data_points_total", "drug_data_points", "treatment_data_points", "image_data_points"]
+summary_columns = ['tag', 'links', 'date', "model_type_pdx", "model_type_cell_line", "model_type_organoid", "model_type_other", "model_type_total", "sample_type_xenograft", "sample_type_cell", "sample_type_patient", "sample_type_total", "molecular_data_biomarker", "molecular_data_cna", "molecular_data_expression", "molecular_data_immunemarker", "molecular_data_mut", "molecular_data_points_total", "drug_data_points", "treatment_data_points", "image_data_points"]
+
+padding = "0.5%"
+margin_left = '0.1%'
+margin_bottom = "0.5%"
+border = '0.5px solid #000'
+bgcolor = '#f4f4f4'
+br = '10px'
+component_style_1 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
+                     'width': '31.5%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
+component_style_2 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
+                     'width': '64.5%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
+component_style_3 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
+                     'width': '33%', 'float': 'right', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
+
+
+
+
 
 primary_site_mapping = {
     "Central Nervous System": [

@@ -1,4 +1,4 @@
-from src.resources import reactive_categories
+from src.components.resources import reactive_categories
 from plotly_express import bar
 
 

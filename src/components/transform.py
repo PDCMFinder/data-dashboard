@@ -1,5 +1,5 @@
 from pandas import read_csv, DataFrame
-from src.resources import diagnosis_to_cancer, primary_site_mapping, diagnosis_to_cancer_system
+from src.components.resources import primary_site_mapping, diagnosis_to_cancer_system
 
 cache = {}
 

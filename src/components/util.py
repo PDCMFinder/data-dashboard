@@ -1,14 +1,13 @@
 import pandas as pd
 from pandas import DataFrame, read_csv, read_json, notna, concat
-from src.backend.pie_chart import get_model_type_donut, get_dto_radial, get_library_strategy_plot
-from src.backend.venn import get_dt_venn, get_dt_venn4, get_venn_table
-from src.backend.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot, get_ss_bar_chart
-from src.resources import labels, summary_columns
-from src.transform import load_data
+from src.components.pie.pie_chart import get_model_type_donut, get_dto_radial, get_library_strategy_plot
+from src.components.venn.venn import get_dt_venn, get_dt_venn4, get_venn_table
+from src.components.bar.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot, get_ss_bar_chart
+from src.components.resources import labels, summary_columns
+from src.components.transform import load_data
 from requests import get
 
 data = DataFrame([[0, 0], [1, 1]], columns=['Type', 'Model'])
-country = DataFrame(columns=['country', 'provider'])
 summary = DataFrame(columns=summary_columns)
 
 def custom_plots(release, plot_type, export_type='plot'):
@@ -156,8 +155,10 @@ def generate_summary_stats():
 
             df['date'] = f['released_at'].split('T')[0]
             df['tag'] = labels[f['tag_name'].replace('PDCM_', '').replace('v', '')]
+            df['links'] = f"[View](/data-release?dropdown-category={f['tag_name'].replace('PDCM_', '').replace('v', '')})"
             table = pd.concat([table, df]).reset_index(drop=True)
     return table
+
 
 
 def generate_country_plot(release, plot_type):

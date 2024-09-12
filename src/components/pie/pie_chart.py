@@ -10,7 +10,7 @@ def get_dto_donut(filtered_data, tm):
     colors_dict = {'mutation': '#ef553b', 'expression': '#636efa', 'copy number alteration': '#b6e880',
               'images': '#00cc96', 'drug': '#19d3f3', 'treatment': '#ff6692',
               'immunemarker': '#ffa15a', 'biomarker': '#ab63fa'}
-    cols = 4#int(len(pie_chart.index)/2)
+    cols = 4#int(len(pie.index)/2)
     fig = make_subplots(rows=2, cols=cols,
                         specs=[[{"type": "pie"}]*cols, [{"type": "pie"}]*cols])
     row = 1
