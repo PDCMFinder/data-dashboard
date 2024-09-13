@@ -2,7 +2,7 @@ import dash
 from dash import html, dcc, dash_table
 from dash.dependencies import Input, Output
 from src.components.util import *
-from src.components.resources import summary_columns
+from src.assets.resources import summary_columns
 from src.components.navbar.navbar import navbar
 
 backend = get_release_data("")

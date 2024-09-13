@@ -7,14 +7,19 @@ import matplotlib.pyplot as plt
 import base64
 
 def get_dt_venn(filtered_data, plot_type):
+    if filtered_data.shape[0]==0:
+        return None
     filtered_data = filtered_data.fillna('').groupby('molecular_characterisation_type')['model_id'].apply(set)
-    set1, set2, set3 = process_sets(filtered_data['mutation']), process_sets(filtered_data['expression']), process_sets(filtered_data['copy number alteration'])
-    labels = ['mutation', 'expression', 'copy number alteration']
-    fig = venn_to_plotly([set1, set2, set3], labels)
-    fig.update_layout(
-        title=dict(text="Model data type overlaps", automargin=True, yref='paper')
-    )
-    return fig
+    if 'mutation' in filtered_data.keys() and 'expression' in filtered_data.keys() and 'copy number alteration' in filtered_data.keys():
+        set1, set2, set3 = process_sets(filtered_data['mutation']), process_sets(filtered_data['expression']), process_sets(filtered_data['copy number alteration'])
+        labels = ['mutation', 'expression', 'copy number alteration']
+        fig = venn_to_plotly([set1, set2, set3], labels)
+        fig.update_layout(
+            title=dict(text="Model data type overlaps", automargin=True, yref='paper')
+        )
+        return fig
+    else:
+        return None
 
 def get_venn_table(df, output, model):
     model['links'] = "https://www.cancermodels.org/data/models/"+model['provider']+"/"+model['model_id']

@@ -1,9 +1,8 @@
 import dash
-from dash import html, dcc, dash_table
 from dash.dependencies import Input, Output
 from dash.exceptions import PreventUpdate
 from src.components.util import *
-from src.components.resources import labels
+from src.assets.resources import labels
 from urllib.parse import urlparse, parse_qs
 from src.components.navbar.navbar import navbar
 from src.components.pie.elements import *
@@ -11,14 +10,14 @@ from src.components.bar.elements import *
 
 
 backend = get_release_data("")
-padding = "0.5%"
-margin_left = '0.45%'
-margin_bottom = "0.5%"
+padding = "0.1%"
+margin_left = '0.1%'
+margin_bottom = "0.1%"
 app = dash.Dash(__name__)
 app.layout = html.Div(children=[
     navbar(),
     html.Div(children=[
-        dcc.Markdown('### Select Data release: ', style={'display': 'inline-block', 'padding-left': padding, 'margin': '0',
+        dcc.Markdown('### Select Data release: ', style={'display': 'inline-block', 'padding-left': '1%', 'margin': '0',
                         'fontSize': '18px', 'fontWeight': 'bold', 'color': '#013e48'}),
         dcc.Dropdown(
             id='dropdown-category',
@@ -26,8 +25,10 @@ app.layout = html.Div(children=[
                      labels.keys()],
             value=list(labels.keys())[0],
             multi=False,
-            style={'width': '50%', 'display': 'inline-block', 'marginLeft': padding, 'fontSize': '16px'}
-        )], style={'width': '100%', 'display': 'inline-block', 'display': 'flex', 'alignItems': 'center', 'gap': '2px', 'padding': '2px 0', 'backgroundColor': '#f2f2f2', 'border': '1px solid #ddd', 'borderRadius': '8px'}),
+            style={'width': '50%', 'display': 'inline-block', 'marginLeft': margin_left, 'fontSize': '16px'}
+        )], style={'width': '100%', 'display': 'inline-block', 'display': 'flex', 'alignItems': 'center', 'gap': '2px',
+                   'padding': '1px 0', 'backgroundColor': '#f2f2f2', 'border': '1px solid #ddd', 'borderRadius': '8px',
+                   'margin-bottom': margin_bottom}),
     ui_model_type_component(),
     ui_data_type_overview_component(),
     html.Div(children=[
@@ -85,8 +86,8 @@ app.layout = html.Div(children=[
                 id='table-container',
             ),
         ],
-        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': padding,
-               'border-radius': '10px', 'width': '33%', 'float': 'right', 'margin-bottom': margin_bottom}
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '0.5%',
+               'border-radius': '10px', 'width': '33.3%', 'float': 'right', 'margin-bottom': margin_bottom, 'margin-left': '0.1%'}
     ),
     ui_model_counts_component(),
     ui_molecular_data_tech_overview_component(),

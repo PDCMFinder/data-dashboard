@@ -8,7 +8,7 @@ labels = {'DR_6.5': 'Data release 6.5', 'DR_6.4': 'Data release 6.4', 'DR_6.3': 
           'DR_2.1': 'Data release 2.1', 'DR_2.0': 'Data release 2.0',
           'DR_1.0': 'Data release 1.0'}
 
-reactive_categories = {'Providers': 'provider', 'Model Type': 'model_type',
+reactive_categories = {'Country': 'country', 'Providers': 'provider', 'Model Type': 'model_type',
                  'Publications': 'publications', 'Age': 'age_in_years_at_collection',
                  'Cancer System': 'diagnosis', 'Tumour Type': 'tumour_type',
                  'Primary Site': 'primary_site', 'Gender': 'sex', 'Ethnicity': 'ethnicity'}
@@ -17,20 +17,16 @@ summary_columns = ['tag', 'links', 'date', "model_type_pdx", "model_type_cell_li
 
 padding = "0.5%"
 margin_left = '0.1%'
-margin_bottom = "0.5%"
+margin_bottom = "0.1%"
 border = '0.5px solid #000'
 bgcolor = '#f4f4f4'
 br = '10px'
 component_style_1 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
-                     'width': '31.5%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
+                     'width': '31.6%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
 component_style_2 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
-                     'width': '64.5%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
+                     'width': '64.35%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
 component_style_3 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
-                     'width': '33%', 'float': 'right', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
-
-
-
-
+                     'width': '33.3%', 'float': 'right', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
 
 primary_site_mapping = {
     "Central Nervous System": [
@@ -105,8 +101,8 @@ primary_site_mapping = {
 }
 
 
-diagnosis_to_cancer = read_csv('assets/diagnosis_mappings.tsv', sep='\t')
-diagnosis_to_cancer = dict(zip(diagnosis_to_cancer['sample_diagnosis'], diagnosis_to_cancer['mappedTermLabel']))
+#diagnosis_to_cancer = read_csv('assets/diagnosis_mappings.tsv', sep='\t')
+#diagnosis_to_cancer = dict(zip(diagnosis_to_cancer['sample_diagnosis'], diagnosis_to_cancer['mappedTermLabel']))
 #cancer_system = pd.read_json("https://www.cancermodels.org/api/model_metadata?select=histology,cancer_system").drop_duplicates()
 #cancer_system['histology'] = cancer_system['histology'].str.title()
 #cancer_system = None

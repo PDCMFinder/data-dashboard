@@ -1,15 +1,15 @@
 from dash import html, dcc, dash_table
-from src.components.resources import reactive_categories
-from src.components.resources import component_style_2, component_style_3
+from src.assets.resources import reactive_categories
+from src.assets.resources import component_style_2, component_style_3
 from pandas import DataFrame
 
 country = DataFrame(columns=['country', 'provider'])
 
 def ui_model_counts_component():
     return html.Div(children=[
+            dcc.Markdown('### Model counts plot:'),
             html.Div(
                 children=[
-                    dcc.Markdown('### Model counts plot:'),
                     dcc.Markdown('Attribute:', style={'display': 'inline-block'}),
                     dcc.Dropdown(
                         id='reactive-category',
@@ -28,9 +28,9 @@ def ui_model_counts_component():
                         multi=False,
                         style={'width': '40%', 'display': 'inline-block'}
                     ),
-                    html.Div([html.Button("Export to CSV", id="btn_csv_model_counts"), dcc.Download(id="download-dataframe-csv-model_counts")]),
-                ],
-                style={'width': '100%'}
+                    html.Div([html.Button("Export to CSV", id="btn_csv_model_counts"),
+                              dcc.Download(id="download-dataframe-csv-model_counts")]),
+                ], style={'width': '100%', 'display': 'inline-block', 'display': 'flex', 'alignItems': 'center', 'gap': '2px', 'padding': '2px 0'}
             ),
             dcc.Graph(
                 id='reactive-plot',

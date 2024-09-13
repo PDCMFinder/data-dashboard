@@ -1,4 +1,4 @@
-from src.components.resources import cancer_system, diagnosis_to_cancer, primary_site_mapping
+from src.assets.resources import cancer_system, diagnosis_to_cancer, primary_site_mapping
 import numpy as np
 from pandas import DataFrame
 from plotly_express import scatter

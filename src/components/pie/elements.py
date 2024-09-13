@@ -1,5 +1,5 @@
 from dash import html, dcc
-from src.components.resources import component_style_1, component_style_2
+from src.assets.resources import component_style_1, component_style_2
 
 def ui_model_type_component():
     return html.Div(children=[

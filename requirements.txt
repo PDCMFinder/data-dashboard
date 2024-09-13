@@ -1,12 +1,12 @@
 dash
-dash_bootstrap_components
 pandas
 plotly
 numpy
 matplotlib
 seaborn
-matplotlib_venn
 scipy
-plotly_express
+plotly-express
 openpyxl
+dash_bootstrap_components
+matplotlib-venn
 venn

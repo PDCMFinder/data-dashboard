@@ -1,51 +1,23 @@
 import pandas as pd
 from pandas import DataFrame, read_csv, read_json, notna, concat
 from src.components.pie.pie_chart import get_model_type_donut, get_dto_radial, get_library_strategy_plot
-from src.components.venn.venn import get_dt_venn, get_dt_venn4, get_venn_table
+from src.components.venn.venns import get_dt_venn, get_dt_venn4, get_venn_table
 from src.components.bar.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot, get_ss_bar_chart
-from src.components.resources import labels, summary_columns
-from src.components.transform import load_data
+from src.assets.resources import labels, summary_columns
+from src.components.transformation.transform import load_data
 from requests import get
 
 data = DataFrame([[0, 0], [1, 1]], columns=['Type', 'Model'])
 summary = DataFrame(columns=summary_columns)
 
 def custom_plots(release, plot_type, export_type='plot'):
-    if release == 'latest':
-        url = 'https://www.cancermodels.org/api/model_molecular_metadata?select=sample_id,data_source,data_type,platform_name,model_id'
-        mapper = {'data_source': 'provider', 'data_type': 'molecular_characterisation_type',
-                  'platform_name': 'instrument_model'}
-        samples = read_json(url).rename(columns=mapper)
-        immune_image_data = read_json('https://www.cancermodels.org/api/search_index?select=patient_sample_id,data_source,dataset_available,model_images,external_model_id')
-        immune_image_data['model_images'] = [None if r is None else 'images' for r in immune_image_data['model_images']]
-        immune_image_data['immunemarker'] = ['immunemarker' if r is not None and 'immune markers' in r else None for r in immune_image_data['dataset_available']]
-        immune_image_data['treatment'] = ['treatment' if r is not None and 'patient treatment' in r else None for r in immune_image_data['dataset_available']]
-        immune_image_data['drug'] = ['drug' if r is not None and 'dosing studies' in r else None for r in immune_image_data['dataset_available']]
-        for t in ['model_images', 'treatment', 'drug', 'immunemarker']:
-            temp = immune_image_data[~immune_image_data[t].isna()]
-            temp['provider'] = temp['data_source']
-            temp['molecular_characterisation_type'] = temp[t]
-            temp['instrument_model'] = ""
-            temp['sample_id'] = temp['patient_sample_id']
-            temp['model_id'] = temp['external_model_id']
-            temp = temp[samples.columns]
-            samples = concat([samples, temp]).reset_index(drop=True)
-        samples['molecular_characterisation_type'] = samples['molecular_characterisation_type'].str.replace('bio markers', 'biomarker')
-    else:
-        samples = load_data(release)['samples']
+    samples = load_data(release)['samples']
     if plot_type == 'dto_donut':
         publication_counts = load_data(release)['total'][['model_id', 'publications']].groupby('publications').count().reset_index().iloc[1][1]
         pie_table = samples.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
             'molecular_characterisation_type').count().sort_index()['model_id'].sort_values().to_frame()
         pie_table = pd.concat([pie_table, pd.DataFrame({'model_id': publication_counts}, index=['publication'])]).sort_index()
-        if release == 'latest':
-            url = 'https://www.cancermodels.org/api/model_metadata?select=model_id,data_source,type,pubmed_ids,patient_age,histology,tumor_type,primary_site,patient_sex,patient_ethnicity'
-            mapper = {'data_source': 'provider', 'type': 'model_type', 'pubmed_ids': 'publications',
-                      'patient_age': 'age_in_years_at_collection', 'histology': 'diagnosis', 'patient_sex': 'sex',
-                      'patient_ethnicity': 'ethnicity'}
-            tm = read_json(url).rename(columns=mapper).shape[0]
-        else:
-            tm = load_data(release)['total'][['model_id']].shape[0]
+        tm = load_data(release)['total'][['model_id']].shape[0]
         if export_type == 'table':
             return pie_table.reset_index()
         fig = get_dto_radial(pie_table, int(tm))
@@ -121,6 +93,8 @@ def reactive_bar_plot(release, category, gc, plot_type):
         models = read_json(url).rename(columns=mapper)
     else:
         models = load_data(release)['total']
+        country = load_data(release)['country'].rename({'1': 'provider', '2': 'country'}, axis=1)
+        models = models.merge(country[['provider', 'country']], on='provider', how='left')
     groupby_columns = [category]
     if gc is not None and category != gc:
         groupby_columns.append(gc)
@@ -145,7 +119,7 @@ def generate_summary_stats():
     table = DataFrame()
     for f in get("https://gitlab.ebi.ac.uk/api/v4/projects/1629/releases?private_token=glpat-gbQzKFxHTWyp_jZhP5gE").json():
         if f['tag_name'].replace('PDCM_', '').replace('v', '') in labels.keys():
-            df = read_csv(f"assets/phenomic/phenomics_data_points_{f['tag_name'].replace('PDCM_', '')}.csv").groupby('release').sum(numeric_only=False).reset_index()
+            df = read_csv(f"src/assets/phenomic/phenomics_data_points_{f['tag_name'].replace('PDCM_', '')}.csv").groupby('release').sum(numeric_only=False).reset_index()
             data = load_data(f['tag_name'].replace('PDCM_DR_v', 'DR_'))['total'][['model_id', 'model_type']].groupby('model_type').count()['model_id'].reset_index()
             df['model_type_cell_line'] = data[data['model_type'].str.contains('Cell')].reset_index(drop=True)['model_id'][0]
             df['model_type_organoid'] = data[data['model_type'].str.contains('Organoid')].reset_index(drop=True)['model_id'][0]

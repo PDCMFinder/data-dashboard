@@ -1,16 +1,16 @@
 from pandas import read_csv, DataFrame
-from src.components.resources import primary_site_mapping, diagnosis_to_cancer_system
+from src.assets.resources import primary_site_mapping, diagnosis_to_cancer_system
 
 cache = {}
 
 def load_data(release):
     if release in cache:
         return cache[release]
-    country = f"assets/country/provider_country_{release.replace('_', '_v')}.csv"
+    country = f"src/assets/country/provider_country_{release.replace('_', '_v')}.csv"
     country = read_csv(country)
-    samples = f"assets/sample/{release.replace('_', '_v')}.csv"
+    samples = f"src/assets/sample/{release.replace('_', '_v')}.csv"
     samples = read_input_file(samples)
-    total_model = f"assets/model/total_models_{release.replace('_', '_v')}.csv"
+    total_model = f"src/assets/model/total_models_{release.replace('_', '_v')}.csv"
     total_model = read_input_file(total_model)
     data = {'total': total_model, 'samples': samples, 'country': country}
     cache[release] = data

@@ -47,10 +47,10 @@ def venn_to_plotly(L_sets, L_labels=None, title=None):
             type="circle",
             xref="x",
             yref="y",
-            x0=v.centers[i][0] - v.radii[i],
-            y0=v.centers[i][1] - v.radii[i],
-            x1=v.centers[i][0] + v.radii[i],
-            y1=v.centers[i][1] + v.radii[i],
+            x0=v.centers[i].x - v.radii[i],
+            y0=v.centers[i].y - v.radii[i],
+            x1=v.centers[i].x + v.radii[i],
+            y1=v.centers[i].y + v.radii[i],
             fillcolor=L_color[i],
             line_color=L_color[i],
             opacity=0.75
@@ -72,10 +72,10 @@ def venn_to_plotly(L_sets, L_labels=None, title=None):
         L_annotation.append(anno_set_label)
 
         # get min and max values of current set shape
-        L_x_max.append(v.centers[i][0] + v.radii[i])
-        L_x_min.append(v.centers[i][0] - v.radii[i])
-        L_y_max.append(v.centers[i][1] + v.radii[i])
-        L_y_min.append(v.centers[i][1] - v.radii[i])
+        L_x_max.append(v.centers[i].x + v.radii[i])
+        L_x_min.append(v.centers[i].x - v.radii[i])
+        L_y_max.append(v.centers[i].y + v.radii[i])
+        L_y_min.append(v.centers[i].y - v.radii[i])
 
     # determine number of subsets
     n_subsets = sum([scipy.special.binom(n_sets, i + 1) for i in range(0, n_sets)])
