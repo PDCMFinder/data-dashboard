@@ -3,16 +3,21 @@ from src.assets.resources import primary_site_mapping, diagnosis_to_cancer_syste
 
 cache = {}
 
-def load_data(release):
-    if release in cache:
+def load_data(release, score=None):
+    if release in cache and score is None:
         return cache[release]
+    if score is not None:
+        metadata_scores = f"src/assets/metadata-scores-all-release.csv"
+        metadata_scores = read_input_file(metadata_scores, ['model_id', 'provider', 'model_type',
+                                                            release.replace('_', '_v').replace('DR', 'PDCM_DR')])
+        return {'metadata_scores': metadata_scores}
     country = f"src/assets/country/provider_country_{release.replace('_', '_v')}.csv"
     country = read_csv(country)
     samples = f"src/assets/sample/{release.replace('_', '_v')}.csv"
     samples = read_input_file(samples)
     total_model = f"src/assets/model/total_models_{release.replace('_', '_v')}.csv"
     total_model = read_input_file(total_model)
-    data = {'total': total_model, 'samples': samples, 'country': country}
+    data = {'total': total_model, 'samples': samples, 'country': country, }
     cache[release] = data
     return data
 

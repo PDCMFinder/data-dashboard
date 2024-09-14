@@ -1,6 +1,6 @@
 from dash import html, dcc, dash_table
 from src.assets.resources import reactive_categories
-from src.assets.resources import component_style_2, component_style_3
+from src.assets.resources import component_style_2, component_style_3, component_style_4
 from pandas import DataFrame
 
 country = DataFrame(columns=['country', 'provider'])
@@ -62,4 +62,18 @@ def ui_molecular_data_type_by_model_type_component():
             dcc.Graph(id='mol-model-type-plot', style={'width': '100%'}),
             html.Div([html.Button("Export to CSV", id="btn_csv_mmtp"), dcc.Download(id="download-dataframe-csv-mmtp")]),
         ], style=component_style_2
+    )
+
+def ui_ms_bar_radio_component():
+    return html.Div(children=[
+        dcc.RadioItems(['PDX', 'Cell Line', 'Organoid'], 'PDX', inline=True, id='ms-category', style={'width': '50%', 'display': 'inline-block', 'marginLeft': '0.1%', 'fontSize': '16px'}),
+    ], style={'width': '100%', 'display': 'inline-block', 'display': 'flex', 'alignItems': 'center', 'gap': '2px',
+              'padding': '1% 0', 'backgroundColor': '#f2f2f2', 'border': '1px solid #ddd', 'borderRadius': '8px',
+              'margin-bottom': '0.1%'})
+
+def ui_ms_bar_plot_component(mt):
+    return html.Div(children=[dcc.Markdown(f'### Metadata scores for {mt} models:', style={'display': 'inline-block'}),
+            dcc.Graph(id=f'{mt}-model-type-plot', style={'width': '100%'}),
+            html.Div([html.Button("Export", id=f"btn_csv_ms_{mt}"), dcc.Download(id=f"download-dataframe-csv-ms-{mt}")]),
+        ], style=component_style_4
     )

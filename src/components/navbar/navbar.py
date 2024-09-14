@@ -34,6 +34,12 @@ def navbar():
                         className='nav-link',
                         style={"color": "white", "padding": "10px 20px", "textDecoration": "none"}
                     ),
+                    dcc.Link(
+                        'Metadata scores',
+                        href='/metadata-scores',
+                        className='nav-link',
+                        style={"color": "white", "padding": "10px 20px", "textDecoration": "none"}
+                    ),
                 ],
                 className='navbar',
                 style={

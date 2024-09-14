@@ -2,7 +2,7 @@ import pandas as pd
 from pandas import DataFrame, read_csv, read_json, notna, concat
 from src.components.pie.pie_chart import get_model_type_donut, get_dto_radial, get_library_strategy_plot
 from src.components.venn.venns import get_dt_venn, get_dt_venn4, get_venn_table
-from src.components.bar.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot, get_ss_bar_chart
+from src.components.bar.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot, get_ss_bar_chart, get_metadata_score_plot
 from src.assets.resources import labels, summary_columns
 from src.components.transformation.transform import load_data
 from requests import get
@@ -133,8 +133,6 @@ def generate_summary_stats():
             table = pd.concat([table, df]).reset_index(drop=True)
     return table
 
-
-
 def generate_country_plot(release, plot_type):
     table = load_data(release)['country'].rename({'0':'release', '1':'provider', '2':'country'}, axis=1)[['country', 'provider']]
     df = table.groupby('country')['provider'].apply(list).reset_index(name='provider')
@@ -155,6 +153,12 @@ def molecular_model_type_plot(release, plot_type):
         return data
     return get_molecular_model_type_plot(data)
 
+def generate_metadata_score_bar_plot(release, model_type):
+    data = load_data(release, 'score')['metadata_scores']
+    data['model_type'] = data['model_type'].str.lower()
+    data = data[data['model_type'] == model_type]
+    data = data.rename([{c: 'scores'} for c in data.columns if c.__contains__('PDCM')][0], axis=1)
+    return get_metadata_score_plot(data)
 
 class get_release_data:
     def __init__(self, release):

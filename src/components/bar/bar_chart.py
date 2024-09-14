@@ -1,5 +1,5 @@
 from src.assets.resources import reactive_categories
-from plotly_express import bar
+from plotly_express import bar, histogram
 
 
 def get_bar_chart(models):
@@ -63,4 +63,8 @@ def get_molecular_model_type_plot(data):
     fig = bar(data, x='molecular_characterisation_type', y='Count', color='model_type', hover_name='model_type',
               hover_data='Total', color_discrete_map=color_code)
     fig.update_layout(barmode='stack', xaxis={'categoryorder': 'category ascending'})
+    return fig
+
+def get_metadata_score_plot(data):
+    fig = histogram(data, x='scores')
     return fig
