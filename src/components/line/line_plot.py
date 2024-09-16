@@ -11,7 +11,7 @@ def plot_line_plot_ms(selected_rows):
                     x=x_labs,
                     y=[row[r] for r in x_labs],
                     mode='lines+markers',
-                    name=row['model_id']
+                    name=[row['model_id'], row['provider']]
                 ))
 
         # Update the layout
