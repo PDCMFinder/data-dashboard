@@ -65,6 +65,7 @@ def get_molecular_model_type_plot(data):
     fig.update_layout(barmode='stack', xaxis={'categoryorder': 'category ascending'})
     return fig
 
-def get_metadata_score_plot(data):
-    fig = histogram(data, x='scores')
+def get_metadata_score_plot(data, model_type):
+    color_code = {"pdx": "#6e9eeb", "organoid": "#8f7cc3", "cell line": "#94c37e", "Other": "#ea921b"}
+    fig = histogram(data, x='scores', color_discrete_sequence=[color_code[model_type]])
     return fig

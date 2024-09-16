@@ -8,6 +8,7 @@ from urllib.parse import urlparse, parse_qs
 from src.components.navbar.navbar import navbar
 from src.components.bar.elements import *
 from src.components.table.tables import *
+from src.components.line.line_plot import plot_line_plot_ms
 
 padding = "0.1%"
 margin_left = '0.1%'
@@ -82,3 +83,11 @@ def register_callbacks(app):
     )
     def update_ms_table(category):
         return get_ms_table().to_dict('records')
+
+    # Callback to update the line plot based on selected rows
+    @app.callback(
+        Output('ms-line-plot', 'figure'),
+        [Input('data-table-ms', 'selected_rows')]
+    )
+    def update_ms_line_graph(selected_rows):
+        return plot_line_plot_ms(selected_rows)

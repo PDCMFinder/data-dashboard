@@ -10,10 +10,11 @@ def score_table_component():
         id='data-table-ms',
         columns=[{'name': col, 'id': col} for col in df.columns],
         data=df.to_dict('records'),
-        page_size=5,
+        page_size=15,
         filter_action='native',  # Allow column filtering
         sort_action='native',  # Allow sorting by columns
         row_selectable='multi',  # Allow row selection
+        selected_rows=[],
         style_table={'overflowX': 'auto'},  # Handle overflow of columns
         style_cell={'textAlign': 'left'},
         style_header={
@@ -23,6 +24,7 @@ def score_table_component():
         },
         export_format='xlsx',
         export_headers='display',
-    )
+    ),
+    dcc.Graph(id='ms-line-plot')
     ], style=component_style_5
     )
