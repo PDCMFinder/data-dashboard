@@ -51,9 +51,10 @@ def get_dto_radial(pie_chart, tm):
               'immunemarker': '#ffa15a', 'biomarker': '#ab63fa', 'publication': '#ffda2f'}
     fig = Figure()
     radius = 0
-    for i, dt in enumerate(pie_chart.index):
-        if not isnan(pie_chart.loc[dt].reset_index(drop=True)[0]):
-            count = int(pie_chart.loc[dt].reset_index(drop=True)[0])
+    for i, row in pie_chart.iterrows():
+        dt = row[0]
+        count = row[1]
+        if not isnan(count):
             theta = linspace(0, 360 * (count/tm), count, endpoint=False)
             fig.add_trace(Scatterpolar(
                 r=arange(radius, count, 0.01),

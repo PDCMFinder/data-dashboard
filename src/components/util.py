@@ -16,10 +16,10 @@ def custom_plots(release, plot_type, export_type='plot'):
         publication_counts = load_data(release)['total'][['model_id', 'publications']].groupby('publications').count().reset_index().iloc[1][1]
         pie_table = samples.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
             'molecular_characterisation_type').count().sort_index()['model_id'].sort_values().to_frame()
-        pie_table = pd.concat([pie_table, pd.DataFrame({'model_id': publication_counts}, index=['publication'])]).sort_index()
+        pie_table = pd.concat([pie_table, pd.DataFrame({'model_id': publication_counts}, index=['publication'])]).sort_values().reset_index()
         tm = load_data(release)['total'][['model_id']].shape[0]
         if export_type == 'table':
-            return pie_table.reset_index()
+            return pie_table.sort_index().reset_index()
         fig = get_dto_radial(pie_table, int(tm))
         return fig
     elif plot_type.__contains__('dt_venn'):
