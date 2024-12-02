@@ -16,21 +16,14 @@ reactive_categories = {'Country': 'country', 'Providers': 'provider', 'Model Typ
 summary_columns = ['tag', 'links', 'date', "model_type_pdx", "model_type_cell_line", "model_type_organoid", "model_type_other", "model_type_total", "sample_type_xenograft", "sample_type_cell", "sample_type_patient", "sample_type_total", "molecular_data_biomarker", "molecular_data_cna", "molecular_data_expression", "molecular_data_immunemarker", "molecular_data_mut", "molecular_data_points_total", "drug_data_points", "treatment_data_points", "image_data_points"]
 
 padding = "0.5%"
-margin_left = '0.1%'
-margin_bottom = "0.1%"
 border = '0.5px solid #000'
 bgcolor = '#f4f4f4'
 br = '10px'
-component_style_1 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
-                     'width': '31.6%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
-component_style_2 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
-                     'width': '64.35%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
-component_style_3 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
-                     'width': '33.3%', 'float': 'right', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
-component_style_4 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
-                     'width': '32.15%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
-component_style_5 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
-                     'width': '99%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
+component_style_1 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br}
+component_style_2 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br, 'grid-column': '1 / 3'}
+component_style_3 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br}
+component_style_4 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br}
+component_style_5 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br, 'grid-column': '1 / -1'}
 
 
 primary_site_mapping = {
