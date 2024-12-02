@@ -29,15 +29,36 @@ app.layout = html.Div(children=[
         )], style={'width': '100%', 'display': 'inline-block', 'display': 'flex', 'alignItems': 'center', 'gap': '2px',
                    'padding': '1px 0', 'backgroundColor': '#f2f2f2', 'border': '1px solid #ddd', 'borderRadius': '8px',
                    'margin-bottom': margin_bottom}),
+    ui_model_type_component(),
+    ui_data_type_overview_component(),
     html.Div(children=[
-        ui_model_type_component(),
-        ui_data_type_overview_component(),
-        html.Div(children=[
-                dcc.Markdown('### Model data overlap:', style={'display': 'inline-block'}),
-                dcc.RadioItems(['Total', 'PDX', 'Cell Line', 'Organoid'], 'Total', inline=True, id='venn-type'),
-                html.Div(dcc.Graph(id='venn-plot'),),
-                html.Div(dcc.Graph(
-                    id='venn-plot-venn4',
+            dcc.Markdown('### Model data overlap:', style={'display': 'inline-block'}),
+            dcc.RadioItems(['Total', 'PDX', 'Cell Line', 'Organoid'], 'Total', inline=True, id='venn-type'),
+            html.Div(dcc.Graph(id='venn-plot'),),
+            html.Div(dcc.Graph(
+                id='venn-plot-venn4',
+                figure={
+                'data': [],
+                'layout': {
+                    'images': [{
+                        'source': None,
+                        'xref': 'paper',
+                        'yref': 'paper',
+                        'x': 0.5,
+                        'y': 0.5,
+                        'sizex': 1,
+                        'sizey': 1,
+                        'xanchor': 'center',
+                        'yanchor': 'middle'
+                    }],
+                    'xaxis': {'visible': False},
+                    'yaxis': {'visible': False}
+                }
+        }
+                ),
+            ),
+            html.Div(dcc.Graph(
+                    id='venn-plot-venn4-bio',
                     figure={
                     'data': [],
                     'layout': {
@@ -56,45 +77,22 @@ app.layout = html.Div(children=[
                         'yaxis': {'visible': False}
                     }
             }
-                    ),
                 ),
-                html.Div(dcc.Graph(
-                        id='venn-plot-venn4-bio',
-                        figure={
-                        'data': [],
-                        'layout': {
-                            'images': [{
-                                'source': None,
-                                'xref': 'paper',
-                                'yref': 'paper',
-                                'x': 0.5,
-                                'y': 0.5,
-                                'sizex': 1,
-                                'sizey': 1,
-                                'xanchor': 'center',
-                                'yanchor': 'middle'
-                            }],
-                            'xaxis': {'visible': False},
-                            'yaxis': {'visible': False}
-                        }
-                }
-                    ),
-                ),
-                html.Div([
-                    html.Button("Export to XLS", id="btn_csv"),
-                    dcc.Download(id="download-dataframe-csv")
-                ],
-                    id='table-container',
-                ),
+            ),
+            html.Div([
+                html.Button("Export to XLS", id="btn_csv"),
+                dcc.Download(id="download-dataframe-csv")
             ],
-            style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '0.5%',
-                'border-radius': '10px', 'width': '33.3%', 'float': 'right', 'margin-bottom': margin_bottom, 'margin-left': '0.1%'}
-        ),
-        ui_model_counts_component(),
-        ui_molecular_data_tech_overview_component(),
-        ui_country_plots_component(),
-        ui_molecular_data_type_by_model_type_component(),
-        ], style={'display': 'grid', 'grid-template-columns': '1fr 1fr 1fr', 'gap': '10px'})
+                id='table-container',
+            ),
+        ],
+        style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '0.5%',
+               'border-radius': '10px', 'width': '33.3%', 'float': 'right', 'margin-bottom': margin_bottom, 'margin-left': '0.1%'}
+    ),
+    ui_model_counts_component(),
+    ui_molecular_data_tech_overview_component(),
+    ui_country_plots_component(),
+    ui_molecular_data_type_by_model_type_component(),
     ],
     style={'font-family': 'Merriweather', 'padding': padding}
 )
