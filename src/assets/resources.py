@@ -24,11 +24,11 @@ br = '10px'
 component_style_1 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
                      'width': '31.4%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
 component_style_2 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
-                     'width': '64.25%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
+                     'width': '64.1%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
 component_style_3 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
-                     'width': '32.3%', 'float': 'right', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
+                     'width': '33.2%', 'float': 'right', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
 component_style_4 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
-                     'width': '32.1%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
+                     'width': '32%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
 component_style_5 = {'border': border, 'background-color': bgcolor, 'padding': padding, 'border-radius': br,
                      'width': '99%', 'float': 'left', 'margin-bottom': margin_bottom, 'margin-left': margin_left}
 
