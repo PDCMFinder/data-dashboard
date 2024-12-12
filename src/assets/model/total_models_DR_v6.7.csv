@@ -4856,8 +4856,8 @@ CSS-VG-014,IRCCS-CSS,PDX,,Not provided,T-ALL,Not provided,spleen/bone marrow,Not
 CSS-VG-015,IRCCS-CSS,PDX,,Not provided,T-ALL,Not provided,spleen/bone marrow,Not provided,Western European,PDX
 CSS-VG-016,IRCCS-CSS,PDX,,Not provided,T-ALL,Not provided,spleen/bone marrow,Not provided,Western European,PDX
 CSS-VG-017,IRCCS-CSS,PDX,,26,T-ALL,primary,spleen/bone marrow,male,Western European,PDX
-CSS-VG-018,IRCCS-CSS,PDX,,10-19,T-ALL,primary,spleen/bone marrow,Not provided,Western European,PDX
-CSS-VG-019,IRCCS-CSS,PDX,,10-19,T-ALL,primary,spleen/bone marrow,Not provided,Western European,PDX
+CSS-VG-018,IRCCS-CSS,PDX,,Oct-19,T-ALL,primary,spleen/bone marrow,Not provided,Western European,PDX
+CSS-VG-019,IRCCS-CSS,PDX,,Oct-19,T-ALL,primary,spleen/bone marrow,Not provided,Western European,PDX
 CSS-VG-020,IRCCS-CSS,PDX,,18,T-ALL,primary,spleen/bone marrow,male,Western European,PDX
 CSS-VG-021,IRCCS-CSS,cell line,,61,T-ALL,primary,blood,Not provided,Western European,Cell Line
 CSS-VG-022,IRCCS-CSS,cell line,,27,T-ALL,primary,blood,male,Western European,Cell Line
@@ -7570,7 +7570,7 @@ K79811-243-R,PDMR,PDX,,Not provided,Glioblastoma multiforme,Primary,Neurologic,F
 147771-066-R2-J2-PDC,PDMR,Cell line,,58,Adenocarcinoma - colon,Primary,Digestive/Gastrointestinal,Male,White,Cell Line
 147771-066-R2-J3-PDC,PDMR,Cell line,,58,Adenocarcinoma - colon,Primary,Digestive/Gastrointestinal,Male,White,Cell Line
 147771-066-R2-V2-organoid,PDMR,Organoid,,58,Adenocarcinoma - colon,Primary,Digestive/Gastrointestinal,Male,White,Organoid
-152344-287-R-V1-organoid,PDMR,Organoid,,90 or older,Pharyngeal squam. cell carcinoma,Primary,Head and Neck,Male,White,Organoid
+152344-287-R-V1-organoid,PDMR,Organoid,,90,Pharyngeal squam. cell carcinoma,Primary,Head and Neck,Male,White,Organoid
 157184-299-T-J1-PDC,PDMR,Cell line,,43,Adenocarcinoma - rectum,Primary,Digestive/Gastrointestinal,Female,Not Provided,Cell Line
 161853-170-R-J1-PDC,PDMR,Cell line,,76,Endometrioid endomet. adenocar.,Primary,Gynecologic,Female,White,Cell Line
 163895-298-T-V1-organoid,PDMR,Organoid,,71,"Ovarian cancer, NOS",Primary,Gynecologic,Female,White,Organoid
@@ -7660,7 +7660,7 @@ K79811-243-R,PDMR,PDX,,Not provided,Glioblastoma multiforme,Primary,Neurologic,F
 413552-270-R-V1-organoid,PDMR,Organoid,,76,Squamous cell lung carcinoma,Primary,Respiratory/Thoracic,Male,White,Organoid
 414838-212-R-J2-PDC,PDMR,Cell line,,52,Invasive breast carcinoma,Primary,Breast,Female,White,Cell Line
 414838-212-R-V2-organoid,PDMR,Organoid,,52,Invasive breast carcinoma,Primary,Breast,Female,White,Organoid
-415371-026-R-V1-organoid,PDMR,Organoid,,90 or older,Squamous cell carcinoma - skin,Primary,Skin,Male,Not Provided,Organoid
+415371-026-R-V1-organoid,PDMR,Organoid,,90,Squamous cell carcinoma - skin,Primary,Skin,Male,Not Provided,Organoid
 416634-122-T-V1-organoid,PDMR,Organoid,,51,Transitional cell car. - uroth.,Primary,Genitourinary,Male,Not Provided,Organoid
 417952-058-R-J1-PDC,PDMR,Cell line,,77,"Vaginal cancer, NOS",Primary,Gynecologic,Female,White,Cell Line
 417952-058-R-V1-organoid,PDMR,Organoid,,77,"Vaginal cancer, NOS",Primary,Gynecologic,Female,White,Organoid
@@ -7748,7 +7748,7 @@ K79811-243-R,PDMR,PDX,,Not provided,Glioblastoma multiforme,Primary,Neurologic,F
 633739-251-R-J1-PDC,PDMR,Cell line,,62,Adenocarcinoma - pancreas,Primary,Digestive/Gastrointestinal,Male,White,Cell Line
 633739-251-R-V1-organoid,PDMR,Organoid,,62,Adenocarcinoma - pancreas,Primary,Digestive/Gastrointestinal,Male,White,Organoid
 638234-109-R-J1-PDC,PDMR,Cell line,,49,Adenocarcinoma - colon,Primary,Digestive/Gastrointestinal,Male,White,Cell Line
-639538-348-R-J2-PDC,PDMR,Cell line,,90 or older,Fibrosarcoma - not infantile,Primary,Musculoskeletal,Male,White,Cell Line
+639538-348-R-J2-PDC,PDMR,Cell line,,90,Fibrosarcoma - not infantile,Primary,Musculoskeletal,Male,White,Cell Line
 656117-040-R-V2-organoid,PDMR,Organoid,,63,Squamous cell lung carcinoma,Primary,Respiratory/Thoracic,Female,White,Organoid
 657687-091-R-J1-PDC,PDMR,Cell line,,64,Endometrioid endomet. adenocar.,Primary,Gynecologic,Female,White,Cell Line
 657687-091-R-V1-organoid,PDMR,Organoid,,64,Endometrioid endomet. adenocar.,Primary,Gynecologic,Female,White,Organoid
@@ -8779,287 +8779,287 @@ HCM-SANG-0310-C15,SANG,3-D: Organoid,,68,Esophageal cancer Esophagus adenocarcin
 HCM-SANG-0275-C18,SANG,3-D: Organoid,,73,Colorectal cancer Adenocarcinoma,Primary,Colon,Male,Not provided,Organoid
 HCM-SANG-0277-C18,SANG,3-D: Organoid,,78,Colorectal cancer Adenocarcinoma,Primary,Colon,Male,Not provided,Organoid
 HCM-SANG-0280-C18,SANG,3-D: Organoid,,71,Colorectal cancer Adenocarcinoma,Primary,Colon,Male,Not provided,Organoid
-SJACT030812_X1,SJCRH,PDX,PMID: 28854174,2.0,Adrenal cortical carcinoma,Not provided,Adrenal mass,Male,Not provided,PDX
-SJACT030812_X2,SJCRH,PDX,PMID: 28854174,2.0,Adrenal cortical carcinoma,Not provided,Distal pancreas,Male,Not provided,PDX
+SJACT030812_X1,SJCRH,PDX,PMID: 28854174,2,Adrenal cortical carcinoma,Not provided,Adrenal mass,Male,Not provided,PDX
+SJACT030812_X2,SJCRH,PDX,PMID: 28854174,2,Adrenal cortical carcinoma,Not provided,Distal pancreas,Male,Not provided,PDX
 SJCCS030167_X1,SJCRH,PDX,PMID: 28854174,0.42,Clear cell sarcoma,Primary,Kidney,Male,Not provided,PDX
-SJCCS030604_X1,SJCRH,PDX,PMID: 28854174,22.0,Clear cell sarcoma,Recurrent,Thumb,Female,Not provided,PDX
-SJDSRCT030490_X1,SJCRH,PDX,PMID: 28854174,20.0,Desmoplastic small round cell tumor,Recurrent,Pelvis,Female,Not provided,PDX
-SJDSRCT030722_X1,SJCRH,PDX,PMID: 28854174,20.0,Desmoplastic small round cell tumor,Metastatic,Thigh,Male,Not provided,PDX
-SJDSRCT046151_X1,SJCRH,PDX,PMID: 28854174,14.0,Desmoplastic small round cell tumor,Primary,Pelvis,Male,Not provided,PDX
-SJDSRCT046155_X1,SJCRH,PDX,PMID: 28854174,23.0,Desmoplastic small round cell tumor,Recurrent,Abdomen,Male,Not provided,PDX
-SJDSRCT049192_X1,SJCRH,PDX,PMID: 28854174,11.0,Desmoplastic small round cell tumor,Primary,Abdominopelvic,Male,Not provided,PDX
-SJDSRCT049192_X3,SJCRH,PDX,PMID: 28854174,12.0,Desmoplastic small round cell tumor,Recurrent,Liver,Male,Not provided,PDX
-SJEWS001321_X1,SJCRH,PDX,"PMID: 28854174, PMID: 25437539",10.0,Ewing sarcoma,Primary,Tibia,Male,Not provided,PDX
-SJEWS030393_X1,SJCRH,PDX,PMID: 28854174,17.0,Ewing sarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJEWS030565_X1,SJCRH,PDX,PMID: 28854174,14.0,Ewing sarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJEWS031703_X1,SJCRH,PDX,PMID: 28854174,15.0,Ewing sarcoma,Primary,Pelvis,Male,Not provided,PDX
-SJEWS046144_X1,SJCRH,PDX,PMID: 28854174,15.0,Ewing sarcoma,Primary,Chest wall,Male,Not provided,PDX
-SJEWS049193_X1,SJCRH,PDX,PMID: 28854174,11.0,Ewing sarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJEWS049193_X2,SJCRH,PDX,PMID: 28854174,11.0,Ewing sarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJEWS056156_X1,SJCRH,PDX,PMID: 28854174,22.0,Ewing sarcoma,Recurrent,Rib,Male,Not provided,PDX
-SJEWS056156_X2,SJCRH,PDX,PMID: 28854174,22.0,Ewing sarcoma,Recurrent,Rib,Male,Not provided,PDX
-SJEWS063826_X1,SJCRH,PDX,PMID: 28854174,17.0,Ewing sarcoma,Recurrent,Axilla,Male,Not provided,PDX
-SJEWS063829_X1,SJCRH,PDX,PMID: 28854174,8.0,Ewing sarcoma,Primary,Femur,Female,Not provided,PDX
-SJEWS063834_X1,SJCRH,PDX,PMID: 28854174,14.0,Ewing sarcoma,Recurrent,Chest wall,Female,Not provided,PDX
-SJEWS063834_X2,SJCRH,PDX,PMID: 28854174,14.0,Ewing sarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJEWS071780_X1,SJCRH,PDX,PMID: 28854174,18.0,Ewing sarcoma,Primary,Chest wall,Female,Not provided,PDX
-SJEWS071783_X1,SJCRH,PDX,PMID: 28854174,20.0,Ewing sarcoma,Recurrent,Chest,Male,Not provided,PDX
-SJEWS071783_X2,SJCRH,PDX,PMID: 28854174,20.0,Ewing sarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJEWS071783_X3,SJCRH,PDX,PMID: 28854174,20.0,Ewing sarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJEWS071783_X4,SJCRH,PDX,PMID: 28854174,20.0,Ewing sarcoma,Recurrent,Spleen,Male,Not provided,PDX
-SJEWS071783_X5,SJCRH,PDX,PMID: 28854174,20.0,Ewing sarcoma,Recurrent,Liver,Male,Not provided,PDX
-SJEWS071785_X1,SJCRH,PDX,PMID: 28854174,12.0,Ewing sarcoma,Recurrent,Spine,Female,Not provided,PDX
-SJEWS071785_X2,SJCRH,PDX,PMID: 28854174,12.0,Ewing sarcoma,Recurrent,Periorbital,Female,Not provided,PDX
-SJGIST030657_X1,SJCRH,PDX,PMID: 28854174,18.0,GIST,Primary,Stomach,Male,Not provided,PDX
-SJHB030622_X1,SJCRH,PDX,PMID: 28854174,4.0,Hepatoblastoma,Metastatic,Lung,Female,Not provided,PDX
-SJHB030622_X2,SJCRH,PDX,PMID: 28854174,4.0,Hepatoblastoma,Metastatic,Lung,Female,Not provided,PDX
-SJHB031109_X1,SJCRH,PDX,PMID: 28854174,5.0,Hepatoblastoma,Primary,Liver,Female,Not provided,PDX
-SJHGS012410_X1,SJCRH,PDX,PMID: 28854174,21.0,High grade sarcoma,Metastatic,Lung,Female,Not provided,PDX
-SJHGS012411_X1,SJCRH,PDX,PMID: 28854174,19.0,High grade sarcoma,Recurrent,Thigh,Female,Not provided,PDX
-SJHGS015726_X1,SJCRH,PDX,PMID: 28854174,12.0,High grade sarcoma,Recurrent,Calf,Male,Not provided,PDX
-SJHGS015726_X2,SJCRH,PDX,PMID: 28854174,12.0,High grade sarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJHGS030131_X1,SJCRH,PDX,PMID: 28854174,16.0,Spindle cell sarcoma,Primary,Femur,Male,Not provided,PDX
-SJHGS030456_X1,SJCRH,PDX,PMID: 28854174,18.0,Fibromyxoid sarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJIFS030375_X1,SJCRH,PDX,PMID: 28854174,2.0,Fibrosarcoma,Recurrent,Thigh,Male,Not provided,PDX
-SJLPS014753_X1,SJCRH,PDX,PMID: 28854174,22.0,Liposarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJMEL030083_X1,SJCRH,PDX,PMID: 28854174,14.0,Melanoma,Recurrent,Superior leg,Male,Not provided,PDX
-SJMEL030083_X2,SJCRH,PDX,PMID: 28854174,14.0,Melanoma,Recurrent,Inferior leg,Male,Not provided,PDX
-SJMEL031086_X3,SJCRH,PDX,PMID: 28854174,13.0,Melanoma,Recurrent,Scalp,Female,Not provided,PDX
-SJMEL031086_X4,SJCRH,PDX,PMID: 28854174,13.0,Melanoma,Recurrent,Scalp,Female,Not provided,PDX
-SJMEL063827_X1,SJCRH,PDX,PMID: 28854174,17.0,Melanoma,Primary,Pontine meninges,Female,Not provided,PDX
-SJMRT015723_X1,SJCRH,PDX,PMID: 28854174,1.0,Rhabdoid tumor,Recurrent,Chest wall,Male,Not provided,PDX
+SJCCS030604_X1,SJCRH,PDX,PMID: 28854174,22,Clear cell sarcoma,Recurrent,Thumb,Female,Not provided,PDX
+SJDSRCT030490_X1,SJCRH,PDX,PMID: 28854174,20,Desmoplastic small round cell tumor,Recurrent,Pelvis,Female,Not provided,PDX
+SJDSRCT030722_X1,SJCRH,PDX,PMID: 28854174,20,Desmoplastic small round cell tumor,Metastatic,Thigh,Male,Not provided,PDX
+SJDSRCT046151_X1,SJCRH,PDX,PMID: 28854174,14,Desmoplastic small round cell tumor,Primary,Pelvis,Male,Not provided,PDX
+SJDSRCT046155_X1,SJCRH,PDX,PMID: 28854174,23,Desmoplastic small round cell tumor,Recurrent,Abdomen,Male,Not provided,PDX
+SJDSRCT049192_X1,SJCRH,PDX,PMID: 28854174,11,Desmoplastic small round cell tumor,Primary,Abdominopelvic,Male,Not provided,PDX
+SJDSRCT049192_X3,SJCRH,PDX,PMID: 28854174,12,Desmoplastic small round cell tumor,Recurrent,Liver,Male,Not provided,PDX
+SJEWS001321_X1,SJCRH,PDX,"PMID: 28854174, PMID: 25437539",10,Ewing sarcoma,Primary,Tibia,Male,Not provided,PDX
+SJEWS030393_X1,SJCRH,PDX,PMID: 28854174,17,Ewing sarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJEWS030565_X1,SJCRH,PDX,PMID: 28854174,14,Ewing sarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJEWS031703_X1,SJCRH,PDX,PMID: 28854174,15,Ewing sarcoma,Primary,Pelvis,Male,Not provided,PDX
+SJEWS046144_X1,SJCRH,PDX,PMID: 28854174,15,Ewing sarcoma,Primary,Chest wall,Male,Not provided,PDX
+SJEWS049193_X1,SJCRH,PDX,PMID: 28854174,11,Ewing sarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJEWS049193_X2,SJCRH,PDX,PMID: 28854174,11,Ewing sarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJEWS056156_X1,SJCRH,PDX,PMID: 28854174,22,Ewing sarcoma,Recurrent,Rib,Male,Not provided,PDX
+SJEWS056156_X2,SJCRH,PDX,PMID: 28854174,22,Ewing sarcoma,Recurrent,Rib,Male,Not provided,PDX
+SJEWS063826_X1,SJCRH,PDX,PMID: 28854174,17,Ewing sarcoma,Recurrent,Axilla,Male,Not provided,PDX
+SJEWS063829_X1,SJCRH,PDX,PMID: 28854174,8,Ewing sarcoma,Primary,Femur,Female,Not provided,PDX
+SJEWS063834_X1,SJCRH,PDX,PMID: 28854174,14,Ewing sarcoma,Recurrent,Chest wall,Female,Not provided,PDX
+SJEWS063834_X2,SJCRH,PDX,PMID: 28854174,14,Ewing sarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJEWS071780_X1,SJCRH,PDX,PMID: 28854174,18,Ewing sarcoma,Primary,Chest wall,Female,Not provided,PDX
+SJEWS071783_X1,SJCRH,PDX,PMID: 28854174,20,Ewing sarcoma,Recurrent,Chest,Male,Not provided,PDX
+SJEWS071783_X2,SJCRH,PDX,PMID: 28854174,20,Ewing sarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJEWS071783_X3,SJCRH,PDX,PMID: 28854174,20,Ewing sarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJEWS071783_X4,SJCRH,PDX,PMID: 28854174,20,Ewing sarcoma,Recurrent,Spleen,Male,Not provided,PDX
+SJEWS071783_X5,SJCRH,PDX,PMID: 28854174,20,Ewing sarcoma,Recurrent,Liver,Male,Not provided,PDX
+SJEWS071785_X1,SJCRH,PDX,PMID: 28854174,12,Ewing sarcoma,Recurrent,Spine,Female,Not provided,PDX
+SJEWS071785_X2,SJCRH,PDX,PMID: 28854174,12,Ewing sarcoma,Recurrent,Periorbital,Female,Not provided,PDX
+SJGIST030657_X1,SJCRH,PDX,PMID: 28854174,18,GIST,Primary,Stomach,Male,Not provided,PDX
+SJHB030622_X1,SJCRH,PDX,PMID: 28854174,4,Hepatoblastoma,Metastatic,Lung,Female,Not provided,PDX
+SJHB030622_X2,SJCRH,PDX,PMID: 28854174,4,Hepatoblastoma,Metastatic,Lung,Female,Not provided,PDX
+SJHB031109_X1,SJCRH,PDX,PMID: 28854174,5,Hepatoblastoma,Primary,Liver,Female,Not provided,PDX
+SJHGS012410_X1,SJCRH,PDX,PMID: 28854174,21,High grade sarcoma,Metastatic,Lung,Female,Not provided,PDX
+SJHGS012411_X1,SJCRH,PDX,PMID: 28854174,19,High grade sarcoma,Recurrent,Thigh,Female,Not provided,PDX
+SJHGS015726_X1,SJCRH,PDX,PMID: 28854174,12,High grade sarcoma,Recurrent,Calf,Male,Not provided,PDX
+SJHGS015726_X2,SJCRH,PDX,PMID: 28854174,12,High grade sarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJHGS030131_X1,SJCRH,PDX,PMID: 28854174,16,Spindle cell sarcoma,Primary,Femur,Male,Not provided,PDX
+SJHGS030456_X1,SJCRH,PDX,PMID: 28854174,18,Fibromyxoid sarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJIFS030375_X1,SJCRH,PDX,PMID: 28854174,2,Fibrosarcoma,Recurrent,Thigh,Male,Not provided,PDX
+SJLPS014753_X1,SJCRH,PDX,PMID: 28854174,22,Liposarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJMEL030083_X1,SJCRH,PDX,PMID: 28854174,14,Melanoma,Recurrent,Superior leg,Male,Not provided,PDX
+SJMEL030083_X2,SJCRH,PDX,PMID: 28854174,14,Melanoma,Recurrent,Inferior leg,Male,Not provided,PDX
+SJMEL031086_X3,SJCRH,PDX,PMID: 28854174,13,Melanoma,Recurrent,Scalp,Female,Not provided,PDX
+SJMEL031086_X4,SJCRH,PDX,PMID: 28854174,13,Melanoma,Recurrent,Scalp,Female,Not provided,PDX
+SJMEL063827_X1,SJCRH,PDX,PMID: 28854174,17,Melanoma,Primary,Pontine meninges,Female,Not provided,PDX
+SJMRT015723_X1,SJCRH,PDX,PMID: 28854174,1,Rhabdoid tumor,Recurrent,Chest wall,Male,Not provided,PDX
 SJMRT030873_X1,SJCRH,PDX,PMID: 28854174,0.75,Rhabdoid tumor of kidney,Primary,Kidney,Male,Not provided,PDX
 SJMRT031055_X1,SJCRH,PDX,PMID: 28854174,1.33,Rhabdoid tumor,Primary,Liver,Male,Not provided,PDX
-SJMRT031758_X1,SJCRH,PDX,PMID: 28854174,2.0,Rhabdoid tumor,Primary,Kidney,Female,Not provided,PDX
-SJMRT063832_X1,SJCRH,PDX,PMID: 28854174,4.0,Rhabdoid tumor,Primary,Paraspinal mass,Male,Not provided,PDX
+SJMRT031758_X1,SJCRH,PDX,PMID: 28854174,2,Rhabdoid tumor,Primary,Kidney,Female,Not provided,PDX
+SJMRT063832_X1,SJCRH,PDX,PMID: 28854174,4,Rhabdoid tumor,Primary,Paraspinal mass,Male,Not provided,PDX
 SJNBL012407_X1,SJCRH,PDX,PMID: 28854174,0.83,Neuroblastoma,Primary,Adrenal mass,Female,Not provided,PDX
-SJNBL013761_X1,SJCRH,PDX,PMID: 28854174,3.0,Neuroblastoma,Primary,Adrenal mass,Female,Not provided,PDX
+SJNBL013761_X1,SJCRH,PDX,PMID: 28854174,3,Neuroblastoma,Primary,Adrenal mass,Female,Not provided,PDX
 SJNBL013762_X1,SJCRH,PDX,PMID: 28854174,1.25,Neuroblastoma,Primary,Adrenal mass,Male,Not provided,PDX
-SJNBL013763_X1,SJCRH,PDX,PMID: 28854174,2.0,Neuroblastoma,Primary,Adrenal mass,Female,Not provided,PDX
-SJNBL015724_X1,SJCRH,PDX,PMID: 28854174,2.0,Neuroblastoma,Primary,Adrenal mass,Female,Not provided,PDX
-SJNBL030339_X1,SJCRH,PDX,PMID: 28854174,11.0,Neuroblastoma,Not provided,Adrenal mass,Male,Not provided,PDX
-SJNBL030513_X1,SJCRH,PDX,PMID: 28854174,2.0,Neuroblastoma,Not provided,Pelvis,Female,Not provided,PDX
-SJNBL030721_X1,SJCRH,PDX,PMID: 28854174,3.0,Neuroblastoma,Not provided,Peritoneal mass,Male,Not provided,PDX
-SJNBL030721_X2,SJCRH,PDX,PMID: 28854174,3.0,Neuroblastoma,Primary,Retroperitoneum,Male,Not provided,PDX
-SJNBL030721_X3,SJCRH,PDX,PMID: 28854174,3.0,Neuroblastoma,Metastatic,Aortocaval,Male,Not provided,PDX
-SJNBL030721_X4,SJCRH,PDX,PMID: 28854174,4.0,Neuroblastoma,Recurrent,Rib,Male,Not provided,PDX
-SJNBL030721_X5,SJCRH,PDX,PMID: 28854174,4.0,Neuroblastoma,Recurrent,Paravetebral,Male,Not provided,PDX
-SJNBL030721_X6,SJCRH,PDX,PMID: 28854174,4.0,Neuroblastoma,Recurrent,Thoracic,Male,Not provided,PDX
-SJNBL030721_X7,SJCRH,PDX,PMID: 28854174,4.0,Neuroblastoma,Recurrent,Retroperitoneum,Male,Not provided,PDX
-SJNBL030824_X1,SJCRH,PDX,PMID: 28854174,6.0,Neuroblastoma,Recurrent,Pelvis,Female,Not provided,PDX
-SJNBL030824_X2,SJCRH,PDX,PMID: 28854174,6.0,Neuroblastoma,Recurrent,Pelvis,Female,Not provided,PDX
-SJNBL031232_X1,SJCRH,PDX,PMID: 28854174,2.0,Neuroblastoma,Primary,Adrenal,Male,Not provided,PDX
+SJNBL013763_X1,SJCRH,PDX,PMID: 28854174,2,Neuroblastoma,Primary,Adrenal mass,Female,Not provided,PDX
+SJNBL015724_X1,SJCRH,PDX,PMID: 28854174,2,Neuroblastoma,Primary,Adrenal mass,Female,Not provided,PDX
+SJNBL030339_X1,SJCRH,PDX,PMID: 28854174,11,Neuroblastoma,Not provided,Adrenal mass,Male,Not provided,PDX
+SJNBL030513_X1,SJCRH,PDX,PMID: 28854174,2,Neuroblastoma,Not provided,Pelvis,Female,Not provided,PDX
+SJNBL030721_X1,SJCRH,PDX,PMID: 28854174,3,Neuroblastoma,Not provided,Peritoneal mass,Male,Not provided,PDX
+SJNBL030721_X2,SJCRH,PDX,PMID: 28854174,3,Neuroblastoma,Primary,Retroperitoneum,Male,Not provided,PDX
+SJNBL030721_X3,SJCRH,PDX,PMID: 28854174,3,Neuroblastoma,Metastatic,Aortocaval,Male,Not provided,PDX
+SJNBL030721_X4,SJCRH,PDX,PMID: 28854174,4,Neuroblastoma,Recurrent,Rib,Male,Not provided,PDX
+SJNBL030721_X5,SJCRH,PDX,PMID: 28854174,4,Neuroblastoma,Recurrent,Paravetebral,Male,Not provided,PDX
+SJNBL030721_X6,SJCRH,PDX,PMID: 28854174,4,Neuroblastoma,Recurrent,Thoracic,Male,Not provided,PDX
+SJNBL030721_X7,SJCRH,PDX,PMID: 28854174,4,Neuroblastoma,Recurrent,Retroperitoneum,Male,Not provided,PDX
+SJNBL030824_X1,SJCRH,PDX,PMID: 28854174,6,Neuroblastoma,Recurrent,Pelvis,Female,Not provided,PDX
+SJNBL030824_X2,SJCRH,PDX,PMID: 28854174,6,Neuroblastoma,Recurrent,Pelvis,Female,Not provided,PDX
+SJNBL031232_X1,SJCRH,PDX,PMID: 28854174,2,Neuroblastoma,Primary,Adrenal,Male,Not provided,PDX
 SJNBL031239_X1,SJCRH,PDX,PMID: 28854174,1.83,Neuroblastoma,Primary,Retroperitoneum,Female,Not provided,PDX
 SJNBL031239_X2,SJCRH,PDX,PMID: 28854174,1.83,Neuroblastoma,Primary,Retroperitoneum,Female,Not provided,PDX
-SJNBL031668_X1,SJCRH,PDX,PMID: 28854174,3.0,Neuroblastoma,Metastatic,Lung,Female,Not provided,PDX
-SJNBL046145_X1,SJCRH,PDX,PMID: 28854174,2.0,Neuroblastoma,Primary,Paraspinal mass resection,Female,Not provided,PDX
+SJNBL031668_X1,SJCRH,PDX,PMID: 28854174,3,Neuroblastoma,Metastatic,Lung,Female,Not provided,PDX
+SJNBL046145_X1,SJCRH,PDX,PMID: 28854174,2,Neuroblastoma,Primary,Paraspinal mass resection,Female,Not provided,PDX
 SJNBL046148_X1,SJCRH,PDX,PMID: 28854174,1.92,Neuroblastoma,Primary,Adrenal mass,Male,Not provided,PDX
-SJNBL046_X,SJCRH,PDX,"PMID: 28854174, PMID: 25863122",2.0,Neuroblastoma,Primary,Adrenal mass,Male,Not provided,PDX
-SJNBL047443_X1,SJCRH,PDX,PMID: 28854174,12.0,Neuroblastoma,Recurrent,Spine,Male,Not provided,PDX
-SJNBL063820_X1,SJCRH,PDX,PMID: 28854174,3.0,Neuroblastoma,Not provided,Adrenal mass,Female,Not provided,PDX
-SJNBL063821_X1,SJCRH,PDX,PMID: 28854174,3.0,Neuroblastoma,Not provided,Chest mass,Female,Not provided,PDX
-SJNBL071354_X1,SJCRH,PDX,PMID: 28854174,3.0,Neuroblastoma,Primary,Adrenal,Male,Not provided,PDX
-SJNBL124_X,SJCRH,PDX,PMID: 28854174,2.0,Neuroblastoma,Primary,Adrenal,Male,Not provided,PDX
-SJOS001105_X1,SJCRH,PDX,"PMID: 28854174, PMID: 30395907",8.0,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
-SJOS001107_X1,SJCRH,PDX,"PMID: 28854174, PMID: 30395907",13.0,Osteosarcoma,Primary,Humerus,Male,Not provided,PDX
-SJOS001107_X3,SJCRH,PDX,"PMID: 28854174, PMID: 30395907",14.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS001108_X1,SJCRH,PDX,PMID: 28854174,14.0,Osteosarcoma,Primary,Lung,Female,Not provided,PDX
-SJOS001112_X1,SJCRH,PDX,PMID: 28854174,18.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS001116_X2,SJCRH,PDX,PMID: 28854174,22.0,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJOS001121_X2,SJCRH,PDX,PMID: 28854174,13.0,Osteosarcoma,Recurrent,Leg,Male,Not provided,PDX
-SJOS001127_X1,SJCRH,PDX,PMID: 28854174,13.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS001132_X1,SJCRH,PDX,PMID: 28854174,13.0,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJOS003939_X1,SJCRH,PDX,PMID: 28854174,15.0,Osteosarcoma,Primary,Humerus,Male,Not provided,PDX
-SJOS003939_X2,SJCRH,PDX,PMID: 28854174,17.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS010929_X1,SJCRH,PDX,PMID: 28854174,11.0,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
-SJOS010930_X1,SJCRH,PDX,PMID: 28854174,11.0,Osteosarcoma,Primary,Humerus,Female,Not provided,PDX
-SJOS012409_X1,SJCRH,PDX,PMID: 28854174,9.0,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
-SJOS013768_X1,SJCRH,PDX,PMID: 28854174,14.0,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
-SJOS013768_X3,SJCRH,PDX,PMID: 28854174,15.0,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJOS013769_X1,SJCRH,PDX,PMID: 28854174,17.0,Osteosarcoma,Primary,Tibia,Male,Not provided,PDX
-SJOS016015_X1,SJCRH,PDX,PMID: 28854174,17.0,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
-SJOS016016_X1,SJCRH,PDX,PMID: 28854174,7.0,Osteosarcoma,Recurrent,Tibia,Male,Not provided,PDX
-SJOS030101_X1,SJCRH,PDX,PMID: 28854174,21.0,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
-SJOS030272_X1,SJCRH,PDX,PMID: 28854174,12.0,Osteosarcoma,Recurrent,Femur,Male,Not provided,PDX
-SJOS030279_X1,SJCRH,PDX,PMID: 28854174,9.0,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
-SJOS030422_X1,SJCRH,PDX,PMID: 28854174,19.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS030441_X1,SJCRH,PDX,PMID: 28854174,19.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS030566_X1,SJCRH,PDX,PMID: 28854174,7.0,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
-SJOS030589_X1,SJCRH,PDX,PMID: 28854174,6.0,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
-SJOS030589_X2,SJCRH,PDX,PMID: 28854174,6.0,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
-SJOS030589_X3,SJCRH,PDX,PMID: 28854174,6.0,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJOS030589_X4,SJCRH,PDX,PMID: 28854174,6.0,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
-SJOS030589_X5,SJCRH,PDX,PMID: 28854174,6.0,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJOS030597_X1,SJCRH,PDX,PMID: 28854174,18.0,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
-SJOS030605_X1,SJCRH,PDX,PMID: 28854174,10.0,Osteosarcoma,Recurrent,Chest wall,Female,Not provided,PDX
-SJOS030605_X2,SJCRH,PDX,PMID: 28854174,10.0,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
-SJOS030645_X1,SJCRH,PDX,PMID: 28854174,6.0,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
-SJOS030645_X2,SJCRH,PDX,PMID: 28854174,8.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS030645_X3,SJCRH,PDX,PMID: 28854174,10.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS030648_X1,SJCRH,PDX,PMID: 28854174,14.0,Osteosarcoma,Primary,Tibia,Male,Not provided,PDX
-SJOS030759_X1,SJCRH,PDX,PMID: 28854174,17.0,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
-SJOS030876_X1,SJCRH,PDX,PMID: 28854174,14.0,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
-SJOS030876_X2,SJCRH,PDX,PMID: 28854174,15.0,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJOS031125_X1,SJCRH,PDX,PMID: 28854174,13.0,Osteosarcoma,Primary,Tibia,Female,Not provided,PDX
-SJOS031130_X1,SJCRH,PDX,PMID: 28854174,6.0,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
-SJOS031782_X1,SJCRH,PDX,PMID: 28854174,14.0,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
-SJOS046149_X1,SJCRH,PDX,PMID: 28854174,12.0,Osteosarcoma,Recurrent,Back,Female,Not provided,PDX
-SJOS046149_X2,SJCRH,PDX,PMID: 28854174,13.0,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
-SJOS063819_X1,SJCRH,PDX,PMID: 28854174,9.0,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
-SJOS063822_X1,SJCRH,PDX,PMID: 28854174,14.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS063833_X1,SJCRH,PDX,PMID: 28854174,14.0,Osteosarcoma,Metastatic,Lung,Male,Not provided,PDX
-SJOS063833_X2,SJCRH,PDX,PMID: 28854174,14.0,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
-SJOS071776_X1,SJCRH,PDX,PMID: 28854174,13.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS071776_X2,SJCRH,PDX,PMID: 28854174,13.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS071776_X3,SJCRH,PDX,PMID: 28854174,13.0,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJOS071781_X1,SJCRH,PDX,PMID: 28854174,12.0,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
-SJOS071782_X1,SJCRH,PDX,PMID: 28854174,14.0,Osteosarcoma,Primary,Humerus,Female,Not provided,PDX
+SJNBL046_X,SJCRH,PDX,"PMID: 28854174, PMID: 25863122",2,Neuroblastoma,Primary,Adrenal mass,Male,Not provided,PDX
+SJNBL047443_X1,SJCRH,PDX,PMID: 28854174,12,Neuroblastoma,Recurrent,Spine,Male,Not provided,PDX
+SJNBL063820_X1,SJCRH,PDX,PMID: 28854174,3,Neuroblastoma,Not provided,Adrenal mass,Female,Not provided,PDX
+SJNBL063821_X1,SJCRH,PDX,PMID: 28854174,3,Neuroblastoma,Not provided,Chest mass,Female,Not provided,PDX
+SJNBL071354_X1,SJCRH,PDX,PMID: 28854174,3,Neuroblastoma,Primary,Adrenal,Male,Not provided,PDX
+SJNBL124_X,SJCRH,PDX,PMID: 28854174,2,Neuroblastoma,Primary,Adrenal,Male,Not provided,PDX
+SJOS001105_X1,SJCRH,PDX,"PMID: 28854174, PMID: 30395907",8,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
+SJOS001107_X1,SJCRH,PDX,"PMID: 28854174, PMID: 30395907",13,Osteosarcoma,Primary,Humerus,Male,Not provided,PDX
+SJOS001107_X3,SJCRH,PDX,"PMID: 28854174, PMID: 30395907",14,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS001108_X1,SJCRH,PDX,PMID: 28854174,14,Osteosarcoma,Primary,Lung,Female,Not provided,PDX
+SJOS001112_X1,SJCRH,PDX,PMID: 28854174,18,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS001116_X2,SJCRH,PDX,PMID: 28854174,22,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJOS001121_X2,SJCRH,PDX,PMID: 28854174,13,Osteosarcoma,Recurrent,Leg,Male,Not provided,PDX
+SJOS001127_X1,SJCRH,PDX,PMID: 28854174,13,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS001132_X1,SJCRH,PDX,PMID: 28854174,13,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJOS003939_X1,SJCRH,PDX,PMID: 28854174,15,Osteosarcoma,Primary,Humerus,Male,Not provided,PDX
+SJOS003939_X2,SJCRH,PDX,PMID: 28854174,17,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS010929_X1,SJCRH,PDX,PMID: 28854174,11,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
+SJOS010930_X1,SJCRH,PDX,PMID: 28854174,11,Osteosarcoma,Primary,Humerus,Female,Not provided,PDX
+SJOS012409_X1,SJCRH,PDX,PMID: 28854174,9,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
+SJOS013768_X1,SJCRH,PDX,PMID: 28854174,14,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
+SJOS013768_X3,SJCRH,PDX,PMID: 28854174,15,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJOS013769_X1,SJCRH,PDX,PMID: 28854174,17,Osteosarcoma,Primary,Tibia,Male,Not provided,PDX
+SJOS016015_X1,SJCRH,PDX,PMID: 28854174,17,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
+SJOS016016_X1,SJCRH,PDX,PMID: 28854174,7,Osteosarcoma,Recurrent,Tibia,Male,Not provided,PDX
+SJOS030101_X1,SJCRH,PDX,PMID: 28854174,21,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
+SJOS030272_X1,SJCRH,PDX,PMID: 28854174,12,Osteosarcoma,Recurrent,Femur,Male,Not provided,PDX
+SJOS030279_X1,SJCRH,PDX,PMID: 28854174,9,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
+SJOS030422_X1,SJCRH,PDX,PMID: 28854174,19,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS030441_X1,SJCRH,PDX,PMID: 28854174,19,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS030566_X1,SJCRH,PDX,PMID: 28854174,7,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
+SJOS030589_X1,SJCRH,PDX,PMID: 28854174,6,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
+SJOS030589_X2,SJCRH,PDX,PMID: 28854174,6,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
+SJOS030589_X3,SJCRH,PDX,PMID: 28854174,6,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJOS030589_X4,SJCRH,PDX,PMID: 28854174,6,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
+SJOS030589_X5,SJCRH,PDX,PMID: 28854174,6,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJOS030597_X1,SJCRH,PDX,PMID: 28854174,18,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
+SJOS030605_X1,SJCRH,PDX,PMID: 28854174,10,Osteosarcoma,Recurrent,Chest wall,Female,Not provided,PDX
+SJOS030605_X2,SJCRH,PDX,PMID: 28854174,10,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
+SJOS030645_X1,SJCRH,PDX,PMID: 28854174,6,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
+SJOS030645_X2,SJCRH,PDX,PMID: 28854174,8,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS030645_X3,SJCRH,PDX,PMID: 28854174,10,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS030648_X1,SJCRH,PDX,PMID: 28854174,14,Osteosarcoma,Primary,Tibia,Male,Not provided,PDX
+SJOS030759_X1,SJCRH,PDX,PMID: 28854174,17,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
+SJOS030876_X1,SJCRH,PDX,PMID: 28854174,14,Osteosarcoma,Recurrent,Femur,Female,Not provided,PDX
+SJOS030876_X2,SJCRH,PDX,PMID: 28854174,15,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJOS031125_X1,SJCRH,PDX,PMID: 28854174,13,Osteosarcoma,Primary,Tibia,Female,Not provided,PDX
+SJOS031130_X1,SJCRH,PDX,PMID: 28854174,6,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
+SJOS031782_X1,SJCRH,PDX,PMID: 28854174,14,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
+SJOS046149_X1,SJCRH,PDX,PMID: 28854174,12,Osteosarcoma,Recurrent,Back,Female,Not provided,PDX
+SJOS046149_X2,SJCRH,PDX,PMID: 28854174,13,Osteosarcoma,Recurrent,Lung,Female,Not provided,PDX
+SJOS063819_X1,SJCRH,PDX,PMID: 28854174,9,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
+SJOS063822_X1,SJCRH,PDX,PMID: 28854174,14,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS063833_X1,SJCRH,PDX,PMID: 28854174,14,Osteosarcoma,Metastatic,Lung,Male,Not provided,PDX
+SJOS063833_X2,SJCRH,PDX,PMID: 28854174,14,Osteosarcoma,Primary,Femur,Male,Not provided,PDX
+SJOS071776_X1,SJCRH,PDX,PMID: 28854174,13,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS071776_X2,SJCRH,PDX,PMID: 28854174,13,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS071776_X3,SJCRH,PDX,PMID: 28854174,13,Osteosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJOS071781_X1,SJCRH,PDX,PMID: 28854174,12,Osteosarcoma,Primary,Femur,Female,Not provided,PDX
+SJOS071782_X1,SJCRH,PDX,PMID: 28854174,14,Osteosarcoma,Primary,Humerus,Female,Not provided,PDX
 SJRB012408_X1,SJCRH,PDX,PMID: 28854174,1.33,Retinoblastoma,Recurrent,Orbit,Female,Not provided,PDX
 SJRB012408_X2,SJCRH,PDX,PMID: 28854174,1.33,Retinoblastoma,Recurrent,Orbit,Female,Not provided,PDX
-SJRB013765_X2,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB013765_X2,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
 SJRB030135_X1,SJCRH,PDX,PMID: 28854174,1.83,Retinoblastoma,Recurrent,Eye,Male,Not provided,PDX
 SJRB030149_X1,SJCRH,PDX,PMID: 28854174,1.17,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB030188_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
+SJRB030188_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB030197_X1,SJCRH,PDX,PMID: 28854174,1.92,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB030199_X1,SJCRH,PDX,PMID: 28854174,1.5,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB030240_X2,SJCRH,PDX,PMID: 28854174,0.67,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
-SJRB030241_X1,SJCRH,PDX,PMID: 28854174,5.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB030241_X1,SJCRH,PDX,PMID: 28854174,5,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
 SJRB030252_X1,SJCRH,PDX,PMID: 28854174,0.67,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
-SJRB030260_X1,SJCRH,PDX,PMID: 28854174,3.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
-SJRB030281_X1,SJCRH,PDX,PMID: 28854174,3.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB030260_X1,SJCRH,PDX,PMID: 28854174,3,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB030281_X1,SJCRH,PDX,PMID: 28854174,3,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
 SJRB030289_X1,SJCRH,PDX,PMID: 28854174,1.42,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
 SJRB030304_X1,SJCRH,PDX,PMID: 28854174,0.42,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB030317_X1,SJCRH,PDX,PMID: 28854174,1.67,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB030402_X1,SJCRH,PDX,PMID: 28854174,1.67,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB030403_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
+SJRB030403_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB030485_X1,SJCRH,PDX,PMID: 28854174,1.33,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB030518_X1,SJCRH,PDX,PMID: 28854174,3.0,Retinoblastoma,Recurrent,Eye,Male,Not provided,PDX
+SJRB030518_X1,SJCRH,PDX,PMID: 28854174,3,Retinoblastoma,Recurrent,Eye,Male,Not provided,PDX
 SJRB046150_X1,SJCRH,PDX,PMID: 28854174,1.58,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
-SJRB046154_X1,SJCRH,PDX,PMID: 28854174,12.0,Retinoblastoma,Recurrent,Orbit,Male,Not provided,PDX
-SJRB046160_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Recurrent,Eye,Male,Not provided,PDX
+SJRB046154_X1,SJCRH,PDX,PMID: 28854174,12,Retinoblastoma,Recurrent,Orbit,Male,Not provided,PDX
+SJRB046160_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Recurrent,Eye,Male,Not provided,PDX
 SJRB046161_X1,SJCRH,PDX,PMID: 28854174,1.83,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB046162_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
-SJRB046163_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
-SJRB049185_X1,SJCRH,PDX,PMID: 28854174,3.0,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB049186_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
+SJRB046162_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB046163_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB049185_X1,SJCRH,PDX,PMID: 28854174,3,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
+SJRB049186_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB049187_X1,SJCRH,PDX,PMID: 28854174,1.83,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
-SJRB063835_X1,SJCRH,PDX,PMID: 28854174,4.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB063835_X1,SJCRH,PDX,PMID: 28854174,4,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
 SJRB063836_X1,SJCRH,PDX,PMID: 28854174,1.83,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB063837_X1,SJCRH,PDX,PMID: 28854174,0.33,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB063838_X1,SJCRH,PDX,PMID: 28854174,1.5,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
 SJRB063839_X1,SJCRH,PDX,PMID: 28854174,1.83,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB063840_X1,SJCRH,PDX,PMID: 28854174,4.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB063840_X1,SJCRH,PDX,PMID: 28854174,4,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
 SJRB063841_X1,SJCRH,PDX,PMID: 28854174,1.5,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB063842_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
-SJRB071788_X1,SJCRH,PDX,PMID: 28854174,4.0,Retinoblastoma,Recurrent,Eye,Male,Not provided,PDX
+SJRB063842_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB071788_X1,SJCRH,PDX,PMID: 28854174,4,Retinoblastoma,Recurrent,Eye,Male,Not provided,PDX
 SJRB071789_X1,SJCRH,PDX,PMID: 28854174,0.08,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB071790_X1,SJCRH,PDX,PMID: 28854174,1.42,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB071792_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB071792_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
 SJRB071793_X1,SJCRH,PDX,PMID: 28854174,1.75,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB071794_X1,SJCRH,PDX,PMID: 28854174,0.33,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB071795_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
-SJRB071796_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
+SJRB071795_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB071796_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB071797_X1,SJCRH,PDX,PMID: 28854174,1.67,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
 SJRB071798_X1,SJCRH,PDX,PMID: 28854174,0.25,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB071799_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
+SJRB071799_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
 SJRB071800_X1,SJCRH,PDX,PMID: 28854174,1.08,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB071801_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB071802_X1,SJCRH,PDX,PMID: 28854174,11.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB071801_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
+SJRB071802_X1,SJCRH,PDX,PMID: 28854174,11,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
 SJRB071804_X1,SJCRH,PDX,PMID: 28854174,0.75,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB071805_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Recurrent,Eye,Male,Not provided,PDX
+SJRB071805_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Recurrent,Eye,Male,Not provided,PDX
 SJRB071806_X1,SJCRH,PDX,PMID: 28854174,0.92,Retinoblastoma,Primary,Eye,Male,Not provided,PDX
-SJRB071807_X1,SJCRH,PDX,PMID: 28854174,3.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
-SJRB071808_X1,SJCRH,PDX,PMID: 28854174,2.0,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB071807_X1,SJCRH,PDX,PMID: 28854174,3,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
+SJRB071808_X1,SJCRH,PDX,PMID: 28854174,2,Retinoblastoma,Primary,Eye,Female,Not provided,PDX
 SJRB071809_X1,SJCRH,PDX,PMID: 28854174,1.5,Retinoblastoma,Recurrent,Eye,Female,Not provided,PDX
-SJRHB000026_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",4.0,Rhabdomyosarcoma,Recurrent,Pelvis,Female,Not provided,PDX
-SJRHB000026_X2,SJCRH,PDX,PMID: 28854174,5.0,Rhabdomyosarcoma,Recurrent,Stomach,Female,Not provided,PDX
-SJRHB010463_X16,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",18.0,Rhabdomyosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJRHB000026_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",4,Rhabdomyosarcoma,Recurrent,Pelvis,Female,Not provided,PDX
+SJRHB000026_X2,SJCRH,PDX,PMID: 28854174,5,Rhabdomyosarcoma,Recurrent,Stomach,Female,Not provided,PDX
+SJRHB010463_X16,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",18,Rhabdomyosarcoma,Recurrent,Lung,Male,Not provided,PDX
 SJRHB010468_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",1.08,Rhabdomyosarcoma,Primary,Thigh,Male,Not provided,PDX
-SJRHB010927_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",5.0,Rhabdomyosarcoma,Primary,Parapharyngeal,Female,Not provided,PDX
-SJRHB010928_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",9.0,Rhabdomyosarcoma,Recurrent,Prostate,Male,Not provided,PDX
-SJRHB011_X,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",5.0,Rhabdomyosarcoma,Recurrent,Infratemporal fossa,Male,Not provided,PDX
-SJRHB011_Y,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",4.0,Rhabdomyosarcoma,Primary,Neck,Male,Not provided,PDX
-SJRHB012405_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",8.0,Rhabdomyosarcoma,Recurrent,Abdominalpelvic,Female,Not provided,PDX
-SJRHB012_X,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",17.0,Rhabdomyosarcoma,Primary,Prostate,Male,Not provided,PDX
-SJRHB012_Y,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",18.0,Rhabdomyosarcoma,Recurrent,Prostate,Male,Not provided,PDX
-SJRHB012_Z,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",18.0,Rhabdomyosarcoma,Recurrent,Bladder,Male,Not provided,PDX
-SJRHB013757_X2,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",3.0,Rhabdomyosarcoma,Primary,Calf,Female,Not provided,PDX
-SJRHB013758_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",4.0,Rhabdomyosarcoma,Primary,Abdomen,Female,Not provided,PDX
-SJRHB013758_X2,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",5.0,Rhabdomyosarcoma,Recurrent,Abdomen,Female,Not provided,PDX
-SJRHB013759_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",19.0,Rhabdomyosarcoma,Recurrent,Inguinal mass,Male,Not provided,PDX
-SJRHB013759_X14,SJCRH,PDX,PMID: 28854174,20.0,Rhabdomyosarcoma,Recurrent,Chest,Male,Not provided,PDX
-SJRHB013759_X15,SJCRH,PDX,PMID: 28854174,20.0,Rhabdomyosarcoma,Recurrent,Omentum,Male,Not provided,PDX
-SJRHB013_X,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",3.0,Rhabdomyosarcoma,Recurrent,Abdominalpelvic,Female,Not provided,PDX
-SJRHB015720_X1,SJCRH,PDX,PMID: 28854174,6.0,Rhabdomyosarcoma,Recurrent,Oropharynx,Female,Not provided,PDX
-SJRHB015721_X1,SJCRH,PDX,PMID: 28854174,8.0,Rhabdomyosarcoma,Recurrent,Retroperitoneum,Male,Not provided,PDX
-SJRHB030451_X1,SJCRH,PDX,PMID: 28854174,2.0,Rhabdomyosarcoma,Recurrent,Lymph node,Female,Not provided,PDX
-SJRHB030476_X1,SJCRH,PDX,PMID: 28854174,5.0,Rhabdomyosarcoma,Recurrent,Abdomen,Male,Not provided,PDX
-SJRHB030549_X1,SJCRH,PDX,PMID: 28854174,2.0,Rhabdomyosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJRHB030550_X1,SJCRH,PDX,PMID: 28854174,18.0,Rhabdomyosarcoma,Recurrent,Breast,Female,Not provided,PDX
+SJRHB010927_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",5,Rhabdomyosarcoma,Primary,Parapharyngeal,Female,Not provided,PDX
+SJRHB010928_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",9,Rhabdomyosarcoma,Recurrent,Prostate,Male,Not provided,PDX
+SJRHB011_X,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",5,Rhabdomyosarcoma,Recurrent,Infratemporal fossa,Male,Not provided,PDX
+SJRHB011_Y,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",4,Rhabdomyosarcoma,Primary,Neck,Male,Not provided,PDX
+SJRHB012405_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",8,Rhabdomyosarcoma,Recurrent,Abdominalpelvic,Female,Not provided,PDX
+SJRHB012_X,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",17,Rhabdomyosarcoma,Primary,Prostate,Male,Not provided,PDX
+SJRHB012_Y,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",18,Rhabdomyosarcoma,Recurrent,Prostate,Male,Not provided,PDX
+SJRHB012_Z,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",18,Rhabdomyosarcoma,Recurrent,Bladder,Male,Not provided,PDX
+SJRHB013757_X2,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",3,Rhabdomyosarcoma,Primary,Calf,Female,Not provided,PDX
+SJRHB013758_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",4,Rhabdomyosarcoma,Primary,Abdomen,Female,Not provided,PDX
+SJRHB013758_X2,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",5,Rhabdomyosarcoma,Recurrent,Abdomen,Female,Not provided,PDX
+SJRHB013759_X1,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",19,Rhabdomyosarcoma,Recurrent,Inguinal mass,Male,Not provided,PDX
+SJRHB013759_X14,SJCRH,PDX,PMID: 28854174,20,Rhabdomyosarcoma,Recurrent,Chest,Male,Not provided,PDX
+SJRHB013759_X15,SJCRH,PDX,PMID: 28854174,20,Rhabdomyosarcoma,Recurrent,Omentum,Male,Not provided,PDX
+SJRHB013_X,SJCRH,PDX,"PMID: 28854174, PMID:24332040, PMID: 30146332",3,Rhabdomyosarcoma,Recurrent,Abdominalpelvic,Female,Not provided,PDX
+SJRHB015720_X1,SJCRH,PDX,PMID: 28854174,6,Rhabdomyosarcoma,Recurrent,Oropharynx,Female,Not provided,PDX
+SJRHB015721_X1,SJCRH,PDX,PMID: 28854174,8,Rhabdomyosarcoma,Recurrent,Retroperitoneum,Male,Not provided,PDX
+SJRHB030451_X1,SJCRH,PDX,PMID: 28854174,2,Rhabdomyosarcoma,Recurrent,Lymph node,Female,Not provided,PDX
+SJRHB030476_X1,SJCRH,PDX,PMID: 28854174,5,Rhabdomyosarcoma,Recurrent,Abdomen,Male,Not provided,PDX
+SJRHB030549_X1,SJCRH,PDX,PMID: 28854174,2,Rhabdomyosarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJRHB030550_X1,SJCRH,PDX,PMID: 28854174,18,Rhabdomyosarcoma,Recurrent,Breast,Female,Not provided,PDX
 SJRHB030680_X1,SJCRH,PDX,PMID: 28854174,1.33,Rhabdomyosarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJRHB030705_X1,SJCRH,PDX,PMID: 28854174,16.0,Rhabdomyosarcoma,Metastatic,Peritracheal,Female,Not provided,PDX
-SJRHB030730_X1,SJCRH,PDX,PMID: 28854174,17.0,Rhabdomyosarcoma,Metastatic,Lymph node,Male,Not provided,PDX
-SJRHB030765_X1,SJCRH,PDX,PMID: 28854174,2.0,Rhabdomyosarcoma,Recurrent,Orbit,Male,Not provided,PDX
-SJRHB030787_X1,SJCRH,PDX,PMID: 28854174,18.0,Rhabdomyosarcoma,Recurrent,Pancreas,Female,Not provided,PDX
-SJRHB031117_X1,SJCRH,PDX,PMID: 28854174,19.0,Rhabdomyosarcoma,Primary,Testicle,Male,Not provided,PDX
-SJRHB031320_X1,SJCRH,PDX,PMID: 28854174,17.0,Rhabdomyosarcoma,Primary,Abdomen,Male,Not provided,PDX
-SJRHB031412_X1,SJCRH,PDX,PMID: 28854174,13.0,Rhabdomyosarcoma,Primary,Testicle,Male,Not provided,PDX
+SJRHB030705_X1,SJCRH,PDX,PMID: 28854174,16,Rhabdomyosarcoma,Metastatic,Peritracheal,Female,Not provided,PDX
+SJRHB030730_X1,SJCRH,PDX,PMID: 28854174,17,Rhabdomyosarcoma,Metastatic,Lymph node,Male,Not provided,PDX
+SJRHB030765_X1,SJCRH,PDX,PMID: 28854174,2,Rhabdomyosarcoma,Recurrent,Orbit,Male,Not provided,PDX
+SJRHB030787_X1,SJCRH,PDX,PMID: 28854174,18,Rhabdomyosarcoma,Recurrent,Pancreas,Female,Not provided,PDX
+SJRHB031117_X1,SJCRH,PDX,PMID: 28854174,19,Rhabdomyosarcoma,Primary,Testicle,Male,Not provided,PDX
+SJRHB031320_X1,SJCRH,PDX,PMID: 28854174,17,Rhabdomyosarcoma,Primary,Abdomen,Male,Not provided,PDX
+SJRHB031412_X1,SJCRH,PDX,PMID: 28854174,13,Rhabdomyosarcoma,Primary,Testicle,Male,Not provided,PDX
 SJRHB031691_X1,SJCRH,PDX,PMID: 28854174,0.92,Rhabdomyosarcoma,Primary,Retroperitoneum,Female,Not provided,PDX
 SJRHB031691_X2,SJCRH,PDX,PMID: 28854174,0.92,Rhabdomyosarcoma,Primary,Pelvis,Female,Not provided,PDX
 SJRHB031691_X3,SJCRH,PDX,PMID: 28854174,0.92,Rhabdomyosarcoma,Primary,Retroperitoneum,Female,Not provided,PDX
-SJRHB046156_X1,SJCRH,PDX,PMID: 28854174,16.0,Rhabdomyosarcoma,Recurrent,Breast,Female,Not provided,PDX
-SJRHB046156_X2,SJCRH,PDX,PMID: 28854174,16.0,Rhabdomyosarcoma,Recurrent,Breast,Female,Not provided,PDX
-SJRHB049188_X1,SJCRH,PDX,PMID: 28854174,4.0,Rhabdomyosarcoma,Primary,Retroperitoneum,Male,Not provided,PDX
+SJRHB046156_X1,SJCRH,PDX,PMID: 28854174,16,Rhabdomyosarcoma,Recurrent,Breast,Female,Not provided,PDX
+SJRHB046156_X2,SJCRH,PDX,PMID: 28854174,16,Rhabdomyosarcoma,Recurrent,Breast,Female,Not provided,PDX
+SJRHB049188_X1,SJCRH,PDX,PMID: 28854174,4,Rhabdomyosarcoma,Primary,Retroperitoneum,Male,Not provided,PDX
 SJRHB049189_X1,SJCRH,PDX,PMID: 28854174,0.67,Rhabdomyosarcoma,Primary,Prostate,Male,Not provided,PDX
 SJRHB063823_X1,SJCRH,PDX,PMID: 28854174,0.5,Rhabdomyosarcoma,Not provided,Back soft tissue,Male,Not provided,PDX
-SJRHB063825_X1,SJCRH,PDX,PMID: 28854174,3.0,Rhabdomyosarcoma,Recurrent,Bladder,Male,Not provided,PDX
-SJRHB063830_X1,SJCRH,PDX,PMID: 28854174,18.0,Rhabdomyosarcoma,Metastatic,Lymph node,Male,Not provided,PDX
-SJRHB063831_X1,SJCRH,PDX,PMID: 28854174,17.0,Rhabdomyosarcoma,Recurrent,Abdominal wall,Female,Not provided,PDX
-SJRHB071775_X1,SJCRH,PDX,PMID: 28854174,12.0,Rhabdomyosarcoma,Primary,Paranasal,Male,Not provided,PDX
-SJRHB071779_X1,SJCRH,PDX,PMID: 28854174,6.0,Rhabdomyosarcoma,Primary,Retroperitoneum,Female,Not provided,PDX
-SJRHB071779_X2,SJCRH,PDX,PMID: 28854174,6.0,Rhabdomyosarcoma,Primary,Retroperitoneum,Female,Not provided,PDX
-SJSS049190_X1,SJCRH,PDX,PMID: 28854174,13.0,Synovial sarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJSS063828_X1,SJCRH,PDX,PMID: 28854174,17.0,Synovial sarcoma,Primary,Femur,Female,Not provided,PDX
-SJST030732_X1,SJCRH,PDX,PMID: 28854174,11.0,Parathyroid carcinoma,Recurrent,Neck,Female,Not provided,PDX
-SJSTS030383_X1,SJCRH,PDX,PMID: 28854174,11.0,Undifferentiated round cell sarcoma,Metastatic,Lymph node,Male,Not provided,PDX
-SJSTS030383_X2,SJCRH,PDX,PMID: 28854174,11.0,Undifferentiated round cell sarcoma,Primary,Neck,Male,Not provided,PDX
-SJSTS030383_X3,SJCRH,PDX,PMID: 28854174,12.0,Undifferentiated round cell sarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJSTS030383_X4,SJCRH,PDX,PMID: 28854174,13.0,Undifferentiated round cell sarcoma,Recurrent,Lung,Male,Not provided,PDX
-SJSTS031700_X1,SJCRH,PDX,PMID: 28854174,18.0,Epithelioid sarcoma,Primary,Neck,Female,Not provided,PDX
-SJSTS046147_X1,SJCRH,PDX,PMID: 28854174,18.0,Epithelioid sarcoma,Primary,Spine,Male,Not provided,PDX
-SJUESL030381_X1,SJCRH,PDX,PMID: 28854174,10.0,Embroyonal sarcoma,Primary,Liver,Female,Not provided,PDX
-SJWLM030043_X1,SJCRH,PDX,PMID: 28854174,5.0,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
-SJWLM030467_X1,SJCRH,PDX,PMID: 28854174,2.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
-SJWLM030548_X1,SJCRH,PDX,PMID: 28854174,2.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
-SJWLM030704_X1,SJCRH,PDX,PMID: 28854174,3.0,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
-SJWLM030704_X2,SJCRH,PDX,PMID: 28854174,3.0,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
-SJWLM030739_X1,SJCRH,PDX,PMID: 28854174,7.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
-SJWLM030792_X1,SJCRH,PDX,PMID: 28854174,3.0,Wilms tumor,Recurrent,Kidney,Female,Not provided,PDX
-SJWLM030897_X1,SJCRH,PDX,PMID: 28854174,2.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
-SJWLM030897_X2,SJCRH,PDX,PMID: 28854174,2.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
-SJWLM030902_X2,SJCRH,PDX,PMID: 28854174,9.0,Wilms tumor,Recurrent,Retroperitoneum,Female,Not provided,PDX
+SJRHB063825_X1,SJCRH,PDX,PMID: 28854174,3,Rhabdomyosarcoma,Recurrent,Bladder,Male,Not provided,PDX
+SJRHB063830_X1,SJCRH,PDX,PMID: 28854174,18,Rhabdomyosarcoma,Metastatic,Lymph node,Male,Not provided,PDX
+SJRHB063831_X1,SJCRH,PDX,PMID: 28854174,17,Rhabdomyosarcoma,Recurrent,Abdominal wall,Female,Not provided,PDX
+SJRHB071775_X1,SJCRH,PDX,PMID: 28854174,12,Rhabdomyosarcoma,Primary,Paranasal,Male,Not provided,PDX
+SJRHB071779_X1,SJCRH,PDX,PMID: 28854174,6,Rhabdomyosarcoma,Primary,Retroperitoneum,Female,Not provided,PDX
+SJRHB071779_X2,SJCRH,PDX,PMID: 28854174,6,Rhabdomyosarcoma,Primary,Retroperitoneum,Female,Not provided,PDX
+SJSS049190_X1,SJCRH,PDX,PMID: 28854174,13,Synovial sarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJSS063828_X1,SJCRH,PDX,PMID: 28854174,17,Synovial sarcoma,Primary,Femur,Female,Not provided,PDX
+SJST030732_X1,SJCRH,PDX,PMID: 28854174,11,Parathyroid carcinoma,Recurrent,Neck,Female,Not provided,PDX
+SJSTS030383_X1,SJCRH,PDX,PMID: 28854174,11,Undifferentiated round cell sarcoma,Metastatic,Lymph node,Male,Not provided,PDX
+SJSTS030383_X2,SJCRH,PDX,PMID: 28854174,11,Undifferentiated round cell sarcoma,Primary,Neck,Male,Not provided,PDX
+SJSTS030383_X3,SJCRH,PDX,PMID: 28854174,12,Undifferentiated round cell sarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJSTS030383_X4,SJCRH,PDX,PMID: 28854174,13,Undifferentiated round cell sarcoma,Recurrent,Lung,Male,Not provided,PDX
+SJSTS031700_X1,SJCRH,PDX,PMID: 28854174,18,Epithelioid sarcoma,Primary,Neck,Female,Not provided,PDX
+SJSTS046147_X1,SJCRH,PDX,PMID: 28854174,18,Epithelioid sarcoma,Primary,Spine,Male,Not provided,PDX
+SJUESL030381_X1,SJCRH,PDX,PMID: 28854174,10,Embroyonal sarcoma,Primary,Liver,Female,Not provided,PDX
+SJWLM030043_X1,SJCRH,PDX,PMID: 28854174,5,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
+SJWLM030467_X1,SJCRH,PDX,PMID: 28854174,2,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM030548_X1,SJCRH,PDX,PMID: 28854174,2,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM030704_X1,SJCRH,PDX,PMID: 28854174,3,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
+SJWLM030704_X2,SJCRH,PDX,PMID: 28854174,3,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
+SJWLM030739_X1,SJCRH,PDX,PMID: 28854174,7,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM030792_X1,SJCRH,PDX,PMID: 28854174,3,Wilms tumor,Recurrent,Kidney,Female,Not provided,PDX
+SJWLM030897_X1,SJCRH,PDX,PMID: 28854174,2,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM030897_X2,SJCRH,PDX,PMID: 28854174,2,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM030902_X2,SJCRH,PDX,PMID: 28854174,9,Wilms tumor,Recurrent,Retroperitoneum,Female,Not provided,PDX
 SJWLM030924_X1,SJCRH,PDX,PMID: 28854174,1.92,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
-SJWLM030951_X1,SJCRH,PDX,PMID: 28854174,4.0,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
+SJWLM030951_X1,SJCRH,PDX,PMID: 28854174,4,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
 SJWLM031124_X1,SJCRH,PDX,PMID: 28854174,1.33,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
 SJWLM031124_X2,SJCRH,PDX,PMID: 28854174,1.33,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
-SJWLM031308_X1,SJCRH,PDX,PMID: 28854174,3.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
-SJWLM031333_X1,SJCRH,PDX,PMID: 28854174,8.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
-SJWLM031558_X2,SJCRH,PDX,PMID: 28854174,19.0,Wilms tumor,Recurrent,Adrenal,Male,Not provided,PDX
-SJWLM031677_X1,SJCRH,PDX,PMID: 28854174,3.0,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
-SJWLM031677_X2,SJCRH,PDX,PMID: 28854174,3.0,Wilms tumor,Metastatic,Lymph node,Female,Not provided,PDX
-SJWLM031811_X1,SJCRH,PDX,PMID: 28854174,2.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM031308_X1,SJCRH,PDX,PMID: 28854174,3,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM031333_X1,SJCRH,PDX,PMID: 28854174,8,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM031558_X2,SJCRH,PDX,PMID: 28854174,19,Wilms tumor,Recurrent,Adrenal,Male,Not provided,PDX
+SJWLM031677_X1,SJCRH,PDX,PMID: 28854174,3,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
+SJWLM031677_X2,SJCRH,PDX,PMID: 28854174,3,Wilms tumor,Metastatic,Lymph node,Female,Not provided,PDX
+SJWLM031811_X1,SJCRH,PDX,PMID: 28854174,2,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
 SJWLM046146_X1,SJCRH,PDX,PMID: 28854174,0.5,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
-SJWLM046152_X1,SJCRH,PDX,PMID: 28854174,15.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM046152_X1,SJCRH,PDX,PMID: 28854174,15,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
 SJWLM046157_X1,SJCRH,PDX,PMID: 28854174,1.83,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
-SJWLM046158_X1,SJCRH,PDX,PMID: 28854174,6.0,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
-SJWLM049191_X1,SJCRH,PDX,PMID: 28854174,3.0,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
-SJWLM059681_X2,SJCRH,PDX,PMID: 28854174,3.0,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
-SJWLM071563_X1,SJCRH,PDX,PMID: 28854174,4.0,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
+SJWLM046158_X1,SJCRH,PDX,PMID: 28854174,6,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
+SJWLM049191_X1,SJCRH,PDX,PMID: 28854174,3,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
+SJWLM059681_X2,SJCRH,PDX,PMID: 28854174,3,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
+SJWLM071563_X1,SJCRH,PDX,PMID: 28854174,4,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
 SJWLM071774_X1,SJCRH,PDX,PMID: 28854174,1.58,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
-SJWLM071778_X1,SJCRH,PDX,PMID: 28854174,3.0,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
-SJWLM071784_X1,SJCRH,PDX,PMID: 28854174,2.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
-SJWLM071786_X1,SJCRH,PDX,PMID: 28854174,5.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
-SJWLM071786_X2,SJCRH,PDX,PMID: 28854174,5.0,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM071778_X1,SJCRH,PDX,PMID: 28854174,3,Wilms tumor,Primary,Kidney,Female,Not provided,PDX
+SJWLM071784_X1,SJCRH,PDX,PMID: 28854174,2,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM071786_X1,SJCRH,PDX,PMID: 28854174,5,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
+SJWLM071786_X2,SJCRH,PDX,PMID: 28854174,5,Wilms tumor,Primary,Kidney,Male,Not provided,PDX
 SJNBL108_X,SJCRH,PDX,PMID: 28854174,Not provided,neuroblastoma,Primary,Adrenal resection,Male,not provided,PDX
 SJOS063824_X1,SJCRH,PDX,PMID: 28854174,Not provided,osteosarcoma,Primary,Femur ,Male,not provided,PDX
 SJRB030240_X1,SJCRH,PDX,PMID: 28854174,Not provided,retinoblastoma,Primary,Eye,Female,Not provided,PDX
