@@ -1,5 +1,6 @@
 from src.components.table.tables import get_ms_table
 from plotly.graph_objects import Figure, Scatter
+from plotly_express import line
 def plot_line_plot_ms(selected_rows):
         figure = Figure()
         df = get_ms_table()
@@ -21,3 +22,20 @@ def plot_line_plot_ms(selected_rows):
             yaxis_title='Score'
         )
         return figure
+
+
+def summary_line_plot(df, cat):
+    figure = Figure()
+#    figure = line(df, x='tag', y=cat)
+    #for _, row in df.iterrows():
+    figure.add_trace(Scatter(
+        x=df['tag'],
+        y=df[cat],
+        mode='lines+markers',
+        name=f"{df['tag']}: {df[cat]}"
+    ))
+    figure.update_layout(
+        xaxis_title='Release',
+        yaxis_title='Counts'
+    )
+    return figure

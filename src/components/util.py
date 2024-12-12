@@ -2,6 +2,7 @@ import pandas as pd
 from pandas import DataFrame, read_csv, read_json, notna, concat
 from src.components.pie.pie_chart import get_model_type_donut, get_dto_radial, get_library_strategy_plot
 from src.components.venn.venns import get_dt_venn, get_dt_venn4, get_venn_table
+from src.components.line.line_plot import summary_line_plot
 from src.components.bar.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot, get_ss_bar_chart, get_metadata_score_plot
 from src.assets.resources import labels, summary_columns
 from src.components.transformation.transform import load_data
@@ -52,7 +53,9 @@ def bar_chart():
     models = DataFrame()
     for f in labels.keys():
         if f != 'latest':
-            model = load_data(f)['total'][['model_id', 'provider', 'model_type']].drop_duplicates(subset=['model_id'])
+            total_model = f"src/assets/model/total_models_{f.replace('_', '_v')}.csv"
+            model = read_csv(total_model, usecols=['model_id', 'provider','model_type', 'mt']).drop_duplicates(subset=['model_id'])
+            model['model_type'] = model['mt']
         else:
             mapper = {'data_source': 'provider', 'type': 'model_type', 'pubmed_ids': 'publications',
                       'patient_age': 'age_in_years_at_collection', 'histology': 'diagnosis', 'patient_sex': 'sex',
@@ -68,7 +71,7 @@ def bar_chart():
 
 def generate_ss_bar_plot(df, cat):
     df = df.sort_values(by=['date']).reset_index(drop=True)
-    return get_ss_bar_chart(df, cat)
+    return summary_line_plot(df, cat)
 
 def model_type_pie(release, type):
     if release == 'latest':
@@ -120,7 +123,10 @@ def generate_summary_stats():
     for f in get("https://gitlab.ebi.ac.uk/api/v4/projects/1629/releases?private_token=glpat-gbQzKFxHTWyp_jZhP5gE").json():
         if f['tag_name'].replace('PDCM_', '').replace('v', '') in labels.keys():
             df = read_csv(f"src/assets/phenomic/phenomics_data_points_{f['tag_name'].replace('PDCM_', '')}.csv").groupby('release').sum(numeric_only=False).reset_index()
-            data = load_data(f['tag_name'].replace('PDCM_DR_v', 'DR_'))['total'][['model_id', 'model_type']].groupby('model_type').count()['model_id'].reset_index()
+            total_model = f"src/assets/model/total_models_{f['tag_name'].replace('PDCM_DR_v', 'DR_').replace('_', '_v')}.csv"
+            data = read_csv(total_model, usecols=['model_id', 'model_type', 'mt'])
+            data['model_type'] = data['mt']
+            data = data.groupby('model_type').count()['model_id'].reset_index()
             df['model_type_cell_line'] = data[data['model_type'].str.contains('Cell')].reset_index(drop=True)['model_id'][0]
             df['model_type_organoid'] = data[data['model_type'].str.contains('Organoid')].reset_index(drop=True)['model_id'][0]
             df['model_type_pdx'] = data[data['model_type'].str.contains('PDX')].reset_index(drop=True)['model_id'][0]
