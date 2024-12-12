@@ -1,7 +1,7 @@
 import pandas as pd
 from pandas import read_csv
 
-labels = {'DR_6.6': 'Data release 6.6', 'DR_6.5': 'Data release 6.5', 'DR_6.4': 'Data release 6.4', 'DR_6.3': 'Data release 6.3', 'DR_6.2': 'Data release 6.2', 'DR_6.1': 'Data release 6.1', 'DR_6.0': 'Data release 6.0',
+labels = {'DR_6.7': 'Data release 6.7', 'DR_6.6': 'Data release 6.6', 'DR_6.5': 'Data release 6.5', 'DR_6.4': 'Data release 6.4', 'DR_6.3': 'Data release 6.3', 'DR_6.2': 'Data release 6.2', 'DR_6.1': 'Data release 6.1', 'DR_6.0': 'Data release 6.0',
           'DR_5.3': 'Data release 5.3', 'DR_5.2': 'Data release 5.2', 'DR_5.1': 'Data release 5.1',
           'DR_4.0': 'Data release 4.0',
           'DR_3.1': 'Data release 3.1', 'DR_3.0': 'Data release 3.0',
