@@ -132,5 +132,4 @@ def venn_to_plotly(L_sets, L_labels=None, title=None):
         annotations=L_annotation,
         title=dict(text=title, x=0.5, xanchor='center')
     )
-
     return p_fig

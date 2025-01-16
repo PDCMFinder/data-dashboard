@@ -17,6 +17,7 @@ def get_dt_venn(filtered_data, plot_type):
         fig.update_layout(
             title=dict(text="Model data type overlaps", automargin=True, yref='paper')
         )
+        plt.close()
         return fig
     else:
         return None
@@ -70,13 +71,14 @@ def get_dt_venn4(df, bio=''):
             data_dict['immunemarker'] = set()
         data_type_list = ('mutation_expression_cna', 'drug', 'treatment', 'immunemarker')
     data_subset_dict = dict((k, process_sets(data_dict[k])) for k in data_type_list)
-    plt.figure(figsize=(12, 12))
-    buf = io.BytesIO()
-    venn(data_subset_dict, figsize=(12, 12), fontsize=20, legend_loc="upper left")
-    plt.savefig(buf, format="png")
     plt.close()
+    fig, ax = plt.subplots(figsize=(12, 12))
+    venn(data_subset_dict, figsize=(12, 12), fontsize=20, legend_loc="upper left", ax=ax)
+    buf = io.BytesIO()
+    plt.close()
+    fig.savefig(buf, format="png")
     buf.seek(0)
-    img_base64 = base64.b64encode(buf.getvalue()).decode('utf-8')
+    img_base64 = base64.b64encode(buf.getbuffer()).decode('ascii')
     buf.close()
     return {
         'data': [],
