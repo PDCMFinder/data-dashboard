@@ -4,6 +4,7 @@ from src.components.pie.pie_chart import get_model_type_donut, get_dto_radial, g
 from src.components.venn.venns import get_dt_venn, get_dt_venn4, get_venn_table
 from src.components.line.line_plot import summary_line_plot
 from src.components.bar.bar_chart import get_bar_chart, get_reactive_bar_plot, get_country_bar_plot, get_molecular_model_type_plot, get_ss_bar_chart, get_metadata_score_plot
+from src.components.overlap.overlap_plot import overlap_diagram
 from src.assets.resources import labels, summary_columns
 from src.components.transformation.transform import load_data
 from requests import get
@@ -165,6 +166,24 @@ def generate_metadata_score_bar_plot(release, model_type):
     data = data[data['model_type'] == model_type]
     data = data.rename([{c: 'scores'} for c in data.columns if c.__contains__('PDCM')][0], axis=1)
     return get_metadata_score_plot(data, model_type)
+
+def generate_overlap_diagram(release, width):
+    samples = load_data(release)['samples']
+    publication_counts = load_data(release)['total'][['model_id', 'publications']]
+    publication_counts['publications'] = [0 if p == 'No' else 1 for p in publication_counts['publications']]
+    result = (
+        samples.groupby(["model_id", "molecular_characterisation_type"])
+        .size()
+        .unstack(fill_value=0)  # Fill missing values with 0
+        .applymap(lambda x: 1 if x > 0 else 0)  # Convert to 1 if data exists
+    )
+    result = result.reset_index()
+    result = result.merge(publication_counts, on='model_id', how='right')
+    columns = result.columns[1:]
+    for c in columns:
+        result[c] = result[c].fillna(0).astype(int)
+    return overlap_diagram(result, width)
+
 
 class get_release_data:
     def __init__(self, release):

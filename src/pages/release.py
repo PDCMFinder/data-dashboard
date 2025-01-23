@@ -7,6 +7,7 @@ from urllib.parse import urlparse, parse_qs
 from src.components.navbar.navbar import navbar
 from src.components.pie.elements import *
 from src.components.bar.elements import *
+from src.components.overlap.elements import ui_overlap_diagram_element
 
 
 backend = get_release_data("")
@@ -31,6 +32,7 @@ app.layout = html.Div(children=[
                    'margin-bottom': margin_bottom}),
     ui_model_type_component(),
     ui_data_type_overview_component(),
+
     html.Div(children=[
             dcc.Markdown('### Model data overlap:', style={'display': 'inline-block'}),
             dcc.RadioItems(['Total', 'PDX', 'Cell Line', 'Organoid'], 'Total', inline=True, id='venn-type'),
@@ -89,10 +91,13 @@ app.layout = html.Div(children=[
         style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '0.5%',
                'border-radius': '10px', 'width': '33.3%', 'float': 'right', 'margin-bottom': margin_bottom, 'margin-left': '0.1%'}
     ),
+    ui_overlap_diagram_element(),
     ui_model_counts_component(),
-    ui_molecular_data_tech_overview_component(),
     ui_country_plots_component(),
+    ui_molecular_data_tech_overview_component(),
+
     ui_molecular_data_type_by_model_type_component(),
+
     ],
     style={'font-family': 'Merriweather', 'padding': padding}
 )
@@ -137,6 +142,26 @@ def register_callbacks(app):
     def update_model_type_plot(category):
         return model_type_pie(category, 'plot')
 
+    app.clientside_callback(
+        """
+        function(_, trigger_id) {
+            const element = document.getElementById("graph-container");
+            if (element) {
+                return element.offsetWidth;
+            }
+            return 0;
+        }
+        """,
+        Output("div-width", "data"),
+        Input("overlap-diagram", "id"),
+    )
+
+    @app.callback(
+        Output('overlap-diagram', 'figure'),
+        [Input('dropdown-category', 'value'), Input("div-width", "data")]
+    )
+    def update_overlap_diagram(selected_category, width):
+        return generate_overlap_diagram(selected_category, width)
 
     @app.callback(
         Output('venn-plot', 'figure'),
