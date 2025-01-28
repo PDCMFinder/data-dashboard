@@ -5,13 +5,13 @@ from plotly_upset.plotting import plot_upset
 
 def overlap_diagram(df, width):
     # Dummy Data
-    set_list = df.columns.tolist()[1:]
+    set_list = df.columns.tolist()[2:]
 
     # Plotting
     fig = plot_upset(
-        dataframes=[df[df.columns[1:]]],
+        dataframes=[df],
         legendgroups=["All models"],
-        marker_size=3,
+        marker_size=10,
         exclude_zeros=True,
         sorted_x="d",
         sorted_y="a",

@@ -16,7 +16,7 @@ def custom_plots(release, plot_type, export_type='plot'):
     samples = load_data(release)['samples']
     if plot_type == 'dto_donut':
         publication_counts = load_data(release)['total'][['model_id', 'publications']].groupby('publications').count().reset_index().iloc[1][1]
-        pie_table = samples.drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
+        pie_table = samples[['model_id', 'provider', 'molecular_characterisation_type']].drop_duplicates(['model_id', 'molecular_characterisation_type']).groupby(
             'molecular_characterisation_type').count().sort_index()['model_id'].sort_values().to_frame()
         pie_table = pd.concat([pie_table, pd.DataFrame({'model_id': publication_counts}, index=['publication'])]).sort_values('model_id').reset_index()
         tm = load_data(release)['total'][['model_id']].shape[0]
@@ -168,21 +168,23 @@ def generate_metadata_score_bar_plot(release, model_type):
     return get_metadata_score_plot(data, model_type)
 
 def generate_overlap_diagram(release, width):
-    samples = load_data(release)['samples']
-    publication_counts = load_data(release)['total'][['model_id', 'publications']]
+    samples = load_data(release)['samples'][['model_id', 'provider', 'molecular_characterisation_type']]
+    publication_counts = load_data(release)['total'][['model_id', 'publications', 'provider']]
     publication_counts['publications'] = [0 if p == 'No' else 1 for p in publication_counts['publications']]
     result = (
-        samples.groupby(["model_id", "molecular_characterisation_type"])
+        samples.groupby(["model_id", "provider", "molecular_characterisation_type" ])
         .size()
         .unstack(fill_value=0)  # Fill missing values with 0
         .applymap(lambda x: 1 if x > 0 else 0)  # Convert to 1 if data exists
     )
     result = result.reset_index()
-    result = result.merge(publication_counts, on='model_id', how='right')
-    columns = result.columns[1:]
+    #result = result.merge(publication_counts, on=['model_id', 'provider'], how='right')
+    columns = result.columns[2:]
+    #print(result.head())
+    #print(result.columns)
     for c in columns:
         result[c] = result[c].fillna(0).astype(int)
-    return overlap_diagram(result, width)
+    return overlap_diagram(result[columns], width)
 
 
 class get_release_data:
