@@ -6,14 +6,14 @@ import io
 import matplotlib.pyplot as plt
 import base64
 
-def get_dt_venn(filtered_data, plot_type):
+def get_dt_venn(filtered_data, plot_type, width):
     if filtered_data.shape[0]==0:
         return None
     filtered_data = filtered_data.fillna('').groupby('molecular_characterisation_type')['model_id'].apply(set)
     if 'mutation' in filtered_data.keys() and 'expression' in filtered_data.keys() and 'copy number alteration' in filtered_data.keys():
         set1, set2, set3 = process_sets(filtered_data['mutation']), process_sets(filtered_data['expression']), process_sets(filtered_data['copy number alteration'])
         labels = ['mutation', 'expression', 'copy number alteration']
-        fig = venn_to_plotly([set1, set2, set3], labels)
+        fig = venn_to_plotly([set1, set2, set3], labels, width)
         fig.update_layout(
             title=dict(text="Model data type overlaps", automargin=True, yref='paper')
         )

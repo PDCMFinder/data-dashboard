@@ -33,7 +33,7 @@ def custom_plots(release, plot_type, export_type='plot'):
                 'model_id', 'provider'], how='inner')
         if export_type == 'table':
             return get_venn_table(samples, f"assets/exports/{release}_mol_data_model_list.xlsx", models)
-        return get_dt_venn(samples, plot_type)
+        return get_dt_venn(samples, plot_type, export_type)
     elif plot_type == 'dt_v4venn':
         if export_type == 'biomarker':
             return get_dt_venn4(samples, 'bio')

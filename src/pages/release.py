@@ -36,7 +36,8 @@ app.layout = html.Div(children=[
     html.Div(children=[
             dcc.Markdown('### Model data overlap:', style={'display': 'inline-block'}),
             dcc.RadioItems(['Total', 'PDX', 'Cell Line', 'Organoid'], 'Total', inline=True, id='venn-type'),
-            html.Div(dcc.Graph(id='venn-plot'),),
+            html.Div(dcc.Graph(id='venn-plot'), id='venn-plot-container'),
+            dcc.Store(id='div-width-venn'),
             html.Div(dcc.Graph(
                 id='venn-plot-venn4',
                 figure={
@@ -156,6 +157,20 @@ def register_callbacks(app):
         Input("overlap-diagram", "id"),
     )
 
+    app.clientside_callback(
+        """
+        function(_, trigger_id) {
+            const element = document.getElementById("venn-plot-container");
+            if (element) {
+                return element.offsetWidth;
+            }
+            return 0;
+        }
+        """,
+        Output("div-width-venn", "data"),
+        Input("venn-plot", "id"),
+    )
+
     @app.callback(
         Output('overlap-diagram', 'figure'),
         [Input('dropdown-category', 'value'), Input("div-width", "data")]
@@ -165,10 +180,10 @@ def register_callbacks(app):
 
     @app.callback(
         Output('venn-plot', 'figure'),
-        [Input('dropdown-category', 'value'), Input('venn-type', 'value'),]
+        [Input('dropdown-category', 'value'), Input('venn-type', 'value'), Input("div-width-venn", "data")]
     )
-    def update_selected_plot(selected_category, venn_type):
-        return custom_plots(selected_category, f'dt_venn_{venn_type}')
+    def update_selected_plot(selected_category, venn_type, width):
+        return custom_plots(selected_category, f'dt_venn_{venn_type}', width)
 
     @app.callback(
         Output('venn-plot-venn4', 'figure'),

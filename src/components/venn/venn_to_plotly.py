@@ -8,7 +8,7 @@ pio.renderers.default = 'iframe'
 import scipy
 
 
-def venn_to_plotly(L_sets, L_labels=None, title=None):
+def venn_to_plotly(L_sets, L_labels=None, width=500, title=None):
     # get number of sets
     n_sets = len(L_sets)
 
@@ -126,8 +126,8 @@ def venn_to_plotly(L_sets, L_labels=None, title=None):
     p_fig.update_layout(
         plot_bgcolor='white',
         margin=dict(b=0, l=10, pad=0, r=10, t=40),
-        width=500,
-        height=500,
+        width=width,
+        height=width,
         shapes=L_shapes,
         annotations=L_annotation,
         title=dict(text=title, x=0.5, xanchor='center')
