@@ -1,4 +1,4 @@
-from src.components.table.tables import get_ms_table
+from src.components.pages.metadata_scores import get_ms_table
 from plotly.graph_objects import Figure, Scatter
 from plotly_express import line
 def plot_line_plot_ms(selected_rows):

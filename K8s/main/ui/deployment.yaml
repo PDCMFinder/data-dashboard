@@ -19,6 +19,9 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 8050
+        envFrom:
+          - configMapRef:
+              name: pdcm-data-dashboard-postgres-configmap
         resources:
           limits:
             cpu: "2"    # The maximum CPU the container can use (e.g., 0.5 CPU core)

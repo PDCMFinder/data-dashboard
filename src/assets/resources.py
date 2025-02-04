@@ -1,5 +1,7 @@
-import pandas as pd
-from pandas import read_csv
+from src.components.DB.db import connect_to_postgres
+from pandas import DataFrame
+
+engine = connect_to_postgres()
 
 labels = {'DR_6.7': 'Data release 6.7', 'DR_6.6': 'Data release 6.6', 'DR_6.5': 'Data release 6.5', 'DR_6.4': 'Data release 6.4', 'DR_6.3': 'Data release 6.3', 'DR_6.2': 'Data release 6.2', 'DR_6.1': 'Data release 6.1', 'DR_6.0': 'Data release 6.0',
           'DR_5.3': 'Data release 5.3', 'DR_5.2': 'Data release 5.2', 'DR_5.1': 'Data release 5.1',
@@ -14,6 +16,8 @@ reactive_categories = {'Country': 'country', 'Providers': 'provider', 'Model Typ
                  'Primary Site': 'primary_site', 'Gender': 'sex', 'Ethnicity': 'ethnicity'}
 
 summary_columns = ['tag', 'links', 'date', "model_type_pdx", "model_type_cell_line", "model_type_organoid", "model_type_other", "model_type_total", "sample_type_xenograft", "sample_type_cell", "sample_type_patient", "sample_type_total", "molecular_data_biomarker", "molecular_data_cna", "molecular_data_expression", "molecular_data_immunemarker", "molecular_data_mut", "molecular_data_points_total", "drug_data_points", "treatment_data_points", "image_data_points"]
+
+summary = DataFrame(columns=summary_columns)
 
 padding = "0.5%"
 margin_left = '0.1%'

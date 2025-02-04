@@ -2,7 +2,7 @@ import pandas as pd
 from dash import html, dcc, dash_table
 from src.assets.resources import component_style_5
 
-df = pd.DataFrame(columns=["model_id", "provider", "model_type", "PDCM_DR_v1.0", "PDCM_DR_v2.0", "PDCM_DR_v2.1", "PDCM_DR_v3.0", "PDCM_DR_v3.1", "PDCM_DR_v4.0", "PDCM_DR_v5.0", "PDCM_DR_v5.1", "PDCM_DR_v5.2", "PDCM_DR_v5.3", "PDCM_DR_v6.0", "PDCM_DR_v6.1", "PDCM_DR_v6.2", "PDCM_DR_v6.3", "PDCM_DR_v6.4", "PDCM_DR_v6.5"])
+df = pd.DataFrame(columns=["model_id", "provider", "model_type", "PDCM_DR_v1.0", "PDCM_DR_v2.0", "PDCM_DR_v2.1", "PDCM_DR_v3.0", "PDCM_DR_v3.1", "PDCM_DR_v4.0", "PDCM_DR_v5.0", "PDCM_DR_v5.1", "PDCM_DR_v5.2", "PDCM_DR_v5.3", "PDCM_DR_v6.0", "PDCM_DR_v6.1", "PDCM_DR_v6.2", "PDCM_DR_v6.3", "PDCM_DR_v6.4", "PDCM_DR_v6.5", "PDCM_DR_v6.6", "PDCM_DR_v6.7"])
 
 def score_table_component():
     return html.Div(children=[

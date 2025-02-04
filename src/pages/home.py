@@ -1,11 +1,10 @@
 import dash
 from dash import html, dcc, dash_table
 from dash.dependencies import Input, Output
-from src.components.util import *
-from src.assets.resources import summary_columns
+from src.assets.resources import engine, summary, summary_columns
 from src.components.navbar.navbar import navbar
+from src.components.pages.home import bar_chart, generate_summary_stats, generate_ss_bar_plot
 
-backend = get_release_data("")
 padding = "0.1%"
 margin_left = '0.45%'
 margin_bottom = "0.5%"
@@ -59,16 +58,14 @@ def register_callbacks(app):
 
     )
     def update_bar_chart(value):
-        return bar_chart()
+        return bar_chart(engine)
 
     @app.callback(
         Output('summary-stat-table', 'data'),
         Input('ss-dropdown-category', 'value')
     )
     def update_summary_stats(category):
-        table = generate_summary_stats()
-        #if table.shape[0] > 0:
-        #    table['links'] = create_links(table['tag'])
+        table = generate_summary_stats(engine)
         return table.to_dict('records')
 
     @app.callback(
@@ -76,7 +73,7 @@ def register_callbacks(app):
         Input('ss-dropdown-category', 'value')
     )
     def update_summary_stats(category):
-        table = generate_summary_stats()
+        table = generate_summary_stats(engine)
         return generate_ss_bar_plot(table[['tag', 'date', category]], category)
 
 def create_links(releases):

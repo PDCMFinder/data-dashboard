@@ -2,3 +2,8 @@ src/assets/exports/
 .xml
 .idea
 venv
+iframe_figures
+.DS_Store
+K8s/main/postgres/postgres-secret.yaml
+K8s/main/ui/postgres-configmap.yaml
+scripts/

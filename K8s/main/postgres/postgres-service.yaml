@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pdcm-data-dashboard-db-service
+  labels:
+    app: pdcm-data-dashboard-db
+  namespace: pdcm-data-dashboard
+spec:
+  selector:
+    app: pdcm-data-dashboard-db
+  ports:
+    - protocol: TCP
+      port: 5432  # Port to expose on the Service
+      targetPort: 5432  # Port your Docusaurus app is listening on inside the container
+      nodePort: 32721
+  type: NodePort
+status:
+  loadBalancer: {}  # Expose the Service using a LoadBalancer (for public access)

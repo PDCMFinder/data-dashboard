@@ -3,8 +3,6 @@ from plotly_express import bar, histogram
 
 
 def get_bar_chart(models):
-    total = models.groupby('Release').sum(numeric_only=False)['Model Count'].to_dict()
-    models['Total Models'] = [total[r] for r in models['Release']]
     color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
     fig = bar(models, x='Release', y='Model Count', color='Model Type', hover_data=['Total Models'], color_discrete_map=color_code)
     fig.update_layout(

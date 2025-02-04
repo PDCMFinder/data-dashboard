@@ -1,19 +1,17 @@
-import dash
+from dash import html, dcc, Dash
 from dash.dependencies import Input, Output
-from dash.exceptions import PreventUpdate
-from src.components.util import generate_metadata_score_bar_plot
+from src.components.pages.metadata_scores import generate_metadata_score_bar_plot, get_ms_table
 from src.components.table.elements import score_table_component
 from src.assets.resources import labels
 from urllib.parse import urlparse, parse_qs
 from src.components.navbar.navbar import navbar
-from src.components.bar.elements import *
-from src.components.table.tables import *
+from src.components.bar.elements import ui_ms_bar_plot_component
 from src.components.line.line_plot import plot_line_plot_ms
 
 padding = "0.1%"
 margin_left = '0.1%'
 margin_bottom = "0.1%"
-app = dash.Dash(__name__)
+app = Dash(__name__)
 
 app.layout = html.Div(children=[
     navbar(),

@@ -1,20 +1,20 @@
-import dash
+from dash import html, dcc, Dash
 from dash.dependencies import Input, Output
 from dash.exceptions import PreventUpdate
-from src.components.util import *
-from src.assets.resources import labels
+from src.assets.resources import labels, engine
 from urllib.parse import urlparse, parse_qs
 from src.components.navbar.navbar import navbar
-from src.components.pie.elements import *
-from src.components.bar.elements import *
+from src.components.pie.elements import ui_model_type_component, ui_data_type_overview_component, ui_molecular_data_tech_overview_component
+from src.components.bar.elements import ui_country_plots_component, ui_molecular_data_type_by_model_type_component, ui_model_counts_component
 from src.components.overlap.elements import ui_overlap_diagram_element
+from src.components.pages.release import generate_overlap_diagram, model_type_pie, reactive_bar_plot, generate_country_plot, molecular_model_type_plot, dto_donut, library_strategy, dt_venn, venn4_plots
 
 
-backend = get_release_data("")
+
 padding = "0.1%"
 margin_left = '0.1%'
 margin_bottom = "0.1%"
-app = dash.Dash(__name__)
+app = Dash(__name__)
 app.layout = html.Div(children=[
     navbar(),
     html.Div(children=[
@@ -125,7 +125,7 @@ def register_callbacks(app):
         [Input('dropdown-category', 'value')]
     )
     def update_pie_plot(category):
-        return custom_plots(category, 'dto_donut')
+        return dto_donut(engine, category)
 
 
     @app.callback(
@@ -133,7 +133,7 @@ def register_callbacks(app):
         [Input('dropdown-category', 'value')]
     )
     def update_library_strategy_plot(category):
-        return custom_plots(category, 'library_strategy')
+        return library_strategy(engine, category, )
 
 
     @app.callback(
@@ -141,7 +141,7 @@ def register_callbacks(app):
         [Input('dropdown-category', 'value')]
     )
     def update_model_type_plot(category):
-        return model_type_pie(category, 'plot')
+        return model_type_pie(engine, category, 'plot')
 
     app.clientside_callback(
         """
@@ -176,28 +176,28 @@ def register_callbacks(app):
         [Input('dropdown-category', 'value'), Input("div-width", "data")]
     )
     def update_overlap_diagram(selected_category, width):
-        return generate_overlap_diagram(selected_category, width)
+        return generate_overlap_diagram(engine, selected_category, width)
 
     @app.callback(
         Output('venn-plot', 'figure'),
         [Input('dropdown-category', 'value'), Input('venn-type', 'value'), Input("div-width-venn", "data")]
     )
     def update_selected_plot(selected_category, venn_type, width):
-        return custom_plots(selected_category, f'dt_venn_{venn_type}', width)
+        return dt_venn(engine, selected_category, f'dt_venn_{venn_type}', width)
 
     @app.callback(
         Output('venn-plot-venn4', 'figure'),
         [Input('dropdown-category', 'value')]
     )
     def update_selected_plot(selected_category):
-        return custom_plots(selected_category, 'dt_v4venn')
+        return venn4_plots(engine, selected_category, 'immunemarker')
 
     @app.callback(
         Output('venn-plot-venn4-bio', 'figure'),
         [Input('dropdown-category', 'value')]
     )
     def update_selected_plot(selected_category):
-        return custom_plots(selected_category, 'dt_v4venn', 'biomarker')
+        return venn4_plots(engine, selected_category, 'biomarker')
 
     @app.callback(
         Output('reactive-plot', 'figure'),
@@ -205,7 +205,7 @@ def register_callbacks(app):
          Input('reactive-groupby-category', 'value')]
     )
     def update_reactive_plot(release, category, group_cat):
-        return reactive_bar_plot(release, category, group_cat, 'plot')
+        return reactive_bar_plot(engine, release, category, group_cat, 'plot')
 
     @app.callback(
         Output('country-plot', 'figure'),
@@ -213,7 +213,7 @@ def register_callbacks(app):
         [Input('dropdown-category', 'value')]
     )
     def country_plot(selected_category):
-        return generate_country_plot(selected_category, 'plot')
+        return generate_country_plot(engine, selected_category, 'plot')
 
 
     @app.callback(
@@ -221,7 +221,7 @@ def register_callbacks(app):
         [Input('dropdown-category', 'value')]
     )
     def molecular_model_type(selected_category):
-        return molecular_model_type_plot(selected_category, 'plot')
+        return molecular_model_type_plot(engine, selected_category, 'plot')
 
 
     ## Exports
@@ -234,7 +234,7 @@ def register_callbacks(app):
         if not n_clicks:
             raise PreventUpdate
         else:
-            return custom_plots(release, 'dt_venn','table')
+            return dt_venn(engine, release, 'dt_venn','table')
 
     @app.callback(
         Output("download-dataframe-csv-mto", "data"),
@@ -245,7 +245,7 @@ def register_callbacks(app):
         if not n_clicks:
             raise PreventUpdate
         else:
-            return dcc.send_data_frame(model_type_pie(release, 'table').to_csv, f'{release}_mto_table.csv', index=False)
+            return dcc.send_data_frame(model_type_pie(engine ,release, 'table').to_csv, f'{release}_mto_table.csv', index=False)
 
 
     @app.callback(
@@ -257,7 +257,7 @@ def register_callbacks(app):
         if not n_clicks:
             raise PreventUpdate
         else:
-            return dcc.send_data_frame(custom_plots(release, 'dto_donut', 'table').to_csv, f'{release}_dto_table.csv', index=False)
+            return dcc.send_data_frame(dto_donut(engine, release, 'table').to_csv, f'{release}_dto_table.csv', index=False)
 
 
     @app.callback(
@@ -272,7 +272,7 @@ def register_callbacks(app):
         if not n_clicks:
             raise PreventUpdate
         else:
-            return dcc.send_data_frame(reactive_bar_plot(release, category, group_cat, 'table').to_csv, f'{release}_model_counts_table.csv', index=False)
+            return dcc.send_data_frame(reactive_bar_plot(engine, release, category, group_cat, 'table').to_csv, f'{release}_model_counts_table.csv', index=False)
 
 
     @app.callback(
@@ -284,7 +284,7 @@ def register_callbacks(app):
         if not n_clicks:
             raise PreventUpdate
         else:
-            return dcc.send_data_frame(generate_country_plot(release, 'table').to_csv, f'{release}_country_table.csv', index=False)
+            return dcc.send_data_frame(generate_country_plot(engine, release, 'table').to_csv, f'{release}_country_table.csv', index=False)
 
     @app.callback(
         Output("download-dataframe-csv-lsp", "data"),
@@ -295,7 +295,7 @@ def register_callbacks(app):
         if not n_clicks:
             raise PreventUpdate
         else:
-            return dcc.send_data_frame(custom_plots(release, 'library_strategy', 'table').to_csv, f'{release}_library_table.csv', index=False)
+            return dcc.send_data_frame(library_strategy(engine, release, 'table').to_csv, f'{release}_library_table.csv', index=False)
 
     @app.callback(
         Output("download-dataframe-csv-mmtp", "data"),
@@ -306,5 +306,5 @@ def register_callbacks(app):
         if not n_clicks:
             raise PreventUpdate
         else:
-            return dcc.send_data_frame(molecular_model_type_plot(release, 'table').to_csv, f'{release}_molecular_model_type_table.csv', index=False)
+            return dcc.send_data_frame(molecular_model_type_plot(engine, release, 'table').to_csv, f'{release}_molecular_model_type_table.csv', index=False)
 

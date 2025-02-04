@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pdcm-data-dashboard-postgres-pvc
+  labels:
+    app: pdcm-data-dashboard-postgres-pvc
+  namespace: pdcm-data-dashboard
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 500Mi
+  storageClassName: standard-nfs-production

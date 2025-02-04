@@ -10,3 +10,5 @@ openpyxl
 dash_bootstrap_components
 matplotlib-venn
 venn
+sqlalchemy
+psycopg2-binary

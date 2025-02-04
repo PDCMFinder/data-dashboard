@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pdcm-data-dashboard-db
+  namespace: pdcm-data-dashboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pdcm-data-dashboard-db
+  template:
+    metadata:
+      labels:
+        app: pdcm-data-dashboard-db
+    spec:
+      containers:
+        - name: pdcm-data-dashboard-db
+          image: postgres:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+              - containerPort: 5432
+          env:
+            - name: POSTGRES_HOST
+              value: "0.0.0.0"
+          envFrom:
+            - configMapRef:
+                name: pdcm-data-dashboard-postgres-configmap
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgres-data
+          resources:
+            limits:
+              cpu: "2"    # The maximum CPU the container can use (e.g., 0.5 CPU core)
+              memory: "1Gi"  # The maximum memory the container can use (e.g., 512 megabytes)
+            requests:
+              cpu: "1"    # The guaranteed minimum CPU the container needs (e.g., 0.2 CPU core)
+              memory: "512Mi"
+      volumes:
+            - name: postgres-data
+              persistentVolumeClaim:
+                claimName: pdcm-data-dashboard-postgres-pvc

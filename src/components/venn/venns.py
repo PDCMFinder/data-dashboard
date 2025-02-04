@@ -6,7 +6,7 @@ import io
 import matplotlib.pyplot as plt
 import base64
 
-def get_dt_venn(filtered_data, plot_type, width):
+def get_dt_venn(filtered_data, width):
     if filtered_data.shape[0]==0:
         return None
     filtered_data = filtered_data.fillna('').groupby('molecular_characterisation_type')['model_id'].apply(set)
@@ -57,23 +57,10 @@ def get_venn_table(df, output, model):
     # Encode the bytes buffer to base64
     return send_file(output)
 
-def get_dt_venn4(df, bio=''):
-    data_dict = df.groupby('molecular_characterisation_type')['model_id'].apply(set).to_dict()
-    set1, set2, set3 = process_sets(data_dict['mutation']), process_sets(data_dict['expression']), process_sets(
-        data_dict['copy number alteration'])
-    data_dict['mutation_expression_cna'] = sorted(list(set1 & set2 & set3))
-    if bio == 'bio':
-        if 'biomarker' not in data_dict.keys():
-            data_dict['biomarker'] = set()
-        data_type_list = ('mutation_expression_cna', 'drug', 'treatment', 'biomarker')
-    else:
-        if 'immunemarker' not in data_dict.keys():
-            data_dict['immunemarker'] = set()
-        data_type_list = ('mutation_expression_cna', 'drug', 'treatment', 'immunemarker')
-    data_subset_dict = dict((k, process_sets(data_dict[k])) for k in data_type_list)
+def get_dt_venn4(data):
     plt.close()
     fig, ax = plt.subplots(figsize=(12, 12))
-    venn(data_subset_dict, figsize=(12, 12), fontsize=20, legend_loc="upper left", ax=ax)
+    venn(data, figsize=(12, 12), fontsize=20, legend_loc="upper left", ax=ax)
     buf = io.BytesIO()
     plt.close()
     fig.savefig(buf, format="png")
