@@ -25,8 +25,8 @@ spec:
         resources:
           limits:
             cpu: "2"    # The maximum CPU the container can use (e.g., 0.5 CPU core)
-            memory: "1Gi"  # The maximum memory the container can use (e.g., 512 megabytes)
+            memory: "5Gi"  # The maximum memory the container can use (e.g., 512 megabytes)
           requests:
-            cpu: "1"    # The guaranteed minimum CPU the container needs (e.g., 0.2 CPU core)
-            memory: "512Mi"
+            cpu: "250m"    # The guaranteed minimum CPU the container needs (e.g., 0.2 CPU core)
+            memory: "1Gi"
 

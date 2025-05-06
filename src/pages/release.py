@@ -92,13 +92,11 @@ app.layout = html.Div(children=[
         style={'border': '0.5px solid #000', 'background-color': '#f4f4f4', 'padding': '0.5%',
                'border-radius': '10px', 'width': '33.3%', 'float': 'right', 'margin-bottom': margin_bottom, 'margin-left': '0.1%'}
     ),
-    ui_overlap_diagram_element(),
     ui_model_counts_component(),
-    ui_country_plots_component(),
     ui_molecular_data_tech_overview_component(),
-
+    ui_country_plots_component(),
     ui_molecular_data_type_by_model_type_component(),
-
+    ui_overlap_diagram_element(),
     ],
     style={'font-family': 'Merriweather', 'padding': padding}
 )

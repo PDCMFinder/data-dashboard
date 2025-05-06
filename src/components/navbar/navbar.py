@@ -40,6 +40,12 @@ def navbar():
                         className='nav-link',
                         style={"color": "white", "padding": "10px 20px", "textDecoration": "none"}
                     ),
+                    dcc.Link(
+                        'Data Visualisation',
+                        href='/data-visualisations',
+                        className='nav-link',
+                        style={"color": "white", "padding": "10px 20px", "textDecoration": "none"}
+                    ),
                 ],
                 className='navbar',
                 style={

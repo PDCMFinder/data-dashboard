@@ -4,9 +4,6 @@ from plotly_upset.plotting import plot_upset
 
 
 def overlap_diagram(df, width):
-    # Dummy Data
-    set_list = df.columns.tolist()[2:]
-
     # Plotting
     fig = plot_upset(
         dataframes=[df],

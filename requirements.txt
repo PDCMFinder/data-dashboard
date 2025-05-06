@@ -12,3 +12,4 @@ matplotlib-venn
 venn
 sqlalchemy
 psycopg2-binary
+dash_bio

@@ -10,7 +10,7 @@ def connect_to_postgres():
     DB_PASSWORD = os.getenv("POSTGRES_PASSWORD")
     try:
         DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-        engine = create_engine(DATABASE_URL)
+        engine = create_engine(DATABASE_URL, pool_size=10, max_overflow=20)
 
         with engine.connect() as conn:
             result = conn.execute(text("SELECT 'Connection successful'"))

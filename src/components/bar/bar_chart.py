@@ -20,11 +20,11 @@ def get_ss_bar_chart(models, cat):
 def get_reactive_bar_plot(data, column, gc):
     color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
     if gc is None or column == gc:
-        fig = bar(data, x=column, y='Count', color_discrete_map=color_code)
+        fig = bar(data, x=column.lower(), y='count', color_discrete_map=color_code)
     else:
-        total = data.groupby(column).sum(numeric_only=False)['Count'].to_dict()
-        data['Total'] = [total[r] for r in data[column]]
-        fig = bar(data, x=column, y='Count', color=gc, hover_name=gc, hover_data='Total', color_discrete_map=color_code)
+        total = data.groupby(column.lower()).sum(numeric_only=False)['count'].to_dict()
+        data['Total'] = [total[r] for r in data[column.lower()]]
+        fig = bar(data, x=column.lower(), y='count', color=gc, hover_name=gc, hover_data='Total', color_discrete_map=color_code)
         fig.update_layout(legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1))
         fig.update_layout(barmode='stack', xaxis={'categoryorder': 'category ascending'})
 
@@ -50,7 +50,7 @@ def get_key_from_value(dictionary, target_value):
     return None
 
 def get_country_bar_plot(df):
-    fig = bar(df.groupby('country').count()['provider'].reset_index(), x='country', y='provider')
+    fig = bar(df, x='country', y='provider_count')
     fig.update_layout(barmode='stack', xaxis={'categoryorder': 'category ascending'})
     return fig
 
@@ -58,8 +58,8 @@ def get_country_bar_plot(df):
 def get_molecular_model_type_plot(data):
     color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
 
-    fig = bar(data, x='molecular_characterisation_type', y='Count', color='model_type', hover_name='model_type',
-              hover_data='Total', color_discrete_map=color_code)
+    fig = bar(data, x='molecular_characterisation_type', y='count', color='model_type', hover_name='model_type',
+              hover_data='total', color_discrete_map=color_code)
     fig.update_layout(barmode='stack', xaxis={'categoryorder': 'category ascending'})
     return fig
 

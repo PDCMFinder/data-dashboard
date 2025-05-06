@@ -2,6 +2,13 @@ from src.components.DB.db import connect_to_postgres
 from pandas import DataFrame
 
 engine = connect_to_postgres()
+gene_list = ["ALK", "BCL2", "BRAF", "BRCA1", "BRCA2", "EGFR ", "ESR1", "PGR", "FGFR2", "FGFR3", "ERBB2", "IDH1", "IDH2", "IRF4", "KRAS", "MYC", "PIK3CA", "RET", "ROS1"]
+visualisation_cancer_system = sorted(['Connective and Soft Tissue Cancer', 'Head and Neck Cancer',
+       'Reproductive System Cancer', 'Digestive System Cancer',
+       'Thoracic Cancer', 'Skin Cancer', 'Breast Cancer',
+       'Nervous System Cancer', 'Urinary System Cancer',
+       'Endocrine Cancer', 'Cardiovascular Cancer',
+       'Peritoneal and Retroperitoneal Cancer'])
 
 labels = {'DR_6.7': 'Data release 6.7', 'DR_6.6': 'Data release 6.6', 'DR_6.5': 'Data release 6.5', 'DR_6.4': 'Data release 6.4', 'DR_6.3': 'Data release 6.3', 'DR_6.2': 'Data release 6.2', 'DR_6.1': 'Data release 6.1', 'DR_6.0': 'Data release 6.0',
           'DR_5.3': 'Data release 5.3', 'DR_5.2': 'Data release 5.2', 'DR_5.1': 'Data release 5.1',
@@ -11,7 +18,7 @@ labels = {'DR_6.7': 'Data release 6.7', 'DR_6.6': 'Data release 6.6', 'DR_6.5': 
           'DR_1.0': 'Data release 1.0'}
 
 reactive_categories = {'Country': 'country', 'Providers': 'provider', 'Model Type': 'model_type',
-                 'Publications': 'publications', 'Age': 'age_in_years_at_collection',
+                 'Publications': 'publications', 'Age': 'age_in_years',
                  'Cancer System': 'diagnosis', 'Tumour Type': 'tumour_type',
                  'Primary Site': 'primary_site', 'Gender': 'sex', 'Ethnicity': 'ethnicity'}
 
@@ -108,6 +115,24 @@ primary_site_mapping = {
         "Peripheral Nervous System", "Placenta", "Gynecologic", "Upper Tract Urothelial Carcinoma (Utuc)"
     ]
 }
+
+
+cancer_system_biomarkers = {
+    "Breast Cancer": ["HER2", "ERBB2", "ESR1", "ER", "PGR", "PTEN", "Ki67", "Homologous recombination deficiency"],
+    "Cardiovascular Cancer": [],  # No specific markers from your list
+    "Connective and Soft Tissue Cancer": ["CD99"],  # Ewing sarcoma marker
+    "Digestive System Cancer": ["SMAD4", "MLH1", "MSH2", "MSH6", "PMS2", "CDX2", "MUC2", "EGFR", "PTEN"],
+    "Endocrine Cancer": ["PAX8", "WT1"],  # Thyroid and adrenal tumors
+    "Eye Cancer": [],  # No specific markers from your list
+    "Head and Neck Cancer": ["EGFR", "BRAF", "ALK", "ROS1"],  # Common mutations in head and neck cancers
+    "Nervous System Cancer": ["MGMT", "IDH1", "p53", "MKI67"],  # Gliomas and brain tumors
+    "Peritoneal and Retroperitoneal Cancer": [],  # No specific markers from your list
+    "Reproductive System Cancer": ["PAX8", "WT1", "Homologous recombination deficiency", "AR", "KLK3", "FOLH1", "ERG"],
+    "Skin Cancer": ["BRAF", "PTEN"],  # Melanoma markers
+    "Thoracic Cancer": ["EGFR", "PD-L1", "BRAF", "ALK", "ROS1"],  # Lung cancer
+    "Urinary System Cancer": ["CK20", "CK7", "KRT5", "KRT18", "KRT19", "MME", "PTPRC"]
+}
+
 
 
 #diagnosis_to_cancer = read_csv('assets/diagnosis_mappings.tsv', sep='\t')

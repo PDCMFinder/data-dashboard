@@ -34,9 +34,8 @@ def get_dto_donut(filtered_data, tm):
 
 
 def get_model_type_donut(df):
-    df = df.groupby('model_type').count()['provider']
-    labels = df.index.tolist()
-    values = df.values.tolist()
+    labels = df['model_type'].tolist()
+    values = df['model_count'].tolist()
     color_code = {"PDX": "#6e9eeb", "Organoid": "#8f7cc3", "Cell Line": "#94c37e", "Other": "#ea921b"}
     colors = [color_code[label] for label in labels]
 
@@ -52,8 +51,8 @@ def get_dto_radial(pie_chart, tm):
     fig = Figure()
     radius = 0
     for i, row in pie_chart.iterrows():
-        dt = row[0]
-        count = row[1]
+        dt = row.iloc[0]
+        count = row.iloc[1]
         if not isnan(count):
             theta = linspace(0, 360 * (count/tm), count, endpoint=False)
             fig.add_trace(Scatterpolar(
@@ -77,26 +76,16 @@ def get_dto_radial(pie_chart, tm):
 
 
 def get_library_strategy_plot(df):
-    replacements = {'Not Provided': 'Not provided',
-                    'Immunohistochemistry': 'IHC', 'immunohistochemistry': 'IHC',
-                    'Tumor mutation burden': 'Tumor Mutation Burden',
-                    'Illumina microarray': 'Microarray', 'arraw comparative genomic hybridization': 'Microarray',
-                    'Genomic plateform of Curie Institute': 'Microarray', 'aCGH array 2x400k': 'Microarray', 'aCGH array 4x180k': 'Microarray',
-                    'whole exome sequencing': 'WES', 'Whole exome sequencing': 'WES',
-                    'NGS plateform of Curie Institute': 'NGS',
-                    'rna sequencing': 'RNA-Seq', 'RNA sequencing': 'RNA-Seq', 'RNAseq': 'RNA-Seq',
-                    'Illumina HT-12 v3': 'WGS', 'NGS': 'NGS', }
-    df['library_strategy'] = df['library_strategy'].replace(replacements)
-    df = df.groupby(['molecular_characterisation_type', 'library_strategy']).count()['model_id']
     molecular_characterisation_type = ['mutation', 'expression', 'copy number alteration']
     fig = make_subplots(rows=1, cols=3, specs=[[{"type": "pie"}] * 3])
     col = 1
     color_map = {"WES": "#636EFA", "WGS": "#EF553B",
                  "Targeted": "#00CC96", "RNA-Seq": "#AB63FA",
-                 "Microarray": "#FFA15A", "Not provided": "#19D3F3", "NGS": "#FF6692"}
+                 "Microarray": "#FFA15A", "Not provided": "#19D3F3", "NGS": "#FF6692", "Not Provided": "#19D3F3"}
     for mct in molecular_characterisation_type:
-        labels = df[mct].index.tolist()
-        values = df[mct].values.tolist()
+        temp = df[df['molecular_characterisation_type'] == mct].reset_index(drop=True)
+        labels = temp['library_strategy'].tolist()
+        values = temp['model_count'].tolist()
         cmap = [color_map[l] for l in labels]
         fig.add_trace(Pie(labels=labels, values=values, name=mct.title(), marker=dict(colors=cmap)), row=1, col=col)
         col += 1

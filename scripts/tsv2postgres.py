@@ -1,10 +1,16 @@
 import pandas as pd
 from requests import get
 from pandas import read_csv, DataFrame
-from src.assets.resources import primary_site_mapping, diagnosis_to_cancer_system
-
+from src.assets.resources import primary_site_mapping, diagnosis_to_cancer_system, gene_list
+from os import listdir
+from os.path import isfile, join, isdir
+from tqdm import tqdm
+import json
 import psycopg2
 import os
+
+home = '/Users/tushar/CancerModels/pdxfinder-data/data/UPDOG'
+
 def test_connection():
     # Load environment variables
     DB_HOST = os.getenv("DB_HOST", "pdcm-data-dashboard-db-service.pdcm-data-dashboard.svc.cluster.local")
@@ -154,12 +160,135 @@ def generate_files_for_db(releases):
         total_df = pd.concat([total_df, data['total']])
         samples_df = pd.concat([samples_df, data['samples']])
         country_df = pd.concat([country_df, data['country']])
+    samples_df = samples_df.fillna('')
+    samples_df = samples_df[samples_df['model_id'] != '']
+    samples_df = samples_df[~samples_df['model_id'].str.contains('free')]
+    samples_df = samples_df[~samples_df['model_id'].str.contains('Unique')]
+    samples_df = samples_df[~samples_df['model_id'].str.contains('desirable')]
+    samples_df = samples_df[~samples_df['model_id'].str.contains('essential')]
+    samples_df = samples_df.drop_duplicates(
+        subset=['DR', 'provider', 'model_id', 'sample_id', 'molecular_characterisation_type'])
     summary_df = generate_summary_stats()
     total_df.to_csv('total_models_db.tsv', sep='\t', index=False)
     samples_df.to_csv('samples_db.tsv', sep='\t', index=False)
     country_df.to_csv('country_db.tsv', sep='\t', index=False)
     summary_df.to_csv('phenomics_db.tsv', sep='\t', index=False)
 
-#if __name__ == "__main__":
+
+def read_metadata_without_fields(path):
+    metadata = pd.read_csv(path, sep='\t', na_values="", low_memory=False, encoding='utf-8', encoding_errors='replace')
+    if 'Field' in metadata.columns:
+        metadata = metadata.loc[metadata.Field.astype(str).str.startswith('#') != True,].reset_index(drop=True)
+        metadata = metadata.drop('Field', axis=1)
+    return metadata
+
+
+def read_metadata_with_fields(path, columns):
+    metadata = pd.read_csv(path, usecols=columns,sep='\t', na_values="", low_memory=False, encoding='utf-8', encoding_errors='replace')
+    return metadata
+
+def get_dirs(path):
+    return [f for f in listdir(path) if isdir(join(path, f))]
+
+
+def get_files(path):
+    return [join(path, f) for f in listdir(path) if isfile(join(path, f)) and f != '.DS_Store' and f.endswith('.tsv')]
+
+def generate_data_visualisation_files():
+    home = '/Users/tushar/CancerModels/pdxfinder-data/data/UPDOG'
+    search_index = pd.read_json('https://www.cancermodels.org/api/search_index?select=data_source,external_model_id,cancer_system,model_type')
+    #data_table = pd.read_json('https://www.cancermodels.org/api/data_overview_mutation_cohorts')[['model_id', 'sample_id', 'symbol','provider', 'type', 'cancer_system']]
+    providers = sorted(get_dirs(home))
+    mutation_df, expression_df = DataFrame(), DataFrame()
+    mut_columns = ['sample_id', 'symbol','amino_acid_change', 'consequence', 'read_depth', 'chromosome', 'strand', 'seq_start_position', 'ref_allele', 'alt_allele']
+    #exp_columns = ['sample_id', 'symbol', 'rnaseq_fpkm']
+    for p in providers:
+        if 'mut' in get_dirs(join(home, p)):
+            mutation_df = merge_tsv_to_df(join(home, p, 'mut'), mut_columns, mutation_df, p)
+        #if 'expression' in get_dirs(join(home, p)):
+        #    expression_df = merge_tsv_to_df(join(home, p, 'expression'), exp_columns, expression_df, p)
+    mutation_df.to_csv('raw_mutation_df.tsv', sep='\t', index=False)
+    mutation_df = mutation_df.merge(search_index, left_on=['model_id', 'provider'], right_on=['external_model_id', 'data_source'], how='left')
+    mutation_df.drop_duplicates(subset=['symbol', 'amino_acid_change', 'chromosome', 'seq_start_position', 'ref_allele', 'alt_allele', 'cancer_system']).to_csv('mutation_df.tsv', sep='\t', index=False)
+    #expression_df.to_csv('expression_df.tsv', sep='\t', index=False)
+
+def merge_tsv_to_df(path, columns, mut_df, provider):
+    df = pd.DataFrame()
+    files = get_mol_files(path)
+    mms = read_metadata_without_fields(f"{home}/{provider}/{provider}_molecular_metadata-sample.tsv")[['model_id', 'sample_id']].drop_duplicates()
+    for f in tqdm(files, path):
+        try:
+            temp = read_metadata_with_fields(f, columns)
+            temp['provider'] = provider
+            #temp = temp[temp['symbol'].isin(gene_list)]
+            if 'ref_allele' in temp.columns or 'alt_allele' in temp.columns:
+                temp['ref_allele'] = temp['ref_allele'].str.split(',').str[0]
+                temp['alt_allele'] = temp['alt_allele'].str.split(',').str[0]
+        except:
+            print(f)
+            exit(1)
+        df = pd.concat([df, temp]).reset_index(drop=True)
+    df = df.merge(mms, on='sample_id', how='left')
+    mut_df = pd.concat([mut_df, df]).reset_index(drop=True)
+    return mut_df
+
+def flatten(xss):
+    return [x for xs in xss for x in xs]
+
+def get_mol_files(path):
+    files = []
+    if len(get_dirs(path)) > 0:
+        for d in get_dirs(path):
+            new_path = join(path, d)
+            files.append(get_files(new_path))
+        files = flatten(files)
+    else:
+        files = get_files(path)
+    return files
+
+
+def generate_mutation_plot_json(df):
+    df = df.drop_duplicates(subset=['chromosome', 'seq_start_position', 'ref_allele', 'alt_allele', 'symbol'])
+    annotations_dict = {}
+    keys = ["name", "start", "length", "expression-level", "gene-type"],
+    for chr in range(1, 25):
+        if chr == 24:
+            chr = 'Y'
+        elif chr == 23:
+            chr = 'X'
+        temp = df[df['chromosome'] == str(chr)]
+        for _, item in temp.iterrows():
+            annotation_entry = [
+                f'{item["symbol"]}, {item["consequence"]}, {item["ref_allele"]}/{item["alt_allele"]}',
+                # name
+                int(float(item["seq_start_position"])),  # start
+                1,  # length (assuming a default of 1)
+                1,  # int(item["read_depth"]),  # expression-level
+                1,  # item["type"]  # gene-type (PDX, Organoid, etc.)
+            ]
+            if str(chr) not in annotations_dict:
+                annotations_dict[str(chr)] = {"chr": str(chr), "annots": []}
+            annotations_dict[str(chr)]["annots"].append(annotation_entry)
+    annotations_list = list(annotations_dict.values())
+    output_data = {
+        "keys": keys[0],
+        "annots": annotations_list
+    }
+    return output_data
+
+def generate_mutation_plot_json_all_cancer():
+    df = read_csv('mutation_df.tsv', sep='\t', low_memory=False, encoding='utf-8')
+    cancer_systems = df['cancer_system'].unique()
+    print(cancer_systems)
+    for c in cancer_systems:
+        t = generate_mutation_plot_json(df[df['cancer_system'] == c])
+        with open(f'{c}.json', 'w') as f:
+            json.dump(t, f)
+
+
+if __name__ == "__main__":
+    generate_data_visualisation_files()
+    generate_mutation_plot_json_all_cancer()
+
     #generate_files_for_db(labels)
     #test_connection()

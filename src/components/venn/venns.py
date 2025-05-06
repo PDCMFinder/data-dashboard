@@ -7,9 +7,6 @@ import matplotlib.pyplot as plt
 import base64
 
 def get_dt_venn(filtered_data, width):
-    if filtered_data.shape[0]==0:
-        return None
-    filtered_data = filtered_data.fillna('').groupby('molecular_characterisation_type')['model_id'].apply(set)
     if 'mutation' in filtered_data.keys() and 'expression' in filtered_data.keys() and 'copy number alteration' in filtered_data.keys():
         set1, set2, set3 = process_sets(filtered_data['mutation']), process_sets(filtered_data['expression']), process_sets(filtered_data['copy number alteration'])
         labels = ['mutation', 'expression', 'copy number alteration']
@@ -58,6 +55,8 @@ def get_venn_table(df, output, model):
     return send_file(output)
 
 def get_dt_venn4(data):
+    if data.shape[0] == 0 or data is None:
+        return None
     plt.close()
     fig, ax = plt.subplots(figsize=(12, 12))
     venn(data, figsize=(12, 12), fontsize=20, legend_loc="upper left", ax=ax)
