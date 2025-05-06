@@ -1,3 +1,5 @@
+from pandas.core.interchange.dataframe_protocol import DataFrame
+
 from src.components.DB.db import query_db
 from src.components.overlap.overlap_plot import overlap_diagram
 from src.components.pie.pie_chart import get_model_type_donut
@@ -35,11 +37,16 @@ def reactive_bar_plot(engine, release, category, gc, plot_type):
             select_clause = category
         elif category == 'provider':
             select_clause = gc
+        elif gc == 'model_type' or category == 'model_type':
+            if gc == 'model_type':
+                select_clause = category
+            else:
+                select_clause = gc
         else:
             select_clause = groupby_clause
 
         query = (f"    WITH model_data AS (\n"
-             f"        SELECT model_id, provider, model_type\n"
+             f"        SELECT *\n"
              f"        FROM TOTAL_MODELS\n"
              f"        WHERE dr = '{release}'\n"
              f"    ),\n"
@@ -120,5 +127,15 @@ def venn4_plots(engine, release, plot_type):
     else:
         table_name = 'mv_immune_marker_data'
     query = f"SELECT data_type, model_ids FROM {table_name} WHERE dr='{release}';"
-    return get_dt_venn4(query_db(engine, query))
+    data = query_db(engine, query)
+    for _, r in data.iterrows():
+        data.iloc[_]['model_ids'] = process_sets(data.iloc[_]['model_ids'])
+    data = dict(zip(data['data_type'], data['model_ids']))
+    return get_dt_venn4(data)
 
+
+
+def process_sets(s):
+    s = set(s)
+    s = {item for item in s if item != ''}
+    return s

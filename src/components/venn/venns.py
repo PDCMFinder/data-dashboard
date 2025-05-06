@@ -55,8 +55,6 @@ def get_venn_table(df, output, model):
     return send_file(output)
 
 def get_dt_venn4(data):
-    if data.shape[0] == 0 or data is None:
-        return None
     plt.close()
     fig, ax = plt.subplots(figsize=(12, 12))
     venn(data, figsize=(12, 12), fontsize=20, legend_loc="upper left", ax=ax)

@@ -18,7 +18,7 @@ labels = {'DR_6.7': 'Data release 6.7', 'DR_6.6': 'Data release 6.6', 'DR_6.5': 
           'DR_1.0': 'Data release 1.0'}
 
 reactive_categories = {'Country': 'country', 'Providers': 'provider', 'Model Type': 'model_type',
-                 'Publications': 'publications', 'Age': 'age_in_years',
+                 'Publications': 'publication', 'Age': 'age_in_years',
                  'Cancer System': 'diagnosis', 'Tumour Type': 'tumour_type',
                  'Primary Site': 'primary_site', 'Gender': 'sex', 'Ethnicity': 'ethnicity'}
 
