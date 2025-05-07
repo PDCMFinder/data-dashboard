@@ -46,6 +46,12 @@ def navbar():
                         className='nav-link',
                         style={"color": "white", "padding": "10px 20px", "textDecoration": "none"}
                     ),
+                    dcc.Link(
+                        'Mathesar - DB viewer',
+                        href='http://hh-rke-wp-webadmin-20-worker-1.caas.ebi.ac.uk:31353/db/1/schemas/2200/',
+                        className='nav-link',
+                        style={"color": "white", "padding": "10px 20px", "textDecoration": "none"}
+                    ),
                 ],
                 className='navbar',
                 style={

@@ -1,9 +1,10 @@
 src/assets/exports/
-.xml
+scripts/
 .idea
 venv
+K8s/main/mathesar/
+.xml
 iframe_figures
 .DS_Store
 K8s/main/postgres/postgres-secret.yaml
 K8s/main/ui/postgres-configmap.yaml
-scripts/
