@@ -1,4 +1,5 @@
 from src.components.boxplot.boxplot import plot_boxplot
+from src.components.heatmap.heatmap import plot_heatmap
 from pandas import read_json
 import json
 from src.components.DB.db import query_db
@@ -16,6 +17,20 @@ def generate_expression_boxplot(cancer_system, gene_symbol, model_type):
         query = f"{query}&type=eq.{model_type.replace(' ', '%20')}"
     df = read_json(f"https://www.cancermodels.org/api/data_overview_expression_cohorts?{query}")
     return plot_boxplot(df)
+
+
+def generate_expression_heatmap(cancer_system, gene_symbol, model_type):
+    #query = f"symbol=eq.{gene_symbol}"
+
+    if isinstance(gene_symbol, list):
+        gene_symbol = ','.join(gene_symbol)
+        query = f"cancer_system=eq.{cancer_system.replace(' ', '%20')}&symbol=in.({gene_symbol.replace(' ', '%20')})"
+    else:
+        query = f"cancer_system=eq.{cancer_system.replace(' ', '%20')}&symbol=eq.{gene_symbol.replace(' ', '%20')}"
+    if model_type != 'All':
+        query = f"{query}&type=eq.{model_type.replace(' ', '%20')}"
+    df = read_json(f"https://www.cancermodels.org/api/data_overview_expression_cohorts?{query}")
+    return plot_heatmap(df.drop_duplicates(subset=['model_id', 'sample_id', 'symbol']))
 
 def generate_mutation_ideogram(cancer_system):
     """

@@ -1,8 +1,9 @@
 from dash import html, dcc, Dash
 from dash.dependencies import Input, Output
-from src.components.pages.data_visualisation import generate_expression_boxplot
+from src.components.pages.data_visualisation import generate_expression_boxplot, generate_expression_heatmap
 from src.components.boxplot.elements import expression_boxplot_component
 from src.components.ideogram.elements import mutation_ideogram_component
+from src.components.heatmap.elements import expression_heatmap_component
 from src.components.pages.data_visualisation import generate_mutation_ideogram
 from src.components.navbar.navbar import navbar
 from src.assets.resources import gene_list, visualisation_cancer_system
@@ -53,11 +54,12 @@ app.layout = html.Div(children=[
               'border': '1px solid #ddd', 'borderRadius': '8px', 'margin-bottom': margin_bottom}
     ),
     html.Div(children=[expression_boxplot_component()]),
+    html.Div(children=[expression_heatmap_component()]),
     html.Div(children=[
         html.Div(children=[
             markdowns("Cancer System")[0],
             dcc.Dropdown(
-                id='cancer-system-dropdown-single-category',
+                id='cancer-system-dropdown-single-category-2',
                 options=[{'label': category, 'value': category} for category in
                          visualisation_cancer_system],
                 value=visualisation_cancer_system[0],
@@ -84,8 +86,17 @@ def register_callbacks(app):
         return generate_expression_boxplot(cancer_system, gene_symbol, model_type)
 
     @app.callback(
+        Output('expression-heatmap-cs-gl-mt', 'figure'),
+        [Input('cancer-system-dropdown-category-1', 'value'),
+         Input('gene-symbol-dropdown-category-1', 'value'),
+         Input('model-type-1', 'value')]
+    )
+    def plot_expression_heatmap(cancer_system, gene_symbol, model_type):
+        return generate_expression_heatmap(cancer_system, gene_symbol, model_type)
+
+    @app.callback(
         Output('mutation-ideogram', 'annotations'),
-        [Input('cancer-system-dropdown-single-category', 'value'),])
+        [Input('cancer-system-dropdown-single-category-2', 'value'),])
     def plot_mutation_ideogram(cancer_system):
         return generate_mutation_ideogram(cancer_system)
 
