@@ -30,7 +30,9 @@ Access the dashboard in your web browser at http://localhost:8050.
 ### Screenshots
 ![Dashboard landing panel](img/img1.png)
 ![Dashboard 2nd panel](img/img2.png)
-![Dashboard 3rd panel](img/img3.png)
+![Dashboard 2nd panel](img/img3.png)
+![Dashboard 2nd panel](img/img4.png)
+![Dashboard 3rd panel](img/img5.png)
 
 ### License
 This project is licensed under the [MIT License](https://github.com/PDCMFinder/data-dashboard#MIT-1-ov-file).
